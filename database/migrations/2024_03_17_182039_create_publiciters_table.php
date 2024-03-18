@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('publiciters', function (Blueprint $table) {
             $table->id();
-            $table->string('fullName');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('titre');
+            $table->string('description');
+            $table->text('contenu');
+            $table->date('datePublicite');
             $table->string('picture');
-            $table->rememberToken();
+            $table->foreignId('publicitaire_id')
+            ->constrained('publicitaires')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('publiciters');
     }
 };
