@@ -1,0 +1,99 @@
+/* --------------------scroll animation hero section ----------------- */
+
+
+.icon-scroll {
+    box-shadow: rgb(24, 26, 27) 0px 0px 0px 1px inset;
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    bottom: 50px;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px #fff;
+    border-radius: 25px;
+}
+.icon-scroll, .icon-scroll:before {
+    position: absolute;
+    left: 50%;
+}
+.icon-scroll::before {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+.icon-scroll:before {
+content: "";
+width: 8px;
+height: 8px;
+background: #fff;
+margin-left: -4px;
+top: 8px;
+border-radius: 4px;
+-webkit-animation-duration: 1.5s;
+animation-duration: 2.5s;
+-webkit-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
+-webkit-animation-name: scroll;
+animation-name: scroll;
+}
+@keyframes scroll {
+0% {
+transform: translateY(0); 
+opacity: 1;
+}
+50% {
+transform: translateY(40px);
+
+}
+100% {
+transform: translateY(0);
+opacity: 0;
+ 
+}
+}
+
+/* ________________animation de border_____________ */
+
+.statistique {
+    position: relative;
+}
+.statistique::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 11%;
+    width: 0%;
+    height: 2px;
+    background-color: #1db60c; 
+    animation: borderAnimation 3s ease-in-out infinite; 
+}
+
+@keyframes borderAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+.annonce {
+    position: relative;
+}
+.annonce::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 11%;
+    width: 0%;
+    height: 2px;
+    background-color: #1db60c; 
+    animation: borderAnimation 3s ease-in-out infinite; 
+}
+
+@keyframes borderAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 80%;
+    }
+}
