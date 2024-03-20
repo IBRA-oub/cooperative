@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\authController;
+use App\Http\Controllers\adminController;
 
 
 /*
@@ -20,3 +21,14 @@ Route::get('/', function () {
 });
 
 Route::get('login' , [authController::class , 'login']);
+
+
+// __________________________admin__________________________
+
+Route::group([], function() {
+    
+    Route::get('/admin-dashboard',[adminController::class , 'dashboard'])->name('admin-dashboard');
+    Route::get('/admin-travailleur',[adminController::class , 'travailleur'])->name('admin-travailleur');
+    Route::get('/admin-message',[adminController::class , 'message'])->name('admin-message');
+    Route::get('/add-user',[adminController::class , 'addUser'])->name('add-user');
+});
