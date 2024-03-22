@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nomProduit');
             $table->integer('prixAchatProduit');
+            $table->integer('quantiterAchat');
+            $table->integer('dateAchat');
             $table->foreignId('financiere_id')
             ->constrained('financieres')
             ->onUpdate('cascade');

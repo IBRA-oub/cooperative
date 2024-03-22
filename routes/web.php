@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\financiereController;
+use App\Http\Controllers\plannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\authController;
 use App\Http\Controllers\adminController;
@@ -48,4 +49,19 @@ Route::group([], function() {
     Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
     Route::get('/add-achat',[financiereController::class , 'addAchat'])->name('add-achat');
     Route::get('/edit-achat',[financiereController::class , 'editAchat'])->name('edit-achat');
+});
+
+// __________________________planner__________________________
+
+Route::group([], function() {
+    
+    Route::get('/planner-dashboard',[plannerController::class , 'dashboard'])->name('planner-dashboard');
+    Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
+    Route::get('/planner-message',[plannerController::class , 'message'])->name('planner-message');
+    
+    // Route::get('/financiere-achat',[financiereController::class , 'redAchat'])->name('financiere-achat');
+    // Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
+    // Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
+    // Route::get('/add-achat',[financiereController::class , 'addAchat'])->name('add-achat');
+    // Route::get('/edit-achat',[financiereController::class , 'editAchat'])->name('edit-achat');
 });
