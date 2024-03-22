@@ -9,7 +9,7 @@
  <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('img/update.jpg')">
 
        <!--  Application Details Start -->
-       <div class="w-full bg-transparent pt-10">
+       <div class="w-full bg-transparent pt-10 ml-10 md:ml-0">
         <div class="container mx-auto py-8">
             <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.863)">
 

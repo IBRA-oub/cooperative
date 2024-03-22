@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\financiereController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\authController;
 use App\Http\Controllers\adminController;
@@ -33,4 +34,18 @@ Route::group([], function() {
     Route::get('/admin-message',[adminController::class , 'message'])->name('admin-message');
     Route::get('/add-user',[adminController::class , 'addUser'])->name('add-user');
     Route::get('/edit-user',[adminController::class , 'editUser'])->name('edit-user');
+});
+
+// __________________________financiere__________________________
+
+Route::group([], function() {
+    
+    Route::get('/financiere-dashboard',[financiereController::class , 'dashboard'])->name('financiere-dashboard');
+    Route::get('/financiere-revenu',[financiereController::class , 'redRevenu'])->name('financiere-revenu');
+    Route::get('/financiere-achat',[financiereController::class , 'redAchat'])->name('financiere-achat');
+    Route::get('/financiere-message',[financiereController::class , 'message'])->name('financiere-message');
+    Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
+    Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
+    Route::get('/add-achat',[financiereController::class , 'addAchat'])->name('add-achat');
+    Route::get('/edit-achat',[financiereController::class , 'editAchat'])->name('edit-achat');
 });
