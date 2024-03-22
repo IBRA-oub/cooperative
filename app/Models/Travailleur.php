@@ -9,11 +9,14 @@ class Travailleur extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'salaire',
-        'heuresTravailler'
+        'salaire'
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function heureTravailler() {
+        return $this->hasMany(HeureTrevailler::class);
     }
 }

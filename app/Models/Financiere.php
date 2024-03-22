@@ -10,8 +10,7 @@ class Financiere extends Model
     use HasFactory;
 
     protected $fillable = [
-        'salaire',
-        'heuresTravailler'
+        'salaire'
     ];
 
     public function user(){
@@ -24,5 +23,8 @@ class Financiere extends Model
 
     public function achat() {
         return $this->hasMany(Achat::class);
+    }
+    public function heureTravailler() {
+        return $this->hasMany(HeureTrevailler::class);
     }
 }

@@ -10,8 +10,7 @@ class Planner extends Model
     use HasFactory;
 
     protected $fillable = [
-        'salaire',
-        'heuresTravailler'
+        'salaire'
     ];
 
     public function user(){
@@ -20,6 +19,9 @@ class Planner extends Model
 
     public function periode() {
         return $this->hasMany(Periode::class);
+    }
+    public function heureTravailler() {
+        return $this->hasMany(HeureTrevailler::class);
     }
 
     

@@ -9,8 +9,7 @@ class Stockiste extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'salaire',
-        'heuresTravailler'
+        'salaire'
     ];
 
     public function user(){
@@ -19,5 +18,8 @@ class Stockiste extends Model
 
     public function stocks() {
         return $this->hasMany(Stocks::class);
+    }
+    public function heureTravailler() {
+        return $this->hasMany(HeureTrevailler::class);
     }
 }

@@ -6,14 +6,14 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-green-200 min-h-screen transition-all main">
     <!--===========Content===========-->
- <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('https://img.freepik.com/photos-gratuite/hommes-affaires-femmes-affaires-asiatiques-reunissant-idees-remue-meninges-application-planification-conception-web-creative-developpement-mise-page-modele-pour-projet-telephone-mobile-travaillant-ensemble-dans-petit-bureau_7861-2682.jpg?w=1060&t=st=1710787356~exp=1710787956~hmac=f89d1652eacb414a67b04d34f94613e10936ad32def24bf241e971a5a65077eb')">
+ <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('img/update.jpg')">
 
        <!--  Application Details Start -->
        <div class="w-full bg-transparent pt-10">
         <div class="container mx-auto py-8">
-            <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.595)">
+            <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.863)">
 
-                <div class="mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500">Ajout Travailleur
+                <div class="mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500">Edit Travailleur
                 </div>
 
                 <form action="">

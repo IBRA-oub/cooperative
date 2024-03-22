@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('stockistes', function (Blueprint $table) {
             $table->id();
             $table->integer('salaire');
-            $table->string('heuresTravailler');
             $table->foreignId('user_id')
             ->constrained('users')
             ->onDelete('cascade')

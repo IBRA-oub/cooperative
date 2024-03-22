@@ -10,8 +10,7 @@ class Publicitaire extends Model
     use HasFactory;
 
     protected $fillable = [
-        'salaire',
-        'heuresTravailler'
+        'salaire'
     ];
 
     public function user(){
@@ -20,5 +19,8 @@ class Publicitaire extends Model
 
     public function publiciter() {
         return $this->hasMany(Publiciter::class);
+    }
+    public function heureTravailler() {
+        return $this->hasMany(HeureTrevailler::class);
     }
 }

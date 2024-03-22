@@ -12,10 +12,16 @@ class adminController extends Controller
     public function travailleur(){
         return view('admin.travailleur');
     }
+    public function travailleurHaurs(){
+        return view('admin.travailleur-heurs');
+    }
     public function message(){
         return view('admin.message');
     }
     public function addUser(){
         return view('admin.add-user');
+    }
+    public function editUser(){
+        return view('admin.edit-user');
     }
 }

@@ -14,8 +14,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="assets/style.css">
+  
 </head>
 
 <body >
@@ -127,9 +128,8 @@
 
     @yield('content')
 
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../javascript/client.js"></script>
+    <script src="js/main.js"></script>
+    
     <script>
         // Masquer le message de succès après 3 secondes
         setTimeout(function() {
