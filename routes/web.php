@@ -59,9 +59,7 @@ Route::group([], function() {
     Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
     Route::get('/planner-message',[plannerController::class , 'message'])->name('planner-message');
     
-    // Route::get('/financiere-achat',[financiereController::class , 'redAchat'])->name('financiere-achat');
-    // Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
-    // Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
-    // Route::get('/add-achat',[financiereController::class , 'addAchat'])->name('add-achat');
-    // Route::get('/edit-achat',[financiereController::class , 'editAchat'])->name('edit-achat');
+    Route::get('/edit-materiaux-outils',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiaux-outils');
+    Route::get('/edit-produit',[plannerController::class , 'editProduit'])->name('edit-produit');
+    Route::get('/edit-periode',[plannerController::class , 'editPeriode'])->name('edit-periode');
 });

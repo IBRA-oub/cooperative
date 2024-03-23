@@ -56,3 +56,42 @@ function toggleDropdown() {
       dropdown.classList.add("hidden");
     }
   });
+
+  // _________________________pop up add periode____________________
+
+ 
+function showModal3() {
+  var modal3 = document.getElementById("myModal3");
+  modal3.style.display = "block";
+}
+
+function closeModal3() {
+  var modal3 = document.getElementById("myModal3");
+  modal3.style.display = "none";
+}
+
+// _________________________pop up add produitplanter____________________
+
+ 
+function showModal4() {
+  var modal4 = document.getElementById("myModal4");
+  modal4.style.display = "block";
+}
+
+function closeModal4() {
+  var modal4 = document.getElementById("myModal4");
+  modal4.style.display = "none";
+}
+
+// _________________________pop up add materiaux/outils____________________
+
+ 
+function showModal5() {
+  var modal5 = document.getElementById("myModal5");
+  modal5.style.display = "block";
+}
+
+function closeModal5() {
+  var modal5 = document.getElementById("myModal5");
+  modal5.style.display = "none";
+}

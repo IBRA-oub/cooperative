@@ -16,11 +16,9 @@ class produit_planter extends Model
         return $this->belongsTo(Periode::class);
     }
 
-    public function outil() {
-        return $this->hasMany(Outil::class);
+    public function materiauxoutil() {
+        return $this->hasMany(MateriauxOutil::class);
     }
 
-    public function materiaux() {
-        return $this->hasMany(Materiaux::class);
-    }
+    
 }
