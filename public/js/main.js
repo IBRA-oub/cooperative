@@ -95,3 +95,16 @@ function closeModal5() {
   var modal5 = document.getElementById("myModal5");
   modal5.style.display = "none";
 }
+
+// _________________________pop up add publiciter____________________
+
+ 
+function showModal6() {
+  var modal6 = document.getElementById("myModal6");
+  modal6.style.display = "block";
+}
+
+function closeModal6() {
+  var modal6 = document.getElementById("myModal6");
+  modal6.style.display = "none";
+}

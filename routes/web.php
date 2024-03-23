@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\financiereController;
 use App\Http\Controllers\plannerController;
+use App\Http\Controllers\publicitaireController;
 use App\Http\Controllers\stockisteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\authController;
@@ -72,6 +73,16 @@ Route::group([], function() {
     Route::get('/stockiste-info-stati',[stockisteController::class , 'infoStati'])->name('stockiste-info-stati');
     Route::get('/stockiste-message',[stockisteController::class , 'message'])->name('stockiste-message');
     Route::get('//edit-produit-stocke',[stockisteController::class , 'editProduitStocke'])->name('/edit-produit-stocke');
-    // Route::get('/edit-materiaux-outils',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiaux-outils');
-    // Route::get('/edit-periode',[plannerController::class , 'editPeriode'])->name('edit-periode');
+    
+});
+
+// __________________________publicitaire__________________________
+
+Route::group([], function() {
+    
+    Route::get('/publicitaire-dashboard',[publicitaireController::class , 'dashboard'])->name('publicitaire-dashboard');
+    Route::get('/publicitaire-info-stati',[publicitaireController::class , 'infoStati'])->name('publicitaire-info-stati');
+    Route::get('/publicitaire-message',[publicitaireController::class , 'message'])->name('publicitaire-message');
+    Route::get('//edit-publiciter',[publicitaireController::class , 'editPubliciter'])->name('/edit-publiciter');
+    
 });
