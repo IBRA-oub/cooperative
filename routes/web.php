@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\financiereController;
 use App\Http\Controllers\plannerController;
+use App\Http\Controllers\stockisteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\authController;
 use App\Http\Controllers\adminController;
@@ -58,8 +59,19 @@ Route::group([], function() {
     Route::get('/planner-dashboard',[plannerController::class , 'dashboard'])->name('planner-dashboard');
     Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
     Route::get('/planner-message',[plannerController::class , 'message'])->name('planner-message');
-    
     Route::get('/edit-materiaux-outils',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiaux-outils');
     Route::get('/edit-produit',[plannerController::class , 'editProduit'])->name('edit-produit');
     Route::get('/edit-periode',[plannerController::class , 'editPeriode'])->name('edit-periode');
+});
+
+// __________________________stockiste__________________________
+
+Route::group([], function() {
+    
+    Route::get('/stockiste-dashboard',[stockisteController::class , 'dashboard'])->name('stockiste-dashboard');
+    Route::get('/stockiste-info-stati',[stockisteController::class , 'infoStati'])->name('stockiste-info-stati');
+    Route::get('/stockiste-message',[stockisteController::class , 'message'])->name('stockiste-message');
+    Route::get('//edit-produit-stocke',[stockisteController::class , 'editProduitStocke'])->name('/edit-produit-stocke');
+    // Route::get('/edit-materiaux-outils',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiaux-outils');
+    // Route::get('/edit-periode',[plannerController::class , 'editPeriode'])->name('edit-periode');
 });
