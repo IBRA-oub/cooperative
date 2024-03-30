@@ -21,10 +21,10 @@
             w-full   " id="table1">
                  <thead class="  sm:w-full">
                      <tr class="bg-[#31363F] text-white h-[40px]">
-                         <th class="">ID</th>
-                         <th class="">fullName</th>
-                         <th class="">heurs</th>
-                         <th class="">jour</th>
+                         <th id="idTH" class="">ID</th>
+                         <th id="fnTH" class="">fullName</th>
+                         <th id="hTH" class="">heurs</th>
+                         <th id="jTH" class="">jour</th>
                          <th class=""></th>
                          
                         

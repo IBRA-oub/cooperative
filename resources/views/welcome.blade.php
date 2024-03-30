@@ -32,15 +32,26 @@
                 </a>
             </div>
 
+            
+           
+
+
             <!-- Right elements -->
             <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
+                {{-- switch langue --}}
+                <div class="mt-2">
+                    <label class="switch">
+                        <input type="checkbox" >
+                        <span class="slider"></span>
+                      </label>
+                </div>
                 {{-- @if (Route::has('login')) --}}
                     <div class="  text-right z-10">
                         {{-- @auth --}}
-                            <a href=""
+                            <a id="dashboard" href=""
                             class="font-semibold text-gray-900 hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                         {{-- @else --}}
-                            <a href=""
+                            <a id="login"  href=""
                                class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs bg-green-600  uppercase leading-normal font-bold text-white transition duration-150 ease-in-out hover:text-white hover:bg-opacity-10 hover:text-primary-600  focus:outline-none focus:ring-0 0 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
                                data-te-ripple-init data-te-ripple-color="light">
                                 Login
@@ -60,7 +71,7 @@
         <div class="container mx-auto text-left text-white relative z-5">
             <div class="sm:flex items-center">
                 <div class="sm:w-1/2">
-                    <h1 class="text-3xl sm:text-7xl font-bold mb-6 text-center sm:mt-[20%]">Ensemble, nous cultivons le succès</h1>
+                    <h1 id="hero" class="text-3xl sm:text-7xl font-bold mb-6 text-center sm:mt-[20%]">Ensemble, nous cultivons le succès</h1>
                 </div>
                 <div class="m-4 sm:w-1/2 sm:pl-16 sm:mt-[9%]">
                     <img src="img/argan.jpg" class="h-72 w-full object-cover rounded-xl" alt="Layout Image">
@@ -73,7 +84,7 @@
 
     {{-- statistique-section-start --}}
     <section class=" w-full  sm:h-[38rem] ">
-        <h1 class="mb-6  text-xl w-60% ml-[10%] sm:w-[40%] statistique  sm:text-3xl sm:ml-[30%] flex justify-center  pt-4 pb-3 font-serif font-semibold text-green-600">Les statistique de coopérative</h1>
+        <h1 id="statistique" class="mb-6  text-xl w-60% ml-[10%] sm:w-[40%] statistique  sm:text-3xl sm:ml-[30%] flex justify-center  pt-4 pb-3 font-serif font-semibold text-green-600">Les statistique de coopérative</h1>
         <div class="sm:flex w-full h-full">
 
             <div class=" mt-3 w-full h-1/2 sm:w-1/2 sm:h-full sm:m-0">
@@ -94,15 +105,15 @@
     {{-- annonce-section-start --}}
 
     <section class=" w-full h-[52rem] sm:h-[38rem] ">
-        <h1 class=" text-xl w-60% ml-[10%] sm:w-[20%] annonce  sm:text-3xl sm:ml-[40%] flex justify-center  pt-4 pb-3 font-serif font-semibold text-green-600">Annonces</h1>
+        <h1 id="annonces" class=" text-xl w-60% ml-[10%] sm:w-[20%] annonce  sm:text-3xl sm:ml-[40%] flex justify-center  pt-4 pb-3 font-serif font-semibold text-green-600">Annonces</h1>
 
         <div  class=" mx-4 md:mx-16 mt-10 flex flex-wrap md:flex-nowrap">
 
             <!-- Section de gauche (2/3) -->
     
             <div  class="w-full md:w-2/3 p-4 bg-gray-100 mb-4 md:mb-0 md:mr-2 shadow-lg rounded-md">
-                <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
-                    Les derniere Annoce
+                <h1 id="dernierAnnonce" class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
+                    Les dernières Annonces
                 </h1>
                 <!-- main post 1 -->
                 <!-- loop pour affichier les dernier wiki -->
@@ -124,9 +135,10 @@
                             
                            
                         <span class="text-gray-700 text-sm hidden md:block mt-4">
-                            date annonce :  276/2873/73
+                            <span id="dateAnnonce">date annonce </span>:  276/2873/73
                         </span>
-                        <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp; dateModified:
+                        <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp;
+                             <span id="dateModifier">date modified</span>:
                              4567
                         </span>
                     </div>
@@ -143,7 +155,7 @@
     
             <!-- Section de droite (1/3) -->
             <div  class="w-full md:w-1/3 p-4 bg-gray-100 md:ml-2 shadow-lg rounded-md">
-                <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight text-center">
+                <h1 id="periode" class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight text-center">
                     La periode agricule
                 </h1>
                 <!-- sub-main posts -->
@@ -160,12 +172,12 @@
                             </span>
                                 <div class="md:mt-0 text-gray-800  text-sm mb-2">
                                     
-                                date depart : 20024-2-3 80:00
+                                <span id="dateDebut">date début </span>: 20024-2-3 80:00
                                 </div>
 
                                 <div class="md:mt-0 text-gray-800  text-sm mb-2">
                                   
-                                    date stop : 20024-2-3 80:00
+                                   <span id="dateFinir">date finir</span>  : 20024-2-3 80:00
                                 </div>
     
     
@@ -215,6 +227,8 @@
 {{-- footer-end --}}
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+
+   
     </body>
 </html>

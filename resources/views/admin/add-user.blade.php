@@ -13,14 +13,14 @@
         <div class="container mx-auto py-8">
             <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.595)">
 
-                <div class="mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500">Ajout Travailleur
+                <div id="addUser" class=" mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500">Ajout Travailleur
                 </div>
 
-                <form action="">
+                <form  action="">
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label for="fullName" class="block text-white text-sm font-bold mb-2">fullName</label>
+                            <label id="FL" for="fullName" class="block text-white text-sm font-bold mb-2">fullName</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="fullName" id="fullName"  placeholder="John Down">
                      
@@ -28,21 +28,21 @@
 
 
                         <div class="mb-4">
-                            <label for="email" class="block text-white text-sm font-bold mb-2">Email</label>
+                            <label id="EM" for="email" class="block text-white text-sm font-bold mb-2">Email</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="email"
                                 name="email" id="email"  placeholder="exemple@gmail.com">
                       
                         </div>
 
                         <div class="mb-4">
-                            <label for="password" class="block text-white text-sm font-bold mb-2">Password</label>
+                            <label id="PS" for="password" class="block text-white text-sm font-bold mb-2">Password</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="password"
                                 name="password" id="password"  placeholder="*********************">
                             <p id=error_creater_id></p>
                         </div>
 
                         <div class="mb-4">
-                            <label for="salaire" class="block text-white text-sm font-bold mb-2">Salaire/Heure</label>
+                            <label id="SL" for="salaire" class="block text-white text-sm font-bold mb-2">Salaire/Heure</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="salaire" id="salaire"  placeholder="3">
                             <p id=error_creater_id></p>
@@ -50,13 +50,13 @@
 
 
                         <div class="mb-4">
-                            <label for="picture" class="block text-white text-sm font-bold mb-2">picture</label>
+                            <label id="pic"  for="picture" class="block text-white text-sm font-bold mb-2">picture</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
                                 name="picture" id="picture" >
                             <p id=error_intake_year></p>
                         </div>
                         <div class="mb-4">
-                            <button
+                            <button id="sv"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save
                             </button>

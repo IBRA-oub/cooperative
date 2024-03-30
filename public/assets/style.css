@@ -363,5 +363,98 @@ opacity: 0;
     }
   }
 
+  /* ____________chagne language button_____________ */
 
-  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 25px;
+    margin-right: 20px;
+   }
+   
+   .switch input {
+    display: none;
+   }
+   
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    font-size: larger;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fffefe;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 1px;
+    bottom: 2px;
+    background-color: rgb(16, 167, 10);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+   }
+   
+   input:checked + .slider {
+    background-color: #f8f8f8;
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px #fefefe;
+    
+   }
+   
+   input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(75px);
+   }
+   
+   /*------ ADDED CSS ---------*/
+   .slider:after {
+    content: ' العربية';
+    color: rgb(0, 0, 0);
+    display: block;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    
+   }
+   
+   input:checked + .slider:after {
+    content: 'FRANCAIS';
+   }
+   
+   /*--------- END --------*/
+
+   /* ___________switch longuage button____ */
+
+   .selected {
+    background-color: #16a34a;
+    color: white;
+}
+
+/* __________tebale direction_______ */
+
+
+.rtl {
+  direction: rtl;
+}
+
+
+.ltr {
+  direction: ltr;
+}

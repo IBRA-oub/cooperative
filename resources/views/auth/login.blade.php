@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -41,9 +42,9 @@
                         </svg>
                         <input type="password" id="password" class="bg-white  rounded-md pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Password" />
                       </div>
-                      <p class="text-blue-600">forget password?</p>
+                      <p id="forgetPassword" class="text-blue-600">oublier mot de passe?</p>
                   <div class="mt-8 flex justify-center text-lg text-black">
-                    <button type="submit" class="w-full rounded-2xl bg-fuchsia-600 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-green-400">Login</button>
+                    <button id="loginBTn" type="submit" class="w-full rounded-2xl bg-fuchsia-600 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-green-400">Login</button>
                   </div>
                 </form>
               </div>

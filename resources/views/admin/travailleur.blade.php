@@ -10,7 +10,7 @@
  
      <div class="absolute right-10  sm:top-10 sm:right-10 ">
         <a href="/add-user">
-        <button class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
+        <button id="addU" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
             add user
         </button>
     </a>
@@ -29,18 +29,17 @@
          <!-- ========== table Banks-desktop ======== -->
        
          <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
-             <table class="  
-            w-full   " id="table1">
+             <table class=" ltr  w-full" id="table1">
                  <thead class="  sm:w-full">
                      <tr class="bg-[#31363F] text-white h-[40px]">
-                         <th class="">ID</th>
-                         <th class="">fullName</th>
-                         <th class="">email</th>
-                         <th class="">Salaire/heure</th>
-                         <th class="">heure Taravailler/j</th>
-                         <th class="">role</th>
+                         <th id="id" class="">ID</th>
+                         <th id="fulN" class="">fullName</th>
+                         <th id="Ema" class="">email</th>
+                         <th id="s/l" class="">Salaire/heure</th>
+                         <th id="HR/j" class="">heure Taravailler/j</th>
+                         <th id="RL" class="">role</th>
                         
-                         <th class="">Actions</th>
+                         <th id="AC" class="">Actions</th>
                      </tr>
                  </thead>
                  {{-- @foreach($allUsers as $user) --}}
@@ -75,10 +74,10 @@
                             <div class="modal-content rounded-lg">
                               <span class="close" onclick="closeModal()">&times;</span>
                               <form id="updateForm">
-                                <label for="heurs" class="block text-black text-sm font-bold mb-2">Heure travailler aujourd'hui</label>
+                                <label id="HTJ" for="heurs" class="block text-black text-sm font-bold mb-2">Heure travailler aujourd'hui</label>
                                 <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                     name="heurs" id="heurs"  placeholder="3"><br>
-                                <button
+                                <button id="svHtj"
                                 class="text-white mb-2 mt-5 mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
                                 Save
                                </button>                              
@@ -117,24 +116,24 @@
                                         <form action="" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                         <button class="bg-red-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-red-800">
+                                         <button id="sup" class="bg-red-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-red-800">
                                              <a href="">Supprimer</a>
                                         </button>
                                         </form>
                                         
                                        
                                          <a href="/edit-user">
-                                         <button class="bg-green-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-green-800">
+                                         <button id="edi" class="bg-green-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-green-800">
                                              Edite
                                         </button>
                                           </a>
                                         
             
-                                        <button class="bg-gray-600 text-white w-full rounded-md h-[35px] mb-2 hover:bg-gray-800" onclick="showModal()">
+                                        <button id="addH" class="bg-gray-600 text-white w-full rounded-md h-[35px] mb-2 hover:bg-gray-800" onclick="showModal()">
                                             add hours
                                         </button>
                                         <a href="/travailleur-heurs">
-                                        <button class=" text-gray-600 w-full rounded-md h-[35px] hover:bg-black hover:text-white" >
+                                        <button id="AllH" class=" text-gray-600 w-full rounded-md h-[35px] hover:bg-black hover:text-white" >
                                            all hours
                                         </button>
                                     </a>
@@ -178,7 +177,7 @@
                            {{-- {{$user->id}} --}}
                            3
                          </td>
-                         <td data-label="fullName" class="border-b before:content-['fullName'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         <td data-label="fullName"  class="border-b before:content-['fullName'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                             {{-- {{$user->fullName}} --}}
                             brrahim
