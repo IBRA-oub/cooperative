@@ -10,8 +10,8 @@
  
      <div class="absolute right-10  sm:top-10 sm:right-10 ">
         <a href="/add-achat">
-        <button class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
-            add produit achat
+        <button id="addProAch" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
+            ajouter produit achat
         </button>
     </a>
 
@@ -33,13 +33,13 @@
             w-full   " id="table1">
                  <thead class="  sm:w-full">
                      <tr class="bg-[#31363F] text-white h-[40px]">
-                         <th class="">ID</th>
-                         <th class="">nom Produit</th>
-                         <th class="">quantiter</th>
-                         <th class="">prix achat</th>
-                         <th class="">date achat</th>
+                         <th id="idA" class="">ID</th>
+                         <th id="NomProAch"  class="">nom Produit</th>
+                         <th id="quantiterAch" class="">quantiter</th>
+                         <th id="prixAch" class="">prix d'achat</th>
+                         <th id="dateAch" class="">date d'achat</th>
                         
-                         <th class="">Actions</th>
+                         <th id="actionsAch" class="">plus options</th>
                      </tr>
                  </thead>
               

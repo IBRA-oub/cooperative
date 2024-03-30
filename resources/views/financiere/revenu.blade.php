@@ -10,7 +10,7 @@
  
      <div class="absolute right-10  sm:top-10 sm:right-10 ">
         <a href="/add-revenu">
-        <button class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
+        <button id="addProRev" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
             add produit revenu
         </button>
     </a>
@@ -29,16 +29,15 @@
          <!-- ========== table Banks-desktop ======== -->
        
          <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
-             <table class="  
-            w-full   " id="table1">
+             <table class=" w-full" id="table1">
                  <thead class="  sm:w-full">
                      <tr class="bg-[#31363F] text-white h-[40px]">
-                         <th class="">ID</th>
-                         <th class="">nom de produit</th>
-                         <th class="">quantiter</th>
-                         <th class="">prix revenu</th>
-                         <th class="">date revenu</th>
-                         <th class="">Actions</th>
+                         <th id="id" class="">ID</th>
+                         <th id="NomPro" class="">nom de produit</th>
+                         <th id="quantiter" class="">quantiter</th>
+                         <th id="prix" class="">prix de vendre</th>
+                         <th id="dateRev" class="">date de vendre</th>
+                         <th id="Action" class="">plus options</th>
                      </tr>
                  </thead>
                  {{-- @foreach($allUsers as $user) --}}

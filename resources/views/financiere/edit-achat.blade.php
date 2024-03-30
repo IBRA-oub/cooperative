@@ -13,14 +13,14 @@
         <div class="container mx-auto py-8">
             <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
-                <div class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">edit produit achat
+                <div id="EditeProAchat" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">Edit produit achat
                 </div>
 
                 <form action="">
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">nom Produit</label>
+                            <label id="nomProAchEdi" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom Produit</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
@@ -28,21 +28,21 @@
 
 
                         <div class="mb-4">
-                            <label for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
+                            <label id="quantiterAchEdi" for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="quantiter" id="quantiter"  placeholder="20kg">
                       
                         </div>
 
                         <div class="mb-4">
-                            <label for="prixRevenu" class="block text-white text-sm font-bold mb-2">Prix Revenu</label>
+                            <label id="prixAchaEdit" for="prixRevenu" class="block text-white text-sm font-bold mb-2">Prix d'achat</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="password"
                                 name="prixRevenu" id="prixRevenu"  placeholder="30dh">
                             <p id=error_creater_id></p>
                         </div>
 
                         <div class="mb-4">
-                            <label for="date" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateAchatEdit" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="date" id="date"  placeholder="3">
                             <p id=error_creater_id></p>
@@ -52,6 +52,7 @@
                       
                         <div class="mb-4">
                             <button
+                            id="saveEditAchat"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save
                             </button>
