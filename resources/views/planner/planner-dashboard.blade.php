@@ -4,9 +4,9 @@
 
 @section('content')
 
-<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main">
+<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-[#31363F] min-h-screen transition-all main">
 
-<div class=" h-[800px] md:h-52 w-full bg-gray-600">
+<div class=" h-[800px] md:h-52 w-full bg-gray-800">
     <div class="absolute right-2   sm:right-2 ">
         
         <button class=" rounded-lg px-5 py-3 bg-[#ffffff] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]" onclick="showModal3()">
@@ -17,9 +17,9 @@
      </div>
     <div class="h-52 w-[90%] flex justify-around flex-wrap ml-10">
         <div class="rounded-md bg-[#c0c1c2] shadow-xl w-60 h-[9.2rem] my-5 text-black">
-            <p class="mt-3 ml-2 text-center text-xl">période:     <strong>9Atf argan</strong></p>
-            <p class="mt-3 ml-2">date depart <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i> <strong>2045-66-6</strong></p>
-            <p class="mt-3 ml-2">date stop <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i>   <strong>4466-6-6</strong></p>
+            <p  class="mt-3 ml-2 text-center text-xl"><span id="periode">période:</span> <strong>Atf argan</strong></p>
+            <p  class="mt-3 ml-2"> <span id="dateDebut">date début</span> <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i> <strong>2045-66-6</strong></p>
+            <p  class="mt-3 ml-2"> <span id="dateFinir">date stop</span> <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i>   <strong>4466-6-6</strong></p>
             <div class="flex justify-end">
                     <form action="" method="POST">
                         @csrf
@@ -124,18 +124,18 @@
     <div class="modal-content3 rounded-lg">
       <span class="close3" onclick="closeModal3()">&times;</span>
       <form id="updateForm">
-        <p class="text-xl font-bold text-center">add periode</p>
+        <p id="addPeriode" class="text-xl font-bold text-center">ajouter une periode</p>
 
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">nom de periode</label>
+        <label id="nomPeriode" for="heurs" class="block text-black text-sm font-bold mb-2">nom de periode</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="3"><br>
-            <label for="heurs" class="block text-black text-sm font-bold mb-2">date Depart</label>
+            <label id="datedb" for="heurs" class="block text-black text-sm font-bold mb-2">date Début</label>
             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                 name="heurs" id="heurs"  placeholder="3"><br>
-                <label for="heurs" class="block text-black text-sm font-bold mb-2">date Stop</label>
+                <label id="dateFN" for="heurs" class="block text-black text-sm font-bold mb-2">date Finir</label>
                 <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                     name="heurs" id="heurs"  placeholder="3"><br>
-        <button
+        <button id="SVPer"
         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
         Save
        </button>                              
@@ -150,12 +150,12 @@
 {{-- produit planter start --}}
 <div class="block md:flex gap-5 ml-[20%] w-[80%] md:w-[95%] h-screen  md:ml-10">
     <div class=" w-full h-full md:w-1/2  ">
-        <main class="bg-gray-600 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
+        <main class="bg-gray-800 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
             <!-- ============== header =========== -->
         
             <div class="absolute right-0 sm:top-4 sm:right-10 ">
               
-               <button onclick="showModal4()" class=" rounded-lg px-10 py-3 bg-[#ffffff] font-bold text-gray-700 hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
+               <button id="addProADD" onclick="showModal4()" class=" rounded-lg px-10 py-3 bg-[#ffffff] font-bold text-gray-700 hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
                    add produit
                </button>
            
@@ -163,7 +163,7 @@
             </div>
             <!-- ============ Content ============= -->
         
-            <div class="md:p-6 bg-gray-600  md:m-5">
+            <div class="md:p-6 bg-gray-800  md:m-5">
                @if (session('success'))
                <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                    <strong class="font-bold">Success!</strong>
@@ -175,13 +175,13 @@
               
                 <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
                     <table class="  
-                   w-full   " id="table1">
+                   w-full   " id="tablePro">
                         <thead class="  sm:w-full">
                             <tr class="bg-[#fefeff] text-black h-[40px]">
-                                <th class="">ID</th>
-                                <th class="">nom de produit</th>
+                                <th id="idADD" class="">ID</th>
+                                <th id="nomProADD" class="">nom de produit</th>
                                 
-                                <th class="">Actions</th>
+                                <th id="actionsADD" class="">plus options</th>
                             </tr>
                         </thead>
                         {{-- @foreach($allUsers as $user) --}}
@@ -300,12 +300,12 @@
 
     {{-- materiaux/outils start --}}
     <div class=" w-full h-full md:w-1/2  ">
-        <main class="bg-gray-600 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
+        <main class="bg-gray-800 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
             <!-- ============== header =========== -->
         
             <div class="absolute right-10 sm:top-4 sm:right-10 ">
                
-               <button onclick="showModal5()" class=" rounded-lg px-10 py-3 bg-[#ffffff] font-bold text-gray-700 hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
+               <button id="outilsMaterADD" onclick="showModal5()" class=" rounded-lg px-10 py-3 bg-[#ffffff] font-bold text-gray-700 hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
                    add 
                </button>
         
@@ -313,7 +313,7 @@
             </div>
             <!-- ============ Content ============= -->
         
-            <div class="md:p-6 bg-gray-600  md:m-5 ">
+            <div class="md:p-6 bg-gray-800  md:m-5 ">
                @if (session('success'))
                <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                    <strong class="font-bold">Success!</strong>
@@ -325,13 +325,13 @@
               
                 <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
                     <table class="  
-                   w-full   " id="table1">
+                   w-full   " id="tableOM">
                         <thead class="  sm:w-full">
                             <tr class="bg-[#fefeff] text-black h-[40px]">
-                                <th class="">Nom produit</th>
-                                <th class="">materiaux/outils</th>
+                                <th id="nomProOutilMAterADD" class="">Nom produit</th>
+                                <th id="outilsMAterADD" class="">materiaux/outils</th>
                                 
-                                <th class="">Actions</th>
+                                <th id="actionOutilMAterADD" class="">Plus options</th>
                             </tr>
                         </thead>
                         {{-- @foreach($allUsers as $user) --}}
@@ -455,11 +455,11 @@
     <div class="modal-content4 rounded-lg">
       <span class="close4" onclick="closeModal4()">&times;</span>
       <form id="updateForm">
-        <p class="text-xl font-bold text-center">add Produit</p>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">nom de produit</label>
+        <p id="addProPlanADD" class="text-xl font-bold text-center">ajouter Produit a planter</p>
+        <label id="nomProPlanADD" for="heurs" class="block text-black text-sm font-bold mb-2">nom de produit</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="3"><br>
-            <label for="heurs" class="block text-black text-sm font-bold mb-2">periode</label>
+            <label id="periodeProPLanADD" for="heurs" class="block text-black text-sm font-bold mb-2">periode</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                 name="heurs" id="heurs"  placeholder="3">
             <option value="">fghjk</option>
@@ -468,7 +468,7 @@
             <option value="">hjk</option>
             </select><br>
                
-        <button
+        <button id="saveProPlanADD"
         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
         Save
        </button>                              
@@ -487,11 +487,11 @@
     <div class="modal-content5 rounded-lg">
       <span class="close5" onclick="closeModal5()">&times;</span>
       <form id="updateForm">
-        <p class="text-xl font-bold text-center">add Materiaux/outils</p>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">materiux/outils</label>
+        <p id="addMaOuADD" class="text-xl font-bold text-center">ajouter Materiaux/outils</p>
+        <label id="MateOutiADD" for="heurs" class="block text-black text-sm font-bold mb-2">materiux/outils</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="3"><br>
-            <label for="heurs" class="block text-black text-sm font-bold mb-2">produit</label>
+            <label id="ProdAdd" for="heurs" class="block text-black text-sm font-bold mb-2">produit</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                 name="heurs" id="heurs"  placeholder="3">
             <option value="">fghjk</option>
@@ -500,7 +500,7 @@
             <option value="">hjk</option>
             </select><br>
                
-        <button
+        <button id="saveOuMAt"
         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
         Save
        </button>                              

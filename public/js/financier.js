@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // const checkbox = document.getElementById("checkbox1");
 
     function traduireEnArabe1() {
         localStorage.setItem("langueF", "arabicF");

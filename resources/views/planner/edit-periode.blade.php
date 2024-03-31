@@ -13,14 +13,14 @@
         <div class="container mx-auto py-8">
             <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
-                <div class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">edit periode
+                <div id="editPeriode" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">Edit une periode
                 </div>
 
                 <form action="">
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">nom periode</label>
+                            <label id="NomPeriode" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom de periode</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
@@ -28,14 +28,14 @@
 
 
                         <div class="mb-4">
-                            <label for="quantiter" class="block text-white text-sm font-bold mb-2">date depart</label>
+                            <label id="dateDebutEdit" for="quantiter" class="block text-white text-sm font-bold mb-2">date début</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="quantiter" id="quantiter"  >
                       
                         </div>
 
                         <div class="mb-4">
-                            <label for="prixRevenu" class="block text-white text-sm font-bold mb-2">date stop</label>
+                            <label id="dateFinirEdite" for="prixRevenu" class="block text-white text-sm font-bold mb-2">date Finir</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="prixRevenu" id="prixRevenu"  >
                             <p id=error_creater_id></p>
@@ -46,7 +46,7 @@
 
                       
                         <div class="mb-4">
-                            <button
+                            <button id="saveEdit"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save
                             </button>
