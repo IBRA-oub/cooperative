@@ -16,7 +16,7 @@
         
             <div class="absolute right-0 sm:top-4 sm:right-10 ">
               
-               <button onclick="showModal4()" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
+               <button id="addProStok" onclick="showModal4()" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
                    add produit
                </button>
            
@@ -36,14 +36,14 @@
               
                 <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
                     <table class="  
-                   w-full   " id="table1">
+                   w-full   " id="tableSto">
                         <thead class="  sm:w-full">
                             <tr class="bg-[#31363F] text-white h-[40px]">
-                                <th class="">ID</th>
-                                <th class="">nom de produit</th>
-                                <th class="">quantiter</th>
+                                <th id="idProSto" class="">ID</th>
+                                <th id="nomProStok" class="">nom de produit</th>
+                                <th id="quantiterProSTok" class="">quantiter</th>
                                 
-                                <th class="">Actions</th>
+                                <th id="actionProStok" class="">plus options</th>
                             </tr>
                         </thead>
                         {{-- @foreach($allUsers as $user) --}}
@@ -180,16 +180,16 @@
     <div class="modal-content4 rounded-lg">
       <span class="close4" onclick="closeModal4()">&times;</span>
       <form id="updateForm">
-        <p class="text-xl font-bold text-center">add Produit en stocke</p>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">nom de produit</label>
+        <p id="produitEnStok" class="text-xl font-bold text-center">add Produit en stocke</p>
+        <label id="nomProdStok" for="heurs" class="block text-black text-sm font-bold mb-2">nom de produit</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="ghj"><br>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">quantiter</label>
+        <label id="quantiterStok" for="heurs" class="block text-black text-sm font-bold mb-2">quantiter</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="3"><br>
             
                
-        <button
+        <button id="saveStok"
         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
         Save
        </button>                              

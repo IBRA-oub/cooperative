@@ -13,14 +13,14 @@
         <div class="container mx-auto py-8">
             <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
-                <div class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">edit produit stocke
+                <div id="EditeProStok" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">Edit produit en stocke
                 </div>
 
                 <form action="">
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">nom produit</label>
+                            <label id="ProstockEDit" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom produit</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
@@ -28,20 +28,15 @@
 
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2"> quantiter</label>
+                            <label id="quantiterEdit" for="nomProduit" class="block text-white text-sm font-bold mb-2"> quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="220 kg">
                      
                         </div>
 
-                       
-
-                       
-
-
                       
                         <div class="mb-4">
-                            <button
+                            <button id="saveEdit"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save
                             </button>
