@@ -16,8 +16,8 @@
         
             <div class="absolute right-0 sm:top-3 sm:right-10 mb-10 sm:mb-0">
               
-               <button onclick="showModal6()" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
-                   add produit
+               <button id="addPubliciter" onclick="showModal6()" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
+                   add publiciter
                </button>
            
        
@@ -66,9 +66,9 @@
                             </span>      
                                
                             <span class="text-gray-700 text-sm hidden md:block mt-4">
-                                date annonce :  276/2873/73
+                                <span id="dateAnnonce">date annonce</span>:  276/2873/73
                             </span>
-                            <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp; dateModified:
+                            <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp; <span id="dateModified">date Modified</span>:
                                  4567
                             </span>
                         </div>
@@ -110,25 +110,25 @@
     <div class="modal-content6 rounded-lg">
       <span class="close6" onclick="closeModal6()">&times;</span>
       <form id="updateForm">
-        <p class="text-xl font-bold text-center">add Publicitere</p>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">titre</label>
+        <p id="addPubliciter" class="text-xl font-bold text-center">ajouter Publiciter</p>
+        <label id="titreAdd" for="heurs" class="block text-black text-sm font-bold mb-2">titre</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="ghj"><br>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">description</label>
+        <label id="description" for="heurs" class="block text-black text-sm font-bold mb-2">description</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="ghj"><br>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">contenu</label>
+        <label id="contenu" for="heurs" class="block text-black text-sm font-bold mb-2">contenu</label>
         <textarea class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
             name="heurs" id="heurs"  placeholder="ghj"></textarea><br>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">date publiciter</label>
+        <label id="datePubliciter" for="heurs" class="block text-black text-sm font-bold mb-2">date publiciter</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
             name="heurs" id="heurs"  placeholder="ghj"><br>
-        <label for="heurs" class="block text-black text-sm font-bold mb-2">picture</label>
+        <label id="picture" for="heurs" class="block text-black text-sm font-bold mb-2">picture</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
             name="heurs" id="heurs"  placeholder="3"><br>
             
                
-        <button
+        <button id="savePubli"
         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
         Save
        </button>                              

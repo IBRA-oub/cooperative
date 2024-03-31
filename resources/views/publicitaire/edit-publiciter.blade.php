@@ -13,58 +13,50 @@
         <div class="container mx-auto py-8">
             <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
-                <div class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">edit produit stocke
+                <div id="EditePubliciter" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">edit produit stocke
                 </div>
 
                 <form action="">
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">titre</label>
+                            <label id="titreEdite" for="nomProduit" class="block text-white text-sm font-bold mb-2">titre</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
                         </div>
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">description</label>
+                            <label id="descriptionEdite" for="nomProduit" class="block text-white text-sm font-bold mb-2">description</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
                         </div>
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">contenu</label>
+                            <label id="contenuEdite" for="nomProduit" class="block text-white text-sm font-bold mb-2">contenu</label>
                             <textarea class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar"></textarea>
                      
                         </div>
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">date publiciter</label>
+                            <label id="datePubliEdite" for="nomProduit" class="block text-white text-sm font-bold mb-2">date publiciter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
                         </div>
 
                         <div class="mb-4">
-                            <label for="nomProduit" class="block text-white text-sm font-bold mb-2">picture</label>
+                            <label id="picturEdite" for="nomProduit" class="block text-white text-sm font-bold mb-2">picture</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                      
                         </div>
 
-
-                        
-
-                       
-
-                       
-
-
                       
                         <div class="mb-4">
-                            <button
+                            <button id="saveEdite"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save
                             </button>

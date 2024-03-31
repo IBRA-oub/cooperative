@@ -13,16 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "معلومات / إحصائيات";
         }
 
-        if (document.getElementById("infoSatati")) {
-            document.getElementById("infoSatati").textContent =
-                "معلومات / إحصائيات";
-        }
-
-        if (document.getElementById("infoSatati1")) {
-            document.getElementById("infoSatati1").textContent =
-                "معلومات / إحصائيات";
-        }
-
         if (document.getElementById("dashboard")) {
             document.getElementById("dashboard").textContent = "لوحة التحكم";
         }
