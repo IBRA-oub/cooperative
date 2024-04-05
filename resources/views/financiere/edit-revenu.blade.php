@@ -9,11 +9,11 @@
  <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('img/editeRA.jpg')">
 
        <!--  Application Details Start -->
-       <div class="w-[70%] md:w-full bg-transparent pt-10 ml-[14.7%] md:ml-0">
+       <div class="w-72 md:w-full  md:pt-10 bg-transparent  ml-[14.7%] md:ml-0">
         <div class="container mx-auto py-8">
-            <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
+            <div class="w-80 md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
-                <div id="eidteProRevenu" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500">Edite produit venter
+                <div id="eidteProRevenu" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500 text-center">Edite produit venter
                 </div>
 
                 <form action="">
@@ -50,7 +50,7 @@
 
 
                       
-                        <div class="mb-4">
+                        <div class="mb-4 flex justify-center">
                             <button id="saveEdite"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save

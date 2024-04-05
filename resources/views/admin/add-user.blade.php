@@ -9,11 +9,11 @@
  <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('https://img.freepik.com/photos-gratuite/hommes-affaires-femmes-affaires-asiatiques-reunissant-idees-remue-meninges-application-planification-conception-web-creative-developpement-mise-page-modele-pour-projet-telephone-mobile-travaillant-ensemble-dans-petit-bureau_7861-2682.jpg?w=1060&t=st=1710787356~exp=1710787956~hmac=f89d1652eacb414a67b04d34f94613e10936ad32def24bf241e971a5a65077eb')">
 
        <!--  Application Details Start -->
-       <div class="w-full bg-transparent pt-10 ml-10 md:ml-0">
+       <div class="w-72 md:w-full  md:pt-10 ml-10 md:ml-0 bg-transparent">
         <div class="container mx-auto py-8">
-            <div class="w-96 mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.595)">
+            <div class="w-80 md:w-[60%] md:mx-auto ml-8   rounded shadow" style="background-color: rgba(116, 116, 116, 0.595)">
 
-                <div id="addUser" class=" mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500">Ajout Travailleur
+                <div id="addUser" class=" mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500 text-center">Ajout Travailleur
                 </div>
 
                 <form  action="">
@@ -55,9 +55,9 @@
                                 name="picture" id="picture" >
                             <p id=error_intake_year></p>
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-4 flex justify-center">
                             <button id="sv"
-                                class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
+                                class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black ">
                                 Save
                             </button>
                         </div>
