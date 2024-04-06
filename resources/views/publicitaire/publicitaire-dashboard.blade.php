@@ -38,7 +38,7 @@
                  
                  
                   
-                    <div class="mb-4 lg:mb-10 p-4 lg:p-0 w-full relative rounded block">
+                    <div class="mb-4 lg:mb-10 p-4 lg:p-0 w-full relative rounded block mt-9 md:mt-0">
                         <div class="flex w-full justify-end">
                             <form action="" method="POST">
                                 @csrf

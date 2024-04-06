@@ -119,7 +119,8 @@ opacity: 0;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    margin-left: 20%;
+    width: 70%;
   }
   
   .close {
@@ -155,7 +156,8 @@ opacity: 0;
     margin: 50% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
+    margin-left: 20%;
+    width: 70%;
   }
   
   .close2 {
@@ -191,7 +193,8 @@ opacity: 0;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    margin-left: 20%;
+    width: 70%;;
   }
   
   .close3 {
@@ -212,7 +215,8 @@ opacity: 0;
     .modal-content3 {
      
       margin: 40% auto;
-      width: 60%;
+      margin-left: 25%;
+      width: 70%;
     }
 
     .modal2 {
@@ -239,7 +243,8 @@ opacity: 0;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    margin-left: 20%;
+    width: 70%;
   }
   
   .close4 {
@@ -260,7 +265,8 @@ opacity: 0;
     .modal-content4 {
      
       margin: 40% auto;
-      width: 60%;
+      margin-left: 20%;
+    width: 70%;
     }
 
     .modal4 {
@@ -286,7 +292,8 @@ opacity: 0;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    margin-left: 20%;
+    width: 70%;
   }
   
   .close5 {
@@ -307,7 +314,8 @@ opacity: 0;
     .modal-content5 {
      
       margin: 40% auto;
-      width: 60%;
+      margin-left: 20%;
+      width: 70%;
     }
 
     .modal5 {
@@ -334,7 +342,8 @@ opacity: 0;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    margin-left: 20%;
+    width: 70%;
   }
   
   .close6 {
@@ -355,7 +364,8 @@ opacity: 0;
     .modal-content6 {
      
       margin: 40% auto;
-      width: 80%;
+      margin-left: 20%;
+      width: 70%;
     }
 
     .modal6 {
@@ -458,3 +468,10 @@ opacity: 0;
 .ltr {
   direction: ltr;
 }
+
+/* ____________planner tableaux shadox_________ */
+.mate{
+
+  box-shadow: 0px 0px 12px #9f99994d;
+}
+

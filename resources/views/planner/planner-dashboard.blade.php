@@ -4,13 +4,13 @@
 
 @section('content')
 
-<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-[#31363F] min-h-screen transition-all main">
+<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main">
 
-<div class=" h-[800px] md:h-52 w-full bg-gray-800">
+<div class=" h-[800px] md:h-52 w-full bg-white">
     <div class="absolute right-2   sm:right-2 ">
         
-        <button class=" rounded-lg px-5 py-3 bg-[#ffffff] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]" onclick="showModal3()">
-            <i class="fa-solid fa-plus" style="color: #000000;"></i>
+        <button class=" rounded-lg px-5 py-3 bg-black font-bold text-white hover:bg-green-500   hover:shadow-lg active:opacity-[0.95]" onclick="showModal3()">
+            <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
         </button>
          
 
@@ -148,14 +148,14 @@
 
 
 {{-- produit planter start --}}
-<div class="block md:flex gap-5 ml-[20%] w-[80%] md:w-[95%] h-screen  md:ml-10">
+<div class=" block md:flex gap-5 ml-[20%] w-[80%] md:w-[95%] h-screen  md:ml-10">
     <div class=" w-full h-full md:w-1/2  ">
-        <main class="bg-gray-800 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
+        <main class="mate bg-white flex-grow h-[100vh] relative rounded-xl shadow-2xl">
             <!-- ============== header =========== -->
         
             <div class="absolute right-0 sm:top-4 sm:right-10 ">
               
-               <button id="addProADD" onclick="showModal4()" class=" rounded-lg px-10 py-3 bg-[#ffffff] font-bold text-gray-700 hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
+               <button id="addProADD" onclick="showModal4()" class="text-white rounded-lg px-10 py-3 bg-[#31363F]  font-bold  hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
                    add produit
                </button>
            
@@ -163,7 +163,7 @@
             </div>
             <!-- ============ Content ============= -->
         
-            <div class="md:p-6 bg-gray-800  md:m-5">
+            <div class="md:p-6 bg-white  md:m-5">
                @if (session('success'))
                <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                    <strong class="font-bold">Success!</strong>
@@ -177,7 +177,7 @@
                     <table class="  
                    w-full   " id="tablePro">
                         <thead class="  sm:w-full">
-                            <tr class="bg-[#fefeff] text-black h-[40px]">
+                            <tr class="bg-[#31363F] text-white h-[40px]">
                                 <th id="idADD" class="">ID</th>
                                 <th id="nomProADD" class="">nom de produit</th>
                                 
@@ -188,7 +188,7 @@
                         <tbody class="sm:w-full">
                          
         
-                            <tr class=" text-white pt-10 sm:pt-0  w-full border-b border-[#ffffff]">
+                            <tr class=" text-black pt-10 sm:pt-0  w-full border-b border-[#31363F]">
         
                                 <td class=" text-center ">
                                     {{-- {{$user->id}} --}}
@@ -300,12 +300,12 @@
 
     {{-- materiaux/outils start --}}
     <div class=" w-full h-full md:w-1/2  ">
-        <main class="bg-gray-800 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
+        <main class="mate bg-white flex-grow h-[100vh] relative rounded-xl ">
             <!-- ============== header =========== -->
         
             <div class="absolute right-10 sm:top-4 sm:right-10 ">
                
-               <button id="outilsMaterADD" onclick="showModal5()" class=" rounded-lg px-10 py-3 bg-[#ffffff] font-bold text-gray-700 hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
+               <button id="outilsMaterADD" onclick="showModal5()" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-400 hover:text-white   hover:shadow-lg  ">
                    add 
                </button>
         
@@ -313,7 +313,7 @@
             </div>
             <!-- ============ Content ============= -->
         
-            <div class="md:p-6 bg-gray-800  md:m-5 ">
+            <div class="md:p-6 bg-white  md:m-5 ">
                @if (session('success'))
                <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                    <strong class="font-bold">Success!</strong>
@@ -327,7 +327,7 @@
                     <table class="  
                    w-full   " id="tableOM">
                         <thead class="  sm:w-full">
-                            <tr class="bg-[#fefeff] text-black h-[40px]">
+                            <tr class="bg-[#31363F] text-white h-[40px]">
                                 <th id="nomProOutilMAterADD" class="">Nom produit</th>
                                 <th id="outilsMAterADD" class="">materiaux/outils</th>
                                 
@@ -338,7 +338,7 @@
                         <tbody class="sm:w-full">
                          
         
-                            <tr class=" text-white pt-10 sm:pt-0  w-full border-b border-[#ffffff]">
+                            <tr class=" text-black pt-10 sm:pt-0  w-full border-b border-[#31363F]">
         
                                 <td class=" text-center ">
                                     {{-- {{$user->id}} --}}

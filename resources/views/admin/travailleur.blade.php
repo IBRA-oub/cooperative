@@ -74,11 +74,11 @@
                             <div class="modal-content rounded-lg">
                               <span class="close" onclick="closeModal()">&times;</span>
                               <form id="updateForm">
-                                <label id="HTJ" for="heurs" class="block text-black text-sm font-bold mb-2">Heure travailler aujourd'hui</label>
+                                <label id="HTJ" for="heurs" class="block text-black text-sm font-bold mb-2 text-center">Heure travailler aujourd'hui</label>
                                 <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                     name="heurs" id="heurs"  placeholder="3"><br>
                                 <button id="svHtj"
-                                class="text-white mb-2 mt-5 mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
+                                class="text-white mb-2 mt-5 mx-56 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
                                 Save
                                </button>                              
                         
@@ -204,7 +204,7 @@
                             <div class="modal-content2 rounded-lg">
                               <span class="close2" onclick="closeModal2()">&times;</span>
                               <form id="updateForm2">
-                                <label for="heurs" class="block text-black text-sm font-bold mb-2">Heure travailler aujourd'hui</label>
+                                <label for="heurs" class="block text-black text-sm font-bold mb-2 text-center">Heure travailler aujourd'hui</label>
                                 <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                     name="heurs" id="heurs"  placeholder="3"><br>
                                 <button

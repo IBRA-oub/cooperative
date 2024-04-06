@@ -18,6 +18,7 @@
     {{-- @vite('resources/js/app.js') --}}
     <link rel="stylesheet" href="assets/style.css">
 
+    
   
 </head>
 
