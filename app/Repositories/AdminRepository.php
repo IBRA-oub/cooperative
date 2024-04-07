@@ -3,6 +3,10 @@
 namespace App\Repositories;
 
 use App\Models\Financiere;
+use App\Models\Planner;
+use App\Models\Publicitaire;
+use App\Models\Stockiste;
+use App\Models\Travailleur;
 use App\Models\User;
 
 class AdminRepository implements AdminRepositoryInterface
@@ -15,10 +19,8 @@ class AdminRepository implements AdminRepositoryInterface
     {
         $this->model = $model;
     }
-    public function getByID($id)
-    {
-        return User::findOrFail($id);
-    }
+   
+    // _________created___________
 
     public function create(array $data)
     {
@@ -28,5 +30,27 @@ class AdminRepository implements AdminRepositoryInterface
     public function createFinanciere(array $data)
     {
         return Financiere::create($data);
+    }
+
+    public function createPlanner(array $data)
+    {
+        return Planner::create($data);
+    }
+
+
+    public function createStockiste(array $data)
+    {
+        return Stockiste::create($data);
+    }
+
+
+    public function createPublicitaire(array $data)
+    {
+        return Publicitaire::create($data);
+    }
+
+    public function createTravailleur(array $data)
+    {
+        return Travailleur::create($data);
     }
 }

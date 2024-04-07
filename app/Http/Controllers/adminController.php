@@ -17,12 +17,6 @@ class adminController extends Controller
     }
 
 
-
-    public function show($id)
-    {
-        $user = $this->adminRepository->getByID($id);
-
-    }
     public function addUser(Request $request)
     {
 
@@ -49,7 +43,65 @@ class adminController extends Controller
             
             $this->adminRepository->createFinanciere($validatedFinancialData);
             
-            return view('admin.travailleur')->with('success','Financiere ajouter avec success');
+            return redirect()->route('admin-travailleur')->with('success','Financiere ajouter avec success');
+            
+        } else if($request->role === 'planner'){
+
+            $validatedPlannerData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedPlannerData['user_id'] = $userId;
+            
+            $this->adminRepository->createPlanner($validatedPlannerData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Planner ajouter avec success');            
+        }else if($request->role === 'stockiste'){
+
+            $validatedStockisteData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedStockisteData['user_id'] = $userId;
+            
+            $this->adminRepository->createStockiste($validatedStockisteData);
+            
+            return redirect()->route('admin-travailleur')->with('success','stockiste ajouter avec success');
+            
+        }else if($request->role === 'publicitaire'){
+
+            $validatedPublicitaireData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedPublicitaireData['user_id'] = $userId;
+            
+            $this->adminRepository->createPublicitaire($validatedPublicitaireData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Publicitaire ajouter avec success');
+            
+        }else if($request->role === 'travailleur'){
+
+            $validatedTravailleurData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedTravailleurData['user_id'] = $userId;
+            
+            $this->adminRepository->createTravailleur($validatedTravailleurData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Travailleur ajouter avec success');
+            
+        }else{
+            return redirect()->route('admin-travailleur')->with('error','il y a une probleme lors de l\'ajoute');
         }
         
     }

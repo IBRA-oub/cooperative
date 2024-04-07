@@ -6,10 +6,12 @@
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-200 min-h-screen transition-all main">
     <!--===========Content===========-->
  <main class="bg-gray-100 flex-grow h-[100vh] relative">
+
+ 
      <!-- ============== header =========== -->
  
      <div class="absolute right-10  sm:top-10 sm:right-10 ">
-        <a href="/add-user">
+        <a href="/add-user-pages">
         <button id="addU" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
             add user
         </button>
@@ -19,12 +21,18 @@
      <!-- ============ Content ============= -->
  
      <div class="md:p-6 bg-white md:m-5">
+      
         @if (session('success'))
-        <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-            <strong class="font-bold">Success!</strong>
-            <span class="block sm:inline">{{ session('success') }}</span>
-        </div>
+            <script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: "{{ session('success') }}",
+                    
+                });
+            </script>
         @endif
+    
  
          <!-- ========== table Banks-desktop ======== -->
        

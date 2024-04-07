@@ -10,7 +10,8 @@ class Planner extends Model
     use HasFactory;
 
     protected $fillable = [
-        'salaire'
+        'salaire',
+        'user_id'
     ];
 
     public function user(){

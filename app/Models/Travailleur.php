@@ -9,7 +9,8 @@ class Travailleur extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'salaire'
+        'salaire',
+        'user_id'
     ];
 
     public function user(){

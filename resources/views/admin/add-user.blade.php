@@ -17,7 +17,6 @@
                 </div>
 
                 <form action="{{route('add-user')}}" method="POST">
-                
                     @csrf
                     <div class="py-4 px-8">
 
@@ -56,7 +55,7 @@
                                 name="role" id="role"  >
                             <option value="financiere">Financière</option>
                             <option value="planner">Planner</option>
-                            <option value="stockists">Stockists</option>
+                            <option value="stockiste">Stockists</option>
                             <option value="publicitaire">Publicitaire</option>
                             <option value="travailleur">Travailleur</option>
                             
