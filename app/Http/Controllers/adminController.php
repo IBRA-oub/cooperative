@@ -21,10 +21,10 @@ class adminController extends Controller
     {
 
         $validatedUserData = $request->validate([
-            'fullName' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
-            'picture' => 'required|string'
+            'fullName' => 'required|string',
+            'email' => 'required',
+            'password' => 'required',
+            'picture' => 'required'
         ]);
     
         
@@ -115,6 +115,121 @@ class adminController extends Controller
     return view('admin.travailleur', ['users' => $users]);
        
     }
+    // ____________edite_______________
+
+    public function editUser($id){
+        $user = $this->adminRepository->editeUser($id);
+        $user->load('financiere', 'planner', 'stockiste', 'publicitaire', 'travailleur');
+
+        return view('admin.edit-user',['user' => $user]);
+    }
+    // _____________update_______________
+    
+    public function updateUser(Request $request,$id)
+    {
+  
+        
+
+        $validatedUserData = $request->validate([
+            'fullName' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'picture' => 'required',
+        ]);
+        
+        
+    
+
+        $user = $this->adminRepository->update($validatedUserData,$id);  
+        $userId = $user->id;
+        
+     
+        if ($request->role === 'financiere') {
+           
+            $validatedFinancialData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedFinancialData['user_id'] = $userId;
+            
+            $this->adminRepository->updateFinanciere($validatedFinancialData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Financiere mise a jour avec success');
+            
+        } else if($request->role === 'planner'){
+
+            $validatedPlannerData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedPlannerData['user_id'] = $userId;
+            
+            $this->adminRepository->updatePlanner($validatedPlannerData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Planner mise a jour avec success');            
+            
+           }else if($request->role === 'stockiste'){
+
+            $validatedStockisteData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedStockisteData['user_id'] = $userId;
+            
+            $this->adminRepository->updateStockiste($validatedStockisteData);
+            
+            return redirect()->route('admin-travailleur')->with('success','stockiste mise a jour avec success');
+            
+        }else if($request->role === 'publicitaire'){
+
+            $validatedPublicitaireData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedPublicitaireData['user_id'] = $userId;
+            
+            $this->adminRepository->updatePublicitaire($validatedPublicitaireData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Publicitaire mise ajour avec success');
+            
+        }else if($request->role === 'travailleur'){
+
+            $validatedTravailleurData = $request->validate([
+                'salaire' => 'required|integer',
+                
+            ]);
+    
+            
+            $validatedTravailleurData['user_id'] = $userId;
+            
+            $this->adminRepository->updateTravailleur($validatedTravailleurData);
+            
+            return redirect()->route('admin-travailleur')->with('success','Travailleur mise a jour avec success');
+            
+        }else{
+            return redirect()->route('admin-travailleur')->with('error','il y a une probleme lors de l\'ajoute');
+        }
+    
+        
+    }
+   
+
+    // ___________________delete__________
+
+    public function deleteUser($id){
+        
+        $this->adminRepository->delete($id);
+            
+        return redirect()->route('admin-travailleur')->with('success','Travailleur supprimer avec success');
+    }
     
     
     public function dashboard(){
@@ -130,9 +245,7 @@ class adminController extends Controller
     public function addUserPage(){
         return view('admin.add-user');
     }
-    public function editUser(){
-        return view('admin.edit-user');
-    }
+   
 
 
    

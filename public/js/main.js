@@ -26,36 +26,61 @@ function closeModal2() {
 
 // _____________________________plus options________________________
 
-    // for descktop
-function toggleDropdown() {
-    var dropdown = document.getElementById("optionsDropdown");
-    dropdown.classList.toggle("hidden");
-  }
+    // for mobil
+
+    document.addEventListener("DOMContentLoaded", function() {
+      let optionsMenu2Buttons = document.querySelectorAll('.optionsMenuButton');
+      optionsMenu2Buttons.forEach(function(button) {
+          button.addEventListener('click', function() {
+              // Sélectionnez l'élément du menu déroulant suivant
+              var dropdown = button.nextElementSibling;
   
-
-  document.addEventListener("click", function(event) {
-    var dropdown = document.getElementById("optionsDropdown");
-    var menuButton = document.getElementById("optionsMenu");
-    if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
-      dropdown.classList.add("hidden");
-    }
+              
+              dropdown.classList.toggle("hidden");
+          });
+      });
   });
-
-    //  for mobile
-
-  function toggleDropdown2() {
-    var dropdown = document.getElementById("optionsDropdown2");
-    dropdown.classList.toggle("hidden");
-  }
   
-
   document.addEventListener("click", function(event) {
-    var dropdown = document.getElementById("optionsDropdown2");
-    var menuButton = document.getElementById("optionsMenu2");
-    if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
-      dropdown.classList.add("hidden");
-    }
+    var dropdowns = document.querySelectorAll(".optionsDropdown");
+    var menuButtons = document.querySelectorAll(".optionsMenuButton");
+
+    dropdowns.forEach(function(dropdown, index) {
+        var menuButton = menuButtons[index];
+        if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.add("hidden");
+        }
+    });
+});
+
+    //  for desktop
+
+    document.addEventListener("DOMContentLoaded", function() {
+      let optionsMenu2Buttons = document.querySelectorAll('.optionsMenu2Button');
+      optionsMenu2Buttons.forEach(function(button) {
+          button.addEventListener('click', function() {
+              // Sélectionnez l'élément du menu déroulant suivant
+              var dropdown = button.nextElementSibling;
+  
+              
+              dropdown.classList.toggle("hidden");
+          });
+      });
   });
+  
+  document.addEventListener("click", function(event) {
+    var dropdowns = document.querySelectorAll(".optionsDropdown2");
+    var menuButtons = document.querySelectorAll(".optionsMenu2Button");
+
+    dropdowns.forEach(function(dropdown, index) {
+        var menuButton = menuButtons[index];
+        if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.add("hidden");
+        }
+    });
+});
+
+
 
   // _________________________pop up add periode____________________
 

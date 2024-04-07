@@ -153,16 +153,20 @@
                           @endif
  
                       
-                         <td class="  text-center flex justify-center ">
+                          @if($user->admin)
+                         <td>
+                         
+                         </td>
+                         @else
                        
                             <td class="text-center flex justify-center">
                                 <div>
-                                    <button type="button" class="text-gray-800 rounded-md w-8 h-[35px] focus:outline-none" id="optionsMenu2" aria-expanded="true" aria-haspopup="true" onclick="toggleDropdown2()">
+                                    <button type="button" class="text-gray-800 rounded-md w-8 h-[35px] focus:outline-none optionsMenu2Button" id="optionsMenu2" aria-expanded="true" aria-haspopup="true">
                                         <i class="fa-solid fa-ellipsis"></i>
                                     </button>
-                                    <div id="optionsDropdown2" class="origin-top-right absolute right-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                                    <div id="optionsDropdown2"  class="optionsDropdown2 origin-top-right absolute right-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
                                       <div class="py-1">
-                                        <form action="" method="POST">
+                                        <form action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                          <button id="sup" class="bg-red-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-red-800">
@@ -171,7 +175,7 @@
                                         </form>
                                         
                                        
-                                         <a href="/edit-user">
+                                         <a href="{{ route('edit-user', ['id' => $user->id]) }}">
                                          <button id="edi" class="bg-green-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-green-800">
                                              Edite
                                         </button>
@@ -192,7 +196,7 @@
                               </td>
                               
                             
-                         </td>
+                         @endif
                         
                      </tr>
                
@@ -345,15 +349,22 @@
                          
                         
                          
+                         @if($user->admin)
+                         <td>
+                          ...
+                         </td>
+                         @else
                          <td data-label="Action"
                              class=" border-b before:content-['action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                             
 
                              <div>
-                                <button type="button" class="text-gray-800 rounded-md w-8 h-[35px] focus:outline-none" id="optionsMenu" aria-expanded="true" aria-haspopup="true" onclick="toggleDropdown()">
+                                <button type="button" class="text-gray-800 rounded-md w-8 h-[35px] focus:outline-none optionsMenuButton" id="optionsMenu" aria-expanded="true" aria-haspopup="true" onclick="toggleDropdown()">
                                     <i class="fa-solid fa-ellipsis"></i>
                                 </button>
-                                <div id="optionsDropdown" class="origin-top-right absolute right-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                                
+                                
+                                <div id="optionsDropdown" class="optionsDropdown origin-top-right absolute right-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
                                   <div class="py-1">
                                     <form action="" method="POST">
                                         @csrf
@@ -364,7 +375,7 @@
                                     </form>
                                     
                                     
-                                    <a href="/edit-user">
+                                    <a href="{{ route('edit-user', ['id' => $user->id]) }}">
                                      <button class="bg-green-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-green-800">
                                          Edite
                                     </button>
@@ -382,9 +393,10 @@
                                   </div>
                                 </div>
                               </div>
-
-                            
-                         </td>
+                              
+                              
+                            </td>
+                            @endif
                          
                      </tr>
                   @endforeach

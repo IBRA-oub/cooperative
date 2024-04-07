@@ -16,7 +16,7 @@
                 <div id="addUser" class=" mx-16 py-4 px-8 text-white text-xl font-bold border-b border-grey-500 text-center">Ajout Travailleur
                 </div>
 
-                <form action="{{route('add-user')}}" method="POST">
+                <form action="{{route('add-user')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="py-4 px-8">
 
@@ -24,7 +24,8 @@
                             <label id="FL" for="fullName" class="block text-white text-sm font-bold mb-2">fullName</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="fullName" id="fullName"  placeholder="John Down">
-                     
+                                @error('fullName')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
 
@@ -32,22 +33,23 @@
                             <label id="EM" for="email" class="block text-white text-sm font-bold mb-2">Email</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="email"
                                 name="email" id="email"  placeholder="exemple@gmail.com">
-                      
+                                @error('email')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
                         <div class="mb-4">
                             <label id="PS" for="password" class="block text-white text-sm font-bold mb-2">Password</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="password"
                                 name="password" id="password"  placeholder="*********************">
-                            <p id=error_creater_id></p>
-                        </div>
+                                @error('password')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                            </div>
 
                         <div class="mb-4">
                             <label id="SL" for="salaire" class="block text-white text-sm font-bold mb-2">Salaire/Heure</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="salaire" id="salaire"  placeholder="3">
-                            <p id=error_creater_id></p>
-                        </div>
+                                @error('salaire')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                            </div>
 
                         <div class="mb-4">
                             <label id="SL" for="role" class="block text-white text-sm font-bold mb-2">Role</label>
@@ -60,16 +62,16 @@
                             <option value="travailleur">Travailleur</option>
                             
                         </select>
-                            <p id=error_creater_id></p>
-                        </div>
+                        @error('role')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                    </div>
 
 
                         <div class="mb-4">
                             <label id="pic"  for="picture" class="block text-white text-sm font-bold mb-2">picture</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
                                 name="picture" id="picture" >
-                            <p id=error_intake_year></p>
-                        </div>
+                                @error('picture')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                            </div>
                         <div class="mb-4 flex justify-center">
                             <button id="sv"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black ">

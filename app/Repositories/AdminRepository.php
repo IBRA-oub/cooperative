@@ -60,4 +60,60 @@ class AdminRepository implements AdminRepositoryInterface
     {
         return User::all();
     }
+
+    // ____________updated ______________
+
+    public function update(array $data, $id)
+    {
+    $user = User::findOrFail($id);
+    $user->update($data);
+    return $user;
+    }
+
+    public function updateFinanciere(array $data)
+    {
+    $financiere = Financiere::where('user_id', $data['user_id'])->first();
+    $financiere->update($data);
+    return $financiere;
+    }
+
+    public function updatePlanner(array $data)
+    {
+    $planner = Planner::update($data);
+    return $planner;
+    }
+
+    public function updateStockiste(array $data)
+    {
+    $stockiste = Stockiste::update($data);
+    return $stockiste;
+    }
+
+    public function updatePublicitaire(array $data)
+    {
+    $publicitaire = Publicitaire::update($data);
+    return $publicitaire;
+    }
+
+    public function updateTravailleur(array $data)
+    {
+    $travailleur = Travailleur::update($data);
+    return $travailleur;
+    }
+
+    // ___________edite_____________
+
+    public function editeUser($id)
+    { 
+    return User::findOrFail($id);
+    }
+
+    // ___________delete_____________
+
+    
+public function delete($id)
+{
+    $inventory = User::findOrFail($id);
+    $inventory->delete();
+}
 }

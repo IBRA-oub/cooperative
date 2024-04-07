@@ -35,10 +35,12 @@ Route::group([], function() {
     Route::get('/travailleur-heurs',[adminController::class , 'travailleurHaurs'])->name('travailleur-heurs');
     Route::get('/admin-message',[adminController::class , 'message'])->name('admin-message');
     Route::get('/add-user-pages',[adminController::class , 'addUserPage']);
-    Route::get('/edit-user',[adminController::class , 'editUser'])->name('edit-user');
     
-    Route::get('/admin-travailleur',[adminController::class , 'travailleur'])->name('admin-travailleur');
     Route::post('/add-user',[adminController::class , 'addUser'])->name('add-user');
+    Route::get('/admin-travailleur',[adminController::class , 'travailleur'])->name('admin-travailleur');
+    Route::get('/edit-user/{id}',[adminController::class , 'editUser'])->name('edit-user');
+    Route::put('/update-user/{id}',[adminController::class , 'updateUser'])->name('user.update');
+    Route::delete('/delete-user/{id}',[adminController::class , 'deleteUser'])->name('user.delete');
 });
 
 // __________________________financiere__________________________
