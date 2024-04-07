@@ -50,32 +50,60 @@
                          <th id="AC" class="">Actions</th>
                      </tr>
                  </thead>
-                 {{-- @foreach($allUsers as $user) --}}
+                 @foreach($users as $user)
+                 
                  <tbody class="sm:w-full">
                   
  
                      <tr class=" pt-10 sm:pt-0  w-full border-b border-[#31363F]">
  
                          <td class=" text-center ">
-                             {{-- {{$user->id}} --}}
-                             4
+                             {{$user->id}}
+                             
                          </td>
                          <td class=" text-center ">
-                            {{-- {{$user->fullName}} --}}
-                            brahim
+                            {{$user->fullName}}
+                           
                          </td>
                          <td class=" text-center ">
-                            {{-- {{$user->email}} --}}
-                            brahimoubourrih@gmail.com
+                            {{$user->email}}
+                            
                          </td>
+
+                         @if($user->admin)
                          <td class=" text-center ">
-                            {{-- {{$user->email}} --}}
-                           70 dh
+                           ....
                          </td>
+                         @elseif($user->financiere)
+                         
+                         <td class=" text-center ">
+                             {{$user->financiere->salaire}} DH
+                          </td>
+                          @elseif($user->planner) 
+                          <td class=" text-center ">
+                            {{$user->planner->salaire}} DH
+                          </td>
+
+                          @elseif($user->stockiste) 
+                          <td class=" text-center ">
+                             {{$user->stockiste->salaire}} DH
+                          </td>
+
+                          @elseif($user->publicitaire) 
+                          <td class=" text-center ">
+                           {{$user->publicitaire->salaire}} DH
+                          </td>
+                          @elseif($user->travailleur) 
+                          <td class=" text-center ">
+                           {{$user->travailleur->salaire}} DH
+                          </td>
+                          @endif
+                         
+
+
                          <td class="text-center flex justify-center">
                             {{-- {{$user->email}} --}}
                             1 H
-                            
                           </td>
 
                           <div id="myModal" class="modal ">
@@ -95,23 +123,36 @@
                           </div>
 
                          
-                         {{-- @if($user->role ==='admin') --}}
+                         @if($user->admin)
                          <td class=" text-center ">
                            <p class="rounded-md bg-red-300 text-red-800"> admin</p>
                          </td>
-                         {{-- @elseif($user->role ==='client') --}}
-                         {{-- <td class=" text-center ">
-                            <p class="rounded-md bg-green-300 text-green-800"> client</p>
-                          </td> --}}
-                          {{-- @elseif($user->role ==='organisateur') --}}
-                          {{-- <td class=" text-center ">
-                            <p class="rounded-md bg-blue-300 text-blue-800"> organisateur</p>
-                          </td> --}}
-                          {{-- @endif --}}
- 
-                        {{-- @if($user->role ==='admin')
+                         @elseif($user->financiere)
+                         
+                         <td class=" text-center ">
+                            <p class="rounded-md bg-blue-300 text-blue-800">financiere</p>
+                          </td>
+                          @elseif($user->planner) 
+                          <td class=" text-center ">
+                            <p class="rounded-md bg-green-300 text-green-800"> planner</p>
+                          </td>
 
-                        @else --}}
+                          @elseif($user->stockiste) 
+                          <td class=" text-center ">
+                            <p class="rounded-md bg-gray-300 text-gray-800"> stockiste</p>
+                          </td>
+
+                          @elseif($user->publicitaire) 
+                          <td class=" text-center ">
+                            <p class="rounded-md bg-blue-300 text-blue-500"> publicitaire</p>
+                          </td>
+                          @elseif($user->travailleur) 
+                          <td class=" text-center ">
+                            <p class="rounded-md bg-gray-300 text-gray-800"> travailleur</p>
+                          </td>
+                          @endif
+ 
+                      
                          <td class="  text-center flex justify-center ">
                        
                             <td class="text-center flex justify-center">
@@ -157,7 +198,8 @@
                
  
                  </tbody>
-                 {{-- @endforeach --}}
+                 @endforeach
+                
              </table>
          </div>
          
@@ -177,29 +219,61 @@
                      </tr>
                  </thead>
                  <tbody class="block  w-full">
-                    {{-- @foreach($allUsers as $user) --}}
+                  @foreach($users as $user)
                      <tr class="block pt-10 sm:pt-0   w-full ">
  
                          <td data-label="id"
                              class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                           {{-- {{$user->id}} --}}
-                           3
+                           {{$user->id}}
+                           
                          </td>
                          <td data-label="fullName"  class="border-b before:content-['fullName'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                            {{-- {{$user->fullName}} --}}
-                            brrahim
+                            {{$user->fullName}}
+                          
                          </td>
                          <td data-label="Email" class="border-b before:content-['email'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                            {{-- {{$user->fullName}} --}}
-                            brrahim@gmail.com
+                            {{$user->email}}
+                           
                          </td>
+                         @if($user->admin)
                          <td data-label="Salaire/heure" class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                            {{-- {{$user->fullName}} --}}
-                           70 dh
+                            ...
+                           
                          </td>
+                         @elseif($user->financiere)
+                         <td data-label="Salaire/heure" class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                              text-right">
+                              {{$user->financiere->salaire}} DH
+                           
+                         </td>
+                         @elseif($user->planner)
+                         <td data-label="Salaire/heure" class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         {{$user->planner->salaire}} DH
+                      
+                         </td>
+                         @elseif($user->stockiste)
+                         <td data-label="Salaire/heure" class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         {{$user->stockiste->salaire}} DH
+                      
+                         </td>
+                         @elseif($user->publicitaire) 
+                         <td data-label="Salaire/heure" class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         {{$user->publicitaire->salaire}} DH
+                      
+                         </td>
+                         @elseif($user->travailleur) 
+                         <td data-label="Salaire/heure" class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         {{$user->travailleur->salaire}} DH
+                      
+                         </td>
+                         @endif
                          <td data-label="heureTravailler/j" class="border-b before:content-['heureTravailler/j'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                             {{-- {{$user->fullName}} --}}
@@ -227,31 +301,50 @@
                          {{-- form add hour end  --}}
                          
 
-                         {{-- @if($user->role ==='admin') --}}
+                         @if($user->admin)
                          <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                          text-right">
                          <p class="rounded-md bg-red-300 text-red-500"> admin</p>
                          </td>
 
-                         {{-- @elseif($user->role ==='client') --}}
+                         @elseif($user->financiere)
 
-                         {{-- <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                          <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                          text-right">
-                         <p class="rounded-md bg-green-300 text-green-800"> client</p>
+                         <p class="rounded-md bg-green-300 text-green-800"> financiere</p>
                          </td>
-                         @elseif($user->role ==='organisateur')
+                         @elseif($user->planner) 
 
                          <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                          text-right">
-                         <p class="rounded-md bg-blue-300 text-blue-800"> organisateur</p>
+                         <p class="rounded-md bg-blue-300 text-blue-800"> planner</p>
                          </td>
-                         @endif --}}
+
+                         @elseif($user->stockiste)
+
+                         <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         <p class="rounded-md bg-blue-300 text-blue-800"> stockiste</p>
+                         </td>
+
+                         @elseif($user->publicitaire)
+
+                         <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         <p class="rounded-md bg-blue-300 text-blue-800"> publicitaire</p>
+                         </td>
+
+                         @elseif($user->travailleur)
+
+                         <td data-label="Role" class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         text-right">
+                         <p class="rounded-md bg-blue-300 text-blue-800"> travailleur</p>
+                         </td>
+                         @endif 
 
                          
                         
-                         {{-- @if($user->role ==='admin')
                          
-                         @else --}}
                          <td data-label="Action"
                              class=" border-b before:content-['action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                             
@@ -294,7 +387,7 @@
                          </td>
                          
                      </tr>
-                  {{-- @endforeach --}}
+                  @endforeach
  
                  </tbody>
              </table>

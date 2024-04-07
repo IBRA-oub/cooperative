@@ -106,15 +106,21 @@ class adminController extends Controller
         
     }
    
-
+    // __________red user____________
+     public function travailleur(){
+        $users = $this->adminRepository->allUser();
+          $users->load('financiere', 'planner', 'stockiste', 'publicitaire', 'travailleur');
+       
+        
+    return view('admin.travailleur', ['users' => $users]);
+       
+    }
     
     
     public function dashboard(){
         return view('admin.admin-dashboard');
     }
-    public function travailleur(){
-        return view('admin.travailleur');
-    }
+   
     public function travailleurHaurs(){
         return view('admin.travailleur-heurs');
     }

@@ -53,4 +53,11 @@ class AdminRepository implements AdminRepositoryInterface
     {
         return Travailleur::create($data);
     }
+
+    // ______________red user____________
+
+    public function allUser()
+    {
+        return User::all();
+    }
 }
