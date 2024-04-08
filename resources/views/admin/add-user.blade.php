@@ -24,7 +24,7 @@
                             <label id="FL" for="fullName" class="block text-white text-sm font-bold mb-2">fullName</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="fullName" id="fullName"  placeholder="John Down">
-                                @error('fullName')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                                @error('fullName')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
                         </div>
 
@@ -33,7 +33,7 @@
                             <label id="EM" for="email" class="block text-white text-sm font-bold mb-2">Email</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="email"
                                 name="email" id="email"  placeholder="exemple@gmail.com">
-                                @error('email')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                                @error('email')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
                         </div>
 
@@ -41,14 +41,14 @@
                             <label id="PS" for="password" class="block text-white text-sm font-bold mb-2">Password</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="password"
                                 name="password" id="password"  placeholder="*********************">
-                                @error('password')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                                @error('password')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                             </div>
 
                         <div class="mb-4">
                             <label id="SL" for="salaire" class="block text-white text-sm font-bold mb-2">Salaire/Heure</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="salaire" id="salaire"  placeholder="3">
-                                @error('salaire')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                                @error('salaire')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                             </div>
 
                         <div class="mb-4">
@@ -62,7 +62,7 @@
                             <option value="travailleur">Travailleur</option>
                             
                         </select>
-                        @error('role')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                        @error('role')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                     </div>
 
 
@@ -70,7 +70,7 @@
                             <label id="pic"  for="picture" class="block text-white text-sm font-bold mb-2">picture</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
                                 name="picture" id="picture" >
-                                @error('picture')<p id="error_creater_id" :messages="$errors->get('fullName')" class="text-red-600">{{$message}}</p> @enderror
+                                @error('picture')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                             </div>
                         <div class="mb-4 flex justify-center">
                             <button id="sv"

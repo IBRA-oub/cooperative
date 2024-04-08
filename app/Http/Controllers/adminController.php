@@ -231,14 +231,92 @@ class adminController extends Controller
         return redirect()->route('admin-travailleur')->with('success','Travailleur supprimer avec success');
     }
     
+    // ___________________create hours__________
+
+    public function addHours(Request $request){
+        
+        // dd($request);
+        $userType = $request->input('user_type');
+        // dd($userType);
+        $validatedData = $request->validate([
+            'heurs' => 'required',
+        ]);
+
+        // dd($validatedData);
+    
+        
+        if ($userType == "financiere") {
+            
+            $validatedData['financiere_id'] = $request->input('user_id');
+            $this->adminRepository->createHoursFinanciere($validatedData);
+            return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
+        }
+         elseif ($userType == "planner") {
+            
+            $validatedData['planner_id'] = $request->input('user_id');
+            $this->adminRepository->createHoursPlanner($validatedData);
+            return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
+        } 
+        elseif ($userType == "stockiste") {
+            
+            $validatedData['stockiste_id'] = $request->input('user_id');
+            $this->adminRepository->createHoursStockiste($validatedData);
+            return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
+        } 
+        elseif ($userType == "publicitaire") {
+            
+            $validatedData['publicitaire_id'] = $request->input('user_id');
+            $this->adminRepository->createHoursPublicitaire($validatedData);
+            return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
+        } 
+        elseif ($userType == "travailleur") {
+             
+            $validatedData['travailleur_id'] = $request->input('user_id');
+            $this->adminRepository->createHoursTravailleur($validatedData);
+            return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
+        }
+    
+        
+        return redirect()->route('admin-travailleur')->with('success', 'error lors d\'ajoute.');
+
+       
+    }
+    
+    
+    // __________________get hours___________________
+    
+    public function travailleurHaurs($id , $type){
+    
+        if($type == 'financiere'){
+           $financiereHeure =  $this->adminRepository->financiereHours($id);
+           dd($financiereHeure);
+            return view('admin.travailleur-heurs',['financiereHeure'=>$financiereHeure]);
+        }
+        elseif($type == 'planner'){
+            $plannerHeure =  $this->adminRepository->plannerHours($id);
+            dd($plannerHeure);
+             return view('admin.travailleur-heurs',['plannerHeure'=>$plannerHeure]);
+        } elseif($type == 'stockiste'){
+            $stockisteHeure =  $this->adminRepository->stockisteHours($id);
+            dd($stockisteHeure);
+             return view('admin.travailleur-heurs',['stockisteHeure'=>$stockisteHeure]);
+        } elseif($type == 'publicitaire'){
+            $publicitaireHeure =  $this->adminRepository->publicitaireHours($id);
+            dd($publicitaireHeure);
+             return view('admin.travailleur-heurs',['publicitaireHeure'=>$publicitaireHeure]);
+        } elseif($type == 'travailleur'){
+            $travailleurHeure =  $this->adminRepository->travailleurHours($id);
+            dd($travailleurHeure);
+             return view('admin.travailleur-heurs',['travailleurHeure'=>$travailleurHeure]);
+        }
+    }
+
+
     
     public function dashboard(){
         return view('admin.admin-dashboard');
     }
    
-    public function travailleurHaurs(){
-        return view('admin.travailleur-heurs');
-    }
     public function message(){
         return view('admin.message');
     }

@@ -1,9 +1,12 @@
 // _______________________________pop-up_______________________
 
 // desctop
-function showModal() {
+function showModal(userId , type) {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
+
+    document.getElementById("userIdInput").value = userId;
+    document.getElementById("userType").value = type;
 }
 
 function closeModal() {
@@ -12,9 +15,12 @@ function closeModal() {
 }
 
 // mobile
-function showModal2() {
+function showModal2(userId , type) {
     var modal2 = document.getElementById("myModal2");
     modal2.style.display = "block";
+
+    document.getElementById("userIdInput1").value = userId;
+    document.getElementById("userType1").value = type;
 }
 
 function closeModal2() {

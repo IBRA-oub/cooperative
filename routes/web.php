@@ -32,10 +32,11 @@ Route::get('login' , [authController::class , 'login']);
 Route::group([], function() {
     
     Route::get('/admin-dashboard',[adminController::class , 'dashboard'])->name('admin-dashboard');
-    Route::get('/travailleur-heurs',[adminController::class , 'travailleurHaurs'])->name('travailleur-heurs');
     Route::get('/admin-message',[adminController::class , 'message'])->name('admin-message');
     Route::get('/add-user-pages',[adminController::class , 'addUserPage']);
     
+    Route::get('/travailleur-heurs/{id}/{type}',[adminController::class , 'travailleurHaurs'])->name('travailleur-heurs');
+    Route::post('/add-heur',[adminController::class , 'addHours'])->name('add-heur');
     Route::post('/add-user',[adminController::class , 'addUser'])->name('add-user');
     Route::get('/admin-travailleur',[adminController::class , 'travailleur'])->name('admin-travailleur');
     Route::get('/edit-user/{id}',[adminController::class , 'editUser'])->name('edit-user');

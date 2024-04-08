@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('heure_trevaillers', function (Blueprint $table) {
             $table->id();
-            $table->integer('haurs');
+            $table->integer('heurs');
             $table->timestamps();
 
             $table->foreignId('financiere_id')

@@ -13,7 +13,10 @@ class Financiere extends Model
         'salaire',
         'user_id'
     ];
-
+    
+    public function heureTravailler() {
+        return $this->hasMany(HeureTrevailler::class);
+    }
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -24,8 +27,5 @@ class Financiere extends Model
 
     public function achat() {
         return $this->hasMany(Achat::class);
-    }
-    public function heureTravailler() {
-        return $this->hasMany(HeureTrevailler::class);
     }
 }

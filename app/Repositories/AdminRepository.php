@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Financiere;
+use App\Models\HeureTrevailler;
 use App\Models\Planner;
 use App\Models\Publicitaire;
 use App\Models\Stockiste;
@@ -116,4 +117,60 @@ public function delete($id)
     $inventory = User::findOrFail($id);
     $inventory->delete();
 }
+
+  // ____________add-hours_____________
+
+  public function createHoursFinanciere(array $data)
+  {
+      return HeureTrevailler::create($data);
+  }
+
+  public function createHoursPlanner(array $data)
+  {
+      return HeureTrevailler::create($data);
+  }
+
+  public function createHoursStockiste(array $data)
+  {
+      return HeureTrevailler::create($data);
+  }
+
+  public function createHoursPublicitaire(array $data)
+  {
+      return HeureTrevailler::create($data);
+  }
+
+  public function createHoursTravailleur(array $data)
+  {
+      return HeureTrevailler::create($data);
+  }
+
+//   _________________get hours___________________
+
+public function financiereHours($id)
+{
+    return HeureTrevailler::all()->where('financiere_id',$id);
+}
+
+public function plannerHours($id)
+{
+    return HeureTrevailler::all()->where('planner_id',$id);
+}
+
+public function stockisteHours($id)
+{
+    return HeureTrevailler::all()->where('stockiste_id',$id);
+}
+
+public function publicitaireHours($id)
+{
+    return HeureTrevailler::all()->where('publicitaire_id',$id);
+}
+
+public function travailleurHours($id)
+{
+    return HeureTrevailler::all()->where('travailleur_id',$id);
+}
+  
+
 }

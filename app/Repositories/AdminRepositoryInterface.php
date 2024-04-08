@@ -32,4 +32,23 @@ interface AdminRepositoryInterface
     // _______________delete______________
 
     public function delete($id);
+
+    // _____________create-hours______________
+
+    public function createHoursFinanciere(array $data);
+
+    public function createHoursPlanner(array $data);
+    public function createHoursStockiste(array $data);
+    public function createHoursPublicitaire(array $data);
+    public function createHoursTravailleur(array $data);
+
+    // _______________________get hours________________
+
+    public function financiereHours($id);
+    public function plannerHours($id);
+    public function stockisteHours($id);
+    public function publicitaireHours($id);
+    public function travailleurHours($id);
+
+    
 }

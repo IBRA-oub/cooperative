@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class HeureTrevailler extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'heurs'
-    ];
+    protected $guarded = [];
 
     public function financiere(){
         return $this->belongsTo(Financiere::class);
