@@ -5,8 +5,9 @@ use App\Http\Controllers\plannerController;
 use App\Http\Controllers\publicitaireController;
 use App\Http\Controllers\stockisteController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\authController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\adminController;
+use App\Http\Middleware\CheckRole;
 
 
 /*
@@ -24,12 +25,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login' , [authController::class , 'login']);
+
+
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::post('login', [AuthController::class , 'loginAction'])->name('login.action');
+Route::get('logout' , [AuthController::class , 'logout'])->middleware('auth')->name('logout');
 
 
 // __________________________admin__________________________
 
-Route::group([], function() {
+Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     
     Route::get('/admin-dashboard',[adminController::class , 'dashboard'])->name('admin-dashboard');
     Route::get('/admin-message',[adminController::class , 'message'])->name('admin-message');
@@ -46,7 +51,7 @@ Route::group([], function() {
 
 // __________________________financiere__________________________
 
-Route::group([], function() {
+Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function() {
     
     Route::get('/financiere-dashboard',[financiereController::class , 'dashboard'])->name('financiere-dashboard');
     Route::get('/financiere-revenu',[financiereController::class , 'redRevenu'])->name('financiere-revenu');
@@ -60,7 +65,7 @@ Route::group([], function() {
 
 // __________________________planner__________________________
 
-Route::group([], function() {
+Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     
     Route::get('/planner-dashboard',[plannerController::class , 'dashboard'])->name('planner-dashboard');
     Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
@@ -72,7 +77,7 @@ Route::group([], function() {
 
 // __________________________stockiste__________________________
 
-Route::group([], function() {
+Route::middleware(['auth', CheckRole::class . ':stockiste'])->group( function() {
     
     Route::get('/stockiste-dashboard',[stockisteController::class , 'dashboard'])->name('stockiste-dashboard');
     Route::get('/stockiste-info-stati',[stockisteController::class , 'infoStati'])->name('stockiste-info-stati');
@@ -83,7 +88,7 @@ Route::group([], function() {
 
 // __________________________publicitaire__________________________
 
-Route::group([], function() {
+Route::middleware(['auth', CheckRole::class . ':publicitaire'])->group( function() {
     
     Route::get('/publicitaire-dashboard',[publicitaireController::class , 'dashboard'])->name('publicitaire-dashboard');
     Route::get('/publicitaire-info-stati',[publicitaireController::class , 'infoStati'])->name('publicitaire-info-stati');

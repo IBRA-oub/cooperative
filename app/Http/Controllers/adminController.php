@@ -6,6 +6,7 @@ use App\Models\Financiere;
 use App\Repositories\AdminRepository;
 use App\Repositories\AdminRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
@@ -27,6 +28,7 @@ class adminController extends Controller
             'password' => 'required',
             'picture' => 'required'
         ]);
+        $validatedUserData['password'] = Hash::make($request->password);
         
         // __________verfied email___________
         $usersEmail = $this->adminRepository->allUser();
@@ -40,6 +42,7 @@ class adminController extends Controller
         $userId = $user->id;
     
                 //    ______________financiere___________
+                if ($request->role === 'financiere') {
         $existingFinancial = $this->adminRepository->getFirstFinanciere();
 
             if ($existingFinancial) {
@@ -47,7 +50,6 @@ class adminController extends Controller
                 return redirect()->route('admin-travailleur')->with('error','Un compte financier existe déjà .');
             }
     
-        if ($request->role === 'financiere') {
            
             $validatedFinancialData = $request->validate([
                 'salaire' => 'required|integer',
@@ -64,13 +66,13 @@ class adminController extends Controller
         } 
         
                 //    ______________planner___________
+                if($request->role === 'planner'){
                 $existingPlanner =  $this->adminRepository->getFirstPlanner();
 
                 if ($existingPlanner) {
                     $this->adminRepository->delete($userId);
                     return redirect()->route('admin-travailleur')->with('error','Un compte planner existe déjà.');
                 }
-        else if($request->role === 'planner'){
 
             $validatedPlannerData = $request->validate([
                 'salaire' => 'required|integer',
@@ -86,6 +88,7 @@ class adminController extends Controller
         }
         
              //    ______________Stockiste___________
+             if($request->role === 'stockiste'){
              $existingStockiste =  $this->adminRepository->getFirstStockiste();
 
              if ($existingStockiste) {
@@ -93,7 +96,6 @@ class adminController extends Controller
                  return redirect()->route('admin-travailleur')->with('error','Un compte stockiste existe déjà.');
              }
         
-        else if($request->role === 'stockiste'){
 
             $validatedStockisteData = $request->validate([
                 'salaire' => 'required|integer',
@@ -110,6 +112,7 @@ class adminController extends Controller
         }
 
         //    ______________publicitaire___________
+        if($request->role === 'publicitaire'){
         $existingPublicitaire =  $this->adminRepository->getFirstPublicitaire();
 
         if ($existingPublicitaire) {
@@ -118,7 +121,6 @@ class adminController extends Controller
         }
         
         
-        else if($request->role === 'publicitaire'){
 
             $validatedPublicitaireData = $request->validate([
                 'salaire' => 'required|integer',
@@ -132,7 +134,8 @@ class adminController extends Controller
             
             return redirect()->route('admin-travailleur')->with('success','Publicitaire ajouter avec success');
             
-        }else if($request->role === 'travailleur'){
+        }
+         if($request->role === 'travailleur'){
 
             $validatedTravailleurData = $request->validate([
                 'salaire' => 'required|integer',
