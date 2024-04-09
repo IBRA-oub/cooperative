@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Financiere;
 use App\Repositories\AdminRepository;
 use App\Repositories\AdminRepositoryInterface;
 use Illuminate\Http\Request;
@@ -26,10 +27,25 @@ class adminController extends Controller
             'password' => 'required',
             'picture' => 'required'
         ]);
-    
         
+        // __________verfied email___________
+        $usersEmail = $this->adminRepository->allUser();
+        foreach($usersEmail as $user)
+        if($user->email == $request->email){
+            return redirect()->route('admin-travailleur')->with('error','email existe déjà .');
+        }
+
+        // __________________________debut de la creation des utilisateur_______________
         $user = $this->adminRepository->create($validatedUserData);  
         $userId = $user->id;
+    
+                //    ______________financiere___________
+        $existingFinancial = $this->adminRepository->getFirstFinanciere();
+
+            if ($existingFinancial) {
+                $this->adminRepository->delete($userId);
+                return redirect()->route('admin-travailleur')->with('error','Un compte financier existe déjà .');
+            }
     
         if ($request->role === 'financiere') {
            
@@ -45,7 +61,16 @@ class adminController extends Controller
             
             return redirect()->route('admin-travailleur')->with('success','Financiere ajouter avec success');
             
-        } else if($request->role === 'planner'){
+        } 
+        
+                //    ______________planner___________
+                $existingPlanner =  $this->adminRepository->getFirstPlanner();
+
+                if ($existingPlanner) {
+                    $this->adminRepository->delete($userId);
+                    return redirect()->route('admin-travailleur')->with('error','Un compte planner existe déjà.');
+                }
+        else if($request->role === 'planner'){
 
             $validatedPlannerData = $request->validate([
                 'salaire' => 'required|integer',
@@ -58,7 +83,17 @@ class adminController extends Controller
             $this->adminRepository->createPlanner($validatedPlannerData);
             
             return redirect()->route('admin-travailleur')->with('success','Planner ajouter avec success');            
-        }else if($request->role === 'stockiste'){
+        }
+        
+             //    ______________Stockiste___________
+             $existingStockiste =  $this->adminRepository->getFirstStockiste();
+
+             if ($existingStockiste) {
+                 $this->adminRepository->delete($userId);
+                 return redirect()->route('admin-travailleur')->with('error','Un compte stockiste existe déjà.');
+             }
+        
+        else if($request->role === 'stockiste'){
 
             $validatedStockisteData = $request->validate([
                 'salaire' => 'required|integer',
@@ -72,7 +107,18 @@ class adminController extends Controller
             
             return redirect()->route('admin-travailleur')->with('success','stockiste ajouter avec success');
             
-        }else if($request->role === 'publicitaire'){
+        }
+
+        //    ______________publicitaire___________
+        $existingPublicitaire =  $this->adminRepository->getFirstPublicitaire();
+
+        if ($existingPublicitaire) {
+            $this->adminRepository->delete($userId);
+            return redirect()->route('admin-travailleur')->with('error','Un compte Publicitaire existe déjà.');
+        }
+        
+        
+        else if($request->role === 'publicitaire'){
 
             $validatedPublicitaireData = $request->validate([
                 'salaire' => 'required|integer',
@@ -107,14 +153,55 @@ class adminController extends Controller
     }
    
     // __________red user____________
-     public function travailleur(){
+    public function travailleur() {
         $users = $this->adminRepository->allUser();
-          $users->load('financiere', 'planner', 'stockiste', 'publicitaire', 'travailleur');
-       
+        $users->load('financiere', 'planner', 'stockiste', 'publicitaire', 'travailleur');
         
-    return view('admin.travailleur', ['users' => $users]);
-       
+        $totaleHeursFi = 0;
+        foreach($users as $user) {
+            if($user->financiere) {
+                $totaleHeursFi += $this->adminRepository->financiereHoursTotal();
+            }
+        }
+    
+        $totaleHeursPl = 0;
+        foreach($users as $user) {
+            if($user->planner) {
+                $totaleHeursPl += $this->adminRepository->plannerHoursTotal();
+            }
+        }
+    
+        $totaleHeursSt = 0;
+        foreach($users as $user) {
+            if($user->stockiste) {
+                $totaleHeursSt += $this->adminRepository->stockisteHoursTotal();
+            }
+        }
+    
+        $totaleHeursPu = 0;
+        foreach($users as $user) {
+            if($user->publicitaire) {
+                $totaleHeursPu += $this->adminRepository->publicitaireHoursTotal();
+            }
+        }
+    
+        $totaleHeursTr = 0;
+        foreach($users as $user) {
+            if($user->travailleur) {
+                $totaleHeursTr += $this->adminRepository->travailleurHoursTotal()->sum('heures');
+            }
+        }
+    
+        return view('admin.travailleur', [
+            'users' => $users,
+            'totaleHeursFi' => $totaleHeursFi,
+            'totaleHeursPl' => $totaleHeursPl,
+            'totaleHeursSt' => $totaleHeursSt,
+            'totaleHeursPu' => $totaleHeursPu,
+            'totaleHeursTr' => $totaleHeursTr
+        ]);
     }
+    
     // ____________edite_______________
 
     public function editUser($id){
@@ -289,25 +376,25 @@ class adminController extends Controller
     
         if($type == 'financiere'){
            $financiereHeure =  $this->adminRepository->financiereHours($id);
-           dd($financiereHeure);
-            return view('admin.travailleur-heurs',['financiereHeure'=>$financiereHeure]);
+           
+            return view('admin.travailleur-heurs',['Heures'=>$financiereHeure]);
         }
         elseif($type == 'planner'){
             $plannerHeure =  $this->adminRepository->plannerHours($id);
-            dd($plannerHeure);
-             return view('admin.travailleur-heurs',['plannerHeure'=>$plannerHeure]);
+            
+             return view('admin.travailleur-heurs',['Heures'=>$plannerHeure]);
         } elseif($type == 'stockiste'){
             $stockisteHeure =  $this->adminRepository->stockisteHours($id);
-            dd($stockisteHeure);
-             return view('admin.travailleur-heurs',['stockisteHeure'=>$stockisteHeure]);
+            
+             return view('admin.travailleur-heurs',['Heures'=>$stockisteHeure]);
         } elseif($type == 'publicitaire'){
             $publicitaireHeure =  $this->adminRepository->publicitaireHours($id);
-            dd($publicitaireHeure);
-             return view('admin.travailleur-heurs',['publicitaireHeure'=>$publicitaireHeure]);
+            
+             return view('admin.travailleur-heurs',['Heures'=>$publicitaireHeure]);
         } elseif($type == 'travailleur'){
             $travailleurHeure =  $this->adminRepository->travailleurHours($id);
-            dd($travailleurHeure);
-             return view('admin.travailleur-heurs',['travailleurHeure'=>$travailleurHeure]);
+            
+             return view('admin.travailleur-heurs',['Heures'=>$travailleurHeure]);
         }
     }
 

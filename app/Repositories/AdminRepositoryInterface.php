@@ -50,5 +50,27 @@ interface AdminRepositoryInterface
     public function publicitaireHours($id);
     public function travailleurHours($id);
 
+    // ____________________sum heure travailler________________
+
+    public function financiereHoursTotal();
+    public function plannerHoursTotal();
+    public function stockisteHoursTotal();
+
+    public function publicitaireHoursTotal();
+
+    public function travailleurHoursTotal();
+
+
+    // _______________get first user_________________
+
+    public function getFirstFinanciere();
+
+    public function getFirstPlanner();
+
+    public function getFirstStockiste();
+
+    public function getFirstPublicitaire();
+    
+    
     
 }

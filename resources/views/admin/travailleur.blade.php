@@ -33,7 +33,19 @@
 
                         });
                     </script>
+
+                @elseif(session('error'))
+                <script>
+                  Swal.fire({
+                      icon: "error",
+                      title: "Error!",
+                      text: "{{ session('error') }}",
+
+
+                  });
+              </script>
                 @endif
+
 
 
                 <!-- ========== table Banks-desktop ======== -->
@@ -95,17 +107,43 @@
                                     @elseif($user->travailleur)
                                         @foreach ($user->travailleur as $travailleur)
                                             <td class=" text-center ">
-                                                {{ $travailleur->salaire }} DH
+                                              {{ $travailleur->salaire }} DH
                                             </td>
-                                        @endforeach
-                                    @endif
-
-
-
-                                    <td class="text-center flex justify-center">
-                                        {{-- {{$user->email}} --}}
-                                        1 H
-                                    </td>
+                                            @endforeach
+                                            @endif
+                                            
+                                            @if($user->admin)
+                                            <td class="text-center flex justify-center">
+                                              ... H
+                                            </td>
+                                            @elseif($user->financiere)
+                                            <td class="text-center flex justify-center">
+                                              {{ $totaleHeursFi }} H
+                                            </td>
+                                            @elseif($user->planner)
+                                            <td class="text-center flex justify-center">
+                                              {{ $totaleHeursPl }} H
+                                            </td>
+                                            @elseif($user->stockiste)
+                                            <td class="text-center flex justify-center">
+                                              {{ $totaleHeursSt }} H
+                                            </td>
+                                            @elseif($user->publicitaire)
+                                            <td class="text-center flex justify-center">
+                                              {{ $totaleHeursPu }} H
+                                            </td>
+                                            
+                                            @elseif($user->travailleur)
+                                            
+                                            @foreach ($user->travailleur as $travailleur)
+                                            
+                                            <td class="text-center flex justify-center">
+                                              {{ $totaleHeursTr[$travailleur->id] }} H
+                                              @endforeach
+                                            </td>
+                                            @endif
+                                    
+                                    
                                     {{-- pop up ading hour start --}}
 
                                     <div id="myModal" class="modal">
@@ -518,6 +556,7 @@
                                                                 </button>
                                                             @endforeach
                                                         @endif
+                                                        {{-- completrer pou le mobile --}}
                                                         <a href="/travailleur-heurs">
                                                             <button
                                                                 class=" text-gray-600 w-full rounded-md h-[35px] hover:bg-black hover:text-white">

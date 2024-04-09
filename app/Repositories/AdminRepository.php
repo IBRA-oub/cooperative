@@ -171,6 +171,54 @@ public function travailleurHours($id)
 {
     return HeureTrevailler::all()->where('travailleur_id',$id);
 }
-  
+
+// ____________________sum heure travailler________________
+
+public function financiereHoursTotal()
+{
+    return HeureTrevailler::whereNotNull('financiere_id')->sum('heurs');
+}
+
+public function plannerHoursTotal()
+{
+    return HeureTrevailler::whereNotNull('planner_id' )->sum('heurs');
+}
+
+public function stockisteHoursTotal()
+{
+    return HeureTrevailler::whereNotNull('stockiste_id' )->sum('heurs');
+}
+
+public function publicitaireHoursTotal()
+{
+    return HeureTrevailler::whereNotNull('publicitaire_id' )->sum('heurs');
+}
+
+public function travailleurHoursTotal()
+{
+    return HeureTrevailler::whereNotNull('travailleur_id')
+        ->groupBy('travailleur_id')
+        ->selectRaw('travailleur_id, sum(heurs) as total_heurs')
+        ->pluck('total_heurs', 'travailleur_id');
+}
+
+// ______________________get user first________________
+ 
+    public function getFirstFinanciere(){
+        return  Financiere::all()->first();
+    }
+
+    public function getFirstPlanner(){
+        return  Planner::all()->first();
+    }
+
+    public function getFirstStockiste(){
+        return  Stockiste::all()->first();
+    }
+
+    public function getFirstPublicitaire(){
+        return  Publicitaire::all()->first();
+    }
+
 
 }
