@@ -4,16 +4,48 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole 
 {
     public function handle(Request $request, Closure $next, ...$roles)
     {
-        if (! $request->user() || ! in_array($request->user()->role, $roles)) {
-            return redirect()-> route('/auth/login');
+        $user = Auth::user();
+
+        foreach ($roles as $role) {
+            switch ($role) {
+                case 'admin':
+                    if ($user->admin()->exists()) {
+                        return $next($request);
+                    }
+                    break;
+                case 'financiere':
+                    if ($user->financiere()->exists()) {
+                        return $next($request);
+                    }
+                    break;
+                case 'planner':
+                    if ($user->planner()->exists()) {
+                        return $next($request);
+                    }
+                    break;
+                case 'stockiste':
+                    if ($user->stockiste()->exists()) {
+                        return $next($request);
+                    }
+                    break;
+                case 'publicitaire':
+                    if ($user->publicitaire()->exists()) {
+                        return $next($request);
+                    }
+                    break;
+                default:
+                    // Handle unknown role
+                    break;
+            }
         }
 
-        return $next($request);
+        // If none of the roles matched, redirect to login
+        return redirect()->route('login');
     }
 }
