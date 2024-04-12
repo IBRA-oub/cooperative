@@ -32,11 +32,23 @@
 
 <body class="bg-gradient-to-tr from-fuchsia-400 to-green-200 overflow-x-hidden">
     <section class="sm:flex w-full h-screen ">
+      @if (session('success'))
+      <script>
+          Swal.fire({
+              icon: "success",
+              title: "Success!",
+              text: "{{ session('success') }}",
+
+
+          });
+      </script>
+      @endif
         <div class="hidden sm:block w-1/3 bg-white ">
          <img src="img/login.png" alt="" class="w-full h-full">
         </div>
 
         <div class="sm:w-2/3 flex justify-center mt-20">
+
             <div class="text-black w-[60%] md:w-[40%]">
                 <div class="mb-8 flex flex-col items-center">
                   <img src="img/big_logo.png" width="200" alt="" srcset="" />

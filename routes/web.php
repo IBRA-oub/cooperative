@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\financiereController;
 use App\Http\Controllers\plannerController;
 use App\Http\Controllers\publicitaireController;
@@ -31,6 +32,8 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class , 'loginAction'])->name('login.action');
 Route::get('logout' , [AuthController::class , 'logout'])->middleware('auth')->name('logout');
 
+Route::get('forget-password', [ForgetPasswordController::class , 'UserEmail'])->name('forget-password');
+Route::get('Reset-password', [ForgetPasswordController::class , 'ResetPassword'])->name('Reset-password');
 
 // __________________________admin__________________________
 

@@ -89,13 +89,7 @@
 
 
    
-                    </div>
-                </form>
-
-            </div>
-
-        </div>
-    </div>
+         
     <!-- Student Visa End -->
  </main>
 </main>
