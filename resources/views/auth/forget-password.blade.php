@@ -47,7 +47,7 @@
                 <div id="addUser" class=" mx-16 py-4 px-8 text-white text-5xl font-bold border-b border-grey-500 text-center"> Oublier Mots De Passe!!
                 </div>
 
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{route('forget.password.post')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="py-4 px-8">
 

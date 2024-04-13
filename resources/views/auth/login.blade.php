@@ -11,6 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
       @keyframes slideInRight {
           from {
@@ -33,22 +34,22 @@
 <body class="bg-gradient-to-tr from-fuchsia-400 to-green-200 overflow-x-hidden">
     <section class="sm:flex w-full h-screen ">
       @if (session('success'))
-      <script>
-          Swal.fire({
-              icon: "success",
-              title: "Success!",
-              text: "{{ session('success') }}",
-
-
-          });
-      </script>
-      @endif
+          <script>
+              Swal.fire({
+                  icon: "success",
+                  title: "Success!",
+                  text: "{{ session('success') }}",
+    
+    
+              });
+          </script>
+          @endif
         <div class="hidden sm:block w-1/3 bg-white ">
          <img src="img/login.png" alt="" class="w-full h-full">
         </div>
 
         <div class="sm:w-2/3 flex justify-center mt-20">
-
+         
             <div class="text-black w-[60%] md:w-[40%]">
                 <div class="mb-8 flex flex-col items-center">
                   <img src="img/big_logo.png" width="200" alt="" srcset="" />
@@ -72,7 +73,7 @@
                         @error('password')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
                       </div>
-                      <p id="forgetPassword" class="text-blue-600">oublier mot de passe?</p>
+                      <a href="/forget-password" id="forgetPassword" class="text-blue-600">oublier mot de passe?</a>
                   <div class="mt-8 flex justify-center text-lg text-black">
                     <button id="loginBTn" type="submit" class="w-full rounded-2xl bg-fuchsia-600 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-green-400">Login</button>
                   </div>

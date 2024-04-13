@@ -32,8 +32,10 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class , 'loginAction'])->name('login.action');
 Route::get('logout' , [AuthController::class , 'logout'])->middleware('auth')->name('logout');
 
-Route::get('forget-password', [ForgetPasswordController::class , 'UserEmail'])->name('forget-password');
-Route::get('Reset-password', [ForgetPasswordController::class , 'ResetPassword'])->name('Reset-password');
+Route::get('forget-password', [ForgetPasswordController::class , 'UserEmail'])->name('forget.password');
+Route::post('forget-password', [ForgetPasswordController::class , 'forgetPassword'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgetPasswordController::class , 'ResetPassword'])->name('reset.password');
+Route::post('reset-password', [ForgetPasswordController::class , 'ResetPasswordPost'])->name('reset.password.post');
 
 // __________________________admin__________________________
 
