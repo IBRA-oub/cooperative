@@ -60,12 +60,21 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     
     Route::get('/financiere-dashboard',[financiereController::class , 'dashboard'])->name('financiere-dashboard');
     Route::get('/financiere-revenu',[financiereController::class , 'redRevenu'])->name('financiere-revenu');
-    Route::get('/financiere-achat',[financiereController::class , 'redAchat'])->name('financiere-achat');
     Route::get('/financiere-message',[financiereController::class , 'message'])->name('financiere-message');
     Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
     Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
-    Route::get('/add-achat',[financiereController::class , 'addAchat'])->name('add-achat');
-    Route::get('/edit-achat',[financiereController::class , 'editAchat'])->name('edit-achat');
+    Route::get('/edit-materiaux',[financiereController::class , 'editMateriaux'])->name('edit-materiaux');
+    
+    Route::get('/add-materiaux',[financiereController::class , 'addMateriaux'])->name('add-materiaux');
+    Route::get('/add-materiel',[financiereController::class , 'addMateriel'])->name('add-materiel');
+    Route::get('/add-location',[financiereController::class , 'addLocation'])->name('add-location');
+    Route::get('/add-electriciter-eau',[financiereController::class , 'addElectriciterEeau'])->name('add-electriciter-eau');
+    
+    Route::get('/financiere-materiaux',[financiereController::class , 'redMateriaux'])->name('financiere-materiaux');
+    Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');
+    Route::get('/financiere-materiel',[financiereController::class , 'redMateriel'])->name('financiere-materiel');
+    Route::get('/financiere-electriciter-eau',[financiereController::class , 'redElectriciterEau'])->name('financiere-electriciter-eau');
+    Route::get('/financiere-location',[financiereController::class , 'redLocation'])->name('financiere-location');
 });
 
 // __________________________planner__________________________

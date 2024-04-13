@@ -1,17 +1,46 @@
 @extends('layouts.financiere-layouts')
 
-@section('title', 'financiere achat')
+@section('title', 'financiere electriciter-eau')
 @section('content') 
 
-<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-200 min-h-screen transition-all main">
+<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main">
+    <div class="hidden h-screen w-32 bg-white absolute top-0 z-10 md:flex flex-col ">
+
+       
+        <a href="/financiere-materiel"  class="mt-32">
+      <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-emerald-200 border-black border-t-2 border-l-2 hover:rounded">
+          <h3 class="text-center text-black py-5 col-end-4 ">materiel</h3>
+      </div>
+      </a>
+  
+      <a  class="mt-10">
+      <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg bg-purple-200 shadow-purple-200 border-black border-t-2 border-l-2 hover:rounded">
+          <h3 class="text-center text-black py-5 col-end-4 ">Electriciter <br> eau</h3>
+      </div>
+      </a>
+  
+      <a href="/financiere-location" class="mt-10">
+      <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-yellow-200 border-black border-t-2 border-l-2 hover:rounded">
+            <div class="translate-y-4 pl-8"> <Image alt="instagram logo" width="30" height="30" src="https://sahilnetic.xyz/instagram.png" /></div>
+          <h3 class="text-center text-black py-5 col-end-4 pl-2">location</h3>
+      </div>
+     </a>
+      <a href="/financiere-materiaux" class="mt-10">
+      <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-rose-200 border-black border-t-2 border-l-2 hover:rounded">
+            <div class="translate-y-4 pl-8"> <Image alt="instagram logo" width="30" height="30" src="https://sahilnetic.xyz/css.png" /></div>
+          <h3 class="text-center text-black py-5 col-end-4 pl-2">materiaux</h3>
+      </div>
+      </a>
+    
+</div>
     <!--===========Content===========-->
- <main class="bg-gray-100 flex-grow h-[100vh] relative">
+ <main class="bg-white flex-grow h-[100vh] relative">
      <!-- ============== header =========== -->
  
      <div class="absolute right-10  sm:top-10 sm:right-10 ">
-        <a href="/add-achat">
-        <button id="addProAch" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
-            ajouter produit achat
+        <a href="/add-electriciter-eau">
+        <button id="" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
+            ajouter 
         </button>
     </a>
 
@@ -28,18 +57,18 @@
  
          <!-- ========== table Banks-desktop ======== -->
        
-         <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
+         <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[90%] items-center ml-32 ">
              <table class="  
             w-full   " id="table1">
                  <thead class="  sm:w-full">
                      <tr class="bg-[#31363F] text-white h-[40px]">
                          <th id="idA" class="">ID</th>
-                         <th id="NomProAch"  class="">nom Produit</th>
-                         <th id="quantiterAch" class="">quantiter</th>
-                         <th id="prixAch" class="">prix d'achat</th>
-                         <th id="dateAch" class="">date d'achat</th>
+                         <th id=""  class="">electriciter/eau </th>
+                         
+                         <th id="" class="">prix </th>
+                         <th id="" class="">date </th>
                         
-                         <th id="actionsAch" class="">plus options</th>
+                         <th id="" class="">plus options</th>
                      </tr>
                  </thead>
               
@@ -52,11 +81,9 @@
                              2
                          </td>
                          <td class=" text-center ">
-                            za3tar
+                            eau
                          </td>
-                         <td class=" text-center ">
-                            50 kg
-                         </td>
+                        
                          
                          <td class=" text-center ">
                          70dh
@@ -104,7 +131,7 @@
                          <th></th>
                          <th></th>
                          <th></th>
-                         <th></th>
+                        
  
  
                      </tr>
@@ -117,15 +144,12 @@
                              class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
                           3
                          </td>
-                         <td data-label="nomProduit" class="border-b before:content-['nomProduit'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                         <td data-label="electriciter/eau" class="border-b before:content-['electriciter/eau'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           za3tar
+                           eau
                          </td>
-                         <td data-label="quantiter" class="border-b before:content-['quantiter'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
-                              text-right">
-                           40kg
-                         </td>
-                         <td data-label="PrixAchat" class="border-b before:content-['PrixAchat'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                       
+                         <td data-label="Prix" class="border-b before:content-['Prix'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                            20dh
                          </td>
@@ -178,4 +202,4 @@
 
 
  
-@endsection
+@endsection 

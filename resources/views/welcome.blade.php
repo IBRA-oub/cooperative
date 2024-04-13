@@ -51,7 +51,7 @@
                             <a id="dashboard" href=""
                             class="font-semibold text-gray-900 hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                         {{-- @else --}}
-                            <a id="login"  href=""
+                            <a id="login"  href="/login"
                                class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs bg-green-600  uppercase leading-normal font-bold text-white transition duration-150 ease-in-out hover:text-white hover:bg-opacity-10 hover:text-primary-600  focus:outline-none focus:ring-0 0 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
                                data-te-ripple-init data-te-ripple-color="light">
                                 Login

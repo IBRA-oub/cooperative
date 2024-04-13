@@ -12,22 +12,53 @@ class financiereController extends Controller
     public function redRevenu(){
         return view('financiere.revenu');
     }
-    public function redAchat(){
-        return view('financiere.achat');
+    // _________________________________
+
+    
+    public function redMateriaux(){
+        return view('financiere.materiaux');
     }
+    public function redCharge(){
+        return view('financiere.charge');
+    }
+    public function redMateriel(){
+        return view('financiere.materiel');
+    }
+    public function redElectriciterEau(){
+        return view('financiere.electriciter-eau');
+    }
+    public function redLocation(){
+        return view('financiere.location');
+    }
+
+    // ___________________________________
+    
     public function message(){
         return view('financiere.message');
     }
+
+    // _____________________________________
+    
     public function addRevenu(){
         return view('financiere.add-revenu');
     }
+    public function addMateriaux(){
+        return view('financiere.add-materiaux');
+    }
+    public function addMateriel(){
+        return view('financiere.add-materiel');
+    }
+    public function addLocation(){
+        return view('financiere.add-location');
+    }
+    public function addElectriciterEeau(){
+        return view('financiere.add-electriciter-eau');
+    }
+    // _____________________________
     public function editRevenu(){
         return view('financiere.edit-revenu');
     }
-    public function addAchat(){
-        return view('financiere.add-achat');
-    }
-    public function editAchat(){
-        return view('financiere.edit-achat');
+    public function editMateriaux(){
+        return view('financiere.edit-materiaux');
     }
 }

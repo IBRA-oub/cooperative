@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("revenu1").textContent = "الدخل";
         }
 
-        if (document.getElementById("achat")) {
-            document.getElementById("achat").textContent = "شراء";
+        if (document.getElementById("charge")) {
+            document.getElementById("charge").textContent = "مصارف";
         }
-        if (document.getElementById("achat1")) {
-            document.getElementById("achat1").textContent = "شراء";
+        if (document.getElementById("charge1")) {
+            document.getElementById("charge1").textContent = "مصارف";
         }
 
         if (document.getElementById("message")) {

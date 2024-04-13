@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Achat extends Model
+class ChargeType extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nomProduit',
-        'prixAchatProduit'
-    ];
+    protected $guarded = [];
     
     public function financiere(){
         return $this->belongsTo(Financiere::class);
+    }
+    public function charge(){
+        return $this->hasMany(Chagre::class);
     }
 }
