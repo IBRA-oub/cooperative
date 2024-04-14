@@ -1,6 +1,6 @@
 @extends('layouts.financiere-layouts')
 
-@section('title', 'edit achat')
+@section('title', 'edit materiaux')
 
 @section('content') 
 
@@ -11,9 +11,9 @@
        <!--  Application Details Start -->
        <div class="w-72 md:w-full bg-transparent md:pt-10 ml-[14.7%] md:ml-0">
         <div class="container mx-auto py-8">
-            <div class="w-80 ml-3 md:ml-0 my-10 md:my-0 md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
+            <div class="w-80 ml-3  my-10 md:my-0 md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
-                <div id="EditeProAchat" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500 text-center">Edit produit achat
+                <div id="EditeProAchat" class="mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Edit produit achat
                 </div>
 
                 <form action="">

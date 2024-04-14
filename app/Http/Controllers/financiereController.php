@@ -61,4 +61,13 @@ class financiereController extends Controller
     public function editMateriaux(){
         return view('financiere.edit-materiaux');
     }
+    public function editMateriel(){
+        return view('financiere.edit-materiel');
+    }
+    public function editLocation(){
+        return view('financiere.edit-location');
+    }
+    public function editElectriciterEau(){
+        return view('financiere.edit-electriciter-eau');
+    }
 }

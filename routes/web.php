@@ -63,7 +63,11 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::get('/financiere-message',[financiereController::class , 'message'])->name('financiere-message');
     Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
     Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
+    
     Route::get('/edit-materiaux',[financiereController::class , 'editMateriaux'])->name('edit-materiaux');
+    Route::get('/edit-materiel',[financiereController::class , 'editMateriel'])->name('edit-materiel');
+    Route::get('/edit-location',[financiereController::class , 'editLocation'])->name('edit-location');
+    Route::get('/edit-electriciter-eau',[financiereController::class , 'editElectriciterEau'])->name('edit-electriciter-eau');
     
     Route::get('/add-materiaux',[financiereController::class , 'addMateriaux'])->name('add-materiaux');
     Route::get('/add-materiel',[financiereController::class , 'addMateriel'])->name('add-materiel');

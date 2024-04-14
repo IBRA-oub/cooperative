@@ -277,11 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("revenu1").textContent = "Revenu";
         }
 
-        if (document.getElementById("achat")) {
-            document.getElementById("achat").textContent = "Achat";
+        if (document.getElementById("charge")) {
+            document.getElementById("charge").textContent = "Charge";
         }
-        if (document.getElementById("achat1")) {
-            document.getElementById("achat1").textContent = "Achat";
+        if (document.getElementById("charge1")) {
+            document.getElementById("charge1").textContent = "Charge";
         }
 
         if (document.getElementById("message")) {
@@ -419,7 +419,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("addProAch")) {
             document.getElementById("addProAch").textContent =
-                "   ajouter produit achat";
+                "   ajouter";
         }
 
         if (document.getElementById("idA")) {
@@ -427,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("NomProAch")) {
-            document.getElementById("NomProAch").textContent = " nom Produit";
+            document.getElementById("NomProAch").textContent = " nom";
         }
 
         if (document.getElementById("quantiterAch")) {
@@ -435,11 +435,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("prixAch")) {
-            document.getElementById("prixAch").textContent = "prix d'achat";
+            document.getElementById("prixAch").textContent = "prix";
         }
 
         if (document.getElementById("dateAch")) {
-            document.getElementById("dateAch").textContent = "date d'achat";
+            document.getElementById("dateAch").textContent = "date";
         }
 
         if (document.getElementById("actionsAch")) {
@@ -450,14 +450,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("addProdAchat")) {
             document.getElementById("addProdAchat").textContent =
-                "  Ajout produit Achat";
+                "  Ajouter Materiaux";
             document
                 .getElementById("addProdAchat")
                 .classList.remove("text-right");
         }
 
         if (document.getElementById("nomProAch")) {
-            document.getElementById("nomProAch").textContent = "nom Produit ";
+            document.getElementById("nomProAch").textContent = "nom  ";
             document.getElementById("nomProAch").classList.remove("text-right");
         }
 
@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("prixAchat")) {
-            document.getElementById("prixAchat").textContent = "Prix d'achat";
+            document.getElementById("prixAchat").textContent = "Prix";
             document.getElementById("prixAchat").classList.remove("text-right");
         }
 
@@ -486,14 +486,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("EditeProAchat")) {
             document.getElementById("EditeProAchat").textContent =
-                "Edit produit achat";
+                "Edit";
             document
                 .getElementById("EditeProAchat")
                 .classList.remove("text-right");
         }
 
         if (document.getElementById("nomProAchEdi")) {
-            document.getElementById("nomProAchEdi").textContent = "nom Produit";
+            document.getElementById("nomProAchEdi").textContent = "nom";
             document
                 .getElementById("nomProAchEdi")
                 .classList.remove("text-right");
@@ -509,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("prixAchaEdit")) {
             document.getElementById("prixAchaEdit").textContent =
-                "Prix d'achat";
+                "Prix";
             document
                 .getElementById("prixAchaEdit")
                 .classList.remove("text-right");

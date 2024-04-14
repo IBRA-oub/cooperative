@@ -107,7 +107,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-achat">
+                            <a href="/edit-materiel">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
