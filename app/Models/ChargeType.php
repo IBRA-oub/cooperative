@@ -15,6 +15,6 @@ class ChargeType extends Model
         return $this->belongsTo(Financiere::class);
     }
     public function charge(){
-        return $this->hasMany(Chagre::class);
+        return $this->hasMany(Charge::class);
     }
 }

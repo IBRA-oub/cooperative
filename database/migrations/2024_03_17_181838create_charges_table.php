@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->integer('prix');
             $table->string('quantiter');
-            $table->integer('date');
+            $table->date('date');
             $table->foreignId('type_id')
             ->constrained('charge_types')
             ->onUpdate('cascade');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('achats');
+        Schema::dropIfExists('charges');
     }
 };

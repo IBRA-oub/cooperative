@@ -25,7 +25,7 @@ class Financiere extends Model
         return $this->hasMany(Revenu::class);
     }
 
-    public function achat() {
-        return $this->hasMany(Achat::class);
+    public function chargeType() {
+        return $this->hasMany(ChargeType::class);
     }
 }

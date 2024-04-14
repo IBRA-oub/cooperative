@@ -74,30 +74,30 @@
               
                  <tbody class="sm:w-full">
                   
- 
+                    @foreach($materiels as $materiel)
                      <tr class=" pt-10 sm:pt-0  w-full border-b border-blue-400">
  
                          <td class=" text-center ">
-                             2
+                             {{$materiel->id}}
                          </td>
                          <td class=" text-center ">
-                            ligant
+                            {{$materiel->nom}}
                          </td>
                          <td class=" text-center ">
-                           15 pièce
+                            {{$materiel->quantiter}}
                          </td>
                          
                          <td class=" text-center ">
-                         70dh
+                            {{$materiel->prix}}dh
                           </td>
                          <td class=" text-center ">
-                         2034-56-6
+                            {{$materiel->date}}
                           </td>
                          
  
                        
                          <td class="  text-center flex justify-center ">
-                            <form action="" method="POST">
+                            <form action="{{ route('materiel.delete', ['id' => $materiel->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -107,7 +107,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-materiel">
+                            <a href="{{ route('edit-materiel', ['id' => $materiel->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -116,7 +116,7 @@
                          </td>
                        
                      </tr>
-               
+               @endforeach
  
                  </tbody>
                
