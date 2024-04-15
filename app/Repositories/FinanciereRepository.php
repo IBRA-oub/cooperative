@@ -36,7 +36,7 @@ class FinanciereRepository implements FinanciereRepositoryInterface
     }
     public function delete($id)
     {
-        $user = Charge::findOrFail($id);
-        $user->delete();
+        $charge = Charge::findOrFail($id);
+        $charge->delete();
     }
 }

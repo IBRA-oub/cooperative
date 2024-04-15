@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Repositories\FinanciereRepositoryInterface;
 
-class FinanciereService
+class FinanciereService implements FinanciereServiceInterface
 {
     public function __construct( protected FinanciereRepositoryInterface $financiereRepository) 
     {

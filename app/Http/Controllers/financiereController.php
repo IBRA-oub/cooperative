@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\FinanciereService;
+
+use App\Services\FinanciereServiceInterface;
 
 class financiereController extends Controller
 {
-    public function __construct(
-        protected FinanciereService $financiereService
-      ) {
+    protected $financiereService;
+    public function __construct( FinanciereServiceInterface $financiereService )
+     {
+        $this->financiereService = $financiereService;
     }
     
    
@@ -80,8 +82,24 @@ class financiereController extends Controller
        
     }
 
-    public function editElectriciterEau(){
-        return view('financiere.edit-electriciter-eau');
+    public function ElectriciterEeauDelete($id){
+        $this->financiereService->delete($id);
+        return redirect()->route('financiere-electriciter-eau')->with('success',' supprimer avec success');
+    }
+    
+    public function editElectriciterEau($id){
+        $electriciterEau = $this->financiereService->find($id);
+        return view('financiere.edit-electriciter-eau',['electriciterEau' => $electriciterEau]);
+        
+    }
+    public function updateElectriciterEau(Request $request,$id){
+        $data = $request->validate([
+            'nom' => 'required',
+            'prix' => 'required',
+            'date' => 'required'
+        ]);
+        $this->financiereService->update($data,$id);
+        return redirect()->route('financiere-electriciter-eau')->with('success',' mise a jour avec success');
     }
 
     // _____________________________________________________

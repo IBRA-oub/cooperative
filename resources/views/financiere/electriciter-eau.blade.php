@@ -96,7 +96,7 @@
  
                        
                          <td class="  text-center flex justify-center ">
-                            <form action="" method="POST">
+                            <form action="{{ route('electriciterEau.delete', ['id' => $elecEau->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -106,7 +106,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-electriciter-eau">
+                            <a href="{{ route('edit-electriciter-eau', ['id' => $elecEau->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -161,7 +161,7 @@
                          <td data-label="Action" class="border-b before:content-['Action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                               
-                              <form action="{{ route('elecEau.delete', ['id' => $elecEau->id]) }}" method="POST">
+                              <form action="{{ route('electriciterEau.delete', ['id' => $elecEau->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -171,7 +171,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-achat">
+                            <a href="{{ route('edit-electriciter-eau', ['id' => $elecEau->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>

@@ -8,6 +8,7 @@ use App\Repositories\AdminRepositoryInterface;
 use App\Repositories\FinanciereRepository;
 use App\Repositories\FinanciereRepositoryInterface;
 use App\Services\FinanciereService;
+use App\Services\FinanciereServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         // ____________________financiere___________
 
         $this->app->bind(FinanciereRepositoryInterface::class, FinanciereRepository::class);
-        $this->app->bind(FinanciereService::class, function ($app) {
+        $this->app->bind(FinanciereServiceInterface::class, function ($app) {
             return new FinanciereService($app->make(FinanciereRepositoryInterface::class));
         });
     }
