@@ -6,11 +6,11 @@ use App\Repositories\FinanciereRepositoryInterface;
 
 class FinanciereService
 {
-    public function __construct(
-        protected FinanciereRepositoryInterface $financiereRepository
-    ) {
+    public function __construct( protected FinanciereRepositoryInterface $financiereRepository) 
+    {
     }
 
+    // ______________materiel___________
     public function allMateriel()
     {
         return $this->financiereRepository->allMateriel();
@@ -20,7 +20,19 @@ class FinanciereService
         $data['type_id']= 1;
         return $this->financiereRepository->store($data);
     }
+    // ____________________Electriciter/eau______________
 
+    public function createElectriciterEau(array $data)
+    {
+        $data['type_id']= 2;
+        return $this->financiereRepository->store($data);
+    }
+
+    public function allElectriciterEau()
+    {
+        return $this->financiereRepository->allElectriciterEau();
+    }
+    
     public function find($id)
     { 
         return $this->financiereRepository->find($id);

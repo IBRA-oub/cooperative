@@ -18,6 +18,11 @@ class FinanciereRepository implements FinanciereRepositoryInterface
         return Charge::all()->where('type_id', 1);
     }
 
+    public function allElectriciterEau()
+    {
+        return Charge::all()->where('type_id', 2);
+    }
+
     public function find($id)
     {
         return Charge::findOrFail($id);

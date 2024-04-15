@@ -139,33 +139,33 @@
                      </tr>
                  </thead>
                  <tbody class="block  w-full">
-                    
+                    @foreach($materiels as $materiel)
                      <tr class="block pt-10 sm:pt-0   w-full ">
  
                          <td data-label="id"
                              class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                          3
+                          {{$materiel->id}}
                          </td>
                          <td data-label="nom" class="border-b before:content-['nom'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           ligant
+                              {{$materiel->nom}}
                          </td>
                          <td data-label="quantiter" class="border-b before:content-['quantiter'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           16 pièce
+                              {{$materiel->quantiter}}
                          </td>
                          <td data-label="Prix" class="border-b before:content-['Prix'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           20dh
+                              {{$materiel->prix}}dh
                          </td>
                          <td data-label="date" class="border-b before:content-['date'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           2034-56-6
+                              {{$materiel->date}}
                          </td>
                          <td data-label="Action" class="border-b before:content-['Action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                               
-                              <form action="" method="POST">
+                              <form action="{{ route('materiel.delete', ['id' => $materiel->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -175,7 +175,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-achat">
+                            <a href="{{ route('edit-materiel', ['id' => $materiel->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -189,7 +189,7 @@
                               
                      </tr>
                   
- 
+                     @endforeach
                  </tbody>
              </table>
          </div>

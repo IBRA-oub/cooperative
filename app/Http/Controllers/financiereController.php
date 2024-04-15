@@ -8,7 +8,7 @@ use App\Services\FinanciereService;
 class financiereController extends Controller
 {
     public function __construct(
-        protected FinanciereService $userService
+        protected FinanciereService $financiereService
       ) {
     }
     
@@ -26,21 +26,21 @@ class financiereController extends Controller
             'prix' => 'required',
             'date' => 'required'
         ]);
-        $this->userService->createMateriel($data);
+        $this->financiereService->createMateriel($data);
         
         return redirect()->route('financiere-materiel')->with('success','Materiel ajouter avec success');
     }
     
     public function redMateriel(){
         
-       $materiels = $this->userService->allMateriel();
+       $materiels = $this->financiereService->allMateriel();
        return view('financiere.materiel',['materiels' => $materiels]);
     }
     public function editMateriel($id){
-        $materiel = $this->userService->find($id);
+        $materiel = $this->financiereService->find($id);
         return view('financiere.edit-materiel',['materiel' => $materiel]);
     }
-
+    
     public function updateMateriel(Request $request,$id){
         $data = $request->validate([
             'nom' => 'required',
@@ -48,14 +48,43 @@ class financiereController extends Controller
             'prix' => 'required',
             'date' => 'required'
         ]);
-        $this->userService->update($data,$id);
+        $this->financiereService->update($data,$id);
         return redirect()->route('financiere-materiel')->with('success','Materiel mise a jour avec success');
     }
     public function materielDelete($id){
-        $this->userService->delete($id);
+        $this->financiereService->delete($id);
         return redirect()->route('financiere-materiel')->with('success','Materiel supprimer avec success');
     }
     // _______________________________________
+    
+    // ________________________Electriciter/eau_______________
+    
+    public function addElectriciterEeau(){
+        return view('financiere.add-electriciter-eau');
+    }
+    public function addElectriciterEeauPost(Request $request){
+        $data = $request->validate([
+            'nom' => 'required',
+            'prix' => 'required',
+            'date' => 'required'
+        ]);
+        $this->financiereService->createElectriciterEau($data);
+        
+        return redirect()->route('financiere-electriciter-eau')->with('success',' ajouter avec success');
+    }
+    public function redElectriciterEau(){
+        
+        $electriciterEau = $this->financiereService->allElectriciterEau();
+        return view('financiere.electriciter-eau',['electriciterEau' => $electriciterEau]);
+        
+       
+    }
+
+    public function editElectriciterEau(){
+        return view('financiere.edit-electriciter-eau');
+    }
+
+    // _____________________________________________________
     public function dashboard(){
         return view('financiere.financiere-dashboard');
     }
@@ -71,9 +100,7 @@ class financiereController extends Controller
     public function redCharge(){
         return view('financiere.charge');
     }
-    public function redElectriciterEau(){
-        return view('financiere.electriciter-eau');
-    }
+    
     public function redLocation(){
         return view('financiere.location');
     }
@@ -95,9 +122,7 @@ class financiereController extends Controller
     public function addLocation(){
         return view('financiere.add-location');
     }
-    public function addElectriciterEeau(){
-        return view('financiere.add-electriciter-eau');
-    }
+    
     // _____________________________
     public function editRevenu(){
         return view('financiere.edit-revenu');
@@ -109,7 +134,5 @@ class financiereController extends Controller
     public function editLocation(){
         return view('financiere.edit-location');
     }
-    public function editElectriciterEau(){
-        return view('financiere.edit-electriciter-eau');
-    }
+   
 }

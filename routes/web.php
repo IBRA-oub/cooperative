@@ -76,6 +76,7 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     
     Route::get('/financiere-electriciter-eau',[financiereController::class , 'redElectriciterEau'])->name('financiere-electriciter-eau');
     Route::get('/add-electriciter-eau',[financiereController::class , 'addElectriciterEeau'])->name('add-electriciter-eau');
+    Route::post('/add-electriciter-eau-post',[financiereController::class , 'addElectriciterEeauPost'])->name('add.electriciter.eau');
     Route::get('/edit-electriciter-eau',[financiereController::class , 'editElectriciterEau'])->name('edit-electriciter-eau');
     
     Route::get('/add-materiaux',[financiereController::class , 'addMateriaux'])->name('add-materiaux');
