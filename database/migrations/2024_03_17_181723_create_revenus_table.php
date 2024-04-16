@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('nomProduit');
             $table->integer('prixRevenuProduit');
-            $table->integer('quantiterRevenu');
-            $table->integer('dateRevenu');
+            $table->string('quantiterRevenu');
+            $table->date('dateRevenu');
             $table->foreignId('financiere_id')
             ->constrained('financieres')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

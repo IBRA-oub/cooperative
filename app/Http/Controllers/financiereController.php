@@ -210,10 +210,23 @@ class financiereController extends Controller
         return view('financiere.message');
     }
 
-    // _____________________________________
+    // _________________Revenu____________________
     
     public function addRevenu(){
         return view('financiere.add-revenu');
+    }
+    public function addRevenuPost(Request $request){
+        $data = $request->validate([
+            'nomProduit' => 'required',
+            'quantiterRevenu' => 'required',
+            'prixRevenuProduit' => 'required',
+            'dateRevenu' => 'required'
+        ]);
+        $data['financiere_id'] = auth()->user()->id;
+        $this->financiereService->createRevenu($data);
+        
+        return redirect()->route('financiere-revenu')->with('success','Produit ajouter avec success');
+       
     }
     
     public function editRevenu(){

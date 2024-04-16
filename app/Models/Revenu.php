@@ -9,10 +9,7 @@ class Revenu extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nomProduit',
-        'prixRevenuProduit'
-    ]; 
+    protected $guarded = []; 
 
     public function financiere(){
         return $this->belongsTo(Financiere::class);

@@ -16,36 +16,39 @@
                 <div id="addProRevenu" class="  md:mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Ajout produit venter
                 </div>
 
-                <form action="">
+                <form action="{{route('add.revenu')}}" method="POST">
+                    @csrf
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
                             <label id="NomProAdd" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom Produit</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
+                                @error('nomProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
 
                         <div class="mb-4">
-                            <label id="quntiterAdd" for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
+                            <label id="quntiterAdd" for="quantiterRevenu" class="block text-white text-sm font-bold mb-2">Quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="quantiter" id="quantiter"  placeholder="20kg">
-                      
+                                name="quantiterRevenu" id="quantiterRevenu"  placeholder="20kg">
+                                @error('quantiterRevenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
                         <div class="mb-4">
-                            <label id="prixRevenuAdd" for="prixRevenu" class="block text-white text-sm font-bold mb-2">Prix de vente</label>
+                            <label id="prixRevenuAdd" for="prixRevenuProduit" class="block text-white text-sm font-bold mb-2">Prix de vente</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
-                                name="prixRevenu" id="prixRevenu"  placeholder="30dh">
-                            <p id=error_creater_id></p>
+                                name="prixRevenuProduit" id="prixRevenuProduit"  placeholder="30dh">
+                                @error('prixRevenuProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateRevenuAdd" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateRevenuAdd" for="dateRevenu" class="block text-white text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="date" id="date"  placeholder="3">
-                            <p id=error_creater_id></p>
+                                name="dateRevenu" id="dateRevenu"  placeholder="3">
+                                @error('dateRevenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
 

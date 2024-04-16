@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 use App\Models\Charge;
 use App\Models\Financiere;
+use App\Models\Revenu;
 
 class FinanciereRepository implements FinanciereRepositoryInterface
 {
@@ -46,5 +47,10 @@ class FinanciereRepository implements FinanciereRepositoryInterface
     {
         $charge = Charge::findOrFail($id);
         $charge->delete();
+    }
+    // ___________revenu_____________
+    public function storeRevenu(array $data){
+        return Revenu::create($data);
+        
     }
 }

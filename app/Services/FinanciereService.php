@@ -66,4 +66,11 @@ class FinanciereService implements FinanciereServiceInterface
     { 
         return $this->financiereRepository->delete($id);
     }
+
+    // ____________________revenu_____________________
+    public function createRevenu(array $data)
+    {
+        
+        return $this->financiereRepository->storeRevenu($data);
+    }
 }
