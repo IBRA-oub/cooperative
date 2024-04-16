@@ -80,6 +80,7 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::get('/edit-electriciter-eau/{id}',[financiereController::class , 'editElectriciterEau'])->name('edit-electriciter-eau');
     Route::put('/update-electriciterEau/{id}',[financiereController::class , 'updateElectriciterEau'])->name('update.electriciterEau');
     
+    Route::get('/financiere-location',[financiereController::class , 'redLocation'])->name('financiere-location');
     Route::get('/add-materiaux',[financiereController::class , 'addMateriaux'])->name('add-materiaux');
     Route::get('/add-location',[financiereController::class , 'addLocation'])->name('add-location');
     Route::post('/add-location-post',[financiereController::class , 'addLocationPost'])->name('add.location');
@@ -88,8 +89,13 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::put('/update-location/{id}',[financiereController::class , 'updateLocation'])->name('update.location');
     
     Route::get('/financiere-materiaux',[financiereController::class , 'redMateriaux'])->name('financiere-materiaux');
+    Route::get('/add-materiaux',[financiereController::class , 'addMateriaux'])->name('add-materiaux');
+    Route::post('/add-materiaux-post',[financiereController::class , 'addMateriauxPost'])->name('add.materiaux');
+    Route::delete('/materiaux-delete/{id}',[financiereController::class , 'materiauxDelete'])->name('materiaux.delete');
+    Route::get('/edit-materiaux/{id}',[financiereController::class , 'editmateriaux'])->name('edit-materiaux');
+    Route::put('/update-materiaux/{id}',[financiereController::class , 'updatemateriaux'])->name('update.materiaux');
+    
     Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');
-    Route::get('/financiere-location',[financiereController::class , 'redLocation'])->name('financiere-location');
 });
 
 // __________________________planner__________________________

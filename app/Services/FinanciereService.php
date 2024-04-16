@@ -41,6 +41,18 @@ class FinanciereService implements FinanciereServiceInterface
     {
         return $this->financiereRepository->allLocation();
     }
+
+    // ______________________materiaux_______________
+
+    public function createMateriaux(array $data)
+    {
+        $data['type_id']= 4;
+        return $this->financiereRepository->store($data);
+    }
+    public function allMateriaux()
+    {
+        return $this->financiereRepository->allMateriaux();
+    }
     public function find($id)
     { 
         return $this->financiereRepository->find($id);

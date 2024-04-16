@@ -150,25 +150,61 @@ class financiereController extends Controller
         return redirect()->route('financiere-location')->with('success','Location mise a jour avec success');
     }
     // ______________________________________________
-    public function dashboard(){
-        return view('financiere.financiere-dashboard');
-    }
-    public function redRevenu(){
-        return view('financiere.revenu');
-    }
-    // _________________________________
+   
 
     
     public function redMateriaux(){
-        return view('financiere.materiaux');
+        $Materiaux = $this->financiereService->allMateriaux();
+        return view('financiere.materiaux',['Materiaux' => $Materiaux]);
+        
     }
-    public function redCharge(){
-        return view('financiere.charge');
+
+    public function addMateriaux(){
+        return view('financiere.add-materiaux');
     }
+    public function addMateriauxPost(Request $request){
+        $data = $request->validate([
+            'nom' => 'required',
+            'quantiter' => 'required',
+            'prix' => 'required',
+            'date' => 'required'
+        ]);
+        $this->financiereService->createMateriaux($data);
+        
+        return redirect()->route('financiere-materiaux')->with('success','Materiaux ajouter avec success');
+       
+    }
+
+   
+    
+    public function materiauxDelete($id){
+        $this->financiereService->delete($id);
+        return redirect()->route('financiere-materiaux')->with('success','materiaux supprimer avec success');
+    }
+
     
     
 
+    public function editMateriaux($id){
+        $materiaux = $this->financiereService->find($id);
+        return view('financiere.edit-materiaux',['materiaux' => $materiaux]);
+    }
+    public function updatemateriaux(Request $request,$id){
+        $data = $request->validate([
+            'nom' => 'required',
+            'quantiter' => 'required',
+            'prix' => 'required',
+            'date' => 'required'
+        ]);
+        $this->financiereService->update($data,$id);
+        return redirect()->route('financiere-materiaux')->with('success','materiaux mise a jour avec success');
+    }
+    
     // ___________________________________
+    
+    public function redCharge(){
+        return view('financiere.charge');
+    }
     
     public function message(){
         return view('financiere.message');
@@ -179,19 +215,21 @@ class financiereController extends Controller
     public function addRevenu(){
         return view('financiere.add-revenu');
     }
-    public function addMateriaux(){
-        return view('financiere.add-materiaux');
-    }
-   
     
-    // _____________________________
     public function editRevenu(){
         return view('financiere.edit-revenu');
     }
-    public function editMateriaux(){
-        return view('financiere.edit-materiaux');
+   
+    public function redRevenu(){
+        return view('financiere.revenu');
     }
     
+    // _____________________________
+    
+    public function dashboard(){
+        return view('financiere.financiere-dashboard');
+    }
+    // _________________________________
     
    
 }

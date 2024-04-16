@@ -80,30 +80,30 @@
 
                         <tbody class="sm:w-full">
 
-
+                            @foreach($Materiaux as $mater)
                             <tr class=" pt-10 sm:pt-0  w-full border-b border-blue-400">
 
                                 <td class=" text-center ">
-                                    2
+                                    {{$mater->id}}
                                 </td>
                                 <td class=" text-center ">
-                                    za3tar
+                                    {{$mater->nom}}
                                 </td>
                                 <td class=" text-center ">
-                                    50 kg
+                                    {{$mater->quantiter}}
                                 </td>
 
                                 <td class=" text-center ">
-                                    70dh
+                                    {{$mater->prix}}dh
                                 </td>
                                 <td class=" text-center ">
-                                    2034-56-6
+                                    {{$mater->date}}
                                 </td>
 
 
 
                                 <td class="  text-center flex justify-center ">
-                                    <form action="" method="POST">
+                                    <form action="{{ route('materiaux.delete', ['id' => $mater->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -111,7 +111,7 @@
 
                                         </button>
                                     </form>
-                                    <a href="/edit-materiaux">
+                                    <a href="{{ route('edit-materiaux', ['id' => $mater->id]) }}">
                                         <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
 
                                             <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -120,7 +120,7 @@
                                 </td>
 
                             </tr>
-
+                            @endforeach
 
                         </tbody>
 
@@ -144,37 +144,38 @@
                         </thead>
                         <tbody class="block  w-full">
 
+                            @foreach($Materiaux as $mater)
                             <tr class="block pt-10 sm:pt-0   w-full ">
 
                                 <td data-label="id"
                                     class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                                    3
+                                    {{$mater->id}}
                                 </td>
                                 <td data-label="nom"
                                     class="border-b before:content-['nom'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                                    za3tar
+                              {{$mater->nom}}
                                 </td>
                                 <td data-label="quantiter"
                                     class="border-b before:content-['quantiter'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                                    40kg
+                              {{$mater->quantiter}}
                                 </td>
                                 <td data-label="Prix"
                                     class="border-b before:content-['Prix'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                                    20dh
+                              {{$mater->prix}}dh
                                 </td>
                                 <td data-label="date"
                                     class="border-b before:content-['date'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                                    2034-56-6
+                              {{$mater->date}}
                                 </td>
                                 <td data-label="Action"
                                     class="border-b before:content-['Action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
 
-                                    <form action="" method="POST">
+                                    <form action="{{ route('materiaux.delete', ['id' => $mater->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -182,7 +183,7 @@
 
                                         </button>
                                     </form>
-                                    <a href="/edit-materiaux">
+                                    <a href="{{ route('edit-materiaux', ['id' => $mater->id]) }}">
                                         <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
 
                                             <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -195,7 +196,7 @@
 
 
                             </tr>
-
+                            @endforeach
 
                         </tbody>
                     </table>
