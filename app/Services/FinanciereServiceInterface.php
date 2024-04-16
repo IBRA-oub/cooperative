@@ -19,4 +19,9 @@ interface FinanciereServiceInterface
     // _________________revenu______________
 
     public function createRevenu(array $data);
+    
+    public function allRevenu();
+    public function deleteRevenu($id);
+    public function findRevenu($id);
+    public function updateRevenu(array $data ,$id);
 }

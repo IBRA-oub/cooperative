@@ -53,4 +53,27 @@ class FinanciereRepository implements FinanciereRepositoryInterface
         return Revenu::create($data);
         
     }
+
+    public function allRevenu()
+    {
+        return Revenu::all();
+    }
+
+    public function deleteRevenu($id)
+    {
+        $charge = Revenu::findOrFail($id);
+        $charge->delete();
+    }
+
+    public function findRevenu($id)
+    {
+        return Revenu::findOrFail($id);
+    }
+
+    public function updateRevenu(array $data, $id)
+    {
+    $charge = Revenu::findOrFail($id);
+    $charge->update($data);
+    return $charge;
+    }
 }

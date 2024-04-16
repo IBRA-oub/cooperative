@@ -181,10 +181,10 @@ class financiereController extends Controller
         $this->financiereService->delete($id);
         return redirect()->route('financiere-materiaux')->with('success','materiaux supprimer avec success');
     }
-
     
     
-
+    
+    
     public function editMateriaux($id){
         $materiaux = $this->financiereService->find($id);
         return view('financiere.edit-materiaux',['materiaux' => $materiaux]);
@@ -209,7 +209,7 @@ class financiereController extends Controller
     public function message(){
         return view('financiere.message');
     }
-
+    
     // _________________Revenu____________________
     
     public function addRevenu(){
@@ -222,19 +222,41 @@ class financiereController extends Controller
             'prixRevenuProduit' => 'required',
             'dateRevenu' => 'required'
         ]);
-        $data['financiere_id'] = auth()->user()->id;
+        $data['financiere_id'] = auth()->user()->financiere->id;
         $this->financiereService->createRevenu($data);
         
         return redirect()->route('financiere-revenu')->with('success','Produit ajouter avec success');
        
     }
     
-    public function editRevenu(){
-        return view('financiere.edit-revenu');
+   
+    public function editRevenu($id){
+        $Revenu = $this->financiereService->findRevenu($id);
+        return view('financiere.edit-revenu',['Revenu' => $Revenu]);
     }
    
     public function redRevenu(){
-        return view('financiere.revenu');
+        $Revenus = $this->financiereService->allRevenu();
+        return view('financiere.revenu',['Revenus' => $Revenus]);
+        
+    }
+    public function revenuDelete($id){
+        $this->financiereService->deleteRevenu($id);
+        return redirect()->route('financiere-revenu')->with('success','produit supprimer avec success');
+    }
+
+    public function updateRevenu(Request $request,$id){
+        $data = $request->validate([
+            'nomProduit' => 'required',
+            'quantiterRevenu' => 'required',
+            'prixRevenuProduit' => 'required',
+            'dateRevenu' => 'required'
+        ]);
+        
+        $this->financiereService->updateRevenu($data,$id);
+        
+        return redirect()->route('financiere-revenu')->with('success','Produit ajouter avec success');
+       
     }
     
     // _____________________________

@@ -16,36 +16,40 @@
                 <div id="eidteProRevenu" class="mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Edite produit venter
                 </div>
 
-                <form action="">
+                <form action="{{route('update.revenu',['id'=>$Revenu->id])}}" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
                             <label id="nomProEdit" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom Produit</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
+                                name="nomProduit" id="nomProduit"  value="{{$Revenu->nomProduit}}">
+                                @error('nomProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
 
                         <div class="mb-4">
-                            <label id="quntiterEdite" for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
+                            <label id="quntiterEdite" for="quantiterRevenu" class="block text-white text-sm font-bold mb-2">Quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="quantiter" id="quantiter"  placeholder="20kg">
-                      
+                                name="quantiterRevenu" id="quantiterRevenu"  value="{{$Revenu->quantiterRevenu}}">
+                                @error('quantiterRevenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
                         <div class="mb-4">
-                            <label id="prixRevenuEdite" for="prixRevenu" class="block text-white text-sm font-bold mb-2">Prix de vanter</label>
+                            <label id="prixRevenuEdite" for="prixRevenuProduit" class="block text-white text-sm font-bold mb-2">Prix de vanter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
-                                name="prixRevenu" id="prixRevenu"  placeholder="30dh">
-                            <p id=error_creater_id></p>
+                                name="prixRevenuProduit" id="prixRevenuProduit"  value="{{$Revenu->prixRevenuProduit}}">
+                                @error('prixRevenuProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateEdite" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateEdite" for="dateRevenu" class="block text-white text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="date" id="date"  placeholder="3">
-                            <p id=error_creater_id></p>
+                                name="dateRevenu" id="dateRevenu"  value="{{$Revenu->dateRevenu}}">
+                                @error('dateRevenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
 

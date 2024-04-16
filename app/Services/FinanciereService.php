@@ -73,4 +73,24 @@ class FinanciereService implements FinanciereServiceInterface
         
         return $this->financiereRepository->storeRevenu($data);
     }
+
+    public function allRevenu()
+    {
+        return $this->financiereRepository->allRevenu();
+    }
+
+    public function deleteRevenu($id)
+    { 
+        return $this->financiereRepository->deleteRevenu($id);
+    }
+
+    public function findRevenu($id)
+    { 
+        return $this->financiereRepository->findRevenu($id);
+    }
+
+    public function updateRevenu(array $data ,$id)
+    { 
+        return $this->financiereRepository->updateRevenu($data,$id);
+    }
 }

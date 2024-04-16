@@ -17,4 +17,9 @@ interface FinanciereRepositoryInterface
     // __________________revenu____________
 
     public function storeRevenu(array $data);
+
+    public function allRevenu();
+    public function deleteRevenu($id);
+    public function findRevenu($id);
+    public function updateRevenu(array $data, $id);
 }

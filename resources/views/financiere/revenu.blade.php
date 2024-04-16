@@ -40,35 +40,35 @@
                          <th id="Action" class="">plus options</th>
                      </tr>
                  </thead>
-                 {{-- @foreach($allUsers as $user) --}}
+                 @foreach($Revenus as $revenu)
                  <tbody class="sm:w-full">
                   
  
                      <tr class=" pt-10 sm:pt-0  w-full border-b border-[#31363F]">
  
                          <td class=" text-center ">
-                             {{-- {{$user->id}} --}}
-                             4
+                             {{$revenu->id}}
+                            
                          </td>
                          <td class=" text-center ">
-                            {{-- {{$user->fullName}} --}}
-                            za3tar
+                            {{$revenu->nomProduit}}
+                           
                          </td>
                          <td class=" text-center ">
-                            {{-- {{$user->email}} --}}
-                           2kg
+                            {{$revenu->quantiterRevenu}}
+                           
                          </td>
                          <td class=" text-center ">
-                            {{-- {{$user->email}} --}}
-                           70 dh
+                            {{$revenu->prixRevenuProduit}}
+                            dh
                          </td>
                          <td class=" text-center ">
-                            {{-- {{$user->email}} --}}
-                           2023-3-6
+                            {{$revenu->dateRevenu}}
+                           
                          </td>
                        
                             <td class="text-center flex justify-center">
-                                <form action="" method="POST">
+                                <form action="{{ route('revenu.delete', ['id' => $revenu->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                  <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -78,7 +78,7 @@
      
                                  </button>
                                 </form>
-                                <a href="/edit-revenu">
+                                <a href="{{ route('edit-revenu', ['id' => $revenu->id]) }}">
                                  <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                     
                                         <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -90,7 +90,7 @@
                
  
                  </tbody>
-                 {{-- @endforeach --}}
+                 @endforeach
              </table>
          </div>
          
@@ -109,35 +109,40 @@
                      </tr>
                  </thead>
                  <tbody class="block  w-full">
-                    {{-- @foreach($allUsers as $user) --}}
+                    @foreach($Revenus as $revenu)
                      <tr class="block pt-10 sm:pt-0   w-full ">
  
                          <td data-label="id"
                              class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                           {{-- {{$user->id}} --}}
-                           3
+                           {{$revenu->id}}
+                           
                          </td>
                          <td data-label="nomProduit" class="border-b before:content-['nomProduit'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                            {{-- {{$user->fullName}} --}}
-                            za3tar
+                            {{$revenu->nom}}
+                           
                          </td>
                          <td data-label="quantiter" class="border-b before:content-['quantiter'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                            {{-- {{$user->fullName}} --}}
-                            2kg
+                            {{$revenu->quantiter}}
+                            
                          </td>
                          <td data-label="prix" class="border-b before:content-['prix'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                            {{-- {{$user->fullName}} --}}
-                           70 dh
+                            {{$revenu->prix}}
+                            dh
+                         </td>
+                         <td data-label="date" class="border-b before:content-['date'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                              text-right">
+                            {{$revenu->date}}
+                           
                          </td>
                          
                          <td data-label="Action"
                              class=" border-b before:content-['action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                             
 
-                             <form action="" method="POST">
+                             <form action="{{ route('revenu.delete', ['id' => $revenu->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -147,7 +152,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-revenu">
+                            <a href="{{ route('edit-revenu', ['id' => $revenu->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -158,7 +163,7 @@
                          </td>
                          
                      </tr>
-                  {{-- @endforeach --}}
+                  @endforeach
  
                  </tbody>
              </table>

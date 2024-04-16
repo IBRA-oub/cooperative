@@ -59,11 +59,15 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
 Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function() {
     
     Route::get('/financiere-dashboard',[financiereController::class , 'dashboard'])->name('financiere-dashboard');
-    Route::get('/financiere-revenu',[financiereController::class , 'redRevenu'])->name('financiere-revenu');
     Route::get('/financiere-message',[financiereController::class , 'message'])->name('financiere-message');
+    
+    Route::get('/financiere-revenu',[financiereController::class , 'redRevenu'])->name('financiere-revenu');
     Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
     Route::post('/add-revenu-post',[financiereController::class , 'addRevenuPost'])->name('add.revenu');
-    Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
+    Route::delete('/revenu-delete/{id}',[financiereController::class , 'revenuDelete'])->name('revenu.delete');
+    Route::get('/edit-revenu/{id}',[financiereController::class , 'editRevenu'])->name('edit-revenu');
+    Route::put('/update-revenu/{id}',[financiereController::class , 'updateRevenu'])->name('update.revenu');
+
     
     Route::get('/edit-materiaux',[financiereController::class , 'editMateriaux'])->name('edit-materiaux');
     
