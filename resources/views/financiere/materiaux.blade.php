@@ -10,14 +10,14 @@
             <a href="/financiere-materiel" class="mt-32">
                 <div
                     class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-emerald-200 border-black border-t-2 border-l-2 hover:rounded">
-                    <h3 class="text-center text-black py-5 col-end-4 ">materiel</h3>
+                    <h3 id="materiel" class="text-center text-black py-5 col-end-4 ">materiel</h3>
                 </div>
             </a>
 
             <a href="/financiere-electriciter-eau" class="mt-10">
                 <div
                     class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-purple-200 border-black border-t-2 border-l-2 hover:rounded">
-                    <h3 class="text-center text-black py-5 col-end-4 ">Electriciter <br> eau</h3>
+                    <h3 id="ElectriciterEau" class="text-center text-black py-5 col-end-4 ">Electriciter <br> eau</h3>
                 </div>
             </a>
 
@@ -25,14 +25,14 @@
                 <div
                     class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-yellow-200 border-black border-t-2 border-l-2 hover:rounded">
                   
-                    <h3 class="text-center text-black py-5 col-end-4 ">location</h3>
+                    <h3 id="Location" class="text-center text-black py-5 col-end-4 ">location</h3>
                 </div>
             </a>
             <a class="mt-10">
                 <div
                     class="border flex md:grid grid-cols-5 rounded-lg shadow-lg bg-rose-200 shadow-rose-200 border-black border-t-2 border-l-2 hover:rounded">
                     
-                    <h3 class="text-center text-black py-5 col-end-4 ">materiaux</h3>
+                    <h3 id="materiaux" class="text-center text-black py-5 col-end-4 ">materiaux</h3>
                 </div>
             </a>
 

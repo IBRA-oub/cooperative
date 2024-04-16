@@ -14,7 +14,7 @@
         <div class="container mx-auto py-8">
             <div class="w-80 ml-3  my-10 md:my-0 md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.814)">
 
-                <div id="" class="mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Ajouter Materiel
+                <div id="addMate" class="mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Ajouter Materiel
                 </div>
 
                 <form action="{{route('add.materiel')}}" method="POST">
@@ -22,7 +22,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="" for="nom" class="block text-white text-sm font-bold mb-2">nom</label>
+                            <label id="nomProAch" for="nom" class="block text-white text-sm font-bold mb-2">nom</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nom" id="nom"  placeholder="ligant">
                                 @error('nom')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -31,7 +31,7 @@
 
 
                         <div class="mb-4">
-                            <label id="" for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
+                            <label id="qunatiterAch" for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="quantiter" id="quantiter"  placeholder="20 îèces">
                                 @error('quantiter')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -39,14 +39,14 @@
                         </div>
 
                         <div class="mb-4">
-                            <label id="" for="prix" class="block text-white text-sm font-bold mb-2">Prix </label>
+                            <label id="prixAchat" for="prix" class="block text-white text-sm font-bold mb-2">Prix </label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="prix" id="prix"  placeholder="30dh">
                                 @error('prix')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label id="date" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateAchat" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="date" id="date"  placeholder="3">
                                 @error('date')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -55,7 +55,7 @@
 
                       
                         <div class="mb-4 flex justify-center">
-                            <button id=""
+                            <button id="saveAchat"
                                 class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
                                 Save
                             </button>

@@ -9,26 +9,26 @@
        
         <a href="/financiere-materiel"  class="mt-32">
       <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-emerald-200 border-black border-t-2 border-l-2 hover:rounded">
-          <h3 class="text-center text-black py-5 col-end-4 ">materiel</h3>
+          <h3 id="materiel" class="text-center text-black py-5 col-end-4 ">materiel</h3>
       </div>
       </a>
   
       <a  class="mt-10">
       <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg bg-purple-200 shadow-purple-200 border-black border-t-2 border-l-2 hover:rounded">
-          <h3 class="text-center text-black py-5 col-end-4 ">Electriciter <br> eau</h3>
+          <h3 id="ElectriciterEau" class="text-center text-black py-5 col-end-4 ">Electriciter <br> eau</h3>
       </div>
       </a>
   
       <a href="/financiere-location" class="mt-10">
       <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-yellow-200 border-black border-t-2 border-l-2 hover:rounded">
             <div class="translate-y-4 pl-8"> <Image alt="instagram logo" width="30" height="30" src="https://sahilnetic.xyz/instagram.png" /></div>
-          <h3 class="text-center text-black py-5 col-end-4 pl-2">location</h3>
+          <h3 id="Location" class="text-center text-black py-5 col-end-4 pl-2">location</h3>
       </div>
      </a>
       <a href="/financiere-materiaux" class="mt-10">
       <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-rose-200 border-black border-t-2 border-l-2 hover:rounded">
             <div class="translate-y-4 pl-8"> <Image alt="instagram logo" width="30" height="30" src="https://sahilnetic.xyz/css.png" /></div>
-          <h3 class="text-center text-black py-5 col-end-4 pl-2">materiaux</h3>
+          <h3 id="materiaux" class="text-center text-black py-5 col-end-4 pl-2">materiaux</h3>
       </div>
       </a>
     
@@ -39,7 +39,7 @@
  
      <div class="absolute right-10  sm:top-10 sm:right-10 ">
         <a href="/add-electriciter-eau">
-        <button id="" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
+        <button id="addProAch" class=" rounded-lg px-10 py-3 bg-[#31363F] font-bold text-white hover:bg-green-500   hover:shadow-lg hover:shadow-black active:opacity-[0.95]">
             ajouter 
         </button>
     </a>
@@ -63,12 +63,12 @@
                  <thead class="  sm:w-full">
                      <tr class="bg-[#31363F] text-white h-[40px]">
                          <th id="idA" class="">ID</th>
-                         <th id=""  class="">electriciter/eau </th>
+                         <th id="NomElectriciterEau"  class="">electriciter/eau </th>
                          
-                         <th id="" class="">prix </th>
-                         <th id="" class="">date </th>
+                         <th id="prixAch" class="">prix </th>
+                         <th id="dateAch" class="">date </th>
                         
-                         <th id="" class="">plus options</th>
+                         <th id="actionsAch" class="">plus options</th>
                      </tr>
                  </thead>
               

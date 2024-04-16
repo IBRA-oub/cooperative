@@ -14,8 +14,8 @@
                     <div class="w-80 ml-3  my-10 md:my-0 md:w-[60%] md:mx-auto rounded shadow"
                         style="background-color: rgba(116, 116, 116, 0.885)">
 
-                        <div id=""
-                            class="mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Edit
+                        <div id="editeElecEau"
+                            class="mx-16 py-4 px-8 text-white text-3xl font-bold border-b border-grey-500 text-center">Edit les charge
                             Electriciter/Eau
                         </div>
 
@@ -25,7 +25,7 @@
                             <div class="py-4 px-8">
 
                                 <div class="mb-4">
-                                    <label id="" for="nom" class="block text-white text-sm font-bold mb-2">nom
+                                    <label id="nomProAchEdi" for="nom" class="block text-white text-sm font-bold mb-2">nom
                                     </label>
                                     <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                         name="nom" id="nom" value="{{ $electriciterEau->nom }}">
@@ -40,17 +40,17 @@
 
 
                                 <div class="mb-4">
-                                    <label id="" for="prix"
+                                    <label id="prixAchaEdit" for="prix"
                                         class="block text-white text-sm font-bold mb-2">Prix </label>
                                     <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                         name="prix" id="prix" value="{{ $electriciterEau->prix }}">
-                                    @error('quantiter')
+                                    @error('prix')
                                         <p id="error_creater_id" class="text-red-600">{{ $message }}</p>
                                     @enderror
                                 </div>
 
                                 <div class="mb-4">
-                                    <label id="" for="date"
+                                    <label id="dateAchatEdit" for="date"
                                         class="block text-white text-sm font-bold mb-2">Date</label>
                                     <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                         name="date" id="date" value="{{ $electriciterEau->date }}">

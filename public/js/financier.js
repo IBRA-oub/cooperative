@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("statistique1").textContent = "إحصائيات";
         }
         if (document.getElementById("revenu")) {
-            document.getElementById("revenu").textContent = "الدخل";
+            document.getElementById("revenu").textContent = "الإنتاج";
         }
 
         if (document.getElementById("revenu1")) {
-            document.getElementById("revenu1").textContent = "الدخل";
+            document.getElementById("revenu1").textContent = "الإنتاج";
         }
 
         if (document.getElementById("charge")) {
@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("addProRevenu")) {
             document.getElementById("addProRevenu").textContent =
-                "إضافة المنتج الرابح";
-            document.getElementById("addProRevenu").classList.add("text-right");
+                "إضافة المنتج ";
+            document.getElementById("addProRevenu").classList.add("text-center");
         }
 
         if (document.getElementById("NomProAdd")) {
@@ -118,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("eidteProRevenu")) {
             document.getElementById("eidteProRevenu").textContent =
-                "تحديث المنتج الرابح";
+                "تحديث المنتج ";
             document
                 .getElementById("eidteProRevenu")
-                .classList.add("text-right");
+                .classList.add("text-center");
         }
 
         if (document.getElementById("nomProEdit")) {
@@ -154,19 +154,22 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("saveEdite").textContent = "    حفظ ";
         }
 
-        // _______________________achat page________________
+        // _______________________charge pages________________
 
         if (document.getElementById("addProAch")) {
             document.getElementById("addProAch").textContent =
-                " إضافة منتج للشراء";
+                "إضافة";
         }
 
         if (document.getElementById("idA")) {
             document.getElementById("idA").textContent = "معرف";
         }
+        if (document.getElementById("NomElectriciterEau")) {
+            document.getElementById("NomElectriciterEau").textContent = "الكهرباء / الماء";
+        }
 
         if (document.getElementById("NomProAch")) {
-            document.getElementById("NomProAch").textContent = "اسم المنتج";
+            document.getElementById("NomProAch").textContent = "اسم ";
         }
 
         if (document.getElementById("quantiterAch")) {
@@ -174,11 +177,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("prixAch")) {
-            document.getElementById("prixAch").textContent = " سعر الشراء";
+            document.getElementById("prixAch").textContent = " سعر ";
         }
 
         if (document.getElementById("dateAch")) {
-            document.getElementById("dateAch").textContent = "  تاريخ الشراء";
+            document.getElementById("dateAch").textContent = "  تاريخ ";
         }
 
         if (document.getElementById("actionsAch")) {
@@ -190,12 +193,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("addProdAchat")) {
             document.getElementById("addProdAchat").textContent =
-                "إضافة منتج للشراء";
-            document.getElementById("addProdAchat").classList.add("text-right");
+                "إضافة رسوم مواد ";
+            document.getElementById("addProdAchat").classList.add("text-center");
+        }
+        if (document.getElementById("addMate")) {
+            document.getElementById("addMate").textContent =
+                "إضافة رسوم معدات ";
+            document.getElementById("addMate").classList.add("text-center");
+        }
+        if (document.getElementById("addEleEau")) {
+            document.getElementById("addEleEau").textContent =
+                " إضافة رسوم كهرباء/ماء ";
+            document.getElementById("addEleEau").classList.add("text-center");
+        }
+        if (document.getElementById("addLoc")) {
+            document.getElementById("addLoc").textContent =
+                " إضافة رسوم الإيجار ";
+            document.getElementById("addLoc").classList.add("text-center");
         }
 
         if (document.getElementById("nomProAch")) {
-            document.getElementById("nomProAch").textContent = "اسم المنتج ";
+            document.getElementById("nomProAch").textContent = "اسم  ";
             document.getElementById("nomProAch").classList.add("text-right");
         }
 
@@ -205,12 +223,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("prixAchat")) {
-            document.getElementById("prixAchat").textContent = "سعر الشراء";
+            document.getElementById("prixAchat").textContent = "سعر ";
             document.getElementById("prixAchat").classList.add("text-right");
         }
 
         if (document.getElementById("dateAchat")) {
-            document.getElementById("dateAchat").textContent = " تاريخ الشراء ";
+            document.getElementById("dateAchat").textContent = " تاريخ  ";
             document.getElementById("dateAchat").classList.add("text-right");
         }
 
@@ -222,14 +240,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("EditeProAchat")) {
             document.getElementById("EditeProAchat").textContent =
-                "تحديث منتج للشراء";
+                "تحديث  رسوم مواد";
             document
                 .getElementById("EditeProAchat")
-                .classList.add("text-right");
+                .classList.add("text-center");
+        }
+
+        if (document.getElementById("EditeMAter")) {
+            document.getElementById("EditeMAter").textContent =
+                "تحديث  رسوم معدات";
+            document
+                .getElementById("EditeMAter")
+                .classList.add("text-center");
+        }
+        if (document.getElementById("editeElecEau")) {
+            document.getElementById("editeElecEau").textContent =
+                "تحديث  رسوم كهرباء/ماء";
+            document
+                .getElementById("editeElecEau")
+                .classList.add("text-center");
+        }
+        if (document.getElementById("editeLocation")) {
+            document.getElementById("editeLocation").textContent =
+                "تحديث  رسوم الإيجار";
+            document
+                .getElementById("editeLocation")
+                .classList.add("text-center");
         }
 
         if (document.getElementById("nomProAchEdi")) {
-            document.getElementById("nomProAchEdi").textContent = "اسم المنتج ";
+            document.getElementById("nomProAchEdi").textContent = "اسم  ";
             document.getElementById("nomProAchEdi").classList.add("text-right");
         }
 
@@ -241,13 +281,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("prixAchaEdit")) {
-            document.getElementById("prixAchaEdit").textContent = "سعر الشراء";
+            document.getElementById("prixAchaEdit").textContent = "سعر ";
             document.getElementById("prixAchaEdit").classList.add("text-right");
         }
 
         if (document.getElementById("dateAchatEdit")) {
             document.getElementById("dateAchatEdit").textContent =
-                " تاريخ الشراء ";
+                "التاريخ";
             document
                 .getElementById("dateAchatEdit")
                 .classList.add("text-right");
@@ -256,7 +296,22 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("saveEditAchat")) {
             document.getElementById("saveEditAchat").textContent = "حفظ ";
         }
+
+        // ________________charge page______________
+        if (document.getElementById("materiel")) {
+            document.getElementById("materiel").textContent = "معدات ";
+        }
+        if (document.getElementById("ElectriciterEau")) {
+            document.getElementById("ElectriciterEau").innerHTML = "الكهرباء<br/>الماء";
+        }
+        if (document.getElementById("Location")) {
+            document.getElementById("Location").textContent = "الإيجار ";
+        }
+        if (document.getElementById("materiaux")) {
+            document.getElementById("materiaux").textContent = "مواد ";
+        }
     }
+  
 
     function reinitialiserTexte1() {
         localStorage.setItem("langueF", "francaisF");
@@ -299,7 +354,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // _______________________revenu page________________
 
         if (document.getElementById("table1")) {
-            document.getElementById("table1").classList.add("lft");
+            document.getElementById("table1").classList.add("ltr");
 
             document.getElementById("table1").classList.remove("rtl");
         }
@@ -314,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("NomPro")) {
-            document.getElementById("NomPro").textContent = "nom de produit ";
+            document.getElementById("NomPro").textContent = "nom  ";
         }
 
         if (document.getElementById("quantiter")) {
@@ -344,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("NomProAdd")) {
-            document.getElementById("NomProAdd").textContent = "nom Produit ";
+            document.getElementById("NomProAdd").textContent = "nom  ";
             document.getElementById("NomProAdd").classList.remove("text-right");
         }
 
@@ -385,7 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("nomProEdit")) {
-            document.getElementById("nomProEdit").textContent = "nom Produit ";
+            document.getElementById("nomProEdit").textContent = "nom  ";
             document
                 .getElementById("nomProEdit")
                 .classList.remove("text-right");
@@ -425,6 +480,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("idA")) {
             document.getElementById("idA").textContent = "ID";
         }
+        if (document.getElementById("NomElectriciterEau")) {
+            document.getElementById("NomElectriciterEau").textContent = " electriciter/eau";
+        }
 
         if (document.getElementById("NomProAch")) {
             document.getElementById("NomProAch").textContent = " nom";
@@ -450,10 +508,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("addProdAchat")) {
             document.getElementById("addProdAchat").textContent =
-                "  Ajouter Materiaux";
-            document
-                .getElementById("addProdAchat")
-                .classList.remove("text-right");
+                "  Ajouter les charges de Materiaux";
+          
+        }
+        if (document.getElementById("addMate")) {
+            document.getElementById("addMate").textContent =
+                " Ajouter les charges de Materiel ";
+        }
+        if (document.getElementById("addEleEau")) {
+            document.getElementById("addEleEau").textContent =
+                " Ajouter les charges de Electriciter/Eau ";
+        }
+
+        if (document.getElementById("addLoc")) {
+            document.getElementById("addLoc").textContent =
+                "   Ajouter  les charges de Location ";
         }
 
         if (document.getElementById("nomProAch")) {
@@ -486,10 +555,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("EditeProAchat")) {
             document.getElementById("EditeProAchat").textContent =
-                "Edit";
+                "Edit les charges de materiaux";
+
+        }
+        if (document.getElementById("EditeMAter")) {
+            document.getElementById("EditeMAter").textContent =
+                " Edit les charges de materiel  ";
             document
-                .getElementById("EditeProAchat")
-                .classList.remove("text-right");
+                .getElementById("EditeMAter")
+                .classList.add("text-center");
+        }
+
+        if (document.getElementById("editeElecEau")) {
+            document.getElementById("editeElecEau").textContent =
+                "Edit les charge Electriciter/Eau";
+           
+        }
+        if (document.getElementById("editeLocation")) {
+            document.getElementById("editeLocation").textContent =
+                "   Edit les charges  Location";
+           
         }
 
         if (document.getElementById("nomProAchEdi")) {
@@ -524,6 +609,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("saveEditAchat")) {
             document.getElementById("saveEditAchat").textContent = "save ";
+        }
+        // ____________________________charge____________________
+        if (document.getElementById("materiel")) {
+            document.getElementById("materiel").textContent = "Materiel ";
+        }
+        if (document.getElementById("ElectriciterEau")) {
+            document.getElementById("ElectriciterEau").innerHTML = "Electriciter<br/>eau";
+
+        }
+        if (document.getElementById("Location")) {
+            document.getElementById("Location").textContent = "Location ";
+        }
+        if (document.getElementById("materiaux")) {
+            document.getElementById("materiaux").textContent = "Materiaux ";
         }
     }
 
