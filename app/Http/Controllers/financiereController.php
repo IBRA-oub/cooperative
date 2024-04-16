@@ -103,6 +103,53 @@ class financiereController extends Controller
     }
 
     // _____________________________________________________
+
+    // ___________________Location___________________
+
+   
+    public function addLocation(){
+        return view('financiere.add-location');
+    }
+    public function redLocation(){
+        
+        $locations = $this->financiereService->allLocation();
+        return view('financiere.location',['locations' => $locations]);
+        
+       
+    }
+    public function addLocationPost(Request $request){
+        $data = $request->validate([
+            'nom' => 'required',
+            'prix' => 'required',
+            'date' => 'required'
+        ]);
+        $this->financiereService->createLocation($data);
+        
+        return redirect()->route('financiere-location')->with('success',' Location charge ajouter avec success');
+        
+    }
+    public function locationDelete($id){
+        $this->financiereService->delete($id);
+        return redirect()->route('financiere-location')->with('success','location supprimer avec success');
+    }
+
+    
+    
+
+    public function editLocation($id){
+        $location = $this->financiereService->find($id);
+        return view('financiere.edit-location',['location' => $location]);
+    }
+    public function updateLocation(Request $request,$id){
+        $data = $request->validate([
+            'nom' => 'required',
+            'prix' => 'required',
+            'date' => 'required'
+        ]);
+        $this->financiereService->update($data,$id);
+        return redirect()->route('financiere-location')->with('success','Location mise a jour avec success');
+    }
+    // ______________________________________________
     public function dashboard(){
         return view('financiere.financiere-dashboard');
     }
@@ -119,9 +166,7 @@ class financiereController extends Controller
         return view('financiere.charge');
     }
     
-    public function redLocation(){
-        return view('financiere.location');
-    }
+    
 
     // ___________________________________
     
@@ -137,9 +182,7 @@ class financiereController extends Controller
     public function addMateriaux(){
         return view('financiere.add-materiaux');
     }
-    public function addLocation(){
-        return view('financiere.add-location');
-    }
+   
     
     // _____________________________
     public function editRevenu(){
@@ -149,8 +192,6 @@ class financiereController extends Controller
         return view('financiere.edit-materiaux');
     }
     
-    public function editLocation(){
-        return view('financiere.edit-location');
-    }
+    
    
 }

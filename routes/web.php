@@ -65,7 +65,6 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::get('/edit-revenu',[financiereController::class , 'editRevenu'])->name('edit-revenu');
     
     Route::get('/edit-materiaux',[financiereController::class , 'editMateriaux'])->name('edit-materiaux');
-    Route::get('/edit-location',[financiereController::class , 'editLocation'])->name('edit-location');
     
     Route::get('/financiere-materiel',[financiereController::class , 'redMateriel'])->name('financiere-materiel');
     Route::get('/add-materiel',[financiereController::class , 'addMateriel'])->name('add-materiel');
@@ -83,6 +82,10 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     
     Route::get('/add-materiaux',[financiereController::class , 'addMateriaux'])->name('add-materiaux');
     Route::get('/add-location',[financiereController::class , 'addLocation'])->name('add-location');
+    Route::post('/add-location-post',[financiereController::class , 'addLocationPost'])->name('add.location');
+    Route::delete('/location-delete/{id}',[financiereController::class , 'locationDelete'])->name('location.delete');
+    Route::get('/edit-location/{id}',[financiereController::class , 'editLocation'])->name('edit-location');
+    Route::put('/update-location/{id}',[financiereController::class , 'updateLocation'])->name('update.location');
     
     Route::get('/financiere-materiaux',[financiereController::class , 'redMateriaux'])->name('financiere-materiaux');
     Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');

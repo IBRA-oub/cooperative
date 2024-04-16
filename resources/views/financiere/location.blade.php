@@ -74,28 +74,28 @@
               
                  <tbody class="sm:w-full">
                   
- 
+                    @foreach($locations as $location)
                      <tr class=" pt-10 sm:pt-0  w-full border-b border-blue-400">
  
                          <td class=" text-center ">
-                             2
+                             {{$location->id}}
                          </td>
                          <td class=" text-center ">
-                            oneHand2-agadir
+                            {{$location->nom}}
                          </td>
                         
                          
                          <td class=" text-center ">
-                         70dh
+                            {{$location->prix}}dh
                           </td>
                          <td class=" text-center ">
-                         2034-56-6
+                            {{$location->date}}
                           </td>
                          
  
                        
                          <td class="  text-center flex justify-center ">
-                            <form action="" method="POST">
+                            <form action="{{ route('location.delete', ['id' => $location->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -105,7 +105,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-location">
+                            <a href="{{ route('edit-location', ['id' => $location->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -114,7 +114,7 @@
                          </td>
                        
                      </tr>
-               
+                     @endforeach
  
                  </tbody>
                
@@ -139,28 +139,28 @@
                  <tbody class="block  w-full">
                     
                      <tr class="block pt-10 sm:pt-0   w-full ">
- 
+                        @foreach($locations as $location)
                          <td data-label="id"
                              class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                          3
+                          {{$location->id}}
                          </td>
                          <td data-label="nom-ville" class="border-b before:content-['nom-ville'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           oneHand2-agadir
+                              {{$location->nom}}
                          </td>
                        
                          <td data-label="Prix" class="border-b before:content-['Prix'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           20dh
+                              {{$location->prix}}dh
                          </td>
                          <td data-label="date" class="border-b before:content-['date'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
-                           2034-56-6
+                              {{$location->date}}
                          </td>
                          <td data-label="Action" class="border-b before:content-['Action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                               
-                              <form action="" method="POST">
+                              <form action="{{ route('location.delete', ['id' => $location->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                              <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -170,7 +170,7 @@
  
                              </button>
                             </form>
-                            <a href="/edit-achat">
+                            <a href="{{ route('edit-location', ['id' => $location->id]) }}">
                              <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                 
                                     <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -184,7 +184,7 @@
                               
                      </tr>
                   
- 
+                     @endforeach
                  </tbody>
              </table>
          </div>

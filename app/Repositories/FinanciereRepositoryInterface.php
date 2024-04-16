@@ -8,6 +8,7 @@ interface FinanciereRepositoryInterface
     public function allMateriel();
 
     public function allElectriciterEau();
+    public function allLocation();
     public function find($id);
     public function update(array $data, $id);
     public function delete($id);

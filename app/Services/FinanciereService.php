@@ -32,7 +32,15 @@ class FinanciereService implements FinanciereServiceInterface
     {
         return $this->financiereRepository->allElectriciterEau();
     }
-    
+    // ______________________location________________
+    public function createLocation(array $data){
+        $data['type_id']= 3;
+        return $this->financiereRepository->store($data);
+    }
+    public function allLocation()
+    {
+        return $this->financiereRepository->allLocation();
+    }
     public function find($id)
     { 
         return $this->financiereRepository->find($id);

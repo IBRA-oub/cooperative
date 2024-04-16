@@ -22,6 +22,10 @@ class FinanciereRepository implements FinanciereRepositoryInterface
     {
         return Charge::all()->where('type_id', 2);
     }
+    public function allLocation()
+    {
+        return Charge::all()->where('type_id', 3);
+    }
 
     public function find($id)
     {
