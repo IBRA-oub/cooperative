@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // __________________periode________________
 
         if (document.getElementById("periode")) {
-            document.getElementById("periode").textContent = "période";
+            document.getElementById("periode").textContent = "période:";
             document.getElementById("periode").classList.remove("rtl");
             document.getElementById("periode").classList.add("ltr");
         }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('periodes', function (Blueprint $table) {
             $table->id();
+            $table->string('titre');
             $table->date('dateDepart');
             $table->date('dateStop');
             $table->foreignId('planner_id')

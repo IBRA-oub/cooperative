@@ -9,8 +9,7 @@ class produit_planter extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nom'
+    protected $guarded = [
     ];
     public function periode(){
         return $this->belongsTo(Periode::class);

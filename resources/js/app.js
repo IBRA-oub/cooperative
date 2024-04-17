@@ -94,8 +94,15 @@ const loginBTn = document.getElementById("loginBTn");
 function traduireEnArabe() {
     // _______________welcome page tradution___________
 
-    dashboard.textContent = "لوحة المعلومات";
-    login.textContent = "تسجيل الدخول";
+    if (dashboard) {
+        
+        dashboard.textContent = "لوحة المعلومات";
+    }
+    if (login) {
+        
+        login.textContent = "تسجيل الدخول";
+    }
+    
     hero.textContent = " معًا، نزرع النجاح";
     statistique.textContent = "إحصائيات التعاونية  ";
     dernierAnnonce.textContent = "الإعلانات الأخيرة";
@@ -115,8 +122,17 @@ function traduireEnArabe() {
 function reinitialiserTexte() {
     // _______________welcome page tradution___________
 
-    dashboard.textContent = "Dashboard";
-    login.textContent = "Login";
+    if (dashboard) {
+        
+        dashboard.textContent = "Dashboard";
+    }
+    if (login) {
+        
+        login.textContent = "Login";
+    }
+
+  
+   
     hero.textContent = "Ensemble, nous cultivons le succès";
     statistique.textContent = "Les statistique de coopérative";
     dernierAnnonce.textContent = "Les dernières Annonces";

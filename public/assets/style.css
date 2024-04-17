@@ -112,6 +112,7 @@ opacity: 0;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
   }
   
   .modal-content {
@@ -149,6 +150,7 @@ opacity: 0;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
   }
   
   .modal-content2 {
@@ -186,6 +188,7 @@ opacity: 0;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
   }
   
   .modal-content3 {
@@ -193,8 +196,8 @@ opacity: 0;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    margin-left: 20%;
-    width: 70%;;
+    margin-left: 35%;
+    width: 50%;;
   }
   
   .close3 {
@@ -223,7 +226,9 @@ opacity: 0;
       left: 5%;
     }
   }
-
+  #CssPeriode{
+    box-shadow: 0px 0px 10px 1px #00000024;
+  }
    /* ______________________ajoute produit planter pop up_____________ */
 
    .modal4 {
@@ -236,6 +241,7 @@ opacity: 0;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
   }
   
   .modal-content4 {
@@ -243,8 +249,8 @@ opacity: 0;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    margin-left: 20%;
-    width: 70%;
+    margin-left: 35%;
+    width: 50%;
   }
   
   .close4 {
@@ -285,6 +291,7 @@ opacity: 0;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
   }
   
   .modal-content5 {
@@ -292,8 +299,8 @@ opacity: 0;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    margin-left: 20%;
-    width: 70%;
+    margin-left: 35%;
+    width: 50%;
   }
   
   .close5 {
@@ -335,6 +342,7 @@ opacity: 0;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
   }
   
   .modal-content6 {

@@ -12,6 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     
     @vite('resources/css/app.css')
@@ -28,11 +29,8 @@
         <img src="img/logo.png" alt="" width="40px">
         <h6 class="hidden md:block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">ONE HAND</h6>
       </a>
-      <button class="middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-white hover:bg-white/10 active:bg-white/30 absolute right-0 top-0 grid rounded-br-none rounded-tl-none xl:hidden" type="button">
-        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-       
-        </span>
-      </button>
+      <p class="text-center text-sm md:text-2xl font-bold text-white font-serif ">PLANNER</p>
+
     </div>
     <div class="m-4">
       <ul class="mb-4 flex flex-col gap-1">

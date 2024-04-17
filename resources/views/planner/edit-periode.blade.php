@@ -11,34 +11,38 @@
        <!--  Application Details Start -->
        <div class="w-72 md:w-full  md:pt-10 bg-transparent  ml-[14.7%] md:ml-0">
         <div class="container mx-auto py-8">
-            <div class="w-80 ml-3 md:ml-0 my-10 md:my-0  md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
+            <div class="w-80 ml-3  my-10 md:my-0  md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
 
                 <div id="editPeriode" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500 text-center">Edit une periode
                 </div>
 
-                <form action="">
+                <form action="{{route('update.periode',['id'=>$periode->id])}}" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="NomPeriode" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom de periode</label>
+                            <label id="NomPeriode" for="titre" class="block text-white text-sm font-bold mb-2">nom de periode</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
+                                name="titre" id="titre"  value="{{$periode->titre}}">
+                                @error('titre')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
 
                         <div class="mb-4">
-                            <label id="dateDebutEdit" for="quantiter" class="block text-white text-sm font-bold mb-2">date début</label>
+                            <label id="dateDebutEdit" for="dateDepart" class="block text-white text-sm font-bold mb-2">date début</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="quantiter" id="quantiter"  >
-                      
+                                name="dateDepart" id="dateDepart"  value="{{$periode->dateDepart}}">
+                                @error('dateDepart')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateFinirEdite" for="prixRevenu" class="block text-white text-sm font-bold mb-2">date Finir</label>
+                            <label id="dateFinirEdite" for="dateStop" class="block text-white text-sm font-bold mb-2">date Finir</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="prixRevenu" id="prixRevenu"  >
-                            <p id=error_creater_id></p>
+                                name="dateStop" id="dateStop"  value="{{$periode->dateStop}}">
+                                @error('dateStop')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                        

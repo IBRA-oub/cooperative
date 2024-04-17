@@ -108,11 +108,22 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
 Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     
     Route::get('/planner-dashboard',[plannerController::class , 'dashboard'])->name('planner-dashboard');
+    Route::post('/add-periode-post',[plannerController::class , 'addPeriodePost'])->name('add.periode');
+    Route::delete('/periode-delete/{id}',[plannerController::class , 'periodeDelete'])->name('periode.delete');
+    Route::get('/edit-periode/{id}',[plannerController::class , 'editPeriode'])->name('edit-periode');
+    Route::put('/update-periode/{id}',[plannerController::class , 'updatePeriode'])->name('update.periode');
+    
+    Route::post('/add-produit-post',[plannerController::class , 'addProduitPost'])->name('add.produit');
+    Route::delete('/produit-delete/{id}',[plannerController::class , 'produitDelete'])->name('produit.delete');
+    Route::get('/edit-produit/{id}',[plannerController::class , 'editProduit'])->name('edit-produit');
+    Route::put('/update-produit/{id}',[plannerController::class , 'updateProduit'])->name('update.produit');
+    
+
     Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
     Route::get('/planner-message',[plannerController::class , 'message'])->name('planner-message');
     Route::get('/edit-materiaux-outils',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiaux-outils');
-    Route::get('/edit-produit',[plannerController::class , 'editProduit'])->name('edit-produit');
-    Route::get('/edit-periode',[plannerController::class , 'editPeriode'])->name('edit-periode');
+   
+
 });
 
 // __________________________stockiste__________________________

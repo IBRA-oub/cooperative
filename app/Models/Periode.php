@@ -9,10 +9,7 @@ class Periode extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'dateDepart',
-        'dateStop'
-    ];
+    protected $guarded = [];
 
     public function planner(){
         return $this->belongsTo(Planner::class);

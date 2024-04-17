@@ -15,105 +15,41 @@
          
 
      </div>
+     @if($periods->isNotEmpty())
+     @foreach($periods as $period)
     <div class="h-52 w-[90%] flex justify-around flex-wrap ml-10">
-        <div class="rounded-md bg-[#c0c1c2] shadow-xl w-60 h-[9.2rem] my-5 text-black">
-            <p  class="mt-3 ml-2 text-center text-xl"><span id="periode">période:</span> <strong>Atf argan</strong></p>
-            <p  class="mt-3 ml-2"> <span id="dateDebut">date début</span> <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i> <strong>2045-66-6</strong></p>
-            <p  class="mt-3 ml-2"> <span id="dateFinir">date stop</span> <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i>   <strong>4466-6-6</strong></p>
+        <div id="CssPeriode" class="rounded-md bg-white  w-60 h-[9.2rem] my-5 text-black">
+            <p  class="mt-3 ml-2 text-center text-xl"><span id="periode">période:</span> <strong>{{$period->titre}}</strong></p>
+            <p  class="mt-3 ml-2"> <span id="dateDebut">date début</span> <i class="fa-solid fa-arrow-right" style="color: #000000;"></i> <strong>{{$period->dateDepart}}</strong></p>
+            <p  class="mt-3 ml-2"> <span id="dateFinir">date stop</span> <i class="fa-solid fa-arrow-right" style="color: #000000;"></i>   <strong>{{$period->dateStop}}</strong></p>
             <div class="flex justify-end">
-                    <form action="" method="POST">
+                    <form action="{{ route('periode.delete', ['id' => $period->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
+                    <button class=" w-8 h-[35px]  ">
                         <a
                             href=""><i
-                                class="fa-solid fa-trash " style="color:#ffffff"></i></a>
+                                class="fa-solid fa-trash " style="color:#ff0101"></i></a>
 
                     </button>
                     </form>
-                    <a href="/edit-periode">
-                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
+                    <a href="{{ route('edit-periode', ['id' => $period->id]) }}">
+                    <button class=" w-8 h-[35px] ">
                         
-                            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
-                    </button>
-                </a>
-          </div>
-        </div>
-
-        <div class="rounded-md bg-[#c0c1c2] shadow-xl w-60 h-[9.2rem] my-5 text-black">
-            <p class="mt-3 ml-2 text-center text-xl">période:     <strong>9Atf argan</strong></p>
-            <p class="mt-3 ml-2">date depart <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i> <strong>2045-66-6</strong></p>
-            <p class="mt-3 ml-2">date stop <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i>   <strong>4466-6-6</strong></p>
-            <div class="flex justify-end">
-                    <form action="" method="POST">
-                        @csrf
-                        @method('DELETE')
-                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
-                        <a
-                            href=""><i
-                                class="fa-solid fa-trash " style="color:#ffffff"></i></a>
-
-                    </button>
-                    </form>
-                    <a href="/edit-periode">
-                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
-                        
-                            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
-                    </button>
-                </a>
-          </div>
-        </div>
-
-
-        <div class="rounded-md bg-[#c0c1c2] shadow-xl w-60 h-[9.2rem] my-5 text-black">
-            <p class="mt-3 ml-2 text-center text-xl">période:     <strong>9Atf argan</strong></p>
-            <p class="mt-3 ml-2">date depart <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i> <strong>2045-66-6</strong></p>
-            <p class="mt-3 ml-2">date stop <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i>   <strong>4466-6-6</strong></p>
-            <div class="flex justify-end">
-                    <form action="" method="POST">
-                        @csrf
-                        @method('DELETE')
-                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
-                        <a
-                            href=""><i
-                                class="fa-solid fa-trash " style="color:#ffffff"></i></a>
-
-                    </button>
-                    </form>
-                    <a href="/edit-periode">
-                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
-                        
-                            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
-                    </button>
-                </a>
-          </div>
-        </div>
-
-
-        <div class="rounded-md bg-[#c0c1c2] shadow-xl w-60 h-[9.2rem] my-5 text-black">
-            <p class="mt-3 ml-2 text-center text-xl">période:     <strong>9Atf argan</strong></p>
-            <p class="mt-3 ml-2">date depart <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i> <strong>2045-66-6</strong></p>
-            <p class="mt-3 ml-2">date stop <i class="fa-solid fa-arrow-right" style="color: #fcfcfd;"></i>   <strong>4466-6-6</strong></p>
-            <div class="flex justify-end">
-                    <form action="" method="POST">
-                        @csrf
-                        @method('DELETE')
-                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
-                        <a
-                            href=""><i
-                                class="fa-solid fa-trash " style="color:#ffffff"></i></a>
-
-                    </button>
-                    </form>
-                    <a href="/edit-periode">
-                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
-                        
-                            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                     </button>
                 </a>
           </div>
         </div>
     </div>
+    @endforeach
+    @else
+    <div class="h-52 w-[90%] flex justify-around flex-wrap ml-10">
+       
+           <p class="text-2xl text-green-500 flex justify-center items-center" > There is no periodes created </p>
+        
+    </div>
+    @endif
 </div>
 
 {{-- pop up for adding periode start --}}
@@ -123,20 +59,27 @@
 <div id="myModal3" class="modal3 ">
     <div class="modal-content3 rounded-lg">
       <span class="close3" onclick="closeModal3()">&times;</span>
-      <form id="updateForm">
+      <form action="{{route('add.periode')}}" id="updateForm" method="POST">
+        @csrf
         <p id="addPeriode" class="text-xl font-bold text-center">ajouter une periode</p>
 
-        <label id="nomPeriode" for="heurs" class="block text-black text-sm font-bold mb-2">nom de periode</label>
+        <label id="nomPeriode" for="titre" class="block text-black text-sm font-bold mb-2">nom de periode</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-            name="heurs" id="heurs"  placeholder="3"><br>
-            <label id="datedb" for="heurs" class="block text-black text-sm font-bold mb-2">date Début</label>
+            name="titre" id="titre"  placeholder="argicule"><br>
+            @error('titre')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
+            <label id="datedb" for="dateDepart" class="block text-black text-sm font-bold mb-2">date Début</label>
             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="heurs" id="heurs"  placeholder="3"><br>
-                <label id="dateFN" for="heurs" class="block text-black text-sm font-bold mb-2">date Finir</label>
+                name="dateDepart" id="dateDepart"  placeholder="3"><br>
+                @error('dateDepart')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
+                <label id="dateFN" for="dateStop" class="block text-black text-sm font-bold mb-2">date Finir</label>
                 <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                    name="heurs" id="heurs"  placeholder="3"><br>
+                    name="dateStop" id="dateStop"  placeholder="3"><br>
+                    @error('dateStop')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
         <button id="SVPer"
-        class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
+        class="  text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
         Save
        </button>                              
 
@@ -164,12 +107,17 @@
             <!-- ============ Content ============= -->
         
             <div class="md:p-6 bg-white  md:m-5">
-               @if (session('success'))
-               <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                   <strong class="font-bold">Success!</strong>
-                   <span class="block sm:inline">{{ session('success') }}</span>
-               </div>
-               @endif
+                @if (session('success'))
+                <script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success!",
+                        text: "{{ session('success') }}",
+
+
+                    });
+                </script>
+                @endif
         
                 <!-- ========== table Banks-desktop ======== -->
               
@@ -180,50 +128,56 @@
                             <tr class="bg-[#31363F] text-white h-[40px]">
                                 <th id="idADD" class="">ID</th>
                                 <th id="nomProADD" class="">nom de produit</th>
+                                <th id="nomProADD" class="">periode</th>
                                 
                                 <th id="actionsADD" class="">plus options</th>
                             </tr>
                         </thead>
-                        {{-- @foreach($allUsers as $user) --}}
                         <tbody class="sm:w-full">
+                            @foreach($produits as $produit)
                          
         
                             <tr class=" text-black pt-10 sm:pt-0  w-full border-b border-[#31363F]">
         
                                 <td class=" text-center ">
-                                    {{-- {{$user->id}} --}}
-                                    4
+                                    {{$produit->id}}
+                                   
                                 </td>
                                 <td class=" text-center ">
-                                   {{-- {{$user->fullName}} --}}
-                                   za3tar
+                                   {{$produit->nom}}
+                                   
+                                </td>
+                                <td class=" text-center ">
+                                   {{$produit->periode_id}}
+                                   
                                 </td>
                              
                               
                                    <td class="text-center flex justify-center">
-                                       <form action="" method="POST">
+                                    <form action="{{ route('produit.delete', ['id' => $produit->id]) }}" method="POST">
+
                                            @csrf
                                            @method('DELETE')
-                                        <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
+                                        <button class=" w-8 h-[35px] ">
                                             <a
                                                 href=""><i
-                                                    class="fa-solid fa-trash " style="color:#ffffff"></i></a>
+                                                    class="fa-solid fa-trash " style="color:#ff0101"></i></a>
             
                                         </button>
                                        </form>
-                                       <a href="/edit-produit">
-                                        <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
+                                       <a href="{{ route('edit-produit', ['id' => $produit->id]) }}">
+                                        <button class=" w-8 h-[35px] ">
                                            
-                                               <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+                                               <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                                        </button>
                                    </a>
                                 </td>
                                
                             </tr>
-                      
+                      @endforeach
         
                         </tbody>
-                        {{-- @endforeach --}}
+                      
                     </table>
                 </div>
                 
@@ -234,6 +188,7 @@
                             <tr>
                                 <th></th>
                                 <th></th>
+                                <th></th>
                                
                                 <th></th>
         
@@ -241,38 +196,43 @@
                             </tr>
                         </thead>
                         <tbody class="block  w-full">
-                           {{-- @foreach($allUsers as $user) --}}
+                           @foreach($produits as $produit)
                             <tr class="block pt-10 mt-9 sm:mt-0 sm:pt-0   w-full ">
         
                                 <td data-label="id"
                                     class="border-b before:content-['id']  before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                                  {{-- {{$user->id}} --}}
-                                  3
+                                  {{$produit->id}}
+                                  
                                 </td>
-                                <td data-label="nomProduit" class="border-b before:content-['nomProduit'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                                <td data-label="nom" class="border-b before:content-['nom'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                                      text-right">
-                                   {{-- {{$user->fullName}} --}}
-                                   za3tar
+                                   {{$produit->nom}}
+                                  
+                                </td>
+                                <td data-label="periode" class="border-b before:content-['periode'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                                     text-right">
+                                   {{$produit->periode_id}}
+                                  
                                 </td>
                            
                                 <td data-label="Action"
                                     class=" border-b before:content-['action'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                                    
        
-                                    <form action="" method="POST">
+                                    <form action="{{ route('produit.delete', ['id' => $produit->id]) }}" method="POST">
                                        @csrf
                                        @method('DELETE')
-                                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
+                                    <button class=" w-8 h-[35px] ">
                                         <a
                                             href=""><i
-                                                class="fa-solid fa-trash " style="color:#ffffff"></i></a>
+                                                class="fa-solid fa-trash " style="color:#ff0101"></i></a>
         
                                     </button>
                                    </form>
-                                   <a href="/edit-produit">
-                                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
+                                   <a href="{{ route('edit-produit', ['id' => $produit->id]) }}">
+                                    <button class=" w-8 h-[35px] ">
                                        
-                                           <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+                                           <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                                    </button>
                                    </a>
        
@@ -280,7 +240,7 @@
                                 </td>
                                 
                             </tr>
-                         {{-- @endforeach --}}
+                         @endforeach
         
                         </tbody>
                     </table>
@@ -314,12 +274,7 @@
             <!-- ============ Content ============= -->
         
             <div class="md:p-6 bg-white  md:m-5 ">
-               @if (session('success'))
-               <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                   <strong class="font-bold">Success!</strong>
-                   <span class="block sm:inline">{{ session('success') }}</span>
-               </div>
-               @endif
+              
         
                 <!-- ========== table Banks-desktop ======== -->
               
@@ -354,17 +309,17 @@
                                        <form action="" method="POST">
                                            @csrf
                                            @method('DELETE')
-                                        <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
+                                        <button class=" w-8 h-[35px] ">
                                             <a
                                                 href=""><i
-                                                    class="fa-solid fa-trash " style="color:#ffffff"></i></a>
+                                                    class="fa-solid fa-trash " style="color:#ff0101"></i></a>
             
                                         </button>
                                        </form>
                                        <a href="/edit-materiaux-outils">
-                                        <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
+                                        <button class=" w-8 h-[35px] ">
                                            
-                                               <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+                                               <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                                        </button>
                                    </a>
                                 </td>
@@ -412,17 +367,17 @@
                                     <form action="" method="POST">
                                        @csrf
                                        @method('DELETE')
-                                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
+                                    <button class=" w-8 h-[35px] ">
                                         <a
                                             href=""><i
-                                                class="fa-solid fa-trash " style="color:#ffffff"></i></a>
+                                                class="fa-solid fa-trash " style="color:#ff0101"></i></a>
         
                                     </button>
                                    </form>
                                    <a href="/edit-materiaux-outils">
-                                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
+                                    <button class=" w-8 h-[35px] ">
                                        
-                                           <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+                                           <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                                    </button>
                                    </a>
        
@@ -454,18 +409,20 @@
 <div id="myModal4" class="modal4 ">
     <div class="modal-content4 rounded-lg">
       <span class="close4" onclick="closeModal4()">&times;</span>
-      <form id="updateForm">
+      <form action="{{route('add.produit')}}" id="updateForm" method="POST">
+        @csrf
         <p id="addProPlanADD" class="text-xl font-bold text-center">ajouter Produit a planter</p>
-        <label id="nomProPlanADD" for="heurs" class="block text-black text-sm font-bold mb-2">nom de produit</label>
+        <label id="nomProPlanADD" for="nom" class="block text-black text-sm font-bold mb-2">nom de produit</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-            name="heurs" id="heurs"  placeholder="3"><br>
-            <label id="periodeProPLanADD" for="heurs" class="block text-black text-sm font-bold mb-2">periode</label>
+            name="nom" id="nom"  placeholder="Argan"><br>
+            @error('nom')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
+            <label id="periodeProPLanADD" for="Periode" class="block text-black text-sm font-bold mb-2">periode</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="heurs" id="heurs"  placeholder="3">
-            <option value="">fghjk</option>
-            <option value="">ghjk</option>
-            <option value="">ghjk</option>
-            <option value="">hjk</option>
+                name="periode_id" id="Periode"  placeholder="3">
+                @foreach($periods as $periode)
+            <option value="{{$periode->id}}">{{$periode->titre}}</option>
+                @endforeach
             </select><br>
                
         <button id="saveProPlanADD"
