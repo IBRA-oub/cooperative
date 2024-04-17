@@ -24,4 +24,8 @@ interface FinanciereServiceInterface
     public function deleteRevenu($id);
     public function findRevenu($id);
     public function updateRevenu(array $data ,$id);
+    public function countRevenu();
+    public function countCharge();
+    public function countChargePrix();
+    public function countRevenuPrix();
 }

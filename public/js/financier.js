@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // _________________sidebar________________
         if (document.getElementById("statistique")) {
-            document.getElementById("statistique").textContent = "إحصائيات";
+            document.getElementById("statistique").textContent = "الملف الشخصي/الإحصائيات";
         }
 
         if (document.getElementById("statistique1")) {
-            document.getElementById("statistique1").textContent = "إحصائيات";
+            document.getElementById("statistique1").textContent = "الملف الشخصي/الإحصائيات";
         }
         if (document.getElementById("revenu")) {
             document.getElementById("revenu").textContent = "الإنتاج";
@@ -310,6 +310,19 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("materiaux")) {
             document.getElementById("materiaux").textContent = "مواد ";
         }
+        // ____________________count_________________
+        if (document.getElementById("totaleProduit")) {
+            document.getElementById("totaleProduit").textContent = "إجمالي المنتجات ";
+        }
+        if (document.getElementById("prixTotalPRod")) {
+            document.getElementById("prixTotalPRod").textContent = "السعر الإجمالي للمنتجات  ";
+        }
+        if (document.getElementById("totaleCharge")) {
+            document.getElementById("totaleCharge").textContent = "المجموع الكلي للنفقات    ";
+        }
+        if (document.getElementById("prixTotaleCharge")) {
+            document.getElementById("prixTotaleCharge").textContent = " السعر الإجمالي للنفقات   ";
+        }
     }
   
 
@@ -318,18 +331,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // _________________sidebar________________
         if (document.getElementById("statistique")) {
-            document.getElementById("statistique").textContent = "Statistique";
+            document.getElementById("statistique").textContent = "Profile/Statistique";
         }
 
         if (document.getElementById("statistique1")) {
-            document.getElementById("statistique1").textContent = "Statistique";
+            document.getElementById("statistique1").textContent = "Profile/Statistique";
         }
         if (document.getElementById("revenu")) {
-            document.getElementById("revenu").textContent = "Revenu";
+            document.getElementById("revenu").textContent = "Produit";
         }
 
         if (document.getElementById("revenu1")) {
-            document.getElementById("revenu1").textContent = "Revenu";
+            document.getElementById("revenu1").textContent = "Produit";
         }
 
         if (document.getElementById("charge")) {
@@ -623,6 +636,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (document.getElementById("materiaux")) {
             document.getElementById("materiaux").textContent = "Materiaux ";
+        }
+         // ____________________count_________________
+         if (document.getElementById("totaleProduit")) {
+            document.getElementById("totaleProduit").textContent = " Totale des produit ";
+        }
+        if (document.getElementById("prixTotalPRod")) {
+            document.getElementById("prixTotalPRod").textContent = "  Prix totale des produit  ";
+        }
+        if (document.getElementById("totaleCharge")) {
+            document.getElementById("totaleCharge").textContent = "  Totale des chagre    ";
+        }
+        if (document.getElementById("prixTotaleCharge")) {
+            document.getElementById("prixTotaleCharge").textContent = "   Prix totale des Charge   ";
         }
     }
 

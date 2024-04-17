@@ -26,8 +26,16 @@ class adminController extends Controller
             'fullName' => 'required|string',
             'email' => 'required',
             'password' => 'required',
-            'picture' => 'required'
+            'picture' => '|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+        if ($request->hasFile('picture')) {
+            $file = $request->file('picture');
+            $imageName = time() . '.' . $file->extension();
+            $file->storeAs('public/image', $imageName);
+            
+        }
+        
+        $validatedUserData['picture'] = $imageName;
         $validatedUserData['password'] = Hash::make($request->password);
         
         // __________verfied email___________

@@ -19,7 +19,8 @@ return new class extends Migration
             $table->date('dateRevenu');
             $table->foreignId('financiere_id')
             ->constrained('financieres')
-            ->cascadeOnUpdate();
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

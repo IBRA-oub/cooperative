@@ -220,5 +220,7 @@ public function travailleurHoursTotal()
         return  Publicitaire::all()->first();
     }
 
+   
+
 
 }

@@ -262,7 +262,11 @@ class financiereController extends Controller
     // _____________________________
     
     public function dashboard(){
-        return view('financiere.financiere-dashboard');
+        $countCharge = $this->financiereService->countCharge();
+        $countRevenu = $this->financiereService->countRevenu();
+        $countChargePrix = $this->financiereService->countChargePrix();
+        $countRevenuPrix = $this->financiereService->countRevenuPrix();
+        return view('financiere.financiere-dashboard',['countCharge'=>$countCharge,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'countChargePrix'=>$countChargePrix]);
     }
     // _________________________________
     

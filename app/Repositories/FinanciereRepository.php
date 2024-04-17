@@ -48,6 +48,28 @@ class FinanciereRepository implements FinanciereRepositoryInterface
         $charge = Charge::findOrFail($id);
         $charge->delete();
     }
+     // ____________totale de charge_______
+     public function countCharge()
+     {
+         $count = Charge::count();
+         return $count;
+     }
+     public function countChargePrix()
+     {
+         $count  = Charge::whereNotNull('prix')->sum('prix');
+         return $count;
+     }
+    // ____________totale de revenu_______
+    public function countRevenu()
+    {
+        $count = Revenu::count();
+        return $count;
+    }
+    public function countRevenuPrix()
+     {
+         $count  = Revenu::whereNotNull('prixRevenuProduit')->sum('prixRevenuProduit');
+         return $count;
+     }
     // ___________revenu_____________
     public function storeRevenu(array $data){
         return Revenu::create($data);

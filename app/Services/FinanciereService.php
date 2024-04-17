@@ -93,4 +93,21 @@ class FinanciereService implements FinanciereServiceInterface
     { 
         return $this->financiereRepository->updateRevenu($data,$id);
     }
+
+    public function countRevenu()
+    { 
+        return $this->financiereRepository->countRevenu();
+    }
+    public function countCharge()
+    { 
+        return $this->financiereRepository->countCharge();
+    }
+    public function countRevenuPrix()
+    { 
+        return $this->financiereRepository->countRevenuPrix();
+    }
+    public function countChargePrix()
+    { 
+        return $this->financiereRepository->countChargePrix();
+    }
 }
