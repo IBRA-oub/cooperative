@@ -83,4 +83,17 @@ class PlannerService implements PlannerServiceInterface
     { 
         return $this->plannerRepository->updateMateraiuxOutils($data,$id);
     }
+    // _____________________count_____________
+    public function countPeriode()
+    { 
+        return $this->plannerRepository->countPeriode();
+    }
+    public function countProduit_planter()
+    { 
+        return $this->plannerRepository->countProduit_planter();
+    }
+    public function countMateriauxOutil()
+    { 
+        return $this->plannerRepository->countMateriauxOutil();
+    }
 }

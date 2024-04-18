@@ -21,4 +21,8 @@ interface PlannerServiceInterface
     public function deleteMateraiuxOutils($id);
     public function findMateraiuxOutils($id);
     public function updateMateraiuxOutils(array $data ,$id);
+    // ___________________count_________________
+    public function countPeriode();
+    public function countProduit_planter();
+    public function countMateriauxOutil();
 }

@@ -5,7 +5,7 @@
 @section('content')
 
 
-<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main">
+<main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main overflow-y-hidden">
    
 
 
@@ -23,6 +23,17 @@
                 align-items: center;
                 border-radius: 20px;
                 background: var(--bg-color);
+            }
+            @media screen and (max-width: 480px) {
+                .card {
+
+                    
+                    margin-left: 10%;
+                   
+                    
+                }
+
+                
             }
 
             .card__img {
@@ -119,7 +130,7 @@
 
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-6 px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-6 px-4 py-8 ml-10 md:ml-0">
 
             
         <div
@@ -132,7 +143,7 @@
         </div>
     
         <div
-            class="shadow-xl flex flex-col justify-center items-center gap-2 border border-dashed border-gray-500 p-4 text-black rounded-md h-32 bg-gray-200 ">
+            class="ml-10 md:ml-0 shadow-xl flex flex-col justify-center items-center gap-2 border border-dashed border-gray-500 p-4 text-black rounded-md h-32 bg-gray-200 ">
             <div class="flex gap-2 items-center">
                 <span class="font-bold text-4xl text-green-600">{{$countRevenuPrix}} DH</span>
                 <i class="fa-solid fa-chart-line fa-2xl" style="color: green"></i>

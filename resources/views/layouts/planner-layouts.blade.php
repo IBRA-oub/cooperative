@@ -29,7 +29,7 @@
         <img src="img/logo.png" alt="" width="40px">
         <h6 class="hidden md:block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">ONE HAND</h6>
       </a>
-      <p class="text-center text-sm md:text-2xl font-bold text-white font-serif ">PLANNER</p>
+      <p class="text-center text-sm md:text-2xl font-bold text-white font-serif ">Responsable agricole</p>
 
     </div>
     <div class="m-4">

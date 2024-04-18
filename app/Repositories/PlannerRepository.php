@@ -91,4 +91,20 @@ class PlannerRepository implements PlannerRepositoryInterface
     $MateraiuxOutils->update($data);
     return $MateraiuxOutils;
     }
+    // _________________count__________________
+    public function countPeriode()
+     {
+         $count = Periode::count();
+         return $count;
+     }
+    public function countProduit_planter()
+     {
+         $count = produit_planter::count();
+         return $count;
+     }
+    public function countMateriauxOutil()
+     {
+         $count = MateriauxOutil::count();
+         return $count;
+     }
 }

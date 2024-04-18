@@ -56,7 +56,7 @@
                             <select class=" border rounded w-full py-2 px-3 text-grey-darker" 
                                 name="role" id="role"  >
                             <option value="financiere">Financière</option>
-                            <option value="planner">Planner</option>
+                            <option value="planner">Responsable agricole</option>
                             <option value="stockiste">Stockists</option>
                             <option value="publicitaire">Publicitaire</option>
                             <option value="travailleur">Travailleur</option>

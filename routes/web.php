@@ -103,7 +103,7 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');
 });
 
-// __________________________planner__________________________
+// __________________________Responsable agricole__________________________
 
 Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     

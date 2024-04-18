@@ -123,7 +123,10 @@ class plannerController extends Controller
     }
     // _________________________________________________
     public function infoStati(){
-        return view('planner.info-stati');
+        $periode =  $this->plannerService->countPeriode();
+        $produit =  $this->plannerService->countProduit_planter();
+        $materiauxOutil =  $this->plannerService->countMateriauxOutil();
+        return view('planner.info-stati',['periode'=>$periode, 'produit'=>$produit, 'materiauxOutil'=>$materiauxOutil]);
     }
     public function message(){
         return view('planner.message');
