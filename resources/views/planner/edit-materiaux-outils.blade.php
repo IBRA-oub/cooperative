@@ -16,25 +16,29 @@
                 <div id="EditeModPlan" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500 text-center">edit materiaux-outils
                 </div>
 
-                <form action="">
+                <form action="{{ route('update.materiauxOutils', ['id' => $MateraiuxOutils->id]) }}" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="py-4 px-8">
                         <div class="mb-4">
-                            <label id="NomPRoduitEdite" for="quantiter" class="block text-white text-sm font-bold mb-2">nom produit</label>
+                            <label id="NomPRoduitEdite" for="nom" class="block text-white text-sm font-bold mb-2">nom produit</label>
                             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="quantiter" id="quantiter"  >
-                            <option value="">hj</option>
-                            <option value="">hjk</option>
-                            <option value="">hj</option>
-                            <option value="">hjk</option>
+                            name="produit_planter_id" id="Periode" >
+                            @foreach($produits as $produit)
+                        <option value="{{$produit->id}}">{{$produit->nom}}</option>
+                            @endforeach
+                            
                         </select>
                       
                         </div>
 
                         <div class="mb-4">
-                            <label id="MaterOutiEdite" for="nomProduit" class="block text-white text-sm font-bold mb-2">materiaux/outils</label>
+                            <label id="MaterOutiEdite" for="nom" class="block text-white text-sm font-bold mb-2">materiaux/outils</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
+                                name="nom" id="nom"  value="{{$MateraiuxOutils->nom}}">
+                                @error('nom')
+                                <p id="error_creater_id" class="text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="mb-4 flex justify-center">

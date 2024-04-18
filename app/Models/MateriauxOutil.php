@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MateriauxOutil extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nom'
-    ];
+    protected $guarded = [];
 
     public function produit_planter(){
         return $this->belongsTo(produit_planter::class);

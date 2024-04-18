@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Repositories;
+use App\Models\MateriauxOutil;
 use App\Models\Periode;
 use App\Models\produit_planter;
 
@@ -59,5 +60,35 @@ class PlannerRepository implements PlannerRepositoryInterface
     $produitPlanter = produit_planter::findOrFail($id);
     $produitPlanter->update($data);
     return $produitPlanter;
+    }
+
+    // _________________________materiauxOutils__________________
+
+    public function storeMateraiuxOutils(array $data){
+        return MateriauxOutil::create($data);
+        
+    }
+    public function redMateraiuxOutils()
+    {
+       
+        
+        return MateriauxOutil::all();
+    }
+    public function deleteMateraiuxOutils($id)
+    {
+        $MateriauxOutil = MateriauxOutil::findOrFail($id);
+        $MateriauxOutil->delete();
+    }
+
+    public function findMateraiuxOutils($id)
+    {
+        return MateriauxOutil::findOrFail($id);
+    }
+
+    public function updateMateraiuxOutils(array $data, $id)
+    {
+    $MateraiuxOutils = MateriauxOutil::findOrFail($id);
+    $MateraiuxOutils->update($data);
+    return $MateraiuxOutils;
     }
 }

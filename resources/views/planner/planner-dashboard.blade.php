@@ -148,7 +148,7 @@
                                    
                                 </td>
                                 <td class=" text-center ">
-                                   {{$produit->periode_id}}
+                                   {{$produit->periode->titre}}
                                    
                                 </td>
                              
@@ -211,7 +211,7 @@
                                 </td>
                                 <td data-label="periode" class="border-b before:content-['periode'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                                      text-right">
-                                   {{$produit->periode_id}}
+                                   {{$produit->periode->titre}}
                                   
                                 </td>
                            
@@ -289,24 +289,24 @@
                                 <th id="actionOutilMAterADD" class="">Plus options</th>
                             </tr>
                         </thead>
-                        {{-- @foreach($allUsers as $user) --}}
                         <tbody class="sm:w-full">
+                            @foreach($MateraiuxOutils as $materOutil)
                          
         
                             <tr class=" text-black pt-10 sm:pt-0  w-full border-b border-[#31363F]">
         
                                 <td class=" text-center ">
-                                    {{-- {{$user->id}} --}}
-                                    za3tar
+                                    {{$materOutil->produit_planter->nom}}
+                                   
                                 </td>
                                 <td class=" text-center ">
-                                   {{-- {{$user->fullName}} --}}
-                                   cotans
+                                   {{$materOutil->nom}}
+                                   
                                 </td>
                              
                               
                                    <td class="text-center flex justify-center">
-                                       <form action="" method="POST">
+                                       <form action="{{ route('materiauxOutils.delete', ['id' => $materOutil->id]) }}" method="POST">
                                            @csrf
                                            @method('DELETE')
                                         <button class=" w-8 h-[35px] ">
@@ -316,7 +316,7 @@
             
                                         </button>
                                        </form>
-                                       <a href="/edit-materiaux-outils">
+                                       <a href="{{ route('edit-materiauxOutils', ['id' => $materOutil->id]) }}">
                                         <button class=" w-8 h-[35px] ">
                                            
                                                <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
@@ -327,8 +327,8 @@
                             </tr>
                       
         
+                            @endforeach
                         </tbody>
-                        {{-- @endforeach --}}
                     </table>
                 </div>
                 
@@ -346,25 +346,24 @@
                             </tr>
                         </thead>
                         <tbody class="block  w-full">
-                           {{-- @foreach($allUsers as $user) --}}
+                            @foreach($MateraiuxOutils as $materOutil)
                             <tr class="block pt-10 sm:pt-0  mt-9 sm:mt-0 w-full ">
         
-                                <td data-label="NomProduit"
-                                    class="border-b before:content-['NomProduit']  before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                                  {{-- {{$user->id}} --}}
-                                  Za3tar
+                                <td data-label="Nom"
+                                    class="border-b before:content-['Nom']  before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
+                                    {{$materOutil->produit_planter->nom}}
+
                                 </td>
                                 <td data-label="materiaux/outils" class="border-b before:content-['materiaux/outils'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                                      text-right">
-                                   {{-- {{$user->fullName}} --}}
-                                   cotant
+                                     {{$materOutil->nom}}
                                 </td>
                            
                                 <td data-label="Action"
                                     class=" border-b before:content-['action'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                                    
        
-                                    <form action="" method="POST">
+                                    <form action="{{ route('materiauxOutils.delete', ['id' => $materOutil->id]) }}" method="POST">
                                        @csrf
                                        @method('DELETE')
                                     <button class=" w-8 h-[35px] ">
@@ -374,7 +373,7 @@
         
                                     </button>
                                    </form>
-                                   <a href="/edit-materiaux-outils">
+                                   <a href="{{ route('edit-materiauxOutils', ['id' => $materOutil->id]) }}">
                                     <button class=" w-8 h-[35px] ">
                                        
                                            <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
@@ -385,7 +384,7 @@
                                 </td>
                                 
                             </tr>
-                         {{-- @endforeach --}}
+                         @endforeach
         
                         </tbody>
                     </table>
@@ -419,7 +418,7 @@
 
             <label id="periodeProPLanADD" for="Periode" class="block text-black text-sm font-bold mb-2">periode</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="periode_id" id="Periode"  placeholder="3">
+                name="periode_id" id="Periode" >
                 @foreach($periods as $periode)
             <option value="{{$periode->id}}">{{$periode->titre}}</option>
                 @endforeach
@@ -443,18 +442,22 @@
 <div id="myModal5" class="modal5 ">
     <div class="modal-content5 rounded-lg">
       <span class="close5" onclick="closeModal5()">&times;</span>
-      <form id="updateForm">
+      
+        <form action="{{route('add.materiauxOutils')}}" id="updateForm" method="POST">
+            @csrf
         <p id="addMaOuADD" class="text-xl font-bold text-center">ajouter Materiaux/outils</p>
-        <label id="MateOutiADD" for="heurs" class="block text-black text-sm font-bold mb-2">materiux/outils</label>
+        <label id="MateOutiADD" for="nom" class="block text-black text-sm font-bold mb-2">materiux/outils</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-            name="heurs" id="heurs"  placeholder="3"><br>
-            <label id="ProdAdd" for="heurs" class="block text-black text-sm font-bold mb-2">produit</label>
+            name="nom" id="nom"  placeholder="sizer"><br>
+            @error('nom')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
+            <label id="ProdAdd" for="produit_planter_id" class="block text-black text-sm font-bold mb-2">produit</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="heurs" id="heurs"  placeholder="3">
-            <option value="">fghjk</option>
-            <option value="">ghjk</option>
-            <option value="">ghjk</option>
-            <option value="">hjk</option>
+                name="produit_planter_id" id="produit_planter_id"  >
+                @foreach($produits as $produit)
+            <option value="{{$produit->id}}">{{$produit->nom}}</option>
+            @endforeach
+          
             </select><br>
                
         <button id="saveOuMAt"

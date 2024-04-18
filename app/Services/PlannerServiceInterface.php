@@ -15,4 +15,10 @@ interface PlannerServiceInterface
     public function deleteProduit($id);
     public function findProduit($id);
     public function updateProduit(array $data ,$id);
+    // materiauxOutils
+    public function createMateraiuxOutils(array $data);
+    public function redAllMateraiuxOutils();
+    public function deleteMateraiuxOutils($id);
+    public function findMateraiuxOutils($id);
+    public function updateMateraiuxOutils(array $data ,$id);
 }

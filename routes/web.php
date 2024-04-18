@@ -118,10 +118,14 @@ Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     Route::get('/edit-produit/{id}',[plannerController::class , 'editProduit'])->name('edit-produit');
     Route::put('/update-produit/{id}',[plannerController::class , 'updateProduit'])->name('update.produit');
     
+    Route::post('/add-materiauxOutils-post',[plannerController::class , 'addMateriauxOutilsPost'])->name('add.materiauxOutils');
+    Route::delete('/materiauxOutils-delete/{id}',[plannerController::class , 'MateriauxOutilsDelete'])->name('materiauxOutils.delete');
+    Route::get('/edit-materiaux-outils/{id}',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiauxOutils');
+    Route::put('/update-materiauxOutils/{id}',[plannerController::class , 'updateMateriauxOutils'])->name('update.materiauxOutils');
+    
 
     Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
-    Route::get('/planner-message',[plannerController::class , 'message'])->name('planner-message');
-    Route::get('/edit-materiaux-outils',[plannerController::class , 'editMateriauxOutils'])->name('edit-materiaux-outils');
+
    
 
 });

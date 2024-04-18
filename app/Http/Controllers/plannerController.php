@@ -32,7 +32,9 @@ class plannerController extends Controller
     public function dashboard(){
         $periods = $this->plannerService->redAllPeriode();
         $produits = $this->plannerService->redAllProduit();
-        return view('planner.planner-dashboard',['periods' => $periods,'produits' => $produits]);
+        $MateraiuxOutils = $this->plannerService->redAllMateraiuxOutils();
+           
+        return view('planner.planner-dashboard',['periods' => $periods,'produits' => $produits,'MateraiuxOutils' => $MateraiuxOutils]);
     }
 
     public function editPeriode($id){
@@ -87,6 +89,39 @@ class plannerController extends Controller
     }
 
     // _________________________________________________
+
+    // ________________________materiauxOutils____________
+    public function addMateriauxOutilsPost(Request $request){
+        $data = $request->validate([
+            'nom' => 'required',
+            'produit_planter_id' => 'required',
+           
+        ]);
+        $this->plannerService->createMateraiuxOutils($data);
+        
+        return redirect()->route('planner-dashboard')->with('success','MateraiuxOutils ajouter avec success');
+    }
+    public function MateriauxOutilsDelete($id){
+        $this->plannerService->deleteMateraiuxOutils($id);
+        return redirect()->route('planner-dashboard')->with('success','MateraiuxOutils supprimer avec success');
+    }
+   
+
+    public function editMateriauxOutils($id){
+        $MateraiuxOutils = $this->plannerService->findMateraiuxOutils($id);
+        $produits = $this->plannerService->redAllProduit();
+        return view('planner.edit-materiaux-outils',['MateraiuxOutils' => $MateraiuxOutils, 'produits' => $produits]);
+    }
+    public function updateMateriauxOutils(Request $request,$id){
+        $data = $request->validate([
+            'nom' => 'required',
+            'produit_planter_id' => 'required'
+        ]);
+        $this->plannerService->updateMateraiuxOutils($data,$id);
+        
+        return redirect()->route('planner-dashboard')->with('success','MateraiuxOutils mise a jour avec success');
+    }
+    // _________________________________________________
     public function infoStati(){
         return view('planner.info-stati');
     }
@@ -94,9 +129,7 @@ class plannerController extends Controller
         return view('planner.message');
     }
 
-    public function editMateriauxOutils(){
-        return view('planner.edit-materiaux-outils');
-    }
+   
    
    
 }

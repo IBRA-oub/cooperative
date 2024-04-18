@@ -15,4 +15,11 @@ interface PlannerRepositoryInterface
     public function deleteProduit($id);
     public function findProduit($id);
     public function updateProduit(array $data, $id);
+    
+    // ________________materiauxOutils_______________
+    public function redMateraiuxOutils();
+    public function storeMateraiuxOutils(array $data);
+    public function deleteMateraiuxOutils($id);
+    public function findMateraiuxOutils($id);
+    public function updateMateraiuxOutils(array $data, $id);
 }

@@ -397,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("addProADD")) {
-            document.getElementById("addProADD").textContent = " add produit";
+            document.getElementById("addProADD").textContent = " ajouter produit";
         }
 
         if (document.getElementById("idADD")) {
@@ -479,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("outilsMaterADD")) {
-            document.getElementById("outilsMaterADD").textContent = " add ";
+            document.getElementById("outilsMaterADD").textContent = " ajouter ";
         }
 
         if (document.getElementById("nomProOutilMAterADD")) {

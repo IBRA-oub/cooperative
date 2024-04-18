@@ -59,4 +59,28 @@ class PlannerService implements PlannerServiceInterface
     { 
         return $this->plannerRepository->updateProduit($data,$id);
     }
+    // ___________________________materiauxOutils__________________
+    public function createMateraiuxOutils(array $data){
+        
+        return $this->plannerRepository->storeMateraiuxOutils($data);
+    }
+    public function redAllMateraiuxOutils(){
+       
+        return $this->plannerRepository->redMateraiuxOutils();
+    }
+
+    public function deleteMateraiuxOutils($id){
+       
+        return $this->plannerRepository->deleteMateraiuxOutils($id);
+    }
+
+    public function findMateraiuxOutils($id)
+    { 
+        return $this->plannerRepository->findMateraiuxOutils($id);
+    }
+
+    public function updateMateraiuxOutils(array $data ,$id)
+    { 
+        return $this->plannerRepository->updateMateraiuxOutils($data,$id);
+    }
 }
