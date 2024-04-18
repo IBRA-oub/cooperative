@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('publiciters', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->string('description');
+           
             $table->text('contenu');
-            $table->date('datePublicite');
+           
             $table->string('picture');
             $table->foreignId('admin_id')
             ->constrained('admins')

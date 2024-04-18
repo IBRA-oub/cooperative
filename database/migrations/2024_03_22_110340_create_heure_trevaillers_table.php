@@ -31,10 +31,7 @@ return new class extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
-            $table->foreignId('publicitaire_id')
-            ->constrained('publicitaires')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+          
 
 
             $table->foreignId('travailleur_id')

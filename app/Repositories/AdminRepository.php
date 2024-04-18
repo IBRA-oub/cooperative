@@ -6,6 +6,7 @@ use App\Models\Financiere;
 use App\Models\HeureTrevailler;
 use App\Models\Planner;
 
+use App\Models\Publiciter;
 use App\Models\Stockiste;
 use App\Models\Travailleur;
 use App\Models\User;
@@ -200,7 +201,40 @@ public function travailleurHoursTotal()
         return  Stockiste::all()->first();
     }
 
-   
+
+    // _______________________publiciter_________________
+    
+
+    public function storePubliciter(array $data){
+        return Publiciter::create($data);
+        
+    }
+    public function redPubliciter()
+    {
+        return Publiciter::all();
+    }
+    public function deletePubliciter($id)
+    {
+        $Publiciter = Publiciter::findOrFail($id);
+        $Publiciter->delete();
+    }
+
+    public function findPubliciter($id)
+    {
+        return Publiciter::findOrFail($id);
+    }
+
+    public function updatePubliciter(array $data, $id)
+    {
+    $Publiciter = Publiciter::findOrFail($id);
+    $Publiciter->update($data);
+    return $Publiciter;
+    }
+    public function countPubliciter()
+    {
+        $count = Publiciter::count();
+        return $count;
+    }
 
    
 

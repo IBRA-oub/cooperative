@@ -373,11 +373,62 @@ class adminController extends Controller
 
     // _________________publiciter_______________
 
-    public function publicitaire(){
-        return view('admin.publicitaire');
+
+
+    public function addPubliciter(Request $request){
+        $data = $request->validate([
+            'titre' => 'required',
+            
+            'contenu' => 'required',
+            
+            'picture' => 'required'
+        ]);
+        if ($request->hasFile('picture')) {
+            $file = $request->file('picture');
+            $imageName = time() . '.' . $file->extension();
+            $file->storeAs('public/image', $imageName);
+            
+        }
+        
+        $data['picture'] = $imageName;
+        $data['admin_id'] = auth()->user()->admin->id;
+        $this->adminRepository->storePubliciter($data);
+        
+        return redirect()->route('publicitaire')->with('success','publiciter ajouter avec success');
     }
-    public function editPubliciter(){
-        return view('admin.edit-publiciter');
+    public function PubliciterDelete($id){
+        $this->adminRepository->deletePubliciter($id);
+        return redirect()->route('publicitaire')->with('success','publiciter supprimer avec success');
+    }
+    public function publicitaire(){
+        $publiciters = $this->adminRepository->redPubliciter(); 
+        
+        return view('admin.publicitaire',['publiciters' => $publiciters ]);
+    }
+
+    public function editPubliciter($id){
+        $publiciter = $this->adminRepository->findPubliciter($id);
+        return view('admin.edit-publiciter',['publiciter' => $publiciter]);
+    }
+    public function updatePubliciter(Request $request,$id){
+        $data = $request->validate([
+            'titre' => 'required',
+            
+            'contenu' => 'required',
+            
+            'picture' => 'required'
+        ]);
+        if ($request->hasFile('picture')) {
+            $file = $request->file('picture');
+            $imageName = time() . '.' . $file->extension();
+            $file->storeAs('public/image', $imageName);
+            
+        }
+        
+        $data['picture'] = $imageName;
+        $this->adminRepository->updatePubliciter($data,$id);
+        
+        return redirect()->route('publicitaire')->with('success',' publiciter mise a jour avec success');
     }
    
 

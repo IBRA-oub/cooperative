@@ -54,7 +54,11 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     Route::delete('/delete-user/{id}',[adminController::class , 'deleteUser'])->name('user.delete');
 
     Route::get('/publicitaire',[adminController::class , 'publicitaire'])->name('publicitaire');
-    Route::get('/edit-publiciter',[adminController::class , 'editPubliciter'])->name('/edit-publiciter');
+    Route::get('/edit-publiciter/{id}',[adminController::class , 'editPubliciter'])->name('edit-publiciter');
+    Route::put('/update-publiciter/{id}',[adminController::class , 'updatePubliciter'])->name('publiciter.update');
+    Route::delete('/delete-publiciter/{id}',[adminController::class , 'PubliciterDelete'])->name('publiciter.delete');
+    Route::post('/add-publiciter',[adminController::class , 'addPubliciter'])->name('add.publiciter');
+
 });
 
 // __________________________financiere__________________________

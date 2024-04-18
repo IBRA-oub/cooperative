@@ -6,7 +6,7 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-green-200 min-h-screen transition-all main">
     <!--===========Content===========-->
- <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('img/editeRA.jpg')">
+ <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('{{asset('img/editeRA.jpg')}}')">
     <div class="w-full h-full" style="background-color: rgba(59, 59, 59, 0.5); backdrop-filter: blur(4px);">
 
     </div>
@@ -19,42 +19,37 @@
                 <div id="EditePubliciter" class="mx-16 py-4 px-8 text-black text-3xl font-bold border-b border-grey-500 text-center">edit publicter
                 </div>
 
-                <form action="">
+                <form action="{{route('publiciter.update',['id'=>$publiciter->id])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="titreEdite" for="nomProduit" class="block text-black text-sm font-bold mb-2">titre</label>
+                            <label id="titreEdite" for="titre" class="block text-black text-sm font-bold mb-2">titre</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
+                                name="titre" id="titre"  value="{{ $publiciter->titre }}">
+                                @error('titre')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
-                        <div class="mb-4">
-                            <label id="descriptionEdite" for="nomProduit" class="block text-black text-sm font-bold mb-2">description</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
-                        </div>
+                       
 
                         <div class="mb-4">
-                            <label id="contenuEdite" for="nomProduit" class="block text-black text-sm font-bold mb-2">contenu</label>
+                            <label id="contenuEdite" for="contenu" class="block text-black text-sm font-bold mb-2">contenu</label>
                             <textarea class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar"></textarea>
-                     
+                                name="contenu" id="contenu"  value="{{ $publiciter->contenu }}"></textarea>
+                                @error('contenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
-                        <div class="mb-4">
-                            <label id="datePubliEdite" for="nomProduit" class="block text-black text-sm font-bold mb-2">date publiciter</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
-                        </div>
+                       
 
                         <div class="mb-4">
-                            <label id="picturEdite" for="nomProduit" class="block text-black text-sm font-bold mb-2">picture</label>
+                            <label id="picturEdite" for="picture" class="block text-black text-sm font-bold mb-2">picture</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
-                                name="nomProduit" id="nomProduit"  placeholder="Za3tar">
-                     
+                                name="picture" id="picture"  value="{{ $publiciter->picture }}">
+                                @error('picture')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
                         </div>
 
                       

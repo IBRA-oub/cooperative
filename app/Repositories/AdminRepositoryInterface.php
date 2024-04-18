@@ -67,6 +67,13 @@ interface AdminRepositoryInterface
 
     public function getFirstStockiste();
 
+    // _________________publiciter_____________
+    public function storePubliciter(array $data);
+    public function redPubliciter();
+    public function deletePubliciter($id);
+    public function findPubliciter($id);
+    public function updatePubliciter(array $data, $id);
+    public function countPubliciter();
     
     
     
