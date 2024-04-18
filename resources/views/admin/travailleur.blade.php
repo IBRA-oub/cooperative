@@ -100,10 +100,7 @@
                                         <td class=" text-center ">
                                             {{ $user->stockiste->salaire }} DH
                                         </td>
-                                    @elseif($user->publicitaire)
-                                        <td class=" text-center ">
-                                            {{ $user->publicitaire->salaire }} DH
-                                        </td>
+                                   
                                     @elseif($user->travailleur)
                                         @foreach ($user->travailleur as $travailleur)
                                             <td class=" text-center ">
@@ -128,10 +125,7 @@
                                             <td class="text-center flex justify-center">
                                               {{ $totaleHeursSt }} H
                                             </td>
-                                            @elseif($user->publicitaire)
-                                            <td class="text-center flex justify-center">
-                                              {{ $totaleHeursPu }} H
-                                            </td>
+                                          
                                             
                                             @elseif($user->travailleur)
                                             
@@ -190,10 +184,7 @@
                                         <td class=" text-center ">
                                             <p class="rounded-md bg-gray-300 text-gray-800"> stockiste</p>
                                         </td>
-                                    @elseif($user->publicitaire)
-                                        <td class=" text-center ">
-                                            <p class="rounded-md bg-blue-300 text-blue-500"> publicitaire</p>
-                                        </td>
+                                   
                                     @elseif($user->travailleur)
                                         <td class=" text-center ">
                                             <p class="rounded-md bg-gray-300 text-gray-800"> travailleur</p>
@@ -253,12 +244,7 @@
                                                                 onclick="showModal({{ $user->stockiste->id }} , 'stockiste')">
                                                                 add hours
                                                             </button>
-                                                        @elseif($user->publicitaire)
-                                                            <button id="addH"
-                                                                class="bg-gray-600 text-white w-full rounded-md h-[35px] mb-2 hover:bg-gray-800"
-                                                                onclick="showModal({{ $user->publicitaire->id }} , 'publicitaire')">
-                                                                add hours
-                                                            </button>
+                                                      
                                                         @elseif($user->travailleur)
                                                             @foreach ($user->travailleur as $travailleur)
                                                                 <button id="addH"
@@ -294,14 +280,7 @@
                                                                     all hours
                                                                 </button>
                                                             </a>
-                                                        @elseif($user->publicitaire)
-                                                            <a
-                                                                href="{{ route('travailleur-heurs', ['id' => $user->publicitaire->id , 'type'=>'publicitaire']) }}">
-                                                                <button id="AllH"
-                                                                    class=" text-gray-600 w-full rounded-md h-[35px] hover:bg-black hover:text-white">
-                                                                    all hours
-                                                                </button>
-                                                            </a>
+                                                      
                                                         @elseif($user->travailleur)
                                                             @foreach ($user->travailleur as $travailleur)
                                                                 <a
@@ -392,13 +371,7 @@
                                             {{ $user->stockiste->salaire }} DH
 
                                         </td>
-                                    @elseif($user->publicitaire)
-                                        <td data-label="Salaire/heure"
-                                            class="border-b before:content-['Salaire/heure'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
-                         text-right">
-                                            {{ $user->publicitaire->salaire }} DH
-
-                                        </td>
+                                  
                                     @elseif($user->travailleur)
                                         @foreach ($user->travailleur as $travailleur)
                                             <td data-label="Salaire/heure"
@@ -467,12 +440,7 @@
                          text-right">
                                             <p class="rounded-md bg-gray-300 text-gray-800"> stockiste</p>
                                         </td>
-                                    @elseif($user->publicitaire)
-                                        <td data-label="Role"
-                                            class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
-                         text-right">
-                                            <p class="rounded-md bg-gray-300 text-gray-800"> publicitaire</p>
-                                        </td>
+                                 
                                     @elseif($user->travailleur)
                                         <td data-label="Role"
                                             class="border-b before:content-['Role'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
@@ -541,12 +509,7 @@
                                                                 onclick="showModal2({{ $user->stockiste->id }} , 'stockiste')">
                                                                 add hours
                                                             </button>
-                                                        @elseif($user->publicitaire)
-                                                            <button
-                                                                class="bg-gray-600 text-white w-full rounded-md h-[35px] mb-2 hover:bg-gray-800"
-                                                                onclick="showModal2({{ $user->publicitaire->id }} , 'publicitaire')">
-                                                                add hours
-                                                            </button>
+                                                        
                                                         @elseif($user->travailleur)
                                                             @foreach ($user->travailleur as $travailleur)
                                                                 <button

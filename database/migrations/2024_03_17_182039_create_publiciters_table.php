@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('contenu');
             $table->date('datePublicite');
             $table->string('picture');
-            $table->foreignId('publicitaire_id')
-            ->constrained('publicitaires')
+            $table->foreignId('admin_id')
+            ->constrained('admins')
             ->onUpdate('cascade');
             $table->timestamps();
         });

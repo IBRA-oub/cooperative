@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("Travailleur")) {
             document.getElementById("Travailleur").textContent = "عمال";
         }
+        if (document.getElementById("publicitaire")) {
+            document.getElementById("publicitaire").textContent = "إعلان";
+        }
+        if (document.getElementById("publicitaire1")) {
+            document.getElementById("publicitaire1").textContent = "إعلان";
+        }
 
         if (document.getElementById("Message")) {
             document.getElementById("Message").textContent = "الرسائل";
@@ -177,10 +183,131 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("jTH")) {
             document.getElementById("jTH").textContent = "يوم";
         }
+
+        // _____________________________publicitaire___________________
+
+         // ___________________publiciter_______________
+
+         if (document.getElementById("addPubliciter")) {
+            document.getElementById("addPubliciter").textContent = "إضافة إعلان";
+        }
+
+        if (document.getElementById("dateAnnonce")) {
+            document.getElementById("dateAnnonce").textContent = "تاريخ الإعلان";
+        }
+
+        if (document.getElementById("dateModified")) {
+            document.getElementById("dateModified").textContent = "تاريخ التعديل";
+        }
+
+         // _______________________add publiciter___________________
+
+         if (document.getElementById("addPubliciter1")) {
+            document.getElementById("addPubliciter1").textContent =
+                " إضافة إعلان";
+        
+        }
+        
+
+        if (document.getElementById("titreAdd")) {
+            document.getElementById("titreAdd").textContent =
+                "عنوان";
+            document
+                .getElementById("titreAdd")
+                .classList.add("text-right");
+        }
+        if (document.getElementById("description")) {
+            document.getElementById("description").textContent =
+                "وصف";
+            document
+                .getElementById("description")
+                .classList.add("text-right");
+        }
+        if (document.getElementById("contenu")) {
+            document.getElementById("contenu").textContent =
+                "المحتوى";
+            document
+                .getElementById("contenu")
+                .classList.add("text-right");
+        }
+        if (document.getElementById("datePubliciter")) {
+            document.getElementById("datePubliciter").textContent =
+                "تاريخ الإعلان";
+            document
+                .getElementById("datePubliciter")
+                .classList.add("text-right");
+        }
+        if (document.getElementById("picture")) {
+            document.getElementById("picture").textContent =
+                "صورة";
+            document
+                .getElementById("picture")
+                .classList.add("text-right");
+        }
+        if (document.getElementById("savePubli")) {
+            document.getElementById("savePubli").textContent =
+                "حفظ";
+          
+        }
+
+            // ___________________edite publicitaire_____________
+            if (document.getElementById("EditePubliciter")) {
+                document.getElementById("EditePubliciter").textContent =
+                    " تعديل المنتج";
+            
+            }
+    
+            if (document.getElementById("titreEdite")) {
+                document.getElementById("titreEdite").textContent =
+                    "عنوان";
+                document
+                    .getElementById("titreEdite")
+                    .classList.add("text-right");
+            }
+            if (document.getElementById("descriptionEdite")) {
+                document.getElementById("descriptionEdite").textContent =
+                    "وصف";
+                document
+                    .getElementById("descriptionEdite")
+                    .classList.add("text-right");
+            }
+            if (document.getElementById("contenuEdite")) {
+                document.getElementById("contenuEdite").textContent =
+                    "المحتوى";
+                document
+                    .getElementById("contenuEdite")
+                    .classList.add("text-right");
+            }
+            if (document.getElementById("datePubliEdite")) {
+                document.getElementById("datePubliEdite").textContent =
+                    "تاريخ الإعلان";
+                document
+                    .getElementById("datePubliEdite")
+                    .classList.add("text-right");
+            }
+            if (document.getElementById("picturEdite")) {
+                document.getElementById("picturEdite").textContent =
+                    "صورة ";
+                document
+                    .getElementById("picturEdite")
+                    .classList.add("text-right");
+            }
+            if (document.getElementById("saveEdite")) {
+                document.getElementById("saveEdite").textContent =
+                    "حفظ ";
+             
+            }
     }
 
     function reinitialiserTexte1() {
         localStorage.setItem("langue", "francais");
+
+        if (document.getElementById("publicitaire")) {
+            document.getElementById("publicitaire").textContent = "Publiciter";
+        }
+        if (document.getElementById("publicitaire1")) {
+            document.getElementById("publicitaire1").textContent = "Publiciter";
+        }
 
         if (document.getElementById("statistique")) {
             document.getElementById("statistique").textContent = "Statistique";
@@ -354,6 +481,119 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (document.getElementById("jTH")) {
             document.getElementById("jTH").textContent = "jour";
+        }
+
+        // ________________________publicitaire_____________________
+         // _______________________publicitaire_____________________
+
+         if (document.getElementById("addPubliciter")) {
+            document.getElementById("addPubliciter").textContent = "ajouter publiciter";
+        }
+
+        if (document.getElementById("dateAnnonce")) {
+            document.getElementById("dateAnnonce").textContent = "date Annonce";
+        }
+
+        if (document.getElementById("dateModified")) {
+            document.getElementById("dateModified").textContent = "date Modified";
+        }
+
+        // _______________________add publiciter___________________
+
+        if (document.getElementById("addPubliciter1")) {
+            document.getElementById("addPubliciter1").textContent =
+                " ajouter Publiciter";
+        
+        }
+
+        if (document.getElementById("titreAdd")) {
+            document.getElementById("titreAdd").textContent =
+                "titre";
+            document
+                .getElementById("titreAdd")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("description")) {
+            document.getElementById("description").textContent =
+                "description";
+            document
+                .getElementById("description")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("contenu")) {
+            document.getElementById("contenu").textContent =
+                "contenu";
+            document
+                .getElementById("contenu")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("datePubliciter")) {
+            document.getElementById("datePubliciter").textContent =
+                "date publiciter";
+            document
+                .getElementById("datePubliciter")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("picture")) {
+            document.getElementById("picture").textContent =
+                "picture";
+            document
+                .getElementById("picture")
+                .classList.remove("text-right");
+        }
+
+        if (document.getElementById("savePubli")) {
+            document.getElementById("savePubli").textContent =
+                "Save";
+          
+        }
+
+        // ___________________edite publicitaire_____________
+        if (document.getElementById("EditePubliciter")) {
+            document.getElementById("EditePubliciter").textContent =
+                " edit produit stocke";
+        
+        }
+
+        if (document.getElementById("titreEdite")) {
+            document.getElementById("titreEdite").textContent =
+                "titre";
+            document
+                .getElementById("titreEdite")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("descriptionEdite")) {
+            document.getElementById("descriptionEdite").textContent =
+                "description";
+            document
+                .getElementById("descriptionEdite")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("contenuEdite")) {
+            document.getElementById("contenuEdite").textContent =
+                "contenu";
+            document
+                .getElementById("contenuEdite")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("datePubliEdite")) {
+            document.getElementById("datePubliEdite").textContent =
+                "date publiciter";
+            document
+                .getElementById("datePubliEdite")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("picturEdite")) {
+            document.getElementById("picturEdite").textContent =
+                "picture ";
+            document
+                .getElementById("picturEdite")
+                .classList.remove("text-right");
+        }
+        if (document.getElementById("saveEdite")) {
+            document.getElementById("saveEdite").textContent =
+                "Save ";
+         
         }
     }
 

@@ -24,7 +24,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="NomProAdd" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom Produit</label>
+                            <label id="NomProAdd" for="nomProduit" class="block text-black text-sm font-bold mb-2">nom Produit</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  placeholder="Za3tar">
                                 @error('nomProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -33,7 +33,7 @@
 
 
                         <div class="mb-4">
-                            <label id="quntiterAdd" for="quantiterRevenu" class="block text-white text-sm font-bold mb-2">Quantiter</label>
+                            <label id="quntiterAdd" for="quantiterRevenu" class="block text-black text-sm font-bold mb-2">Quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="quantiterRevenu" id="quantiterRevenu"  placeholder="20kg">
                                 @error('quantiterRevenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -41,14 +41,14 @@
                         </div>
 
                         <div class="mb-4">
-                            <label id="prixRevenuAdd" for="prixRevenuProduit" class="block text-white text-sm font-bold mb-2">Prix de vente</label>
+                            <label id="prixRevenuAdd" for="prixRevenuProduit" class="block text-black text-sm font-bold mb-2">Prix de vente</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="prixRevenuProduit" id="prixRevenuProduit"  placeholder="30dh">
                                 @error('prixRevenuProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateRevenuAdd" for="dateRevenu" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateRevenuAdd" for="dateRevenu" class="block text-black text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="dateRevenu" id="dateRevenu"  placeholder="3">
                                 @error('dateRevenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror

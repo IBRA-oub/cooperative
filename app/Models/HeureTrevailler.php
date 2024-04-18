@@ -18,9 +18,7 @@ class HeureTrevailler extends Model
         return $this->belongsTo(Planner::class);
     }
 
-    public function publicitaire(){
-        return $this->belongsTo(Publicitaire::class);
-    }
+
 
     public function stockiste(){
         return $this->belongsTo(Stockiste::class);

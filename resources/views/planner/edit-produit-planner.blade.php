@@ -28,7 +28,7 @@
 
                                 <div class="mb-4">
                                     <label id="NomPRoduitPlantEDite" for="nom"
-                                        class="block text-white text-sm font-bold mb-2">nom de produit</label>
+                                        class="block text-black text-sm font-bold mb-2">nom de produit</label>
                                     <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                         name="nom" id="nom"  value="{{$produit->nom}}">
                                     @error('nom')
@@ -40,7 +40,7 @@
 
                                 <div class="mb-4">
                                     <label id="periodeEdite" for="periode_id"
-                                        class="block text-white text-sm font-bold mb-2">periode</label>
+                                        class="block text-black text-sm font-bold mb-2">periode</label>
                                     <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                         name="periode_id" id="periode_id">
                                         @foreach ($periods as $period)

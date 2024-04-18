@@ -119,30 +119,7 @@ class adminController extends Controller
             
         }
 
-        //    ______________publicitaire___________
-        if($request->role === 'publicitaire'){
-        $existingPublicitaire =  $this->adminRepository->getFirstPublicitaire();
-
-        if ($existingPublicitaire) {
-            $this->adminRepository->delete($userId);
-            return redirect()->route('admin-travailleur')->with('error','Un compte Publicitaire existe déjà.');
-        }
-        
-        
-
-            $validatedPublicitaireData = $request->validate([
-                'salaire' => 'required|integer',
-                
-            ]);
     
-            
-            $validatedPublicitaireData['user_id'] = $userId;
-            
-            $this->adminRepository->createPublicitaire($validatedPublicitaireData);
-            
-            return redirect()->route('admin-travailleur')->with('success','Publicitaire ajouter avec success');
-            
-        }
          if($request->role === 'travailleur'){
 
             $validatedTravailleurData = $request->validate([
@@ -166,7 +143,7 @@ class adminController extends Controller
     // __________red user____________
     public function travailleur() {
         $users = $this->adminRepository->allUser();
-        $users->load('financiere', 'planner', 'stockiste', 'publicitaire', 'travailleur');
+        $users->load('financiere', 'planner', 'stockiste', 'travailleur');
         
         $totaleHeursFi = 0;
         foreach($users as $user) {
@@ -189,12 +166,7 @@ class adminController extends Controller
             }
         }
     
-        $totaleHeursPu = 0;
-        foreach($users as $user) {
-            if($user->publicitaire) {
-                $totaleHeursPu += $this->adminRepository->publicitaireHoursTotal();
-            }
-        }
+       
     
         $totaleHeursTr = 0;
         foreach($users as $user) {
@@ -208,7 +180,7 @@ class adminController extends Controller
             'totaleHeursFi' => $totaleHeursFi,
             'totaleHeursPl' => $totaleHeursPl,
             'totaleHeursSt' => $totaleHeursSt,
-            'totaleHeursPu' => $totaleHeursPu,
+           
             'totaleHeursTr' => $totaleHeursTr
         ]);
     }
@@ -217,7 +189,7 @@ class adminController extends Controller
 
     public function editUser($id){
         $user = $this->adminRepository->editeUser($id);
-        $user->load('financiere', 'planner', 'stockiste', 'publicitaire', 'travailleur');
+        $user->load('financiere', 'planner', 'stockiste', 'travailleur');
 
         return view('admin.edit-user',['user' => $user]);
     }
@@ -284,20 +256,6 @@ class adminController extends Controller
             
             return redirect()->route('admin-travailleur')->with('success','stockiste mise a jour avec success');
             
-        }else if($request->role === 'publicitaire'){
-
-            $validatedPublicitaireData = $request->validate([
-                'salaire' => 'required|integer',
-                
-            ]);
-    
-            
-            $validatedPublicitaireData['user_id'] = $userId;
-            
-            $this->adminRepository->updatePublicitaire($validatedPublicitaireData);
-            
-            return redirect()->route('admin-travailleur')->with('success','Publicitaire mise ajour avec success');
-            
         }else if($request->role === 'travailleur'){
 
             $validatedTravailleurData = $request->validate([
@@ -361,12 +319,7 @@ class adminController extends Controller
             $this->adminRepository->createHoursStockiste($validatedData);
             return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
         } 
-        elseif ($userType == "publicitaire") {
-            
-            $validatedData['publicitaire_id'] = $request->input('user_id');
-            $this->adminRepository->createHoursPublicitaire($validatedData);
-            return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
-        } 
+       
         elseif ($userType == "travailleur") {
              
             $validatedData['travailleur_id'] = $request->input('user_id');
@@ -398,11 +351,7 @@ class adminController extends Controller
             $stockisteHeure =  $this->adminRepository->stockisteHours($id);
             
              return view('admin.travailleur-heurs',['Heures'=>$stockisteHeure]);
-        } elseif($type == 'publicitaire'){
-            $publicitaireHeure =  $this->adminRepository->publicitaireHours($id);
-            
-             return view('admin.travailleur-heurs',['Heures'=>$publicitaireHeure]);
-        } elseif($type == 'travailleur'){
+        }  elseif($type == 'travailleur'){
             $travailleurHeure =  $this->adminRepository->travailleurHours($id);
             
              return view('admin.travailleur-heurs',['Heures'=>$travailleurHeure]);
@@ -420,6 +369,15 @@ class adminController extends Controller
     }
     public function addUserPage(){
         return view('admin.add-user');
+    }
+
+    // _________________publiciter_______________
+
+    public function publicitaire(){
+        return view('admin.publicitaire');
+    }
+    public function editPubliciter(){
+        return view('admin.edit-publiciter');
     }
    
 

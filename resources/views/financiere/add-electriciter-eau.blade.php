@@ -25,7 +25,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="nomProAch" for="nom" class="block text-white text-sm font-bold mb-2">nom</label>
+                            <label id="nomProAch" for="nom" class="block text-black text-sm font-bold mb-2">nom</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nom" id="nom"  placeholder="Eau/Electriciter">
                                 @error('nom')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -36,14 +36,14 @@
                        
 
                         <div class="mb-4">
-                            <label id="prixAchat" for="prix" class="block text-white text-sm font-bold mb-2">Prix </label>
+                            <label id="prixAchat" for="prix" class="block text-black text-sm font-bold mb-2">Prix </label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="prix" id="prix"  placeholder="30dh">
                                 @error('prix')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateAchat" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateAchat" for="date" class="block text-black text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="date" id="date"  placeholder="3">
                                 @error('date')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror

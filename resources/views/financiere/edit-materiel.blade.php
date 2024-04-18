@@ -25,7 +25,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="nomProAchEdi" for="nom" class="block text-white text-sm font-bold mb-2">nom </label>
+                            <label id="nomProAchEdi" for="nom" class="block text-black text-sm font-bold mb-2">nom </label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nom" id="nom"  value="{{$materiel->nom}}">
                                 @error('nom')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -34,7 +34,7 @@
 
 
                         <div class="mb-4">
-                            <label id="quantiterAchEdi" for="quantiter" class="block text-white text-sm font-bold mb-2">Quantiter</label>
+                            <label id="quantiterAchEdi" for="quantiter" class="block text-black text-sm font-bold mb-2">Quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="quantiter" id="quantiter" value="{{$materiel->quantiter}}">
                                 @error('quantiter')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -42,14 +42,14 @@
                         </div>
 
                         <div class="mb-4">
-                            <label id="prixAchaEdit" for="prix" class="block text-white text-sm font-bold mb-2">Prix </label>
+                            <label id="prixAchaEdit" for="prix" class="block text-black text-sm font-bold mb-2">Prix </label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="prix" id="prix"  value="{{$materiel->prix}}">
                                 @error('prix')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateAchatEdit" for="date" class="block text-white text-sm font-bold mb-2">Date</label>
+                            <label id="dateAchatEdit" for="date" class="block text-black text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="date" id="date"  value="{{$materiel->date}}">
                                 @error('date')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror

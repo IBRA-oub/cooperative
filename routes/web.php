@@ -52,6 +52,9 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     Route::get('/edit-user/{id}',[adminController::class , 'editUser'])->name('edit-user');
     Route::put('/update-user/{id}',[adminController::class , 'updateUser'])->name('user.update');
     Route::delete('/delete-user/{id}',[adminController::class , 'deleteUser'])->name('user.delete');
+
+    Route::get('/publicitaire',[adminController::class , 'publicitaire'])->name('publicitaire');
+    Route::get('/edit-publiciter',[adminController::class , 'editPubliciter'])->name('/edit-publiciter');
 });
 
 // __________________________financiere__________________________
@@ -146,16 +149,5 @@ Route::middleware(['auth', CheckRole::class . ':stockiste'])->group( function() 
     
     Route::get('/stockiste-info-stati',[stockisteController::class , 'infoStati'])->name('stockiste-info-stati');
     Route::get('/stockiste-message',[stockisteController::class , 'message'])->name('stockiste-message');
-    
-});
-
-// __________________________publicitaire__________________________
-
-Route::middleware(['auth', CheckRole::class . ':publicitaire'])->group( function() {
-    
-    Route::get('/publicitaire-dashboard',[publicitaireController::class , 'dashboard'])->name('publicitaire-dashboard');
-    Route::get('/publicitaire-info-stati',[publicitaireController::class , 'infoStati'])->name('publicitaire-info-stati');
-    Route::get('/publicitaire-message',[publicitaireController::class , 'message'])->name('publicitaire-message');
-    Route::get('//edit-publiciter',[publicitaireController::class , 'editPubliciter'])->name('/edit-publiciter');
     
 });

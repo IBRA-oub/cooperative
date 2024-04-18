@@ -25,7 +25,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="ProstockEDit" for="nomProduit" class="block text-white text-sm font-bold mb-2">nom produit</label>
+                            <label id="ProstockEDit" for="nomProduit" class="block text-black text-sm font-bold mb-2">nom produit</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nomProduit" id="nomProduit"  value="{{$produit->nomProduit}}">
                                 @error('nomProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -34,7 +34,7 @@
 
 
                         <div class="mb-4">
-                            <label id="quantiterEdit" for="quantiterProduit" class="block text-white text-sm font-bold mb-2"> quantiter</label>
+                            <label id="quantiterEdit" for="quantiterProduit" class="block text-black text-sm font-bold mb-2"> quantiter</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="quantiterProduit" id="quantiterProduit"  value="{{$produit->quantiterProduit}}">
                                 @error('quantiterProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror

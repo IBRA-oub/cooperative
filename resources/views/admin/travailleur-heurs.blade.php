@@ -56,11 +56,7 @@
                                             {{ $Heure->stockiste->user->fullName }}
 
                                         </td>
-                                    @elseif($Heure->publicitaire_id)
-                                        <td class=" text-center ">
-                                            {{ $Heure->publicitaire->user->fullName }}
-
-                                        </td>
+                                   
                                     @elseif($Heure->travailleur_id)
                                         <td class=" text-center ">
                                             {{ $Heure->travailleur->user->fullName }}
@@ -135,11 +131,7 @@
                                             class="border-b before:content-['fullName'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center  text-right">
                                             {{ $Heure->stockiste->user->fullName }}
                                         </td>
-                                    @elseif($Heure->publicitaire_id)
-                                        <td data-label="fullName"
-                                            class="border-b before:content-['fullName'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center  text-right">
-                                            {{ $Heure->publicitaire->user->fullName }}
-                                        </td>
+                                   
                                     @elseif($Heure->travailleur_id)
                                         <td data-label="fullName"
                                             class="border-b before:content-['fullName'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center  text-right">

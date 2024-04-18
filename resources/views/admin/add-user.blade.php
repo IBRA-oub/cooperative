@@ -12,7 +12,7 @@
 
     </div>
        <!--  Application Details Start -->
-       <div  class="absolute w-72 md:w-full   ml-10 md:ml-0 bg-transparent">
+       <div  class="absolute top-0 w-72 md:w-full   ml-10 md:ml-0 bg-transparent">
         <div class="container mx-auto py-8">
             <div class="w-80 md:w-[60%] md:mx-auto ml-8   rounded shadow bg-white" >
 
@@ -24,7 +24,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="FL" for="fullName" class="block text-white text-sm font-bold mb-2">fullName</label>
+                            <label id="FL" for="fullName" class="block text-black text-sm font-bold mb-2">fullName</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="fullName" id="fullName"  placeholder="John Down">
                                 @error('fullName')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -33,7 +33,7 @@
 
 
                         <div class="mb-4">
-                            <label id="EM" for="email" class="block text-white text-sm font-bold mb-2">Email</label>
+                            <label id="EM" for="email" class="block text-black text-sm font-bold mb-2">Email</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="email"
                                 name="email" id="email"  placeholder="exemple@gmail.com">
                                 @error('email')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -41,27 +41,27 @@
                         </div>
 
                         <div class="mb-4">
-                            <label id="PS" for="password" class="block text-white text-sm font-bold mb-2">Password</label>
+                            <label id="PS" for="password" class="block text-black text-sm font-bold mb-2">Password</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="password"
                                 name="password" id="password"  placeholder="*********************">
                                 @error('password')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                             </div>
 
                         <div class="mb-4">
-                            <label id="SL" for="salaire" class="block text-white text-sm font-bold mb-2">Salaire/Heure</label>
+                            <label id="SL" for="salaire" class="block text-black text-sm font-bold mb-2">Salaire/Heure</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="salaire" id="salaire"  placeholder="3">
                                 @error('salaire')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                             </div>
 
                         <div class="mb-4">
-                            <label id="SL" for="role" class="block text-white text-sm font-bold mb-2">Role</label>
+                            <label id="SL" for="role" class="block text-black text-sm font-bold mb-2">Role</label>
                             <select class=" border rounded w-full py-2 px-3 text-grey-darker" 
                                 name="role" id="role"  >
                             <option value="financiere">Financière</option>
                             <option value="planner">Responsable agricole</option>
                             <option value="stockiste">Stockists</option>
-                            <option value="publicitaire">Publicitaire</option>
+                            
                             <option value="travailleur">Travailleur</option>
                             
                         </select>
@@ -70,7 +70,7 @@
 
 
                         <div class="mb-4">
-                            <label id="pic"  for="picture" class="block text-white text-sm font-bold mb-2">picture</label>
+                            <label id="pic"  for="picture" class="block text-black text-sm font-bold mb-2">picture</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file"
                                 name="picture" id="picture" >
                                 @error('picture')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror

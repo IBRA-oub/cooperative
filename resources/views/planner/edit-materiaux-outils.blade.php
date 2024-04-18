@@ -24,7 +24,7 @@
                     @method('PUT')
                     <div class="py-4 px-8">
                         <div class="mb-4">
-                            <label id="NomPRoduitEdite" for="nom" class="block text-white text-sm font-bold mb-2">nom produit</label>
+                            <label id="NomPRoduitEdite" for="nom" class="block text-black text-sm font-bold mb-2">nom produit</label>
                             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                             name="produit_planter_id" id="Periode" >
                             @foreach($produits as $produit)
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label id="MaterOutiEdite" for="nom" class="block text-white text-sm font-bold mb-2">materiaux/outils</label>
+                            <label id="MaterOutiEdite" for="nom" class="block text-black text-sm font-bold mb-2">materiaux/outils</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="nom" id="nom"  value="{{$MateraiuxOutils->nom}}">
                                 @error('nom')

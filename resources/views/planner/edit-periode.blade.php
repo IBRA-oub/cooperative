@@ -25,7 +25,7 @@
                     <div class="py-4 px-8">
 
                         <div class="mb-4">
-                            <label id="NomPeriode" for="titre" class="block text-white text-sm font-bold mb-2">nom de periode</label>
+                            <label id="NomPeriode" for="titre" class="block text-black text-sm font-bold mb-2">nom de periode</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
                                 name="titre" id="titre"  value="{{$periode->titre}}">
                                 @error('titre')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -34,7 +34,7 @@
 
 
                         <div class="mb-4">
-                            <label id="dateDebutEdit" for="dateDepart" class="block text-white text-sm font-bold mb-2">date début</label>
+                            <label id="dateDebutEdit" for="dateDepart" class="block text-black text-sm font-bold mb-2">date début</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="dateDepart" id="dateDepart"  value="{{$periode->dateDepart}}">
                                 @error('dateDepart')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label id="dateFinirEdite" for="dateStop" class="block text-white text-sm font-bold mb-2">date Finir</label>
+                            <label id="dateFinirEdite" for="dateStop" class="block text-black text-sm font-bold mb-2">date Finir</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
                                 name="dateStop" id="dateStop"  value="{{$periode->dateStop}}">
                                 @error('dateStop')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror

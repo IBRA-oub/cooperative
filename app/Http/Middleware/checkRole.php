@@ -34,11 +34,7 @@ class CheckRole
                         return $next($request);
                     }
                     break;
-                case 'publicitaire':
-                    if ($user->publicitaire()->exists()) {
-                        return $next($request);
-                    }
-                    break;
+                
                 default:
                     // Handle unknown role
                     break;

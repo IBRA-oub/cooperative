@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\Financiere;
 use App\Models\HeureTrevailler;
 use App\Models\Planner;
-use App\Models\Publicitaire;
+
 use App\Models\Stockiste;
 use App\Models\Travailleur;
 use App\Models\User;
@@ -45,10 +45,7 @@ class AdminRepository implements AdminRepositoryInterface
     }
 
 
-    public function createPublicitaire(array $data)
-    {
-        return Publicitaire::create($data);
-    }
+  
 
     public function createTravailleur(array $data)
     {
@@ -90,11 +87,7 @@ class AdminRepository implements AdminRepositoryInterface
     return $stockiste;
     }
 
-    public function updatePublicitaire(array $data)
-    {
-    $publicitaire = Publicitaire::update($data);
-    return $publicitaire;
-    }
+  
 
     public function updateTravailleur(array $data)
     {
@@ -135,10 +128,7 @@ public function delete($id)
       return HeureTrevailler::create($data);
   }
 
-  public function createHoursPublicitaire(array $data)
-  {
-      return HeureTrevailler::create($data);
-  }
+ 
 
   public function createHoursTravailleur(array $data)
   {
@@ -162,10 +152,7 @@ public function stockisteHours($id)
     return HeureTrevailler::all()->where('stockiste_id',$id);
 }
 
-public function publicitaireHours($id)
-{
-    return HeureTrevailler::all()->where('publicitaire_id',$id);
-}
+
 
 public function travailleurHours($id)
 {
@@ -189,10 +176,7 @@ public function stockisteHoursTotal()
     return HeureTrevailler::whereNotNull('stockiste_id' )->sum('heurs');
 }
 
-public function publicitaireHoursTotal()
-{
-    return HeureTrevailler::whereNotNull('publicitaire_id' )->sum('heurs');
-}
+
 
 public function travailleurHoursTotal()
 {
@@ -216,9 +200,7 @@ public function travailleurHoursTotal()
         return  Stockiste::all()->first();
     }
 
-    public function getFirstPublicitaire(){
-        return  Publicitaire::all()->first();
-    }
+   
 
    
 

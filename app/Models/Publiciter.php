@@ -9,15 +9,9 @@ class Publiciter extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'titre',
-        'description',
-        'contenu',
-        'datePublicite',
-        'picture'
-    ];
+    protected $guarded = [];
 
-    public function publicitaire(){
-        return $this->belongsTo(Publicitaire::class);
+    public function admin(){
+        return $this->belongsTo(Admin::class);
     }
 }
