@@ -6,14 +6,17 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-green-200 min-h-screen transition-all main">
     <!--===========Content===========-->
- <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('img/editeRA.jpg')">
+ <main class=" flex-grow  relative h-screen bg-cover bg-center "  style="background-image: url('{{asset('img/editeRA.jpg')}}')">
 
+    <div class="w-full h-full" style="background-color: rgba(59, 59, 59, 0.5); backdrop-filter: blur(4px);">
+
+    </div>
        <!--  Application Details Start -->
-       <div class="w-72 md:w-full  md:pt-10 bg-transparent  ml-[14.7%] md:ml-0">
+       <div class="absolute top-10 w-72 md:w-full  md:pt-10 bg-transparent  ml-[14.7%] md:ml-0">
         <div class="container mx-auto py-8">
-            <div class="w-80 ml-3  my-10 md:my-0  md:w-[60%] md:mx-auto rounded shadow" style="background-color: rgba(116, 116, 116, 0.885)">
+            <div class="w-80 ml-3  my-10 md:my-0  md:w-[60%] md:mx-auto rounded shadow bg-white">
 
-                <div id="EditeModPlan" class="mx-16 py-4 px-8 text-white text-md font-bold border-b border-grey-500 text-center">edit materiaux-outils
+                <div id="EditeModPlan" class="mx-16 py-4 px-8 text-black text-md font-bold border-b border-grey-500 text-center">edit materiaux-outils
                 </div>
 
                 <form action="{{ route('update.materiauxOutils', ['id' => $MateraiuxOutils->id]) }}" method="POST">
@@ -43,7 +46,7 @@
 
                         <div class="mb-4 flex justify-center">
                             <button id="saveMaOutEdit"
-                                class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-white hover:text-black">
+                                class="text-white mb-2 mx-16 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
                                 Save
                             </button>
                         </div>

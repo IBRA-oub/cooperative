@@ -26,7 +26,7 @@
 <aside class="w-20 bg-[#31363F] fixed inset-0 z-50  h-100vh md:w-72 e ">
     <div class="relative border-b border-white/20">
       <a class="flex items-center gap-4 py-6 px-8" >
-        <img src="img/logo.png" alt="" width="40px">
+        <img src="{{asset('img/logo.png')}}" alt="" width="40px">
         <h6 class="hidden md:block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">ONE HAND</h6>
       </a>
       <p class="text-center text-xs md:text-2xl font-bold text-white font-serif ">STOCKISTE</p>
