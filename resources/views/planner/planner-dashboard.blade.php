@@ -218,7 +218,7 @@
                                 <td data-label="Action"
                                     class=" border-b before:content-['action'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                                    
-       
+                                    <div class="flex justify-end">
                                     <form action="{{ route('produit.delete', ['id' => $produit->id]) }}" method="POST">
                                        @csrf
                                        @method('DELETE')
@@ -235,7 +235,7 @@
                                            <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                                    </button>
                                    </a>
-       
+                                    </div>
                                    
                                 </td>
                                 
@@ -362,7 +362,7 @@
                                 <td data-label="Action"
                                     class=" border-b before:content-['action'] before:absolute before:left-0 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                                    
-       
+                                    <div class="flex justify-end">
                                     <form action="{{ route('materiauxOutils.delete', ['id' => $materOutil->id]) }}" method="POST">
                                        @csrf
                                        @method('DELETE')
@@ -379,7 +379,7 @@
                                            <i class="fa-solid fa-pen" style="color: #30ff02;"></i>
                                    </button>
                                    </a>
-       
+                                    </div>
                                    
                                 </td>
                                 

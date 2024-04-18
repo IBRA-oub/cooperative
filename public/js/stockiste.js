@@ -191,22 +191,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("produitEnStok")) {
             document.getElementById("produitEnStok").textContent =
                 " add Produit en stocke";
-            document
-                .getElementById("produitEnStok")
-                .classList.add("text-right");
+           
         }
 
         if (document.getElementById("nomProdStok")) {
             document.getElementById("nomProdStok").textContent =
                 " nom de produit ";
-            document.getElementById("nomProdStok").classList.add("text-right");
+            document.getElementById("nomProdStok").classList.remove("text-right");
         }
 
         if (document.getElementById("quantiterStok")) {
             document.getElementById("quantiterStok").textContent = "quantiter";
             document
                 .getElementById("quantiterStok")
-                .classList.add("text-right");
+                .classList.remove("text-right");
         }
 
         if (document.getElementById("saveStok")) {

@@ -141,7 +141,7 @@
                          <td data-label="Action"
                              class=" border-b before:content-['action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                             
-
+                             <div class="flex justify-end">
                              <form action="{{ route('revenu.delete', ['id' => $revenu->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -159,7 +159,7 @@
                             </button>
                             </a>
 
-                            
+                             </div>
                          </td>
                          
                      </tr>

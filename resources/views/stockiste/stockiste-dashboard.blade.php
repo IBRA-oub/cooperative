@@ -25,12 +25,18 @@
             <!-- ============ Content ============= -->
         
             <div class="md:p-6 bg-gray-200  md:m-5">
-               @if (session('success'))
-               <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                   <strong class="font-bold">Success!</strong>
-                   <span class="block sm:inline">{{ session('success') }}</span>
-               </div>
-               @endif
+
+                @if (session('success'))
+                <script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success!",
+                        text: "{{ session('success') }}",
+
+
+                    });
+                </script>
+                @endif
         
                 <!-- ========== table Banks-desktop ======== -->
               
@@ -46,28 +52,28 @@
                                 <th id="actionProStok" class="">plus options</th>
                             </tr>
                         </thead>
-                        {{-- @foreach($allUsers as $user) --}}
                         <tbody class="sm:w-full">
+                            @foreach($produits as $produit)
                          
         
                             <tr class="  pt-10 sm:pt-0  w-full border-b border-[#31363F]">
         
                                 <td class=" text-center ">
-                                    {{-- {{$user->id}} --}}
-                                    4
+                                    {{$produit->id}}
+                                    
                                 </td>
                                 <td class=" text-center ">
-                                   {{-- {{$user->fullName}} --}}
-                                   za3tar
+                                   {{$produit->nomProduit}}
+                                   
                                 </td>
                                 <td class=" text-center ">
-                                    {{-- {{$user->fullName}} --}}
-                                    220 kg
+                                    {{$produit->quantiterProduit}}
+                                    
                                  </td>
                              
                               
                                    <td class="text-center flex justify-center">
-                                       <form action="" method="POST">
+                                       <form action="{{ route('ProduitStocke.delete', ['id' => $produit->id]) }}" method="POST">
                                            @csrf
                                            @method('DELETE')
                                         <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -77,7 +83,7 @@
             
                                         </button>
                                        </form>
-                                       <a href="/edit-produit-stocke">
+                                       <a href="{{ route('edit-ProduitStocke', ['id' => $produit->id]) }}">
                                         <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                            
                                                <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
@@ -88,8 +94,8 @@
                             </tr>
                       
         
+                            @endforeach
                         </tbody>
-                        {{-- @endforeach --}}
                     </table>
                 </div>
                 
@@ -107,31 +113,32 @@
                             </tr>
                         </thead>
                         <tbody class="block  w-full">
-                           {{-- @foreach($allUsers as $user) --}}
+                            @foreach($produits as $produit)
+                         
                             <tr class="block pt-10 mt-9 sm:mt-0 sm:pt-0   w-full ">
         
                                 <td data-label="id"
-                                    class="border-b before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
-                                  {{-- {{$user->id}} --}}
-                                  3
+                                    class="border-b border-black before:content-['id']  before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 sm:before:hidden sm:text-center block    text-right">
+                                  {{$produit->id}}
+                                  
                                 </td>
-                                <td data-label="nomProduit" class="border-b before:content-['nomProduit'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                                <td data-label="nomProduit" class="border-b border-black before:content-['nomProduit'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                                      text-right">
-                                   {{-- {{$user->fullName}} --}}
-                                   za3tar
+                                   {{$produit->nomProduit}}
+                                   
                                 </td>
                            
-                                <td data-label="quantiter" class="border-b before:content-['quantiter'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                                <td data-label="quantiter" class="border-b border-black before:content-['quantiter'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                                      text-right">
-                                   {{-- {{$user->fullName}} --}}
-                                   220 Kg
+                                   {{$produit->quantiterProduit}}
+                                  
                                 </td>
                            
                                 <td data-label="Action"
-                                    class=" border-b before:content-['action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
+                                    class=" border-b border-black before:content-['action'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2  sm:before:hidden  sm:text-center block    text-right">
                                    
-       
-                                    <form action="" method="POST">
+                                <div class="flex justify-end">
+                                    <form action="{{ route('ProduitStocke.delete', ['id' => $produit->id]) }}" method="POST">
                                        @csrf
                                        @method('DELETE')
                                     <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
@@ -141,18 +148,18 @@
         
                                     </button>
                                    </form>
-                                   <a href="/edit-produit-stocke">
+                                   <a href="{{ route('edit-ProduitStocke', ['id' => $produit->id]) }}">
                                     <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
                                        
                                            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
                                    </button>
                                    </a>
-       
+                                </div>
                                    
                                 </td>
                                 
                             </tr>
-                         {{-- @endforeach --}}
+                         @endforeach
         
                         </tbody>
                     </table>
@@ -179,14 +186,19 @@
 <div id="myModal4" class="modal4 ">
     <div class="modal-content4 rounded-lg">
       <span class="close4" onclick="closeModal4()">&times;</span>
-      <form id="updateForm">
+      <form action="{{route('add.ProduitStocke')}}" id="updateForm" method="POST">
+        @csrf
         <p id="produitEnStok" class="text-xl font-bold text-center">add Produit en stocke</p>
-        <label id="nomProdStok" for="heurs" class="block text-black text-sm font-bold mb-2">nom de produit</label>
+        <label id="nomProdStok" for="nomProduit" class="block text-black text-sm font-bold mb-2">nom de produit</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-            name="heurs" id="heurs"  placeholder="ghj"><br>
-        <label id="quantiterStok" for="heurs" class="block text-black text-sm font-bold mb-2">quantiter</label>
+            name="nomProduit" id="nomProduit"  placeholder="za3tar"><br>
+            @error('nomProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
+        <label id="quantiterStok" for="quantiterProduit" class="block text-black text-sm font-bold mb-2">quantiter</label>
         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-            name="heurs" id="heurs"  placeholder="3"><br>
+            name="quantiterProduit" id="quantiterProduit"  placeholder="2O kg"><br>
+            @error('quantiterProduit')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
+
             
                
         <button id="saveStok"

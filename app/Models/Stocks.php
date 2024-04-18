@@ -9,10 +9,7 @@ class Stocks extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nomProduit',
-        'quantiterProduit'
-    ];
+    protected $guarded = [];
 
     public function stockiste(){
         return $this->belongsTo(Stockiste::class);

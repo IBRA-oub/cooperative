@@ -13,6 +13,10 @@ use App\Repositories\PlannerRepository;
 use App\Repositories\PlannerRepositoryInterface;
 use App\Services\PlannerService;
 use App\Services\PlannerServiceInterface;
+use App\Repositories\StockisteRepository;
+use App\Repositories\StockisteRepositoryInterface;
+use App\Services\StockisteService;
+use App\Services\StockisteServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,11 +38,17 @@ class AppServiceProvider extends ServiceProvider
             return new FinanciereService($app->make(FinanciereRepositoryInterface::class));
         });
 
-        // _______________planner_______________
+        // _______________Responsable agricule_______________
         $this->app->bind(PlannerRepositoryInterface::class, PlannerRepository::class);
         $this->app->bind(PlannerServiceInterface::class, function ($app) {
             return new PlannerService($app->make(PlannerRepositoryInterface::class));
         });
+
+         // _______________stockiste_______________
+         $this->app->bind(StockisteRepositoryInterface::class, StockisteRepository::class);
+         $this->app->bind(StockisteServiceInterface::class, function ($app) {
+             return new StockisteService($app->make(StockisteRepositoryInterface::class));
+         });
     }
 
     /**
