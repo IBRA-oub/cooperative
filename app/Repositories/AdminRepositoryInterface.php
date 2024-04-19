@@ -73,7 +73,7 @@ interface AdminRepositoryInterface
     public function deletePubliciter($id);
     public function findPubliciter($id);
     public function updatePubliciter(array $data, $id);
-    public function countPubliciter();
+    // public function countPubliciter();
 
     // _____________________last publiciter et periode _______________
 
@@ -81,6 +81,14 @@ interface AdminRepositoryInterface
     public function redLastPubliciter();
 
     public function redPeriodes();
+
+    // ____________count____________
+    public function countCharge();
+    public function countChargePrix();
+    public function countRevenu();
+    public function countRevenuPrix();
+    public function HoursTotal();
+    public function TravailleurTotal();
     
     
 }

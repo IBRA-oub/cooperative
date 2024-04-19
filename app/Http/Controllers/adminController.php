@@ -438,7 +438,13 @@ class adminController extends Controller
     public function Welcome(){
         $publiciter = $this->adminRepository->redLastPubliciter();
         $periodes = $this->adminRepository->redPeriodes();
-        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes]);
+        $countCharge = $this->adminRepository->countCharge();
+        $countChargePrix = $this->adminRepository->countChargePrix();
+        $countRevenu = $this->adminRepository->countRevenu();
+        $countRevenuPrix = $this->adminRepository->countRevenuPrix();
+        $HoursTotal = $this->adminRepository->HoursTotal();
+        $TravailleurTotal = $this->adminRepository->TravailleurTotal()+4;
+        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal]);
     }
 
    

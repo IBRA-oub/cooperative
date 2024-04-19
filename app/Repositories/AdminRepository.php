@@ -2,12 +2,14 @@
 
 namespace App\Repositories;
 
+use App\Models\Charge;
 use App\Models\Financiere;
 use App\Models\HeureTrevailler;
 use App\Models\Periode;
 use App\Models\Planner;
 
 use App\Models\Publiciter;
+use App\Models\Revenu;
 use App\Models\Stockiste;
 use App\Models\Travailleur;
 use App\Models\User;
@@ -231,11 +233,11 @@ public function travailleurHoursTotal()
     $Publiciter->update($data);
     return $Publiciter;
     }
-    public function countPubliciter()
-    {
-        $count = Publiciter::count();
-        return $count;
-    }
+    // public function countPubliciter()
+    // {
+    //     $count = Publiciter::count();
+    //     return $count;
+    // }
 
     // ________________les deux dernier publiciter avec affichage des periode dans home page_______________
 
@@ -247,7 +249,39 @@ public function travailleurHoursTotal()
     {
         return Periode::all();
     }
+
+    // ______________________les statistique_______________
    
 
+    // ____________totale de charge_______
+    public function countCharge()
+    {
+        $count = Charge::count();
+        return $count;
+    }
+    public function countChargePrix()
+    {
+        $count  = Charge::whereNotNull('prix')->sum('prix');
+        return $count;
+    }
+   // ____________totale de revenu_______
+   public function countRevenu()
+   {
+       $count = Revenu::count();
+       return $count;
+   }
+   public function countRevenuPrix()
+    {
+        $count  = Revenu::whereNotNull('prixRevenuProduit')->sum('prixRevenuProduit');
+        return $count;
+    }
 
+    public function HoursTotal()
+{
+    return HeureTrevailler::sum('heurs');
+}
+    public function TravailleurTotal()
+{
+    return Travailleur::count();
+}
 }

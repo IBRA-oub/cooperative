@@ -63,13 +63,13 @@
                                 <a id="dashboard" href="/stockiste-dashboard"
                                     class="font-semibold text-gray-200 hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                             @endif
-                 @else
-                                <a id="login" href="/login"
-                                    class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs bg-green-600  uppercase leading-normal font-bold text-white transition duration-150 ease-in-out hover:text-white hover:bg-opacity-10 hover:text-primary-600  focus:outline-none focus:ring-0 0 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
-                                    data-te-ripple-init data-te-ripple-color="light">
-                                    Login
-                                </a>
-                            @endauth
+                        @else
+                            <a id="login" href="/login"
+                                class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs bg-green-600  uppercase leading-normal font-bold text-white transition duration-150 ease-in-out hover:text-white hover:bg-opacity-10 hover:text-primary-600  focus:outline-none focus:ring-0 0 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+                                data-te-ripple-init data-te-ripple-color="light">
+                                Login
+                            </a>
+                        @endauth
                     </div>
                 @endif
             </div>
@@ -134,43 +134,44 @@
                 <h1 id="dernierAnnonce" class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
                     Les dernières Annonces
                 </h1>
-               
+
                 <!-- loop pour affichier les dernier publiciter -->
 
-                @foreach($publiciter as $pub)
-                <div class="mb-4 lg:mb-10 p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
+                @foreach ($publiciter as $pub)
+                    <div class="mb-4 lg:mb-10 p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
 
-                    <img src='{{asset('/storage/image/'.$pub->picture )}}' class='rounded-md object-cover w-full h-64'>
+                        <img src='{{ asset('/storage/image/' . $pub->picture) }}'
+                            class='rounded-md object-cover w-full h-64'>
 
-                    <div class="flex">
-
-
-
-
-                        <span class="text-green-700 text-sm hidden md:block mt-4"> Admin
-                            &ensp;|&ensp;
-                        </span>
+                        <div class="flex">
 
 
 
 
-                        <span class="text-gray-700 text-sm hidden md:block mt-4">
-                            <span id="dateAnnonce">date annonce </span>: {{$pub->created_at}}
-                        </span>
-                        <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp;
-                            <span id="dateModifier">date modified</span>:
-                            {{$pub->updated_at}}
-                        </span>
+                            <span class="text-green-700 text-sm hidden md:block mt-4"> Admin
+                                &ensp;|&ensp;
+                            </span>
+
+
+
+
+                            <span class="text-gray-700 text-sm hidden md:block mt-4">
+                                <span id="dateAnnonce">date annonce </span>: {{ $pub->created_at }}
+                            </span>
+                            <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp;
+                                <span id="dateModifier">date modified</span>:
+                                {{ $pub->updated_at }}
+                            </span>
+                        </div>
+                        <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
+                            {{ $pub->titre }}
+                        </h1>
+                        <p class="text-gray-600 mb-4">
+                            {{ $pub->contenu }}
+                        </p>
                     </div>
-                    <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
-                        {{$pub->titre}}
-                    </h1>
-                    <p class="text-gray-600 mb-4">
-                        {{$pub->contenu}}
-                    </p>
-                </div>
                 @endforeach
-                
+
             </div>
 
             <!-- Section de droite  -->
@@ -180,29 +181,29 @@
                 </h1>
                 <!-- sub-main posts -->
                 <div class="w-full md:w-4/7">
-                  
 
 
-                    @foreach($periodes as $period)
-                    <div class=" mt-5 rounded w-full flex flex-col md:flex-row mb-10">
+
+                    @foreach ($periodes as $period)
+                        <div class=" mt-5 rounded w-full flex flex-col md:flex-row mb-10">
 
 
-                        <div class="bg-gray-300 rounded px-4 sm:w-full">
-                            <span class="text-green-700 text-xl hidden md:block"> {{$period->titre}}
-                            </span>
-                            <div class="md:mt-0 text-gray-800  text-sm mb-2">
+                            <div class="bg-gray-300 rounded px-4 sm:w-full">
+                                <span class="text-green-700 text-xl hidden md:block"> {{ $period->titre }}
+                                </span>
+                                <div class="md:mt-0 text-gray-800  text-sm mb-2">
 
-                                <span id="dateDebut">date début </span>: {{$period->dateDepart}}
+                                    <span id="dateDebut">date début </span>: {{ $period->dateDepart }}
+                                </div>
+
+                                <div class="md:mt-0 text-gray-800  text-sm mb-2">
+
+                                    <span id="dateFinir">date finir</span> : {{ $period->dateStop }}
+                                </div>
+
+
                             </div>
-
-                            <div class="md:mt-0 text-gray-800  text-sm mb-2">
-
-                                <span id="dateFinir">date finir</span> : {{$period->dateStop}}
-                            </div>
-
-
                         </div>
-                    </div>
                     @endforeach
 
 
@@ -250,6 +251,64 @@
 
 
     {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // --------------------chartjs---------------------
+
+        const ctx = document.getElementById("barchart");
+
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ['{{ $countCharge }} Charge', '{{ $countChargePrix }} Prix des charge',
+                    '{{ $countRevenu }} Revenu', '{{ $countRevenuPrix }} Prix des revenu'
+                ],
+                datasets: [{
+                    label: "finance",
+                    data: [{{ $countCharge }}, {{ $countChargePrix }}, {{ $countRevenu }},
+                        {{ $countRevenuPrix }}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 9, 32, 0.2)',
+                        'rgba(25, 249, 13, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+        // __________________________________________
+        const doughnut = document.getElementById("doughnut");
+
+        new Chart(doughnut, {
+            type: "doughnut",
+            data: {
+                labels: ['{{ $HoursTotal }} heurs totale travailler', '{{ $TravailleurTotal }} totale des travailleur', ],
+                datasets: [{
+                    label: "# of Votes",
+                    data: [{{ $HoursTotal }}, {{ $TravailleurTotal }}],
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+        // _______________________________________
+    </script>
 
 
 </body>
