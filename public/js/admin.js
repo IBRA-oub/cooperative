@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // ___________________edite publicitaire_____________
             if (document.getElementById("EditePubliciter")) {
                 document.getElementById("EditePubliciter").textContent =
-                    " تعديل المنتج";
+                    " تحديث إعلان";
             
             }
     
@@ -536,7 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (document.getElementById("picture")) {
             document.getElementById("picture").textContent =
-                "picture";
+                "image";
             document
                 .getElementById("picture")
                 .classList.remove("text-right");
@@ -544,14 +544,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("savePubli")) {
             document.getElementById("savePubli").textContent =
-                "Save";
+                "Enregistrer";
           
         }
 
         // ___________________edite publicitaire_____________
         if (document.getElementById("EditePubliciter")) {
             document.getElementById("EditePubliciter").textContent =
-                " edit produit stocke";
+                " mise a jour publiciter";
         
         }
 
@@ -585,14 +585,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (document.getElementById("picturEdite")) {
             document.getElementById("picturEdite").textContent =
-                "picture ";
+                "image ";
             document
                 .getElementById("picturEdite")
                 .classList.remove("text-right");
         }
         if (document.getElementById("saveEdite")) {
             document.getElementById("saveEdite").textContent =
-                "Save ";
+                "mise à jour";
          
         }
     }

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Financiere;
 use App\Models\HeureTrevailler;
+use App\Models\Periode;
 use App\Models\Planner;
 
 use App\Models\Publiciter;
@@ -236,6 +237,16 @@ public function travailleurHoursTotal()
         return $count;
     }
 
+    // ________________les deux dernier publiciter avec affichage des periode dans home page_______________
+
+    public function redLastPubliciter()
+    {
+        return Publiciter::latest()->take(2)->get();
+    }
+    public function redPeriodes()
+    {
+        return Periode::all();
+    }
    
 
 

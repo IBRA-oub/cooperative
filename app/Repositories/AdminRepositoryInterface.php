@@ -74,7 +74,13 @@ interface AdminRepositoryInterface
     public function findPubliciter($id);
     public function updatePubliciter(array $data, $id);
     public function countPubliciter();
+
+    // _____________________last publiciter et periode _______________
+
     
+    public function redLastPubliciter();
+
+    public function redPeriodes();
     
     
 }

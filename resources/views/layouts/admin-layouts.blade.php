@@ -277,8 +277,8 @@
 
     @yield('content')
 
-    <script src="js/main.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/admin.js')}}"></script>
 
     {{-- <script>
         // Masquer le message de succès après 3 secondes

@@ -22,9 +22,9 @@ use App\Http\Middleware\CheckRole;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [adminController::class, 'welcome'])->name('welcome');
+
 
 
 

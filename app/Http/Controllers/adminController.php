@@ -432,6 +432,14 @@ class adminController extends Controller
     }
    
 
+    // ____________________________home page____________________________
+
+    
+    public function Welcome(){
+        $publiciter = $this->adminRepository->redLastPubliciter();
+        $periodes = $this->adminRepository->redPeriodes();
+        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes]);
+    }
 
    
 }

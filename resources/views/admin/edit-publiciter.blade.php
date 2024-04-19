@@ -35,9 +35,9 @@
                        
 
                         <div class="mb-4">
-                            <label id="contenuEdite" for="contenu" class="block text-black text-sm font-bold mb-2">contenu</label>
+                            <label id="contenuEdite" for="contenuPubliciter" class="block text-black text-sm font-bold mb-2">contenu</label>
                             <textarea class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="contenu" id="contenu"  value="{{ $publiciter->contenu }}"></textarea>
+                                name="contenu" id="contenuPubliciter" >{{ $publiciter->contenu}}</textarea>
                                 @error('contenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
                         </div>

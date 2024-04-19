@@ -51,15 +51,15 @@
                                 <form action="{{route('publiciter.delete',['id'=>$publiciter->id])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="bg-red-600 text-white w-8 h-[35px] rounded-md mr-2">
-                                        <a href=""><i class="fa-solid fa-trash " style="color:#ffffff"></i></a>
+                                    <button class=" w-8 h-[35px] rounded-md">
+                                        <a href=""><i class="fa-solid fa-trash " style="color:#ff0202"></i></a>
 
                                     </button>
                                 </form>
                                 <a href=" {{route('edit-publiciter',['id'=>$publiciter->id])}}">
-                                    <button class="bg-green-600 text-white w-8 h-[35px] rounded-md">
+                                    <button class=" w-8 h-[35px] rounded-md">
 
-                                        <i class="fa-solid fa-pen " style="color: #ffffff;"></i>
+                                        <i class="fa-solid fa-pen " style="color: #32ff12;"></i>
                                     </button>
                                 </a>
                             </div>
@@ -120,7 +120,6 @@
 
         {{-- pop up for adding produit planter start --}}
 
-
         <div id="myModal6" class="modal6 ">
             <div class="modal-content6 rounded-lg">
                 <span class="close6" onclick="closeModal6()">&times;</span>
@@ -129,23 +128,23 @@
                     <p id="addPubliciter1" class="text-xl md:text-3xl  font-bold text-center">ajouter Publiciter</p>
                     <label id="titreAdd" for="titre" class="block text-black text-sm font-bold mb-2">titre</label>
                     <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text" name="titre"
-                        id="titre" placeholder="le preme de ce mois"><br>
+                        id="titre" placeholder="le preme de ce mois" value="{{ old('titre') }}"><br>
                         @error('titre')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
                     <label id="contenu" for="contenu" class="block text-black text-sm font-bold mb-2">contenu</label>
                     <textarea class=" border rounded w-full py-2 px-3 text-grey-darker" type="text" name="contenu" id="contenu"
-                        placeholder="detailles......."></textarea><br>
+                        placeholder="detailles.......">{{ old('contenu') }}</textarea><br>
                         @error('contenu')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
 
                     <label id="picture" for="picture" class="block text-black text-sm font-bold mb-2">picture</label>
                     <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="file" name="picture"
-                        id="picture" ><br>
+                        id="picture" {{ old('piture') }}><br>
                         @error('picture')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
 
 
-                    <button id="savePubli"
+                    <button id="savePubli" type="button" onclick="checkFields()"
                         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
                         Save
                     </button>
@@ -153,6 +152,7 @@
                 </form>
             </div>
         </div>
+      
 
         {{-- pop up for adding produit planter end --}}
 

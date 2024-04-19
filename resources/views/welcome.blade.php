@@ -121,32 +121,33 @@
 
     {{-- annonce-section-start --}}
 
-    <section class=" w-full h-[52rem] sm:h-[38rem] ">
+    <section class=" w-full  ">
         <h1 id="annonces"
             class=" text-xl w-60% ml-[10%] sm:w-[20%] annonce  sm:text-3xl sm:ml-[40%] flex justify-center  pt-4 pb-3 font-serif font-semibold text-green-600">
             Annonces</h1>
 
         <div class=" mx-4 md:mx-16 mt-10 flex flex-wrap md:flex-nowrap">
 
-            <!-- Section de gauche (2/3) -->
+            <!-- Section de gauche  -->
 
             <div class="w-full md:w-2/3 p-4 bg-gray-100 mb-4 md:mb-0 md:mr-2 shadow-lg rounded-md">
                 <h1 id="dernierAnnonce" class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
                     Les dernières Annonces
                 </h1>
-                <!-- main post 1 -->
-                <!-- loop pour affichier les dernier wiki -->
+               
+                <!-- loop pour affichier les dernier publiciter -->
 
+                @foreach($publiciter as $pub)
                 <div class="mb-4 lg:mb-10 p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
 
-                    <img src='img/argan.jpg' class='rounded-md object-cover w-full h-64'>
+                    <img src='{{asset('/storage/image/'.$pub->picture )}}' class='rounded-md object-cover w-full h-64'>
 
                     <div class="flex">
 
 
 
 
-                        <span class="text-green-700 text-sm hidden md:block mt-4"> ahmed
+                        <span class="text-green-700 text-sm hidden md:block mt-4"> Admin
                             &ensp;|&ensp;
                         </span>
 
@@ -154,55 +155,55 @@
 
 
                         <span class="text-gray-700 text-sm hidden md:block mt-4">
-                            <span id="dateAnnonce">date annonce </span>: 276/2873/73
+                            <span id="dateAnnonce">date annonce </span>: {{$pub->created_at}}
                         </span>
                         <span class="text-gray-700 text-sm hidden md:block mt-4"> &ensp;|&ensp;
                             <span id="dateModifier">date modified</span>:
-                            4567
+                            {{$pub->updated_at}}
                         </span>
                     </div>
                     <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
-                        prende de salaire
+                        {{$pub->titre}}
                     </h1>
                     <p class="text-gray-600 mb-4">
-                        il faut tous les travailleur demain matin 4 by 4 vient vers le derecteur pour prendre leur
-                        salaire
+                        {{$pub->contenu}}
                     </p>
                 </div>
-
-                <!-- sub-main posts -->
+                @endforeach
+                
             </div>
 
-            <!-- Section de droite (1/3) -->
+            <!-- Section de droite  -->
             <div class="w-full md:w-1/3 p-4 bg-gray-100 md:ml-2 shadow-lg rounded-md">
                 <h1 id="periode" class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight text-center">
-                    La periode agricule
+                    Les periodes agricule
                 </h1>
                 <!-- sub-main posts -->
                 <div class="w-full md:w-4/7">
-                    <!-- post 1 -->
+                  
 
 
-
+                    @foreach($periodes as $period)
                     <div class=" mt-5 rounded w-full flex flex-col md:flex-row mb-10">
 
 
                         <div class="bg-gray-300 rounded px-4 sm:w-full">
-                            <span class="text-green-700 text-xl hidden md:block"> prendre argan
+                            <span class="text-green-700 text-xl hidden md:block"> {{$period->titre}}
                             </span>
                             <div class="md:mt-0 text-gray-800  text-sm mb-2">
 
-                                <span id="dateDebut">date début </span>: 20024-2-3 80:00
+                                <span id="dateDebut">date début </span>: {{$period->dateDepart}}
                             </div>
 
                             <div class="md:mt-0 text-gray-800  text-sm mb-2">
 
-                                <span id="dateFinir">date finir</span> : 20024-2-3 80:00
+                                <span id="dateFinir">date finir</span> : {{$period->dateStop}}
                             </div>
 
 
                         </div>
                     </div>
+                    @endforeach
 
 
 
