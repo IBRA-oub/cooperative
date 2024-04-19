@@ -360,9 +360,7 @@ class adminController extends Controller
 
 
     
-    public function dashboard(){
-        return view('admin.admin-dashboard');
-    }
+   
    
     public function message(){
         return view('admin.message');
@@ -449,5 +447,18 @@ class adminController extends Controller
         return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal,'countPeriode'=>$countPeriode]);
     }
 
+    public function dashboard(){
+        $HoursTotal = $this->adminRepository->HoursTotal();
+        $TravailleurTotal = $this->adminRepository->TravailleurTotal()+4;
+        $countCharge = $this->adminRepository->countCharge();
+        $countChargePrix = $this->adminRepository->countChargePrix();
+        $countRevenu = $this->adminRepository->countRevenu();
+        $countRevenuPrix = $this->adminRepository->countRevenuPrix();
+        $countPeriode = $this->adminRepository->countPeriode();
+        $countProduit_planter = $this->adminRepository->countProduit_planter();
+        $countMateriauxOutil = $this->adminRepository->countMateriauxOutil();
+        $countStocke = $this->adminRepository->countStocke();
+        return view('admin.admin-dashboard',['TravailleurTotal'=>$TravailleurTotal,'HoursTotal'=>$HoursTotal,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'countPeriode'=>$countPeriode,'countProduit_planter'=>$countProduit_planter,'countMateriauxOutil'=>$countMateriauxOutil,'countStocke'=>$countStocke]);
+    }
    
 }

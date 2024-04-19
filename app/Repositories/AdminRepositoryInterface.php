@@ -92,6 +92,7 @@ interface AdminRepositoryInterface
     public function countPeriode();
     public function countProduit_planter();
     public function countMateriauxOutil();
+    public function countStocke();
     
     
 }

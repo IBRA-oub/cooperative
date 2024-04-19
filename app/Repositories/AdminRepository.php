@@ -13,8 +13,10 @@ use App\Models\produit_planter;
 use App\Models\Publiciter;
 use App\Models\Revenu;
 use App\Models\Stockiste;
+use App\Models\Stocks;
 use App\Models\Travailleur;
 use App\Models\User;
+use Psy\Readline\Hoa\StreamLockable;
 
 class AdminRepository implements AdminRepositoryInterface
 {
@@ -302,4 +304,11 @@ public function travailleurHoursTotal()
          $count = MateriauxOutil::count();
          return $count;
      }
+
+     public function countStocke()
+     {
+         $count = Stocks::count();
+         return $count;
+     }
+    
 }
