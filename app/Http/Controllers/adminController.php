@@ -444,7 +444,9 @@ class adminController extends Controller
         $countRevenuPrix = $this->adminRepository->countRevenuPrix();
         $HoursTotal = $this->adminRepository->HoursTotal();
         $TravailleurTotal = $this->adminRepository->TravailleurTotal()+4;
-        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal]);
+        $countPeriode = $this->adminRepository->countPeriode();
+       
+        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal,'countPeriode'=>$countPeriode]);
     }
 
    

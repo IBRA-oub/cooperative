@@ -89,6 +89,9 @@ interface AdminRepositoryInterface
     public function countRevenuPrix();
     public function HoursTotal();
     public function TravailleurTotal();
+    public function countPeriode();
+    public function countProduit_planter();
+    public function countMateriauxOutil();
     
     
 }

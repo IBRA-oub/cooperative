@@ -60,9 +60,7 @@ class User extends Authenticatable
         return $this->hasOne(Stockiste::class);
     }
 
-    public function publicitaire() {
-        return $this->hasOne(Publicitaire::class);
-    }
+   
 
     public function travailleur() {
         return $this->hasMany(Travailleur::class);

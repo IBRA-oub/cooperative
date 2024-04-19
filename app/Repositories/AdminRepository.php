@@ -5,9 +5,11 @@ namespace App\Repositories;
 use App\Models\Charge;
 use App\Models\Financiere;
 use App\Models\HeureTrevailler;
+use App\Models\MateriauxOutil;
 use App\Models\Periode;
 use App\Models\Planner;
 
+use App\Models\produit_planter;
 use App\Models\Publiciter;
 use App\Models\Revenu;
 use App\Models\Stockiste;
@@ -284,4 +286,20 @@ public function travailleurHoursTotal()
 {
     return Travailleur::count();
 }
+
+    public function countPeriode()
+     {
+         $count = Periode::count();
+         return $count;
+     }
+    public function countProduit_planter()
+     {
+         $count = produit_planter::count();
+         return $count;
+     }
+    public function countMateriauxOutil()
+     {
+         $count = MateriauxOutil::count();
+         return $count;
+     }
 }

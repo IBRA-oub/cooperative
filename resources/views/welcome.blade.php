@@ -261,20 +261,22 @@
         new Chart(ctx, {
             type: "bar",
             data: {
-                labels: ['{{ $countCharge }} Charge', '{{ $countChargePrix }} Prix des charge',
-                    '{{ $countRevenu }} Revenu', '{{ $countRevenuPrix }} Prix des revenu'
+                labels: ['{{ $countCharge }} Charge', '{{ $countChargePrix }} DH Prix des charge',
+                    '{{ $countRevenu }} Revenu', '{{ $countRevenuPrix }}DH Prix des revenu',
+                    '{{ $countPeriode }} Periode'
                 ],
                 datasets: [{
-                    label: "finance",
+                    label: "statistique",
                     data: [{{ $countCharge }}, {{ $countChargePrix }}, {{ $countRevenu }},
-                        {{ $countRevenuPrix }}
+                        {{ $countRevenuPrix }}, {{ $countPeriode }}
                     ],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(255, 9, 32, 0.2)',
-                        'rgba(25, 249, 13, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                    ],
+                    // backgroundColor: [
+                    //     'rgba(255, 99, 132, 0.2)',  
+                    //     'rgba(255, 159, 64, 0.2)',   
+                    //     'rgba(255, 205, 86, 0.2)',   
+                    //     'rgba(75, 192, 192, 0.2)',   
+                    //     'rgba(54, 162, 235, 0.2)',   
+                    // ],
                     borderWidth: 1,
                 }, ],
             },
@@ -286,13 +288,16 @@
                 },
             },
         });
+
         // __________________________________________
         const doughnut = document.getElementById("doughnut");
 
         new Chart(doughnut, {
             type: "doughnut",
             data: {
-                labels: ['{{ $HoursTotal }} heurs totale travailler', '{{ $TravailleurTotal }} totale des travailleur', ],
+                labels: ['{{ $HoursTotal }} heurs totale travailler',
+                    '{{ $TravailleurTotal }} totale des travailleur',
+                ],
                 datasets: [{
                     label: "# of Votes",
                     data: [{{ $HoursTotal }}, {{ $TravailleurTotal }}],
@@ -308,6 +313,28 @@
             },
         });
         // _______________________________________
+        const line = document.getElementById("line");
+
+        new Chart(line, {
+            type: "line",
+            data: {
+                labels: ['refernce', '{{ $countCharge }} cahrge',
+                    '{{ $countChargePrix }}DH Prix des charges',
+                ],
+                datasets: [{
+                    label: "les charges",
+                    data: [10, {{ $countCharge }}, {{ $countChargePrix }}],
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
     </script>
 
 
