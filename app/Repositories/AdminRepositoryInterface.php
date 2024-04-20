@@ -93,6 +93,11 @@ interface AdminRepositoryInterface
     public function countProduit_planter();
     public function countMateriauxOutil();
     public function countStocke();
+
+    // ________________pdf____________
+    public function financiereHoursPdf();
+    public function plannerHoursPdf();
+    public function stockisteHoursPdf();
     
     
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ForgetPasswordController;
 use App\Http\Controllers\financiereController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\plannerController;
 use App\Http\Controllers\publicitaireController;
 use App\Http\Controllers\stockisteController;
@@ -58,7 +59,9 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     Route::put('/update-publiciter/{id}',[adminController::class , 'updatePubliciter'])->name('publiciter.update');
     Route::delete('/delete-publiciter/{id}',[adminController::class , 'PubliciterDelete'])->name('publiciter.delete');
     Route::post('/add-publiciter',[adminController::class , 'addPubliciter'])->name('add.publiciter');
-
+    
+    Route::get('/totale-heurs/{type}',[PDFController::class , 'totaleHeurs'])->name('totale-heurs');
+    
 });
 
 // __________________________financiere__________________________

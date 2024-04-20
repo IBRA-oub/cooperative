@@ -310,5 +310,21 @@ public function travailleurHoursTotal()
          $count = Stocks::count();
          return $count;
      }
+
+    //  _______________get hours for pdf_____________
+    public function financiereHoursPdf()
+{
+    return HeureTrevailler::whereNotNull('financiere_id')->get();
+}
+    
+    public function plannerHoursPdf()
+{
+    return HeureTrevailler::whereNotNull('planner_id')->get();
+}
+    public function stockisteHoursPdf()
+{
+    return HeureTrevailler::whereNotNull('stockiste_id')->get();
+}
+  
     
 }

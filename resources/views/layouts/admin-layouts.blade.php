@@ -16,7 +16,7 @@
 
     @vite('resources/css/app.css')
     {{-- @vite('resources/js/app.js') --}}
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="{{asset('assets/style.css')}}">
 
 
 
@@ -28,18 +28,13 @@
     <aside class="w-20 bg-[#31363F] fixed inset-0 z-50  h-100vh md:w-72 e ">
         <div class="relative border-b border-white/20">
             <a class="flex items-center gap-4 py-6 px-8">
-                <img src="img/logo.png" alt="" width="40px">
+                <img src="{{asset('img/logo.png')}}" alt="" width="40px">
                 <h6
                     class="hidden md:block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
                     ONE HAND</h6>
             </a>
-            <button
-                class="middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-white hover:bg-white/10 active:bg-white/30 absolute right-0 top-0 grid rounded-br-none rounded-tl-none xl:hidden"
-                type="button">
-                <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+            <p class="text-center text-sm md:text-2xl font-bold text-white font-serif ">ADMIN</p>
 
-                </span>
-            </button>
         </div>
         <div class="m-4">
             <ul class="mb-4 flex flex-col gap-1">
