@@ -98,6 +98,10 @@ interface AdminRepositoryInterface
     public function financiereHoursPdf();
     public function plannerHoursPdf();
     public function stockisteHoursPdf();
+
+    // __________________message____________
+    public function createMessage(array $data);
+    public function adminFinanciereMessage();
     
     
 }

@@ -13,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     @vite('resources/css/app.css')
     {{-- @vite('resources/js/app.js') --}}
@@ -187,9 +189,9 @@
                     </li>
                 @endif
 
-                @if (request()->is('admin-message'))
+                @if (request()->is('admin-message-financiere-view'))
                     <li>
-                        <a class="" href="/admin-message">
+                        <a class="" href="/admin-message-financiere-view">
                             <button
                                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-md shadow-white hover:shadow-lg hover:shadow-white active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize"
                                 type="button">
@@ -213,7 +215,7 @@
                     </li>
                 @else
                     <li>
-                        <a class="" href="/admin-message">
+                        <a class="" href="/admin-message-financiere-view">
                             <button
                                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                                 type="button">
@@ -274,6 +276,7 @@
 
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/admin.js')}}"></script>
+    <script src="{{asset('js/message.js')}}"></script>
 
     {{-- <script>
         // Masquer le message de succès après 3 secondes

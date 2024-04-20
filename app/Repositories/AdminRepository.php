@@ -6,6 +6,7 @@ use App\Models\Charge;
 use App\Models\Financiere;
 use App\Models\HeureTrevailler;
 use App\Models\MateriauxOutil;
+use App\Models\Message;
 use App\Models\Periode;
 use App\Models\Planner;
 
@@ -326,5 +327,24 @@ public function travailleurHoursTotal()
     return HeureTrevailler::whereNotNull('stockiste_id')->get();
 }
   
+// _____________________message_____________________
+public function createMessage(array $data)
+    {
+        return Message::create($data);
+    }
+
+    public function adminFinanciereMessage()
+    {
+        return Message::where(function ($query) {
+            $query->where('sender', 'admin')
+                ->orWhere('recipient', 'admin');
+        })
+        ->where(function ($query) {
+            $query->where('recipient', 'financiere')
+                ->orWhere('sender', 'financiere');
+        })
+        ->get();
+    }
+    
     
 }

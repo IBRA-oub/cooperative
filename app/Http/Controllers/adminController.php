@@ -336,7 +336,7 @@ class adminController extends Controller
     
     // __________________get hours___________________
     
-    public function travailleurHaurs($id , $type){
+    public function travailleurHeurs($id , $type){
     
         if($type == 'financiere'){
            $financiereHeure =  $this->adminRepository->financiereHours($id);
@@ -362,9 +362,7 @@ class adminController extends Controller
     
    
    
-    public function message(){
-        return view('admin.message');
-    }
+    
     public function addUserPage(){
         return view('admin.add-user');
     }
@@ -460,5 +458,45 @@ class adminController extends Controller
         $countStocke = $this->adminRepository->countStocke();
         return view('admin.admin-dashboard',['TravailleurTotal'=>$TravailleurTotal,'HoursTotal'=>$HoursTotal,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'countPeriode'=>$countPeriode,'countProduit_planter'=>$countProduit_planter,'countMateriauxOutil'=>$countMateriauxOutil,'countStocke'=>$countStocke]);
     }
-   
+
+
+
+
+    // ___________________________message_________________________
+
+    public function messageFinanciereView(){
+        return view('admin.message-financiere');
+    }
+    
+    public function messageFinanciere(){
+        $messages = $this->adminRepository->adminFinanciereMessage();
+        
+        return response()->json(['messages' => $messages]);
+    }
+    
+    
+    public function messagePlanner(){
+        $users = $this->adminRepository->allUser();
+        $users->load('financiere', 'planner', 'stockiste');
+        return view('admin.message-planner',['users'=>$users]);
+    }
+    public function messageStockiste(){
+        $users = $this->adminRepository->allUser();
+        $users->load('financiere', 'planner', 'stockiste');
+        return view('admin.message-stockiste',['users'=>$users]);
+    }
+
+    // ____________________create message_____________________
+    
+    public function message(Request $request){
+        $data = $request->validate([
+            'sender' => 'required',
+            
+            'recipient' => 'required',
+            
+            'content' => 'required'
+        ]);
+         $this->adminRepository->createMessage($data);
+      
+    }
 }

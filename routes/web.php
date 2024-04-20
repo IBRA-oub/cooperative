@@ -43,10 +43,9 @@ Route::post('reset-password', [ForgetPasswordController::class , 'ResetPasswordP
 Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     
     Route::get('/admin-dashboard',[adminController::class , 'dashboard'])->name('admin-dashboard');
-    Route::get('/admin-message',[adminController::class , 'message'])->name('admin-message');
     Route::get('/add-user-pages',[adminController::class , 'addUserPage']);
     
-    Route::get('/travailleur-heurs/{id}/{type}',[adminController::class , 'travailleurHaurs'])->name('travailleur-heurs');
+    Route::get('/travailleur-heurs/{id}/{type}',[adminController::class , 'travailleurHeurs'])->name('travailleur-heurs');
     Route::post('/add-heur',[adminController::class , 'addHours'])->name('add-heur');
     Route::post('/add-user',[adminController::class , 'addUser'])->name('add-user');
     Route::get('/admin-travailleur',[adminController::class , 'travailleur'])->name('admin-travailleur');
@@ -62,6 +61,11 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     
     Route::get('/totale-heurs/{type}',[PDFController::class , 'totaleHeurs'])->name('totale-heurs');
     
+    Route::get('/admin-message-financiere-view',[adminController::class , 'messageFinanciereView'])->name('admin-message-financiere-view');
+    Route::post('/admin-message-financiere-post',[adminController::class , 'message'])->name('admin-message-financiere-post');
+    
+    Route::get('/admin-message-planner',[adminController::class , 'messagePlanner'])->name('admin-message-planner');
+    Route::get('/admin-message-stockiste',[adminController::class , 'messageStockiste'])->name('admin-message-stockiste');
 });
 
 // __________________________financiere__________________________
