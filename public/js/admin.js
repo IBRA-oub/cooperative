@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("HR/j")) {
-            document.getElementById("HR/j").textContent = "ساعات العمل / يوم";
+            document.getElementById("HR/j").textContent = "ساعات العمل ";
         }
 
         if (document.getElementById("RL")) {
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Ajout Travailleur";
         }
         if (document.getElementById("FL")) {
-            document.getElementById("FL").textContent = "fullName";
+            document.getElementById("FL").textContent = "nom et prénom";
             document.getElementById("FL").classList.remove("text-right");
         }
 
@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("PS")) {
-            document.getElementById("PS").textContent = "Password";
+            document.getElementById("PS").textContent = "Mot de passe";
             document.getElementById("PS").classList.remove("text-right");
         }
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("pic")) {
-            document.getElementById("pic").textContent = "picture";
+            document.getElementById("pic").textContent = "image";
             document.getElementById("pic").classList.remove("text-right");
         }
 
@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("addU")) {
-            document.getElementById("addU").textContent = " add user";
+            document.getElementById("addU").textContent = " Ajouter";
         }
 
         if (document.getElementById("id")) {
@@ -386,11 +386,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("fulN")) {
-            document.getElementById("fulN").textContent = " fullName";
+            document.getElementById("fulN").textContent = " nom et prénom";
         }
 
         if (document.getElementById("Ema")) {
-            document.getElementById("Ema").textContent = " email";
+            document.getElementById("Ema").textContent = " Email";
         }
 
         if (document.getElementById("s/l")) {
@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.getElementById("HR/j")) {
             document.getElementById("HR/j").textContent =
-                " heure Taravailler/j";
+                " heures Taravailler";
         }
 
         if (document.getElementById("RL")) {
@@ -440,7 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Edite Travailleur";
         }
         if (document.getElementById("FLE")) {
-            document.getElementById("FLE").textContent = "fullName";
+            document.getElementById("FLE").textContent = "nom et prénom";
             document.getElementById("FLE").classList.remove("text-right");
         }
 
@@ -450,7 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("PSE")) {
-            document.getElementById("PSE").textContent = "Password";
+            document.getElementById("PSE").textContent = "Mot de passe";
             document.getElementById("PSE").classList.remove("text-right");
         }
 
@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (document.getElementById("picE")) {
-            document.getElementById("picE").textContent = "picture";
+            document.getElementById("picE").textContent = "image";
             document.getElementById("picE").classList.remove("text-right");
         }
 
@@ -474,7 +474,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("idTH").textContent = "ID";
         }
         if (document.getElementById("fnTH")) {
-            document.getElementById("fnTH").textContent = "fullName";
+            document.getElementById("fnTH").textContent = "nom et prénom";
         }
         if (document.getElementById("hTH")) {
             document.getElementById("hTH").textContent = "heurs";

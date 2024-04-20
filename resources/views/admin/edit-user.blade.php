@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-green-200 min-h-screen transition-all main">
+    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-green-200 min-h-screen transition-all main overflow-y-hidden">
         <!--===========Content===========-->
         <main class=" flex-grow  relative h-screen bg-cover bg-center " style="background-image: url('img/update.jpg')">
 

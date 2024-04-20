@@ -58,7 +58,7 @@
                                 <th id="fulN" class="">fullName</th>
                                 <th id="Ema" class="">email</th>
                                 <th id="s/l" class="">Salaire/heure</th>
-                                <th id="HR/j" class="">heure Taravailler/j</th>
+                                <th id="HR/j" class="">heures Taravailler</th>
                                 <th id="RL" class="">role</th>
 
                                 <th id="AC" class="">Actions</th>
@@ -381,8 +381,8 @@
                                             </td>
                                         @endforeach
                                     @endif
-                                    <td data-label="heureTravailler/j"
-                                        class="border-b before:content-['heureTravailler/j'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
+                                    <td data-label="heuresTravailler"
+                                        class="border-b before:content-['heuresTravailler'] before:absolute before:left-20 before:w-1/2 before:font-bold before:text-left before:pl-2 block  sm:before:hidden sm:text-center 
                               text-right">
                                         {{-- {{$user->fullName}} --}}
                                         2H

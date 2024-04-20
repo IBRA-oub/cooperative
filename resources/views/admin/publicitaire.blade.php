@@ -11,7 +11,7 @@
 
         {{-- produit planter start --}}
 
-        <main class="bg-gray-200 flex-grow h-[100vh] relative rounded-xl shadow-2xl">
+        <main class="bg-white flex-grow h-[100vh] relative rounded-xl shadow-2xl">
             <!-- ============== header =========== -->
 
             <div class="absolute right-0 sm:top-3 sm:right-10 mb-10 sm:mb-0">
@@ -25,7 +25,7 @@
             </div>
             <!-- ============ Content ============= -->
 
-            <div class="md:p-6 bg-gray-200  md:m-5">
+            <div class="md:p-6 bg-white md:m-5">
                 @if (session('success'))
                     <script>
                         Swal.fire({
