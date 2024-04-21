@@ -27,4 +27,8 @@ interface FinanciereRepositoryInterface
     public function countRevenu();
     public function countChargePrix();
     public function countRevenuPrix();
+
+    // __________________message________________
+    public function createMessage(array $data);
+    public function FinanciereAdminMessage();
 }

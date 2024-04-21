@@ -28,4 +28,9 @@ interface FinanciereServiceInterface
     public function countCharge();
     public function countChargePrix();
     public function countRevenuPrix();
+
+    // _____________________message_________________
+    public function createMessage(array $data);
+    public function FinanciereAdminMessage();
+    
 }

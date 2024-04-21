@@ -110,4 +110,15 @@ class FinanciereService implements FinanciereServiceInterface
     { 
         return $this->financiereRepository->countChargePrix();
     }
+
+    // ___________________message_______________
+
+    public function createMessage(array $data)
+    { 
+        return $this->financiereRepository->createMessage($data);
+    }
+    public function FinanciereAdminMessage( )
+    { 
+        return $this->financiereRepository->FinanciereAdminMessage();
+    }
 }

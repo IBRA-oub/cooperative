@@ -76,7 +76,6 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
 Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function() {
     
     Route::get('/financiere-dashboard',[financiereController::class , 'dashboard'])->name('financiere-dashboard');
-    Route::get('/financiere-message',[financiereController::class , 'message'])->name('financiere-message');
     
     Route::get('/financiere-revenu',[financiereController::class , 'redRevenu'])->name('financiere-revenu');
     Route::get('/add-revenu',[financiereController::class , 'addRevenu'])->name('add-revenu');
@@ -84,7 +83,7 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::delete('/revenu-delete/{id}',[financiereController::class , 'revenuDelete'])->name('revenu.delete');
     Route::get('/edit-revenu/{id}',[financiereController::class , 'editRevenu'])->name('edit-revenu');
     Route::put('/update-revenu/{id}',[financiereController::class , 'updateRevenu'])->name('update.revenu');
-
+    
     
     Route::get('/edit-materiaux',[financiereController::class , 'editMateriaux'])->name('edit-materiaux');
     
@@ -118,6 +117,9 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::put('/update-materiaux/{id}',[financiereController::class , 'updatemateriaux'])->name('update.materiaux');
     
     Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');
+    
+    Route::get('/financiere-message',[financiereController::class , 'messageFinanciereAdminView'])->name('financiere-message');
+    Route::post('/admin-message-stockiste-post',[financiereController::class , 'message'])->name('admin-message-stockiste-post');
 });
 
 // __________________________Responsable agricole__________________________

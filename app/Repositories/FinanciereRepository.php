@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 use App\Models\Charge;
 use App\Models\Financiere;
+use App\Models\Message;
 use App\Models\Revenu;
 
 class FinanciereRepository implements FinanciereRepositoryInterface
@@ -97,5 +98,25 @@ class FinanciereRepository implements FinanciereRepositoryInterface
     $charge = Revenu::findOrFail($id);
     $charge->update($data);
     return $charge;
+    }
+
+    // _______________________message_______________
+
+    public function createMessage(array $data)
+    {
+        return Message::create($data);
+    }
+
+    public function FinanciereAdminMessage()
+    {
+        return Message::where(function ($query) {
+            $query->where('sender', 'admin')
+                ->orWhere('recipient', 'admin');
+        })
+        ->where(function ($query) {
+            $query->where('recipient', 'financiere')
+                ->orWhere('sender', 'financiere');
+        })
+        ->get();
     }
 }

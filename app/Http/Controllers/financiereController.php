@@ -206,9 +206,6 @@ class financiereController extends Controller
         return view('financiere.charge');
     }
     
-    public function message(){
-        return view('financiere.message');
-    }
     
     // _________________Revenu____________________
     
@@ -270,5 +267,28 @@ class financiereController extends Controller
     }
     // _________________________________
     
+    // ____________________message_______________
    
+    public function messageFinanciereAdminView(){
+      
+        return view('financiere.message');
+    }
+
+    public function messageFinanciereAdmin(){
+        $messages = $this->financiereService->FinanciereAdminMessage();
+        
+        return response()->json(['messages' => $messages]);
+    }
+
+    public function message(Request $request){
+        $data = $request->validate([
+            'sender' => 'required',
+            
+            'recipient' => 'required',
+            
+            'content' => 'required'
+        ]);
+         $this->financiereService->createMessage($data);
+      
+    }
 }

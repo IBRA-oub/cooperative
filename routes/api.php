@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\financiereController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/admin-message-financiere',[adminController::class , 'messageFinanciere'])->name('admin-message-financiere');
 Route::get('/admin-message-planner',[adminController::class , 'messagePlanner'])->name('admin-message-planner');
 Route::get('/admin-message-stockiste',[adminController::class , 'messageStockiste'])->name('admin-message-stockiste');
+
+
+Route::get('/message-financiere-admin',[financiereController::class , 'messageFinanciereAdmin'])->name('message-financiere-admin');
