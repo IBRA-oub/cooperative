@@ -96,4 +96,15 @@ class PlannerService implements PlannerServiceInterface
     { 
         return $this->plannerRepository->countMateriauxOutil();
     }
+
+    // ___________________message_______________
+
+    public function createMessage(array $data)
+    { 
+        return $this->plannerRepository->createMessage($data);
+    }
+    public function PlannerAdminMessage( )
+    { 
+        return $this->plannerRepository->PlannerAdminMessage();
+    }
 }

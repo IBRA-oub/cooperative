@@ -119,7 +119,7 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');
     
     Route::get('/financiere-message',[financiereController::class , 'messageFinanciereAdminView'])->name('financiere-message');
-    Route::post('/admin-message-stockiste-post',[financiereController::class , 'message'])->name('admin-message-stockiste-post');
+    Route::post('/admin-message-financiere-post',[financiereController::class , 'message'])->name('admin-message-financiere-post');
 });
 
 // __________________________Responsable agricole__________________________
@@ -128,7 +128,6 @@ Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     
     Route::get('/planner-dashboard',[plannerController::class , 'dashboard'])->name('planner-dashboard');
     Route::get('/planner-info-stati',[plannerController::class , 'infoStati'])->name('planner-info-stati');
-    Route::get('/planner-message',[plannerController::class , 'message'])->name('planner-message');
     
     Route::post('/add-periode-post',[plannerController::class , 'addPeriodePost'])->name('add.periode');
     Route::delete('/periode-delete/{id}',[plannerController::class , 'periodeDelete'])->name('periode.delete');
@@ -146,7 +145,8 @@ Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     Route::put('/update-materiauxOutils/{id}',[plannerController::class , 'updateMateriauxOutils'])->name('update.materiauxOutils');
     
 
-
+    Route::get('/planner-message',[plannerController::class , 'messagePlannerAdminView'])->name('planner-message');
+    Route::post('/admin-message-planner-post',[plannerController::class , 'message'])->name('admin-message-planner-post');
 
    
 

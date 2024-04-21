@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 use App\Models\MateriauxOutil;
+use App\Models\Message;
 use App\Models\Periode;
 use App\Models\produit_planter;
 
@@ -107,4 +108,24 @@ class PlannerRepository implements PlannerRepositoryInterface
          $count = MateriauxOutil::count();
          return $count;
      }
+
+      // _______________________message_______________
+
+    public function createMessage(array $data)
+    {
+        return Message::create($data);
+    }
+
+    public function PlannerAdminMessage()
+    {
+        return Message::where(function ($query) {
+            $query->where('sender', 'admin')
+                ->orWhere('recipient', 'admin');
+        })
+        ->where(function ($query) {
+            $query->where('recipient', 'planner')
+                ->orWhere('sender', 'planner');
+        })
+        ->get();
+    }
 }

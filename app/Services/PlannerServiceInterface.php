@@ -25,4 +25,8 @@ interface PlannerServiceInterface
     public function countPeriode();
     public function countProduit_planter();
     public function countMateriauxOutil();
+
+    // _____________________message_________________
+    public function createMessage(array $data);
+    public function PlannerAdminMessage();
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\plannerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
@@ -26,3 +27,4 @@ Route::get('/admin-message-stockiste',[adminController::class , 'messageStockist
 
 
 Route::get('/message-financiere-admin',[financiereController::class , 'messageFinanciereAdmin'])->name('message-financiere-admin');
+Route::get('/message-planner-admin',[plannerController::class , 'messagePlannerAdmin'])->name('message-planner-admin');

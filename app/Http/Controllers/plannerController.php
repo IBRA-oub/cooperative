@@ -128,8 +128,31 @@ class plannerController extends Controller
         $materiauxOutil =  $this->plannerService->countMateriauxOutil();
         return view('planner.info-stati',['periode'=>$periode, 'produit'=>$produit, 'materiauxOutil'=>$materiauxOutil]);
     }
-    public function message(){
+   
+
+     // ____________________message_______________
+   
+     public function messagePlannerAdminView(){
+      
         return view('planner.message');
+    }
+
+    public function messagePlannerAdmin(){
+        $messages = $this->plannerService->PlannerAdminMessage();
+        
+        return response()->json(['messages' => $messages]);
+    }
+
+    public function message(Request $request){
+        $data = $request->validate([
+            'sender' => 'required',
+            
+            'recipient' => 'required',
+            
+            'content' => 'required'
+        ]);
+         $this->plannerService->createMessage($data);
+      
     }
 
    
