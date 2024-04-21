@@ -87,7 +87,7 @@ function loadMessages() {
 $(document).ready(function() {
     loadMessages(); 
     
-    // setInterval(loadMessages, 1000);
+    setInterval(loadMessages, 1000);
 });
 
 

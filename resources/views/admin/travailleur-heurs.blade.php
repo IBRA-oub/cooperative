@@ -14,6 +14,8 @@
             {{-- ______________download all hours works_________ --}}
             <div class="md:p-6 bg-white md:m-5">
                 @php $buttonShown = false; @endphp
+
+                @if($Heures->isNotEmpty())
                 @foreach ($Heures as $Heure)
                 @if ($Heure->financiere_id && !$buttonShown)
                 @php $buttonShown = true; @endphp
@@ -50,6 +52,7 @@
                 </div>
                 @endif
                 @endforeach
+                @endif
                 {{-- ______________download all hours works end_________ --}}
 
                 <!-- ========== table Banks-desktop ======== -->
@@ -65,7 +68,7 @@
                                 
                             </tr>
                         </thead>
-                       
+                       @if($Heures->isNotEmpty())
                         @foreach ($Heures as $Heure)
                             <tbody class="sm:w-full">
                                 <tr class="pt-10 sm:pt-0 w-full border-b border-[#31363F]">
@@ -85,6 +88,13 @@
                                 </tr>
                             </tbody>
                         @endforeach
+                        @else
+                        
+                                
+                                <p class="text-2xl text-black font-bold flex justify-center items-center" >Il n'y a pas donneés </p>
+                            
+                        
+                        @endif
                     </table>
                     
                 </div>

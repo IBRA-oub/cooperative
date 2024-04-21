@@ -40,6 +40,7 @@
                          <th id="Action" class="">plus options</th>
                      </tr>
                  </thead>
+                 @if($Revenus->isNotEmpty())
                  @foreach($Revenus as $revenu)
                  <tbody class="sm:w-full">
                   
@@ -91,6 +92,13 @@
  
                  </tbody>
                  @endforeach
+                 @else
+                     
+                             
+            <p class="text-2xl text-black font-bold flex justify-center items-center" >Il n'y a pas donneés </p>
+        
+    
+    @endif
              </table>
          </div>
          

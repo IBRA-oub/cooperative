@@ -85,7 +85,7 @@
                         </thead>
 
                         <tbody class="sm:w-full">
-
+                            @if($materiels->isNotEmpty())
                             @foreach ($materiels as $materiel)
                                 <tr class=" pt-10 sm:pt-0  w-full border-b border-blue-400">
 
@@ -129,7 +129,13 @@
 
                                 </tr>
                             @endforeach
-
+                            @else
+                     
+                             
+                            <p class="text-2xl text-black font-bold flex justify-center items-center" >Il n'y a pas donneés </p>
+                        
+                    
+                    @endif
                         </tbody>
 
                     </table>

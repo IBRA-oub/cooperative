@@ -8,8 +8,7 @@
 <body>
     <h1 class="text-center text-4xl font-bold">{{ $data['title'] }}</h1>
     <p class="text-center my-6">{{ $data['date'] }}</p>
-    <p class=" text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class=" text-center">Ce document présente un récapitulatif complet des heures de travail de l'employé pour la période spécifiée, détaillant les heures d'entrée et de sortie de chaque journée de travail..</p>
   
     <table class="table table-bordered ">
         <tr>

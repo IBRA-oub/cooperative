@@ -297,6 +297,44 @@ document.addEventListener("DOMContentLoaded", function () {
                     "حفظ ";
              
             }
+
+            // _____________message_______________
+
+            if (document.getElementById("financiere")) {
+                document.getElementById("financiere").textContent =
+                    "المسؤول المالي ";
+             
+            }
+            if (document.getElementById("financiere1")) {
+                document.getElementById("financiere1").textContent =
+                    "المسؤول المالي ";
+             
+            }
+            if (document.getElementById("planner")) {
+                document.getElementById("planner").textContent =
+                    " المسؤول الزراعي ";
+             
+            }
+            if (document.getElementById("planner1")) {
+                document.getElementById("planner1").textContent =
+                    " المسؤول الزراعي ";
+             
+            }
+            if (document.getElementById("stockiste")) {
+                document.getElementById("stockiste").textContent =
+                    " مسؤول المخزون ";
+             
+            }
+            if (document.getElementById("stockiste1")) {
+                document.getElementById("stockiste1").textContent =
+                    " مسؤول المخزون ";
+             
+            }
+            if (document.getElementById("envoyer")) {
+                document.getElementById("envoyer").textContent =
+                    "  إرسال ";
+             
+            }
     }
 
     function reinitialiserTexte1() {
@@ -593,6 +631,44 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("saveEdite")) {
             document.getElementById("saveEdite").textContent =
                 "mise à jour";
+         
+        }
+
+          // _____________message_______________
+
+          if (document.getElementById("financiere")) {
+            document.getElementById("financiere").textContent =
+                " Financiere ";
+         
+        }
+        if (document.getElementById("planner")) {
+            document.getElementById("planner").textContent =
+                "  Responsable agricule ";
+         
+        }
+        if (document.getElementById("stockiste")) {
+            document.getElementById("stockiste").textContent =
+                "  Stockiste ";
+         
+        }
+          if (document.getElementById("financiere1")) {
+            document.getElementById("financiere1").textContent =
+                " Financiere ";
+         
+        }
+        if (document.getElementById("planner1")) {
+            document.getElementById("planner1").textContent =
+                "  Responsable agricule ";
+         
+        }
+        if (document.getElementById("stockiste1")) {
+            document.getElementById("stockiste1").textContent =
+                "  Stockiste ";
+         
+        }
+        if (document.getElementById("envoyer")) {
+            document.getElementById("envoyer").textContent =
+                "  Envoyer ";
          
         }
     }

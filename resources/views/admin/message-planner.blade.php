@@ -9,20 +9,20 @@
         <a href="/admin-message-financiere-view" class="mr-10 ml-10">
             <div
                 class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-blue-200 border-black border-t-2 border-l-2 hover:rounded">
-                <h3 id="ElectriciterEau" class="text-center text-black py-5 col-end-4 ">Financiere </h3>
+                <h3 id="financiere" class="text-center text-black py-5 col-end-4 ">Financiere </h3>
             </div>
         </a>
 
         <a class="mr-10">
             <div
                 class="w-full px-10 border   rounded-lg shadow-lg bg-green-200 shadow-green-200 border-black border-t-2 border-l-2 hover:rounded">
-                <h3 id="Location" class="text-center text-black py-5 col-end-4 pl-2 ">Responsable argicule</h3>
+                <h3 id="planner" class="text-center text-black py-5 col-end-4 pl-2 ">Responsable argicule</h3>
             </div>
         </a>
         <a href="/admin-message-stockiste-view" class="">
             <div
                 class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-gray-200 border-black border-t-2 border-l-2 hover:rounded">
-                <h3 id="materiaux" class="text-center text-black py-5 col-end-4 pl-2">Stockiste</h3>
+                <h3 id="stockiste" class="text-center text-black py-5 col-end-4 pl-2">Stockiste</h3>
             </div>
         </a>
 
@@ -30,9 +30,9 @@
     <!--===========Content===========-->
     <main class="bg-gray-100 flex-grow h-[100vh] relative ml-[10%] md:ml-5">
 
-        <div class="   h-screen bg-cover bg-center" style="background-image: url('img/chat.png')">
+        <div class="   h-screen bg-cover bg-center mt-7" style="background-image: url('img/chat.png') ">
 
-            <div class="flex sm:items-center  py-3 border-b-2 border-gray-200 bg-white">
+            <div class="flex sm:items-center  py-3 border-b-2 border-gray-200 bg-white ">
                 <div class="relative flex items-center ">
                     <div class="relative ml-5">
                         <span class="absolute text-green-500 right-0 bottom-0">
@@ -40,18 +40,17 @@
                                 <circle cx="8" cy="8" r="8" fill="currentColor"></circle>
                             </svg>
                         </span>
-                        <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
-                            alt="" class="w-10 sm:w-16 h-10 sm:h-16 rounded-full">
+                        <div class="w-10 sm:w-16 h-10 sm:h-16 rounded-full bg-green-300"></div>
                     </div>
                     <div class="flex flex-col leading-tight">
                         <div class="text-2xl mt-1 flex items-center">
-                            <span class="text-gray-700 mr-3">Responsable agricule</span>
+                            <span class="text-gray-700 mr-3" id="planner1">Responsable agricule</span>
                         </div>
 
                     </div>
                 </div>
 
-            </div>
+            </div> 
             <div id="messagesPlanner"
                 class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch" style="max-height: 600px;">
 
@@ -79,7 +78,7 @@
                         {{-- _________________button send_____________ --}}
                         <button type="submit"
                             class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-green-500 hover:bg-green-400 focus:outline-none">
-                            <span class="font-bold">Send</span>
+                            <span class="font-bold"id="envoyer">Envoyer</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="h-6 w-6 ml-2 transform rotate-90">
                                 <path
