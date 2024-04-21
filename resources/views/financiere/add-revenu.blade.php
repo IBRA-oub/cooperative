@@ -12,7 +12,7 @@
 
     </div>
        <!--  Application Details Start -->
-       <div class="w-72 md:w-full  md:pt-10 bg-transparent  ml-[14.7%] md:ml-0">
+       <div class="absolute top-10 w-72 md:w-full  md:pt-10 bg-transparent  ml-[14.7%] md:ml-0">
           <div class="container mx-auto py-8">
             <div class="w-80 ml-3  my-10 md:my-0 md:w-[60%] md:mx-auto rounded shadow bg-white" >
 
