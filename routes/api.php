@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\plannerController;
+use App\Http\Controllers\stockisteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\financiereController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,4 @@ Route::get('/admin-message-stockiste',[adminController::class , 'messageStockist
 
 Route::get('/message-financiere-admin',[financiereController::class , 'messageFinanciereAdmin'])->name('message-financiere-admin');
 Route::get('/message-planner-admin',[plannerController::class , 'messagePlannerAdmin'])->name('message-planner-admin');
+Route::get('/message-stockiste-admin',[stockisteController::class , 'messageStockisteAdmin'])->name('message-stockiste-admin');

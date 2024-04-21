@@ -37,4 +37,15 @@ class StockisteService implements StockisteServiceInterface
     { 
         return $this->stockisteRepository->count();
     }
+
+      // ___________________message_______________
+
+      public function createMessage(array $data)
+      { 
+          return $this->stockisteRepository->createMessage($data);
+      }
+      public function StockisteAdminMessage( )
+      { 
+          return $this->stockisteRepository->StockisteAdminMessage();
+      }
 }

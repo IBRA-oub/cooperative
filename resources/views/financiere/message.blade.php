@@ -6,7 +6,7 @@
 
  
     <!--===========Content===========-->
-    <main class="bg-gray-100 flex-grow h-[100vh] relative ml-5">
+    <main class="bg-gray-100 flex-grow h-[100vh] relative ml-[10%] md:ml-5">
 
         <div class="   h-screen bg-cover bg-center" style="background-image: url('img/chat.png')">
          
@@ -31,7 +31,7 @@
 
             </div>
             <div  id="messagesFinanciereAdmin"
-                class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
+                class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch" style="max-height: 600px;">
 
 
             </div>
@@ -58,7 +58,7 @@
 
                     {{-- _________________button send_____________ --}}
                     <button type="submit"
-                        class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-green-500 hover:bg-green-400 focus:outline-none">
+                        class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-300 hover:bg-blue-400 focus:outline-none">
                         <span class="font-bold">Send</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                             class="h-6 w-6 ml-2 transform rotate-90">
@@ -79,10 +79,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{asset('js/message-financiere-admin.js')}}"></script>
-<script>
-    const el = document.getElementById('messagesFinanciereAdmin')
-    el.scrollTop = el.scrollHeight
-</script>
+
 
 @section('content') 
 

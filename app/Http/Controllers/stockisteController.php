@@ -54,8 +54,31 @@ class stockisteController extends Controller
     }
     // ________________________________________________
    
-    public function message(){
+   
+
+      // ____________________message_______________
+   
+      public function messageStockisteAdminView(){
+      
         return view('stockiste.message');
+    }
+
+    public function messageStockisteAdmin(){
+        $messages = $this->stockisterService->StockisteAdminMessage();
+        
+        return response()->json(['messages' => $messages]);
+    }
+
+    public function message(Request $request){
+        $data = $request->validate([
+            'sender' => 'required',
+            
+            'recipient' => 'required',
+            
+            'content' => 'required'
+        ]);
+         $this->stockisterService->createMessage($data);
+      
     }
    
 }

@@ -119,7 +119,7 @@ Route::middleware(['auth', CheckRole::class . ':financiere'])->group( function()
     Route::get('/financiere-charge',[financiereController::class , 'redCharge'])->name('financiere-charge');
     
     Route::get('/financiere-message',[financiereController::class , 'messageFinanciereAdminView'])->name('financiere-message');
-    Route::post('/admin-message-financiere-post',[financiereController::class , 'message'])->name('admin-message-financiere-post');
+    Route::post('/financiere-message-admin-post',[financiereController::class , 'message'])->name('financiere-message-admin-post');
 });
 
 // __________________________Responsable agricole__________________________
@@ -146,7 +146,7 @@ Route::middleware(['auth', CheckRole::class . ':planner'])->group( function() {
     
 
     Route::get('/planner-message',[plannerController::class , 'messagePlannerAdminView'])->name('planner-message');
-    Route::post('/admin-message-planner-post',[plannerController::class , 'message'])->name('admin-message-planner-post');
+    Route::post('/planner-message-admin-post',[plannerController::class , 'message'])->name('planner-message-admin-post');
 
    
 
@@ -164,6 +164,8 @@ Route::middleware(['auth', CheckRole::class . ':stockiste'])->group( function() 
     Route::put('/update-ProduitStocke/{id}',[stockisteController::class , 'updateProduitStocke'])->name('update.ProduitStocke');
     
     Route::get('/stockiste-info-stati',[stockisteController::class , 'infoStati'])->name('stockiste-info-stati');
-    Route::get('/stockiste-message',[stockisteController::class , 'message'])->name('stockiste-message');
     
+    Route::get('/stockiste-message',[stockisteController::class , 'messageStockisteAdminView'])->name('stockiste-message');
+    Route::post('/stockiste-message-admin-post',[stockisteController::class , 'message'])->name('stockiste-message-admin-post');
+
 });

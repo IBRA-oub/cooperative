@@ -11,7 +11,7 @@ function sendMessage() {
 
     
     $.ajax({
-        url: '/admin-message-financiere-post', 
+        url: '/financiere-message-admin-post', 
         type: 'POST',
         data: formData,
         success: function(response) {

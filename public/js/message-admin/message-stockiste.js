@@ -59,7 +59,7 @@ function loadMessages() {
                     messageHTML += '<div class="flex justify-end">'+
                     '<span class="px-4 py-2 rounded-lg rounded-br-none bg-green-600 text-white">';
                 } 
-                 if (message.sender === 'stockiste') {
+                 else if (message.sender === 'stockiste') {
                     messageHTML += '<span class="inline-block ml-5  mb-5 px-4 py-2 rounded-lg  rounded-bl-none bg-purple-300 text-white">';
                 }
 
@@ -87,7 +87,7 @@ function loadMessages() {
 $(document).ready(function() {
     loadMessages(); 
     
-    setInterval(loadMessages, 1000);
+    // setInterval(loadMessages, 1000);
 });
 
 

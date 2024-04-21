@@ -11,7 +11,7 @@ function sendMessage() {
 
     
     $.ajax({
-        url: '/admin-message-planner-post', 
+        url: '/planner-message-admin-post', 
         type: 'POST',
         data: formData,
         success: function(response) {

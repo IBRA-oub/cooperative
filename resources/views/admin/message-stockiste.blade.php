@@ -4,7 +4,7 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main ">
 
-    <div class=" h-[10%] w-[90%] bg-white  z-10 md:flex  ml-10">
+    <div class=" h-[10%] w-[90%] bg-white  z-10 flex  ml-10">
 
       <a href="/admin-message-financiere-view" class="mr-10 ml-10">
       <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-blue-200 border-black border-t-2 border-l-2 hover:rounded">
@@ -26,7 +26,7 @@
     
 </div>
     <!--===========Content===========-->
-    <main class="bg-gray-100 flex-grow h-[100vh] relative ml-5">
+    <main class="bg-gray-100 flex-grow h-[100vh] relative ml-[10%] md:ml-5">
 
       <div class="   h-screen bg-cover bg-center" style="background-image: url('img/chat.png')">
 
@@ -51,7 +51,7 @@
 
          </div>
          <div id="messagesStockiste"
-             class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
+             class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch" style="max-height: 600px;">
 
 
          </div>
@@ -71,7 +71,7 @@
          
 
              {{-- _________________button send_____________ --}}
-             <button type="submit" class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+             <button type="submit" class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-green-500 hover:bg-green-400 focus:outline-none">
                 <span class="font-bold">Send</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 ml-2 transform rotate-90">
                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
@@ -89,10 +89,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{asset('js/message-admin/message-stockiste.js')}}"></script>
-<script>
-	const el = document.getElementById('messagesStockiste')
-	el.scrollTop = el.scrollHeight
-</script>
+
 @section('content') 
 
 @endsection

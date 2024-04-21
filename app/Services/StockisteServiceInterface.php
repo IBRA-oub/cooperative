@@ -10,4 +10,8 @@ interface StockisteServiceInterface
     public function find($id);
     public function update(array $data ,$id);
     public function count();
+
+      // _____________________message_________________
+      public function createMessage(array $data);
+      public function StockisteAdminMessage();
 }

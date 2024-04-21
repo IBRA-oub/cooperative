@@ -4,7 +4,7 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main ">
 
-    <div class=" h-[10%] w-[90%] bg-white  z-10 md:flex  ml-10">
+    <div class=" h-[10%] w-[90%] bg-white  z-10 flex  ml-10">
 
         <a class="mr-10 ml-10">
             <div
@@ -28,7 +28,7 @@
 
     </div>
     <!--===========Content===========-->
-    <main class="bg-gray-100 flex-grow h-[100vh] relative ml-5">
+    <main class="bg-gray-100 flex-grow h-[100vh] relative ml-[10%] md:ml-5">
 
         <div class="   h-screen bg-cover bg-center" style="background-image: url('img/chat.png')">
          
@@ -52,9 +52,7 @@
                 </div>
 
             </div>
-            <div  id="messages"
-                class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
-
+            <div id="messages" class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch" style="max-height: 600px;">
 
             </div>
 
@@ -101,10 +99,9 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{asset('js/message-admin/message-financiere.js')}}"></script>
-<script>
-    const el = document.getElementById('messages')
-    el.scrollTop = el.scrollHeight
-</script>
+
+
+
 
 
 
