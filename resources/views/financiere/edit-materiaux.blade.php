@@ -50,7 +50,8 @@
                         <div class="mb-4">
                             <label id="dateAchatEdit" for="date" class="block text-black text-sm font-bold mb-2">Date</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="date" id="date"  value="{{$materiaux->date}}">
+                                name="date" id="date"  value="{{$materiaux->date}}"
+                                min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}">
                                 @error('date')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 

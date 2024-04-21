@@ -70,12 +70,14 @@
 
             <label id="datedb" for="dateDepart" class="block text-black text-sm font-bold mb-2">date Début</label>
             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="dateDepart" id="dateDepart"  placeholder="3"><br>
+                name="dateDepart" id="dateDepart"  placeholder="3"
+                min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}"><br>
                 @error('dateDepart')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
                 <label id="dateFN" for="dateStop" class="block text-black text-sm font-bold mb-2">date Finir</label>
                 <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                    name="dateStop" id="dateStop"  placeholder="3"><br>
+                    name="dateStop" id="dateStop"  placeholder="3"
+                    min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}"><br>
                     @error('dateStop')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
 
         <button id="SVPer"
@@ -418,7 +420,7 @@
 
             <label id="periodeProPLanADD" for="Periode" class="block text-black text-sm font-bold mb-2">periode</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="periode_id" id="Periode" >
+                name="periode_id" id="Periode" min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}">
                 @foreach($periods as $periode)
             <option value="{{$periode->id}}">{{$periode->titre}}</option>
                 @endforeach
@@ -453,7 +455,7 @@
 
             <label id="ProdAdd" for="produit_planter_id" class="block text-black text-sm font-bold mb-2">produit</label>
             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                name="produit_planter_id" id="produit_planter_id"  >
+                name="produit_planter_id" id="produit_planter_id" min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}" >
                 @foreach($produits as $produit)
             <option value="{{$produit->id}}">{{$produit->nom}}</option>
             @endforeach

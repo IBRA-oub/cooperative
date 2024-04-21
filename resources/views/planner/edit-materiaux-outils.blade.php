@@ -26,7 +26,8 @@
                         <div class="mb-4">
                             <label id="NomPRoduitEdite" for="nom" class="block text-black text-sm font-bold mb-2">nom produit</label>
                             <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                            name="produit_planter_id" id="Periode" >
+                            name="produit_planter_id" id="Periode" 
+                            min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}">
                             @foreach($produits as $produit)
                         <option value="{{$produit->id}}">{{$produit->nom}}</option>
                             @endforeach

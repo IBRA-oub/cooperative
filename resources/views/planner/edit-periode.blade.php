@@ -44,7 +44,8 @@
                         <div class="mb-4">
                             <label id="dateFinirEdite" for="dateStop" class="block text-black text-sm font-bold mb-2">date Finir</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                name="dateStop" id="dateStop"  value="{{$periode->dateStop}}">
+                                name="dateStop" id="dateStop"  value="{{$periode->dateStop}}"
+                                min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}">
                                 @error('dateStop')<p id="error_creater_id"  class="text-red-600">{{$message}}</p> @enderror
                         </div>
 

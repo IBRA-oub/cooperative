@@ -42,7 +42,8 @@
                                     <label id="periodeEdite" for="periode_id"
                                         class="block text-black text-sm font-bold mb-2">periode</label>
                                     <select class=" border rounded w-full py-2 px-3 text-grey-darker" type="date"
-                                        name="periode_id" id="periode_id">
+                                        name="periode_id" id="periode_id"
+                                        min="{{ now()->timezone('Africa/Casablanca')->format('Y-m-d') }}">
                                         @foreach ($periods as $period)
                                             <option value="{{ $period->id}}">{{$period->titre}}</option>
                                         @endforeach
