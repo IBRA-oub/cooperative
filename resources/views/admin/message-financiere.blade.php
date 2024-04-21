@@ -13,13 +13,13 @@
             </div>
         </a>
 
-        <a href="/admin-message-planner" class="mr-10">
+        <a href="/admin-message-planner-view" class="mr-10">
             <div
                 class="w-full px-10 border   rounded-lg shadow-lg shadow-green-200 border-black border-t-2 border-l-2 hover:rounded">
                 <h3 id="Location" class="text-center text-black py-5 col-end-4 pl-2 ">Responsable argicule</h3>
             </div>
         </a>
-        <a href="/admin-message-stockiste" class="">
+        <a href="/admin-message-stockiste-view" class="">
             <div
                 class="border flex md:grid grid-cols-5 rounded-lg shadow-lg shadow-gray-200 border-black border-t-2 border-l-2 hover:rounded">
                 <h3 id="materiaux" class="text-center text-black py-5 col-end-4 pl-2">Stockiste</h3>
@@ -62,7 +62,7 @@
 
         <div class="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
             <div class="relative flex">
-                {{-- _____________audio_________ --}}
+                
 
                 {{-- __________________input for message ____________ --}}
                 <form action="" class="flex w-full" id="messageForm">
@@ -99,10 +99,13 @@
 
 </main>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{asset('js/message-admin/message-financiere.js')}}"></script>
 <script>
     const el = document.getElementById('messages')
     el.scrollTop = el.scrollHeight
 </script>
+
 
 
 

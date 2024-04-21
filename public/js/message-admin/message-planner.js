@@ -11,7 +11,7 @@ function sendMessage() {
 
     
     $.ajax({
-        url: '/admin-message-financiere-post', 
+        url: '/admin-message-planner-post', 
         type: 'POST',
         data: formData,
         success: function(response) {
@@ -40,12 +40,12 @@ $('#messageForm').submit(function(event) {
 
 function loadMessages() {
     $.ajax({
-        url: "/api/admin-message-financiere",
+        url: "/api/admin-message-planner",
         type: "GET",
         dataType: "json",
         success: function(response) {
             var messages = response.messages;
-            console.log(messages);
+            // console.log(messages);
 
             // Parcourir chaque message et mettre à jour le contenu existant
             messages.forEach(function(message) {
@@ -59,21 +59,21 @@ function loadMessages() {
                     messageHTML += '<div class="flex justify-end">'+
                     '<span class="px-4 py-2 rounded-lg rounded-br-none bg-green-600 text-white">';
                 } 
-                 if (message.sender === 'financiere') {
-                    messageHTML += '<span class="inline-block ml-5  mb-5 px-4 py-2 rounded-lg  rounded-bl-none bg-gray-600 text-white">';
+                 if (message.sender === 'planner') {
+                    messageHTML += '<span class="inline-block ml-5  mb-5 px-4 py-2 rounded-lg  rounded-bl-none bg-green-300 text-white">';
                 }
 
                 messageHTML += message.content + '</span></div></div>';
 
                 // Vérifier si le message existe déjà dans le div
-                var existingMessage = $('#messages').find('#message_' + message.id);
+                var existingMessage = $('#messagesPlanner').find('#message_' + message.id);
                 if (existingMessage.length > 0) {
                     
                     // Mettre à jour le contenu du message existant
                     existingMessage.html(messageHTML);
                 } else {
                     // Ajouter le message s'il n'existe pas déjà
-                    $('#messages').append('<div  id="message_' + message.id + '">' + messageHTML + '</div>');
+                    $('#messagesPlanner').append('<div  id="message_' + message.id + '">' + messageHTML + '</div>');
                 }
             });
         },

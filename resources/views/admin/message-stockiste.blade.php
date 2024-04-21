@@ -6,13 +6,13 @@
 
     <div class=" h-[10%] w-[90%] bg-white  z-10 md:flex  ml-10">
 
-      <a href="/admin-message-financiere" class="mr-10 ml-10">
+      <a href="/admin-message-financiere-view" class="mr-10 ml-10">
       <div class="border flex md:grid grid-cols-5 rounded-lg shadow-lg  shadow-blue-200 border-black border-t-2 border-l-2 hover:rounded">
           <h3 id="ElectriciterEau" class="text-center text-black py-5 col-end-4 ">Financiere </h3>
       </div>
       </a>
   
-      <a href="/admin-message-planner" class="mr-10">
+      <a href="/admin-message-planner-view" class="mr-10">
       <div class="w-full px-10 border   rounded-lg shadow-lg shadow-green-200 border-black border-t-2 border-l-2 hover:rounded">
           <h3 id="Location" class="text-center text-black py-5 col-end-4 pl-2 ">Responsable argicule</h3>
       </div>

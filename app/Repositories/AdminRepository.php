@@ -345,6 +345,20 @@ public function createMessage(array $data)
         })
         ->get();
     }
+
+
+    public function adminPlannerMessage()
+    {
+        return Message::where(function ($query) {
+            $query->where('sender', 'admin')
+                ->orWhere('recipient', 'admin');
+        })
+        ->where(function ($query) {
+            $query->where('recipient', 'planner')
+                ->orWhere('sender', 'planner');
+        })
+        ->get();
+    }
     
     
 }

@@ -475,11 +475,18 @@ class adminController extends Controller
     }
     
     
-    public function messagePlanner(){
-        $users = $this->adminRepository->allUser();
-        $users->load('financiere', 'planner', 'stockiste');
-        return view('admin.message-planner',['users'=>$users]);
+    public function messagePlannerView(){
+        
+        return view('admin.message-planner');
     }
+
+    public function messagePlanner(){
+        $messages = $this->adminRepository->adminPlannerMessage();
+        
+        return response()->json(['messages' => $messages]);
+    }
+
+    
     public function messageStockiste(){
         $users = $this->adminRepository->allUser();
         $users->load('financiere', 'planner', 'stockiste');

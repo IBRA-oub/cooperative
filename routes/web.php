@@ -64,7 +64,9 @@ Route::middleware(['auth', CheckRole::class . ':admin'])->group( function() {
     Route::get('/admin-message-financiere-view',[adminController::class , 'messageFinanciereView'])->name('admin-message-financiere-view');
     Route::post('/admin-message-financiere-post',[adminController::class , 'message'])->name('admin-message-financiere-post');
     
-    Route::get('/admin-message-planner',[adminController::class , 'messagePlanner'])->name('admin-message-planner');
+    Route::get('/admin-message-planner-view',[adminController::class , 'messagePlannerView'])->name('admin-message-planner-view');
+    Route::post('/admin-message-planner-post',[adminController::class , 'message'])->name('admin-message-planner-post');
+    
     Route::get('/admin-message-stockiste',[adminController::class , 'messageStockiste'])->name('admin-message-stockiste');
 });
 
