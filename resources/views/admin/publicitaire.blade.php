@@ -100,7 +100,10 @@
                     
                 </div>
 
+                <div class=" md:hidden justify-end ml-[15%] mt-10 z-0">
 
+                    {{$publiciters->links()}}
+                </div>
 
 
 

@@ -65,7 +65,7 @@ class AdminRepository implements AdminRepositoryInterface
 
     public function allUser()
     {
-        return User::all();
+        return User::paginate(7);
     }
 
     // ____________updated ______________
@@ -148,24 +148,24 @@ public function delete($id)
 
 public function financiereHours($id)
 {
-    return HeureTrevailler::all()->where('financiere_id',$id);
+    return HeureTrevailler::where('financiere_id',$id)->paginate(6);
 }
 
 public function plannerHours($id)
 {
-    return HeureTrevailler::all()->where('planner_id',$id);
+    return HeureTrevailler::where('planner_id',$id)->paginate(6);
 }
 
 public function stockisteHours($id)
 {
-    return HeureTrevailler::all()->where('stockiste_id',$id);
+    return HeureTrevailler::where('stockiste_id',$id)->paginate(6);
 }
 
 
 
 public function travailleurHours($id)
 {
-    return HeureTrevailler::all()->where('travailleur_id',$id);
+    return HeureTrevailler::where('travailleur_id',$id)->paginate(6);
 }
 
 // ____________________sum heure travailler________________
@@ -219,7 +219,7 @@ public function travailleurHoursTotal()
     }
     public function redPubliciter()
     {
-        return Publiciter::all();
+        return Publiciter::paginate(4);
     }
     public function deletePubliciter($id)
     {

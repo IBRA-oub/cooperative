@@ -17,6 +17,7 @@ use App\Repositories\StockisteRepository;
 use App\Repositories\StockisteRepositoryInterface;
 use App\Services\StockisteService;
 use App\Services\StockisteServiceInterface;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -56,6 +57,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::useTailwind();
     }
 }

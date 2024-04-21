@@ -8,7 +8,7 @@
 <body>
     <h1 class="text-center text-4xl font-bold">{{ $data['title'] }}</h1>
     <p class="text-center my-6">{{ $data['date'] }}</p>
-    <p class=" text-center">Ce document présente un récapitulatif complet des heures de travail de l'employé pour la période spécifiée, détaillant les heures d'entrée et de sortie de chaque journée de travail..</p>
+    <p class=" text-center">Ce document présente un récapitulatif complet des heures de travail de l'employé pour la période spécifiée, détaillant les heures chaque journée de travail..</p>
   
     <table class="table table-bordered ">
         <tr>
@@ -20,7 +20,13 @@
         @foreach($data['allData'] as $data)
         <tr>
             <td>{{ $data->id }}</td>
+            @if($data->financiere)
             <td>{{ $data->financiere->user->fullName }}</td>
+            @elseif($data->planner)
+            <td>{{ $data->planner->user->fullName }}</td>
+            @elseif($data->stockiste)
+            <td>{{ $data->stockiste->user->fullName }}</td>
+            @endif
             <td class="bg-yellow-400 ">{{ $data->heurs }} heurs</td>
             <td>{{ $data->created_at }}</td>
         </tr>

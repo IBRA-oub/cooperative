@@ -3,9 +3,9 @@
 @section('title', 'Admin travailleur')
 @section('content')
 
-    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-200 min-h-screen transition-all main">
+    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main">
         <!--===========Content===========-->
-        <main class="bg-gray-100 flex-grow h-[100vh] relative">
+        <main class="bg-white flex-grow h-[100vh] relative">
 
 
             <!-- ============== header =========== -->
@@ -48,7 +48,7 @@
 
 
 
-                <!-- ========== table Banks-desktop ======== -->
+                <!-- ========== table desktop ======== -->
 
                 <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
                     <table class=" ltr  w-full" id="table1">
@@ -306,8 +306,12 @@
 
                     </table>
                 </div>
+                <div class="hidden md:flex justify-start mt-10">
 
-                <!-- ========== table Banks-mobile ======== -->
+                    {{$users->links()}}
+                </div>
+
+                <!-- ========== table mobile ======== -->
                 <div class="block sm:hidden rounded-lg overflow-hidden mt-10 ">
                     <table class=" block sm:hidden w-full  border-2 sm:border-0  " id="table2">
                         <thead class="hidden">
@@ -540,8 +544,11 @@
                         </tbody>
                     </table>
                 </div>
+               
+                <div class=" md:hidden justify-end ml-[15%] mt-10">
 
-
+                    {{$users->links()}}
+                </div>
 
             </div>
             <!-- ============ Content ============= -->
