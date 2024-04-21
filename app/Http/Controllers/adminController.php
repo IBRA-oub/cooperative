@@ -487,10 +487,15 @@ class adminController extends Controller
     }
 
     
+    public function messageStockisteView(){
+      
+        return view('admin.message-stockiste');
+    }
+
     public function messageStockiste(){
-        $users = $this->adminRepository->allUser();
-        $users->load('financiere', 'planner', 'stockiste');
-        return view('admin.message-stockiste',['users'=>$users]);
+        $messages = $this->adminRepository->adminStockisteMessage();
+        
+        return response()->json(['messages' => $messages]);
     }
 
     // ____________________create message_____________________

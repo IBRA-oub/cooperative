@@ -103,6 +103,7 @@ interface AdminRepositoryInterface
     public function createMessage(array $data);
     public function adminFinanciereMessage();
     public function adminPlannerMessage();
+    public function adminStockisteMessage();
     
     
 }

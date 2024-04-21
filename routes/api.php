@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/admin-message-financiere',[adminController::class , 'messageFinanciere'])->name('admin-message-financiere');
 Route::get('/admin-message-planner',[adminController::class , 'messagePlanner'])->name('admin-message-planner');
+Route::get('/admin-message-stockiste',[adminController::class , 'messageStockiste'])->name('admin-message-stockiste');

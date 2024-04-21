@@ -359,6 +359,20 @@ public function createMessage(array $data)
         })
         ->get();
     }
+
+
+    public function adminStockisteMessage()
+    {
+        return Message::where(function ($query) {
+            $query->where('sender', 'admin')
+                ->orWhere('recipient', 'admin');
+        })
+        ->where(function ($query) {
+            $query->where('recipient', 'stockiste')
+                ->orWhere('sender', 'stockiste');
+        })
+        ->get();
+    }
     
     
 }
