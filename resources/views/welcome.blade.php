@@ -263,12 +263,12 @@
             data: {
                 labels: ['{{ $countCharge }} Charge', '{{ $countChargePrix }} DH Prix des charge',
                     '{{ $countRevenu }} Revenu', '{{ $countRevenuPrix }}DH Prix des revenu',
-                    '{{ $countPeriode }} Periode'
+                    '{{ $countStocke }} Stocke'
                 ],
                 datasets: [{
                     label: "statistique",
                     data: [{{ $countCharge }}, {{ $countChargePrix }}, {{ $countRevenu }},
-                        {{ $countRevenuPrix }}, {{ $countPeriode }}
+                        {{ $countRevenuPrix }}, {{ $countStocke }}
                     ],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.9)',  

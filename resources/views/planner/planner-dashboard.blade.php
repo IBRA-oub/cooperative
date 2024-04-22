@@ -130,7 +130,7 @@
                             <tr class="bg-[#31363F] text-white h-[40px]">
                                 <th id="idADD" class="">ID</th>
                                 <th id="nomProADD" class="">nom de produit</th>
-                                <th id="nomProADD" class="">periode</th>
+                                <th id="periProADD" class="">periode</th>
                                 
                                 <th id="actionsADD" class="">plus options</th>
                             </tr>

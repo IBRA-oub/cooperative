@@ -189,11 +189,25 @@ public function stockisteHoursTotal()
 
 public function travailleurHoursTotal()
 {
-    return HeureTrevailler::whereNotNull('travailleur_id')
+    $totalHeurs = HeureTrevailler::whereNotNull('travailleur_id')
         ->groupBy('travailleur_id')
         ->selectRaw('travailleur_id, sum(heurs) as total_heurs')
-        ->pluck('total_heurs', 'travailleur_id');
+        ->pluck('total_heurs', 'travailleur_id')
+        ->toArray(); // Convertir la collection en tableau associatif
+
+    // Récupérer tous les travailleurs
+    $travailleurs = Travailleur::pluck('id')->toArray();
+
+    // Créer un tableau avec tous les travailleurs et leurs totaux d'heures,
+    // en incluant les travailleurs sans totaux d'heures avec une valeur par défaut de 0
+    $allTotals = [];
+    foreach ($travailleurs as $travailleurId) {
+        $allTotals[$travailleurId] = $totalHeurs[$travailleurId] ?? 0;
+    }
+
+    return $allTotals;
 }
+
 
 // ______________________get user first________________
  

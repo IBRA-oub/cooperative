@@ -47,9 +47,9 @@
      </div>
      <!-- ============ Content ============= -->
  
-     <div class="md:p-6 bg-white md:m-5">
+     <div class="md:p-6 bg-white md:m-5 ">
         @if (session('success'))
-        <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative ml-[17%] w-[70%]" role="alert">
             <strong class="font-bold">Success!</strong>
             <span class="block sm:inline">{{ session('success') }}</span>
         </div>

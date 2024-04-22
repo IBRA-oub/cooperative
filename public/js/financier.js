@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("NomProAdd").textContent = "  اسم المنتج";
             document.getElementById("NomProAdd").classList.add("text-right");
         }
-
+       
         if (document.getElementById("quntiterAdd")) {
             document.getElementById("quntiterAdd").textContent = "   الكمية";
             document.getElementById("quntiterAdd").classList.add("text-right");

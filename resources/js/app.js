@@ -1,76 +1,3 @@
-import "./bootstrap";
-import Chart from "chart.js/auto";
-
-// --------------------chartjs---------------------
-
-// const ctx = document.getElementById("barchart");
-
-// new Chart(ctx, {
-//     type: "bar",
-//     data: {
-//         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-//         datasets: [
-//             {
-//                 label: "# of Votes",
-//                 data: [12, 19, 3, 5, 2, 3],
-//                 borderWidth: 1,
-//             },
-//         ],
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true,
-//             },
-//         },
-//     },
-// });
-
-// const doughnut = document.getElementById("doughnut");
-
-// new Chart(doughnut, {
-//     type: "doughnut",
-//     data: {
-//         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-//         datasets: [
-//             {
-//                 label: "# of Votes",
-//                 data: [12, 19, 3, 5, 2, 3],
-//                 borderWidth: 1,
-//             },
-//         ],
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true,
-//             },
-//         },
-//     },
-// });
-
-// const line = document.getElementById("line");
-
-// new Chart(line, {
-//     type: "line",
-//     data: {
-//         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-//         datasets: [
-//             {
-//                 label: "# of Votes",
-//                 data: [12, 19, 3, 5, 2, 3],
-//                 borderWidth: 1,
-//             },
-//         ],
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true,
-//             },
-//         },
-//     },
-// });
 
 // ______________________________traduction ________________________________
 
@@ -107,11 +34,11 @@ function traduireEnArabe() {
     statistique.textContent = "إحصائيات التعاونية  ";
     dernierAnnonce.textContent = "الإعلانات الأخيرة";
     annonces.textContent = "إعلانات";
-    dateAnnonce.textContent = "تاريخ الإعلان";
-    dateModified.textContent = "تاريخ التعديل";
     periode.textContent = "الفترة الزراعية";
     dateDebut.textContent = "تاريخ البدء";
     dateFinir.textContent = "تاريخ الانتهاء";
+    dateAnnonce.textContent = "تاريخ الإعلان";
+    dateModified.textContent = "تاريخ التعديل";
 
     // ________________login_______________
 
@@ -137,11 +64,11 @@ function reinitialiserTexte() {
     statistique.textContent = "Les statistique de coopérative";
     dernierAnnonce.textContent = "Les dernières Annonces";
     annonces.textContent = "Annonces";
-    dateAnnonce.textContent = "date annonce";
-    dateModified.textContent = "date modified";
     periode.textContent = "La periode agricule";
     dateDebut.textContent = "date début";
     dateFinir.textContent = "date finir";
+    dateAnnonce.textContent = "date annonce";
+    dateModified.textContent = "date modified";
 
     // ________________login_______________
 

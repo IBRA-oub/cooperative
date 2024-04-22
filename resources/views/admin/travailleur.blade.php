@@ -128,9 +128,9 @@
                                           
                                             
                                             @elseif($user->travailleur)
-                                            
+
                                             @foreach ($user->travailleur as $travailleur)
-                                            
+
                                             <td class="text-center flex justify-center">
                                               {{ $totaleHeursTr[$travailleur->id] }} H
                                               @endforeach

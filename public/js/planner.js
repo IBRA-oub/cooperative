@@ -116,6 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("nomProADD")) {
             document.getElementById("nomProADD").textContent = "اسم المنتج";
         }
+        if (document.getElementById("periProADD")) {
+            document.getElementById("periProADD").textContent = " الفترة";
+        }
 
         if (document.getElementById("actionsADD")) {
             document.getElementById("actionsADD").textContent =
@@ -407,6 +410,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById("nomProADD")) {
             document.getElementById("nomProADD").textContent =
                 "nom de produit ";
+        }
+        if (document.getElementById("periProADD")) {
+            document.getElementById("periProADD").textContent = " periode";
         }
 
         if (document.getElementById("actionsADD")) {

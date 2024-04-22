@@ -171,18 +171,18 @@ class adminController extends Controller
         $totaleHeursTr = 0;
         foreach($users as $user) {
             if($user->travailleur) {
-                $totaleHeursTr += $this->adminRepository->travailleurHoursTotal()->sum('heures');
+                $totaleHeursTr = $this->adminRepository->travailleurHoursTotal();;
             }
         }
-    
+        
         return view('admin.travailleur', [
             'users' => $users,
             'totaleHeursFi' => $totaleHeursFi,
             'totaleHeursPl' => $totaleHeursPl,
             'totaleHeursSt' => $totaleHeursSt,
-           
             'totaleHeursTr' => $totaleHeursTr
         ]);
+        
     }
     
     // ____________edite_______________
@@ -440,9 +440,9 @@ class adminController extends Controller
         $countRevenuPrix = $this->adminRepository->countRevenuPrix();
         $HoursTotal = $this->adminRepository->HoursTotal();
         $TravailleurTotal = $this->adminRepository->TravailleurTotal()+4;
-        $countPeriode = $this->adminRepository->countPeriode();
+        $countStocke = $this->adminRepository->countStocke();
        
-        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal,'countPeriode'=>$countPeriode]);
+        return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal,'countStocke'=>$countStocke]);
     }
 
     public function dashboard(){
