@@ -121,7 +121,7 @@
                 </script>
                 @endif
         
-                <!-- ========== table Banks-desktop ======== -->
+                <!-- ========== table -desktop ======== -->
               
                 <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
                     <table class="  
@@ -183,7 +183,7 @@
                     </table>
                 </div>
                 
-                <!-- ========== table Banks-mobile ======== -->
+                <!-- ========== table -mobile ======== -->
                 <div class="block sm:hidden rounded-lg overflow-hidden mt-10 ">
                     <table class=" block sm:hidden w-full  border-2 sm:border-0  " id="table2">
                         <thead class="hidden">
@@ -278,7 +278,7 @@
             <div class="md:p-6 bg-white  md:m-5 ">
               
         
-                <!-- ========== table Banks-desktop ======== -->
+                <!-- ========== table -desktop ======== -->
               
                 <div class="hidden md:block  rounded-lg overflow-hidden mt-[10%] w-[95%] items-center ml-10 ">
                     <table class="  
@@ -334,7 +334,7 @@
                     </table>
                 </div>
                 
-                <!-- ========== table Banks-mobile ======== -->
+                <!-- ========== table -mobile ======== -->
                 <div class="block sm:hidden rounded-lg overflow-hidden mt-10 ">
                     <table class=" block sm:hidden w-full  border-2 sm:border-0  " id="table2">
                         <thead class="hidden">

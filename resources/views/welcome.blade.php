@@ -136,7 +136,7 @@
                 </h1>
 
                 <!-- loop pour affichier les dernier publiciter -->
-
+                @if($publiciter->isNotEmpty())
                 @foreach ($publiciter as $pub)
                     <div class="mb-4 lg:mb-10 p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
 
@@ -171,7 +171,12 @@
                         </p>
                     </div>
                 @endforeach
+                @else
+                <div class="md:mt-0 text-gray-800  text-sm mb-2">
 
+                    <span id="dateFinir"> il n'y a pas des publiciter pour le mement
+                </div>
+                @endif
             </div>
 
             <!-- Section de droite  -->
@@ -183,7 +188,7 @@
                 <div class="w-full md:w-4/7">
 
 
-
+                    @if($periodes->isNotEmpty())
                     @foreach ($periodes as $period)
                         <div class=" mt-5 rounded w-full flex flex-col md:flex-row mb-10">
 
@@ -205,7 +210,12 @@
                             </div>
                         </div>
                     @endforeach
+                    @else
+                    <div class="md:mt-0 text-gray-800  text-sm mb-2">
 
+                        <span id="dateFinir"> il n'y a pas des periodes pour le mement
+                    </div>
+                    @endif
 
 
                 </div>
