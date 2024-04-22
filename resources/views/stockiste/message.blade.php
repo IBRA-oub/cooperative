@@ -4,7 +4,7 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main ">
 
- 
+   
     <!--===========Content===========-->
     <main class="bg-gray-100 flex-grow h-[100vh] relative ml-[10%] md:ml-5">
 
@@ -76,6 +76,8 @@
     </main>
 
 </main>
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{asset('js/message-stockiste-admin.js')}}"></script>

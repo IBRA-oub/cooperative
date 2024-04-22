@@ -4,8 +4,9 @@
 
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main ">
 
- 
+
     <!--===========Content===========-->
+   
     <main class="bg-gray-100 flex-grow h-[100vh] relative ml-[10%] md:ml-5">
 
         <div class="   h-screen bg-cover bg-center" style="background-image: url('img/chat.png')">
@@ -77,8 +78,11 @@
 
 </main>
 
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{asset('js/message-financiere-admin.js')}}"></script>
+
 
 
 @section('content') 
