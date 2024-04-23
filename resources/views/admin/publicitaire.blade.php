@@ -147,7 +147,7 @@
 
 
 
-                    <button id="savePubli" type="button" onclick="checkFields()"
+                    <button id="savePubli" type="submit" onclick="checkFields()"
                         class="text-white mb-2 mt-5 md:mx-60 rounded-full py-1 px-24 bg-[#31363F] hover:bg-black hover:text-white">
                         Save
                     </button>
