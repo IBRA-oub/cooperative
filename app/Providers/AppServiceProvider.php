@@ -17,6 +17,8 @@ use App\Repositories\StockisteRepository;
 use App\Repositories\StockisteRepositoryInterface;
 use App\Services\StockisteService;
 use App\Services\StockisteServiceInterface;
+use App\Services\AdminService;
+use App\Services\AdminServiceInterface;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,8 +30,10 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // _____________admin__________
-        $this->app->bind(AdminRepositoryInterface::class, function ($app) {
-            return new AdminRepository( new User());
+
+        $this->app->bind(AdminRepositoryInterface::class, AdminRepository::class);
+        $this->app->bind(AdminServiceInterface::class, function ($app) {
+            return new AdminService($app->make(AdminRepositoryInterface::class));
         });
 
         // ____________________financiere___________

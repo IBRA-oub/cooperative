@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Financiere;
-use App\Repositories\AdminRepository;
-use App\Repositories\AdminRepositoryInterface;
+use App\Services\AdminServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
 
-    protected $adminRepository;
+    protected $adminService;
 
-    public function __construct(AdminRepositoryInterface $AdminRepository)
+    public function __construct(AdminServiceInterface $adminService)
     {
-        $this->adminRepository = $AdminRepository;
+        $this->adminService = $adminService;
     }
 
 
@@ -39,22 +37,22 @@ class adminController extends Controller
         $validatedUserData['password'] = Hash::make($request->password);
         
         // __________verfied email___________
-        $usersEmail = $this->adminRepository->allUser();
+        $usersEmail = $this->adminService->allUser();
         foreach($usersEmail as $user)
         if($user->email == $request->email){
             return redirect()->route('admin-travailleur')->with('error','email existe déjà .');
         }
 
         // __________________________debut de la creation des utilisateur_______________
-        $user = $this->adminRepository->create($validatedUserData);  
+        $user = $this->adminService->create($validatedUserData);  
         $userId = $user->id;
     
                 //    ______________financiere___________
                 if ($request->role === 'financiere') {
-        $existingFinancial = $this->adminRepository->getFirstFinanciere();
+        $existingFinancial = $this->adminService->getFirstFinanciere();
 
             if ($existingFinancial) {
-                $this->adminRepository->delete($userId);
+                $this->adminService->delete($userId);
                 return redirect()->route('admin-travailleur')->with('error','Un compte financier existe déjà .');
             }
     
@@ -67,7 +65,7 @@ class adminController extends Controller
             
             $validatedFinancialData['user_id'] = $userId;
             
-            $this->adminRepository->createFinanciere($validatedFinancialData);
+            $this->adminService->createFinanciere($validatedFinancialData);
             
             return redirect()->route('admin-travailleur')->with('success','Financiere ajouter avec success');
             
@@ -75,10 +73,10 @@ class adminController extends Controller
         
                 //    ______________planner___________
                 if($request->role === 'planner'){
-                $existingPlanner =  $this->adminRepository->getFirstPlanner();
+                $existingPlanner =  $this->adminService->getFirstPlanner();
 
                 if ($existingPlanner) {
-                    $this->adminRepository->delete($userId);
+                    $this->adminService->delete($userId);
                     return redirect()->route('admin-travailleur')->with('error','Un compte planner existe déjà.');
                 }
 
@@ -90,17 +88,17 @@ class adminController extends Controller
             
             $validatedPlannerData['user_id'] = $userId;
             
-            $this->adminRepository->createPlanner($validatedPlannerData);
+            $this->adminService->createPlanner($validatedPlannerData);
             
             return redirect()->route('admin-travailleur')->with('success','Planner ajouter avec success');            
         }
         
              //    ______________Stockiste___________
              if($request->role === 'stockiste'){
-             $existingStockiste =  $this->adminRepository->getFirstStockiste();
+             $existingStockiste =  $this->adminService->getFirstStockiste();
 
              if ($existingStockiste) {
-                 $this->adminRepository->delete($userId);
+                 $this->adminService->delete($userId);
                  return redirect()->route('admin-travailleur')->with('error','Un compte stockiste existe déjà.');
              }
         
@@ -113,7 +111,7 @@ class adminController extends Controller
             
             $validatedStockisteData['user_id'] = $userId;
             
-            $this->adminRepository->createStockiste($validatedStockisteData);
+            $this->adminService->createStockiste($validatedStockisteData);
             
             return redirect()->route('admin-travailleur')->with('success','stockiste ajouter avec success');
             
@@ -130,7 +128,7 @@ class adminController extends Controller
             
             $validatedTravailleurData['user_id'] = $userId;
             
-            $this->adminRepository->createTravailleur($validatedTravailleurData);
+            $this->adminService->createTravailleur($validatedTravailleurData);
             
             return redirect()->route('admin-travailleur')->with('success','Travailleur ajouter avec success');
             
@@ -142,27 +140,27 @@ class adminController extends Controller
    
     // __________red user____________
     public function travailleur() {
-        $users = $this->adminRepository->allUser();
+        $users = $this->adminService->allUser();
         $users->load('financiere', 'planner', 'stockiste', 'travailleur');
         
         $totaleHeursFi = 0;
         foreach($users as $user) {
             if($user->financiere) {
-                $totaleHeursFi += $this->adminRepository->financiereHoursTotal();
+                $totaleHeursFi += $this->adminService->financiereHoursTotal();
             }
         }
     
         $totaleHeursPl = 0;
         foreach($users as $user) {
             if($user->planner) {
-                $totaleHeursPl += $this->adminRepository->plannerHoursTotal();
+                $totaleHeursPl += $this->adminService->plannerHoursTotal();
             }
         }
     
         $totaleHeursSt = 0;
         foreach($users as $user) {
             if($user->stockiste) {
-                $totaleHeursSt += $this->adminRepository->stockisteHoursTotal();
+                $totaleHeursSt += $this->adminService->stockisteHoursTotal();
             }
         }
     
@@ -171,7 +169,7 @@ class adminController extends Controller
         $totaleHeursTr = 0;
         foreach($users as $user) {
             if($user->travailleur) {
-                $totaleHeursTr = $this->adminRepository->travailleurHoursTotal();;
+                $totaleHeursTr = $this->adminService->travailleurHoursTotal();;
             }
         }
         
@@ -188,7 +186,7 @@ class adminController extends Controller
     // ____________edite_______________
 
     public function editUser($id){
-        $user = $this->adminRepository->editeUser($id);
+        $user = $this->adminService->editeUser($id);
         $user->load('financiere', 'planner', 'stockiste', 'travailleur');
 
         return view('admin.edit-user',['user' => $user]);
@@ -210,7 +208,7 @@ class adminController extends Controller
         
     
 
-        $user = $this->adminRepository->update($validatedUserData,$id);  
+        $user = $this->adminService->update($validatedUserData,$id);  
         $userId = $user->id;
         
      
@@ -224,7 +222,7 @@ class adminController extends Controller
             
             $validatedFinancialData['user_id'] = $userId;
             
-            $this->adminRepository->updateFinanciere($validatedFinancialData);
+            $this->adminService->updateFinanciere($validatedFinancialData);
             
             return redirect()->route('admin-travailleur')->with('success','Financiere mise a jour avec success');
             
@@ -238,7 +236,7 @@ class adminController extends Controller
             
             $validatedPlannerData['user_id'] = $userId;
             
-            $this->adminRepository->updatePlanner($validatedPlannerData);
+            $this->adminService->updatePlanner($validatedPlannerData);
             
             return redirect()->route('admin-travailleur')->with('success','Planner mise a jour avec success');            
             
@@ -252,7 +250,7 @@ class adminController extends Controller
             
             $validatedStockisteData['user_id'] = $userId;
             
-            $this->adminRepository->updateStockiste($validatedStockisteData);
+            $this->adminService->updateStockiste($validatedStockisteData);
             
             return redirect()->route('admin-travailleur')->with('success','stockiste mise a jour avec success');
             
@@ -266,7 +264,7 @@ class adminController extends Controller
             
             $validatedTravailleurData['user_id'] = $userId;
             
-            $this->adminRepository->updateTravailleur($validatedTravailleurData);
+            $this->adminService->updateTravailleur($validatedTravailleurData);
             
             return redirect()->route('admin-travailleur')->with('success','Travailleur mise a jour avec success');
             
@@ -282,7 +280,7 @@ class adminController extends Controller
 
     public function deleteUser($id){
         
-        $this->adminRepository->delete($id);
+        $this->adminService->delete($id);
             
         return redirect()->route('admin-travailleur')->with('success','Travailleur supprimer avec success');
     }
@@ -304,26 +302,26 @@ class adminController extends Controller
         if ($userType == "financiere") {
             
             $validatedData['financiere_id'] = $request->input('user_id');
-            $this->adminRepository->createHoursFinanciere($validatedData);
+            $this->adminService->createHoursFinanciere($validatedData);
             return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
         }
          elseif ($userType == "planner") {
             
             $validatedData['planner_id'] = $request->input('user_id');
-            $this->adminRepository->createHoursPlanner($validatedData);
+            $this->adminService->createHoursPlanner($validatedData);
             return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
         } 
         elseif ($userType == "stockiste") {
             
             $validatedData['stockiste_id'] = $request->input('user_id');
-            $this->adminRepository->createHoursStockiste($validatedData);
+            $this->adminService->createHoursStockiste($validatedData);
             return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
         } 
        
         elseif ($userType == "travailleur") {
              
             $validatedData['travailleur_id'] = $request->input('user_id');
-            $this->adminRepository->createHoursTravailleur($validatedData);
+            $this->adminService->createHoursTravailleur($validatedData);
             return redirect()->route('admin-travailleur')->with('success', 'Heures travaillées ajoutées avec succès.');
         }
     
@@ -339,20 +337,20 @@ class adminController extends Controller
     public function travailleurHeurs($id , $type){
     
         if($type == 'financiere'){
-           $financiereHeure =  $this->adminRepository->financiereHours($id);
+           $financiereHeure =  $this->adminService->financiereHours($id);
            
             return view('admin.travailleur-heurs',['Heures'=>$financiereHeure]);
         }
         elseif($type == 'planner'){
-            $plannerHeure =  $this->adminRepository->plannerHours($id);
+            $plannerHeure =  $this->adminService->plannerHours($id);
             
              return view('admin.travailleur-heurs',['Heures'=>$plannerHeure]);
         } elseif($type == 'stockiste'){
-            $stockisteHeure =  $this->adminRepository->stockisteHours($id);
+            $stockisteHeure =  $this->adminService->stockisteHours($id);
             
              return view('admin.travailleur-heurs',['Heures'=>$stockisteHeure]);
         }  elseif($type == 'travailleur'){
-            $travailleurHeure =  $this->adminRepository->travailleurHours($id);
+            $travailleurHeure =  $this->adminService->travailleurHours($id);
             
              return view('admin.travailleur-heurs',['Heures'=>$travailleurHeure]);
         }
@@ -388,22 +386,22 @@ class adminController extends Controller
         
         $data['picture'] = $imageName;
         $data['admin_id'] = auth()->user()->admin->id;
-        $this->adminRepository->storePubliciter($data);
+        $this->adminService->storePubliciter($data);
         
         return redirect()->route('publicitaire')->with('success','publiciter ajouter avec success');
     }
     public function PubliciterDelete($id){
-        $this->adminRepository->deletePubliciter($id);
+        $this->adminService->deletePubliciter($id);
         return redirect()->route('publicitaire')->with('success','publiciter supprimer avec success');
     }
     public function publicitaire(){
-        $publiciters = $this->adminRepository->redPubliciter(); 
+        $publiciters = $this->adminService->redPubliciter(); 
         
         return view('admin.publicitaire',['publiciters' => $publiciters ]);
     }
 
     public function editPubliciter($id){
-        $publiciter = $this->adminRepository->findPubliciter($id);
+        $publiciter = $this->adminService->findPubliciter($id);
         return view('admin.edit-publiciter',['publiciter' => $publiciter]);
     }
     public function updatePubliciter(Request $request,$id){
@@ -422,7 +420,7 @@ class adminController extends Controller
         }
         
         $data['picture'] = $imageName;
-        $this->adminRepository->updatePubliciter($data,$id);
+        $this->adminService->updatePubliciter($data,$id);
         
         return redirect()->route('publicitaire')->with('success',' publiciter mise a jour avec success');
     }
@@ -432,30 +430,30 @@ class adminController extends Controller
 
     
     public function Welcome(){
-        $publiciter = $this->adminRepository->redLastPubliciter();
-        $periodes = $this->adminRepository->redPeriodes();
-        $countCharge = $this->adminRepository->countCharge();
-        $countChargePrix = $this->adminRepository->countChargePrix();
-        $countRevenu = $this->adminRepository->countRevenu();
-        $countRevenuPrix = $this->adminRepository->countRevenuPrix();
-        $HoursTotal = $this->adminRepository->HoursTotal();
-        $TravailleurTotal = $this->adminRepository->TravailleurTotal()+4;
-        $countStocke = $this->adminRepository->countStocke();
+        $publiciter = $this->adminService->redLastPubliciter();
+        $periodes = $this->adminService->redPeriodes();
+        $countCharge = $this->adminService->countCharge();
+        $countChargePrix = $this->adminService->countChargePrix();
+        $countRevenu = $this->adminService->countRevenu();
+        $countRevenuPrix = $this->adminService->countRevenuPrix();
+        $HoursTotal = $this->adminService->HoursTotal();
+        $TravailleurTotal = $this->adminService->TravailleurTotal()+4;
+        $countStocke = $this->adminService->countStocke();
        
         return view('welcome',['publiciter' => $publiciter,'periodes' => $periodes,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'HoursTotal'=>$HoursTotal,'TravailleurTotal'=>$TravailleurTotal,'countStocke'=>$countStocke]);
     }
 
     public function dashboard(){
-        $HoursTotal = $this->adminRepository->HoursTotal();
-        $TravailleurTotal = $this->adminRepository->TravailleurTotal()+4;
-        $countCharge = $this->adminRepository->countCharge();
-        $countChargePrix = $this->adminRepository->countChargePrix();
-        $countRevenu = $this->adminRepository->countRevenu();
-        $countRevenuPrix = $this->adminRepository->countRevenuPrix();
-        $countPeriode = $this->adminRepository->countPeriode();
-        $countProduit_planter = $this->adminRepository->countProduit_planter();
-        $countMateriauxOutil = $this->adminRepository->countMateriauxOutil();
-        $countStocke = $this->adminRepository->countStocke();
+        $HoursTotal = $this->adminService->HoursTotal();
+        $TravailleurTotal = $this->adminService->TravailleurTotal()+4;
+        $countCharge = $this->adminService->countCharge();
+        $countChargePrix = $this->adminService->countChargePrix();
+        $countRevenu = $this->adminService->countRevenu();
+        $countRevenuPrix = $this->adminService->countRevenuPrix();
+        $countPeriode = $this->adminService->countPeriode();
+        $countProduit_planter = $this->adminService->countProduit_planter();
+        $countMateriauxOutil = $this->adminService->countMateriauxOutil();
+        $countStocke = $this->adminService->countStocke();
         return view('admin.admin-dashboard',['TravailleurTotal'=>$TravailleurTotal,'HoursTotal'=>$HoursTotal,'countCharge'=>$countCharge,'countChargePrix'=>$countChargePrix,'countRevenu'=>$countRevenu,'countRevenuPrix'=>$countRevenuPrix,'countPeriode'=>$countPeriode,'countProduit_planter'=>$countProduit_planter,'countMateriauxOutil'=>$countMateriauxOutil,'countStocke'=>$countStocke]);
     }
 
@@ -469,7 +467,7 @@ class adminController extends Controller
     }
     
     public function messageFinanciere(){
-        $messages = $this->adminRepository->adminFinanciereMessage();
+        $messages = $this->adminService->adminFinanciereMessage();
         
         return response()->json(['messages' => $messages]);
     }
@@ -481,7 +479,7 @@ class adminController extends Controller
     }
 
     public function messagePlanner(){
-        $messages = $this->adminRepository->adminPlannerMessage();
+        $messages = $this->adminService->adminPlannerMessage();
         
         return response()->json(['messages' => $messages]);
     }
@@ -493,7 +491,7 @@ class adminController extends Controller
     }
 
     public function messageStockiste(){
-        $messages = $this->adminRepository->adminStockisteMessage();
+        $messages = $this->adminService->adminStockisteMessage();
         
         return response()->json(['messages' => $messages]);
     }
@@ -508,7 +506,7 @@ class adminController extends Controller
             
             'content' => 'required'
         ]);
-         $this->adminRepository->createMessage($data);
+         $this->adminService->createMessage($data);
       
     }
 }
