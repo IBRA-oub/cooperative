@@ -89,7 +89,7 @@
                                         @enderror
                                     @elseif ($user->travailleur)
                                         <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
-                                            name="salaire" id="salaire" value="{{ $user->travailleur->salaire }}">
+                                            name="salaire" id="salaire" >
                                         @error('salaire')
                                             <p id="error_creater_id" :messages="$errors - > get('fullName')" class="text-red-600">
                                                 {{ $message }}</p>

@@ -207,13 +207,13 @@
                                                 <div id="optionsDropdown2"
                                                     class="optionsDropdown2 origin-top-right absolute right-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
                                                     <div class="py-1">
-                                                        <form action="{{ route('user.delete', ['id' => $user->id]) }}"
+                                                        <form action="{{ route('user.delete', ['id' => $user->id]) }}" 
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button id="sup"
+                                                            <button id="sup" type="submit"
                                                                 class="bg-red-600 text-white w-full h-[35px] rounded-md mb-2 hover:bg-red-800">
-                                                                <a href="">Supprimer</a>
+                                                                Supprimer
                                                             </button>
                                                         </form>
 

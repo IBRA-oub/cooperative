@@ -36,12 +36,12 @@ class CheckRole
                     break;
                 
                 default:
-                    // Handle unknown role
+                    
                     break;
             }
         }
 
-        // If none of the roles matched, redirect to login
+        
         return redirect()->route('login');
     }
 }

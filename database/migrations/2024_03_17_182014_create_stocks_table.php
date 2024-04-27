@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('quantiterProduit');
             $table->foreignId('stockist_id')
             ->constrained('stockistes')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

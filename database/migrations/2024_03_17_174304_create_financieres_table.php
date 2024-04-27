@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('salaire');
             $table->foreignId('user_id')
             ->constrained('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

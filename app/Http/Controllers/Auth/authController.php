@@ -23,14 +23,12 @@ class AuthController extends Controller
     }
 
     public function loginAction(Request $request) {
-        
         $validite = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
+        // dd($request);
         $validite['password'] = Hash::make($request->password);
-        
-        // dd($validite);
 
         
         

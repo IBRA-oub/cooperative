@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('picture');
             $table->foreignId('admin_id')
             ->constrained('admins')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

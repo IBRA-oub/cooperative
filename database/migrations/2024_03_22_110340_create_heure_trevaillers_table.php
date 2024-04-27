@@ -18,26 +18,26 @@ return new class extends Migration
 
             $table->foreignId('financiere_id')
             ->constrained('financieres')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
 
             $table->foreignId('planner_id')
             ->constrained('planners')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
 
             $table->foreignId('stockiste_id')
             ->constrained('stockistes')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
 
           
 
 
             $table->foreignId('travailleur_id')
             ->constrained('travailleurs')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
         });
     }
 

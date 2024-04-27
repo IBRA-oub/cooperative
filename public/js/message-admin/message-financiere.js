@@ -47,14 +47,14 @@ function loadMessages() {
             var messages = response.messages;
             // console.log(messages);
 
-            // Parcourir chaque message et mettre à jour le contenu existant
+           
             messages.forEach(function(message) {
                 var messageHTML = '<div class=" chat-message">' +
                     
                    
                     '<div>';
 
-                // Vérifier l'expéditeur du message
+                
                 if (message.sender === 'admin') {
                     messageHTML += '<div class="flex justify-end">'+
                     '<span class="px-4 py-2 rounded-lg rounded-br-none bg-green-600 text-white">';
@@ -65,14 +65,14 @@ function loadMessages() {
 
                 messageHTML += message.content + '</span></div></div>';
 
-                // Vérifier si le message existe déjà dans le div
+                
                 var existingMessage = $('#messages').find('#message_' + message.id);
                 if (existingMessage.length > 0) {
                     
-                    // Mettre à jour le contenu du message existant
+                    
                     existingMessage.html(messageHTML);
                 } else {
-                    // Ajouter le message s'il n'existe pas déjà
+                   
                     $('#messages').append('<div  id="message_' + message.id + '">' + messageHTML + '</div>');
                 }
             });
@@ -87,7 +87,7 @@ function loadMessages() {
 $(document).ready(function() {
     loadMessages(); 
     
-    setInterval(loadMessages, 1000);
+    setInterval(loadMessages, 3000);
 });
 
 

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nom');
             $table->foreignId('financiere_id')
             ->constrained('financieres')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

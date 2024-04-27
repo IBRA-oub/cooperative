@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nom');
             $table->foreignId('produit_planter_id')
             ->constrained('produit_planters')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

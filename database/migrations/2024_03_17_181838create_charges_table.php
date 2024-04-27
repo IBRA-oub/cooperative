@@ -19,7 +19,8 @@ return new class extends Migration
             $table->date('date');
             $table->foreignId('type_id')
             ->constrained('charge_types')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

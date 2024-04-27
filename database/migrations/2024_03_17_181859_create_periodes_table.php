@@ -18,7 +18,8 @@ return new class extends Migration
             $table->date('dateStop');
             $table->foreignId('planner_id')
             ->constrained('planners')
-            ->onUpdate('cascade');
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }
